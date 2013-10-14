@@ -7,74 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B537A635180C71FF00CEF23D /* _debugger.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A604180C71FF00CEF23D /* _debugger.js */; };
-		B537A636180C71FF00CEF23D /* _http_agent.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A605180C71FF00CEF23D /* _http_agent.js */; };
-		B537A637180C71FF00CEF23D /* _http_client.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A606180C71FF00CEF23D /* _http_client.js */; };
-		B537A638180C71FF00CEF23D /* _http_common.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A607180C71FF00CEF23D /* _http_common.js */; };
-		B537A639180C71FF00CEF23D /* _http_incoming.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A608180C71FF00CEF23D /* _http_incoming.js */; };
-		B537A63A180C71FF00CEF23D /* _http_outgoing.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A609180C71FF00CEF23D /* _http_outgoing.js */; };
-		B537A63B180C71FF00CEF23D /* _http_server.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A60A180C71FF00CEF23D /* _http_server.js */; };
-		B537A63C180C71FF00CEF23D /* _linklist.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A60B180C71FF00CEF23D /* _linklist.js */; };
-		B537A63D180C71FF00CEF23D /* _stream_duplex.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A60C180C71FF00CEF23D /* _stream_duplex.js */; };
-		B537A63E180C71FF00CEF23D /* _stream_passthrough.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A60D180C71FF00CEF23D /* _stream_passthrough.js */; };
-		B537A63F180C71FF00CEF23D /* _stream_readable.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A60E180C71FF00CEF23D /* _stream_readable.js */; };
-		B537A640180C71FF00CEF23D /* _stream_transform.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A60F180C71FF00CEF23D /* _stream_transform.js */; };
-		B537A641180C71FF00CEF23D /* _stream_writable.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A610180C71FF00CEF23D /* _stream_writable.js */; };
-		B537A642180C71FF00CEF23D /* _tls_legacy.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A611180C71FF00CEF23D /* _tls_legacy.js */; };
-		B537A643180C71FF00CEF23D /* _tls_wrap.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A612180C71FF00CEF23D /* _tls_wrap.js */; };
-		B537A644180C71FF00CEF23D /* assert.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A613180C71FF00CEF23D /* assert.js */; };
-		B537A645180C71FF00CEF23D /* buffer.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A614180C71FF00CEF23D /* buffer.js */; };
-		B537A646180C71FF00CEF23D /* child_process.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A615180C71FF00CEF23D /* child_process.js */; };
-		B537A647180C71FF00CEF23D /* cluster.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A616180C71FF00CEF23D /* cluster.js */; };
-		B537A648180C71FF00CEF23D /* console.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A617180C71FF00CEF23D /* console.js */; };
-		B537A649180C71FF00CEF23D /* constants.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A618180C71FF00CEF23D /* constants.js */; };
-		B537A64A180C71FF00CEF23D /* crypto.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A619180C71FF00CEF23D /* crypto.js */; };
-		B537A64B180C71FF00CEF23D /* dgram.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A61A180C71FF00CEF23D /* dgram.js */; };
-		B537A64C180C71FF00CEF23D /* dns.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A61B180C71FF00CEF23D /* dns.js */; };
-		B537A64D180C71FF00CEF23D /* domain.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A61C180C71FF00CEF23D /* domain.js */; };
-		B537A64E180C71FF00CEF23D /* events.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A61D180C71FF00CEF23D /* events.js */; };
-		B537A64F180C71FF00CEF23D /* freelist.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A61E180C71FF00CEF23D /* freelist.js */; };
-		B537A650180C71FF00CEF23D /* fs.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A61F180C71FF00CEF23D /* fs.js */; };
-		B537A651180C71FF00CEF23D /* http.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A620180C71FF00CEF23D /* http.js */; };
-		B537A652180C71FF00CEF23D /* https.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A621180C71FF00CEF23D /* https.js */; };
-		B537A653180C71FF00CEF23D /* module.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A622180C71FF00CEF23D /* module.js */; };
-		B537A654180C71FF00CEF23D /* net.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A623180C71FF00CEF23D /* net.js */; };
-		B537A655180C71FF00CEF23D /* os.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A624180C71FF00CEF23D /* os.js */; };
-		B537A656180C71FF00CEF23D /* path.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A625180C71FF00CEF23D /* path.js */; };
-		B537A657180C71FF00CEF23D /* punycode.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A626180C71FF00CEF23D /* punycode.js */; };
-		B537A658180C71FF00CEF23D /* querystring.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A627180C71FF00CEF23D /* querystring.js */; };
-		B537A659180C71FF00CEF23D /* readline.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A628180C71FF00CEF23D /* readline.js */; };
-		B537A65A180C71FF00CEF23D /* repl.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A629180C71FF00CEF23D /* repl.js */; };
-		B537A65B180C71FF00CEF23D /* smalloc.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A62A180C71FF00CEF23D /* smalloc.js */; };
-		B537A65C180C71FF00CEF23D /* stream.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A62B180C71FF00CEF23D /* stream.js */; };
-		B537A65D180C71FF00CEF23D /* string_decoder.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A62C180C71FF00CEF23D /* string_decoder.js */; };
-		B537A65E180C71FF00CEF23D /* sys.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A62D180C71FF00CEF23D /* sys.js */; };
-		B537A65F180C71FF00CEF23D /* timers.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A62E180C71FF00CEF23D /* timers.js */; };
-		B537A660180C71FF00CEF23D /* tls.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A62F180C71FF00CEF23D /* tls.js */; };
-		B537A661180C71FF00CEF23D /* tty.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A630180C71FF00CEF23D /* tty.js */; };
-		B537A662180C71FF00CEF23D /* url.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A631180C71FF00CEF23D /* url.js */; };
-		B537A663180C71FF00CEF23D /* util.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A632180C71FF00CEF23D /* util.js */; };
-		B537A664180C71FF00CEF23D /* vm.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A633180C71FF00CEF23D /* vm.js */; };
-		B537A665180C71FF00CEF23D /* zlib.js in Sources */ = {isa = PBXBuildFile; fileRef = B537A634180C71FF00CEF23D /* zlib.js */; };
-		B537A666180C724500CEF23D /* _linklist.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A60B180C71FF00CEF23D /* _linklist.js */; };
-		B537A667180C724500CEF23D /* _stream_duplex.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A60C180C71FF00CEF23D /* _stream_duplex.js */; };
-		B537A668180C724500CEF23D /* _stream_passthrough.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A60D180C71FF00CEF23D /* _stream_passthrough.js */; };
-		B537A669180C724500CEF23D /* _stream_readable.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A60E180C71FF00CEF23D /* _stream_readable.js */; };
-		B537A66A180C724500CEF23D /* _stream_transform.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A60F180C71FF00CEF23D /* _stream_transform.js */; };
-		B537A66B180C724500CEF23D /* _stream_writable.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A610180C71FF00CEF23D /* _stream_writable.js */; };
-		B537A66C180C724500CEF23D /* assert.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A613180C71FF00CEF23D /* assert.js */; };
-		B537A66D180C724500CEF23D /* constants.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A618180C71FF00CEF23D /* constants.js */; };
-		B537A66E180C724500CEF23D /* events.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A61D180C71FF00CEF23D /* events.js */; };
-		B537A66F180C724500CEF23D /* freelist.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A61E180C71FF00CEF23D /* freelist.js */; };
-		B537A670180C724500CEF23D /* fs.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A61F180C71FF00CEF23D /* fs.js */; };
-		B537A671180C724500CEF23D /* path.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A625180C71FF00CEF23D /* path.js */; };
-		B537A672180C724500CEF23D /* punycode.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A626180C71FF00CEF23D /* punycode.js */; };
-		B537A673180C724500CEF23D /* querystring.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A627180C71FF00CEF23D /* querystring.js */; };
-		B537A674180C724500CEF23D /* stream.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A62B180C71FF00CEF23D /* stream.js */; };
-		B537A675180C724500CEF23D /* string_decoder.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A62C180C71FF00CEF23D /* string_decoder.js */; };
-		B537A676180C724500CEF23D /* sys.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A62D180C71FF00CEF23D /* sys.js */; };
-		B537A677180C724500CEF23D /* url.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A631180C71FF00CEF23D /* url.js */; };
-		B537A678180C724500CEF23D /* util.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A632180C71FF00CEF23D /* util.js */; };
+		B59EA08F180CB587005BF5C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B44642180AB78E009ADEF9 /* Foundation.framework */; };
+		B59EA094180CB587005BF5C1 /* Nodelike.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B59EA093180CB587005BF5C1 /* Nodelike.h */; };
+		B59EA0B1180CB62D005BF5C1 /* NLProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B4467A180AB800009ADEF9 /* NLProcess.m */; };
+		B59EA0B3180CB62D005BF5C1 /* NLRequire.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B446E0180AC689009ADEF9 /* NLRequire.m */; };
+		B59EA0B5180CB62D005BF5C1 /* NLContext.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B446E4180ACC27009ADEF9 /* NLContext.m */; };
+		B59EA0B7180CB62D005BF5C1 /* NLBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B44720180B29CD009ADEF9 /* NLBinding.m */; };
+		B59EA0B9180CB62D005BF5C1 /* NLBindingConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B44724180B2F34009ADEF9 /* NLBindingConstants.m */; };
+		B59EA0BB180CB62D005BF5C1 /* NLBindingFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B4471D180B294F009ADEF9 /* NLBindingFilesystem.m */; };
+		B59EA0BD180CB639005BF5C1 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59EA04F180CB38E005BF5C1 /* JavaScriptCore.framework */; };
+		B59EA0BF180CB694005BF5C1 /* _linklist.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A60B180C71FF00CEF23D /* _linklist.js */; };
+		B59EA0C0180CB694005BF5C1 /* _stream_duplex.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A60C180C71FF00CEF23D /* _stream_duplex.js */; };
+		B59EA0C1180CB694005BF5C1 /* _stream_passthrough.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A60D180C71FF00CEF23D /* _stream_passthrough.js */; };
+		B59EA0C2180CB694005BF5C1 /* _stream_readable.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A60E180C71FF00CEF23D /* _stream_readable.js */; };
+		B59EA0C3180CB694005BF5C1 /* _stream_transform.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A60F180C71FF00CEF23D /* _stream_transform.js */; };
+		B59EA0C4180CB694005BF5C1 /* _stream_writable.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A610180C71FF00CEF23D /* _stream_writable.js */; };
+		B59EA0C5180CB694005BF5C1 /* assert.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A613180C71FF00CEF23D /* assert.js */; };
+		B59EA0C6180CB694005BF5C1 /* constants.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A618180C71FF00CEF23D /* constants.js */; };
+		B59EA0C7180CB694005BF5C1 /* events.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A61D180C71FF00CEF23D /* events.js */; };
+		B59EA0C8180CB694005BF5C1 /* freelist.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A61E180C71FF00CEF23D /* freelist.js */; };
+		B59EA0C9180CB694005BF5C1 /* fs.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A61F180C71FF00CEF23D /* fs.js */; };
+		B59EA0CA180CB694005BF5C1 /* path.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A625180C71FF00CEF23D /* path.js */; };
+		B59EA0CB180CB694005BF5C1 /* punycode.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A626180C71FF00CEF23D /* punycode.js */; };
+		B59EA0CC180CB694005BF5C1 /* querystring.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A627180C71FF00CEF23D /* querystring.js */; };
+		B59EA0CD180CB694005BF5C1 /* stream.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A62B180C71FF00CEF23D /* stream.js */; };
+		B59EA0CE180CB694005BF5C1 /* string_decoder.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A62C180C71FF00CEF23D /* string_decoder.js */; };
+		B59EA0CF180CB694005BF5C1 /* sys.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A62D180C71FF00CEF23D /* sys.js */; };
+		B59EA0D0180CB694005BF5C1 /* url.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A631180C71FF00CEF23D /* url.js */; };
+		B59EA0D1180CB694005BF5C1 /* util.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A632180C71FF00CEF23D /* util.js */; };
+		B59EA0D4180CB6AC005BF5C1 /* libNodelike.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B59EA08E180CB587005BF5C1 /* libNodelike.a */; };
 		B5B44643180AB78E009ADEF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B44642180AB78E009ADEF9 /* Foundation.framework */; };
 		B5B44645180AB78E009ADEF9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B44644180AB78E009ADEF9 /* CoreGraphics.framework */; };
 		B5B44647180AB78E009ADEF9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B44646180AB78E009ADEF9 /* UIKit.framework */; };
@@ -84,50 +45,26 @@
 		B5B44656180AB78E009ADEF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5B44654180AB78E009ADEF9 /* Main.storyboard */; };
 		B5B44659180AB78E009ADEF9 /* NLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B44658180AB78E009ADEF9 /* NLViewController.m */; };
 		B5B4465B180AB78E009ADEF9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5B4465A180AB78E009ADEF9 /* Images.xcassets */; };
-		B5B44662180AB78E009ADEF9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B44661180AB78E009ADEF9 /* XCTest.framework */; };
-		B5B44663180AB78E009ADEF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B44642180AB78E009ADEF9 /* Foundation.framework */; };
-		B5B44664180AB78E009ADEF9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B44646180AB78E009ADEF9 /* UIKit.framework */; };
-		B5B4466C180AB78E009ADEF9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5B4466A180AB78E009ADEF9 /* InfoPlist.strings */; };
-		B5B4466E180AB78E009ADEF9 /* NodelikeDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B4466D180AB78E009ADEF9 /* NodelikeDemoTests.m */; };
-		B5B4467B180AB800009ADEF9 /* NLProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B4467A180AB800009ADEF9 /* NLProcess.m */; };
-		B5B446E1180AC689009ADEF9 /* NLRequire.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B446E0180AC689009ADEF9 /* NLRequire.m */; };
-		B5B446E5180ACC27009ADEF9 /* NLContext.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B446E4180ACC27009ADEF9 /* NLContext.m */; };
-		B5B446EC180AD616009ADEF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B44642180AB78E009ADEF9 /* Foundation.framework */; };
-		B5B446F9180AD616009ADEF9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B44661180AB78E009ADEF9 /* XCTest.framework */; };
-		B5B446FA180AD616009ADEF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B44642180AB78E009ADEF9 /* Foundation.framework */; };
-		B5B446FB180AD616009ADEF9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B44646180AB78E009ADEF9 /* UIKit.framework */; };
-		B5B446FE180AD616009ADEF9 /* libNodelike.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B446EB180AD616009ADEF9 /* libNodelike.a */; };
-		B5B44704180AD616009ADEF9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5B44702180AD616009ADEF9 /* InfoPlist.strings */; };
-		B5B44706180AD616009ADEF9 /* NodelikeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B44705180AD616009ADEF9 /* NodelikeTests.m */; };
-		B5B4471E180B294F009ADEF9 /* NLBindingFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B4471D180B294F009ADEF9 /* NLBindingFilesystem.m */; };
-		B5B44721180B29CD009ADEF9 /* NLBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B44720180B29CD009ADEF9 /* NLBinding.m */; };
-		B5B44725180B2F34009ADEF9 /* NLBindingConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B44724180B2F34009ADEF9 /* NLBindingConstants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B5B44665180AB78E009ADEF9 /* PBXContainerItemProxy */ = {
+		B59EA0D2180CB6A3005BF5C1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B5B44637180AB78E009ADEF9 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = B5B4463E180AB78E009ADEF9;
-			remoteInfo = NodelikeDemo;
-		};
-		B5B446FC180AD616009ADEF9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B5B44637180AB78E009ADEF9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B5B446EA180AD616009ADEF9;
+			remoteGlobalIDString = B59EA08D180CB587005BF5C1;
 			remoteInfo = Nodelike;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		B5B446E9180AD616009ADEF9 /* CopyFiles */ = {
+		B59EA08C180CB587005BF5C1 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				B59EA094180CB587005BF5C1 /* Nodelike.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +120,10 @@
 		B537A632180C71FF00CEF23D /* util.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = util.js; sourceTree = "<group>"; };
 		B537A633180C71FF00CEF23D /* vm.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = vm.js; sourceTree = "<group>"; };
 		B537A634180C71FF00CEF23D /* zlib.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = zlib.js; sourceTree = "<group>"; };
+		B59EA04F180CB38E005BF5C1 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		B59EA08E180CB587005BF5C1 /* libNodelike.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNodelike.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B59EA092180CB587005BF5C1 /* Nodelike-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Nodelike-Prefix.pch"; sourceTree = "<group>"; };
+		B59EA093180CB587005BF5C1 /* Nodelike.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Nodelike.h; sourceTree = "<group>"; };
 		B5B4463F180AB78E009ADEF9 /* NodelikeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NodelikeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5B44642180AB78E009ADEF9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B5B44644180AB78E009ADEF9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -197,81 +138,45 @@
 		B5B44657180AB78E009ADEF9 /* NLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NLViewController.h; sourceTree = "<group>"; };
 		B5B44658180AB78E009ADEF9 /* NLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NLViewController.m; sourceTree = "<group>"; };
 		B5B4465A180AB78E009ADEF9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		B5B44660180AB78E009ADEF9 /* NodelikeDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NodelikeDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5B44661180AB78E009ADEF9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		B5B44669180AB78E009ADEF9 /* NodelikeDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NodelikeDemoTests-Info.plist"; sourceTree = "<group>"; };
-		B5B4466B180AB78E009ADEF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		B5B4466D180AB78E009ADEF9 /* NodelikeDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NodelikeDemoTests.m; sourceTree = "<group>"; };
-		B5B44679180AB800009ADEF9 /* NLProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLProcess.h; path = Nodelike/NLProcess.h; sourceTree = "<group>"; };
-		B5B4467A180AB800009ADEF9 /* NLProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLProcess.m; path = Nodelike/NLProcess.m; sourceTree = "<group>"; };
-		B5B446DF180AC689009ADEF9 /* NLRequire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLRequire.h; path = Nodelike/NLRequire.h; sourceTree = "<group>"; };
-		B5B446E0180AC689009ADEF9 /* NLRequire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLRequire.m; path = Nodelike/NLRequire.m; sourceTree = "<group>"; };
-		B5B446E3180ACC27009ADEF9 /* NLContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLContext.h; path = Nodelike/NLContext.h; sourceTree = "<group>"; };
-		B5B446E4180ACC27009ADEF9 /* NLContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLContext.m; path = Nodelike/NLContext.m; sourceTree = "<group>"; };
-		B5B446EB180AD616009ADEF9 /* libNodelike.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNodelike.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		B5B446F8180AD616009ADEF9 /* NodelikeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NodelikeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B5B44701180AD616009ADEF9 /* NodelikeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NodelikeTests-Info.plist"; sourceTree = "<group>"; };
-		B5B44703180AD616009ADEF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		B5B44705180AD616009ADEF9 /* NodelikeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NodelikeTests.m; sourceTree = "<group>"; };
-		B5B4471C180B294F009ADEF9 /* NLBindingFilesystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLBindingFilesystem.h; path = Nodelike/NLBindingFilesystem.h; sourceTree = "<group>"; };
-		B5B4471D180B294F009ADEF9 /* NLBindingFilesystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLBindingFilesystem.m; path = Nodelike/NLBindingFilesystem.m; sourceTree = "<group>"; };
-		B5B4471F180B29CD009ADEF9 /* NLBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLBinding.h; path = Nodelike/NLBinding.h; sourceTree = "<group>"; };
-		B5B44720180B29CD009ADEF9 /* NLBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLBinding.m; path = Nodelike/NLBinding.m; sourceTree = "<group>"; };
-		B5B44723180B2F34009ADEF9 /* NLBindingConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLBindingConstants.h; path = Nodelike/NLBindingConstants.h; sourceTree = "<group>"; };
-		B5B44724180B2F34009ADEF9 /* NLBindingConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLBindingConstants.m; path = Nodelike/NLBindingConstants.m; sourceTree = "<group>"; };
+		B5B44679180AB800009ADEF9 /* NLProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLProcess.h; path = NodelikeDemo/Nodelike/NLProcess.h; sourceTree = SOURCE_ROOT; };
+		B5B4467A180AB800009ADEF9 /* NLProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLProcess.m; path = NodelikeDemo/Nodelike/NLProcess.m; sourceTree = SOURCE_ROOT; };
+		B5B446DF180AC689009ADEF9 /* NLRequire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLRequire.h; path = NodelikeDemo/Nodelike/NLRequire.h; sourceTree = SOURCE_ROOT; };
+		B5B446E0180AC689009ADEF9 /* NLRequire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLRequire.m; path = NodelikeDemo/Nodelike/NLRequire.m; sourceTree = SOURCE_ROOT; };
+		B5B446E3180ACC27009ADEF9 /* NLContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLContext.h; path = NodelikeDemo/Nodelike/NLContext.h; sourceTree = SOURCE_ROOT; };
+		B5B446E4180ACC27009ADEF9 /* NLContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLContext.m; path = NodelikeDemo/Nodelike/NLContext.m; sourceTree = SOURCE_ROOT; };
+		B5B4471C180B294F009ADEF9 /* NLBindingFilesystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLBindingFilesystem.h; path = NodelikeDemo/Nodelike/NLBindingFilesystem.h; sourceTree = SOURCE_ROOT; };
+		B5B4471D180B294F009ADEF9 /* NLBindingFilesystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLBindingFilesystem.m; path = NodelikeDemo/Nodelike/NLBindingFilesystem.m; sourceTree = SOURCE_ROOT; };
+		B5B4471F180B29CD009ADEF9 /* NLBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLBinding.h; path = NodelikeDemo/Nodelike/NLBinding.h; sourceTree = SOURCE_ROOT; };
+		B5B44720180B29CD009ADEF9 /* NLBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLBinding.m; path = NodelikeDemo/Nodelike/NLBinding.m; sourceTree = SOURCE_ROOT; };
+		B5B44723180B2F34009ADEF9 /* NLBindingConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLBindingConstants.h; path = NodelikeDemo/Nodelike/NLBindingConstants.h; sourceTree = SOURCE_ROOT; };
+		B5B44724180B2F34009ADEF9 /* NLBindingConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLBindingConstants.m; path = NodelikeDemo/Nodelike/NLBindingConstants.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B59EA08B180CB587005BF5C1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B59EA0BD180CB639005BF5C1 /* JavaScriptCore.framework in Frameworks */,
+				B59EA08F180CB587005BF5C1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B5B4463C180AB78E009ADEF9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B59EA0D4180CB6AC005BF5C1 /* libNodelike.a in Frameworks */,
 				B5B44645180AB78E009ADEF9 /* CoreGraphics.framework in Frameworks */,
 				B5B44647180AB78E009ADEF9 /* UIKit.framework in Frameworks */,
 				B5B44643180AB78E009ADEF9 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B5B4465D180AB78E009ADEF9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B5B44662180AB78E009ADEF9 /* XCTest.framework in Frameworks */,
-				B5B44664180AB78E009ADEF9 /* UIKit.framework in Frameworks */,
-				B5B44663180AB78E009ADEF9 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B5B446E8180AD616009ADEF9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B5B446EC180AD616009ADEF9 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B5B446F5180AD616009ADEF9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B5B446F9180AD616009ADEF9 /* XCTest.framework in Frameworks */,
-				B5B446FB180AD616009ADEF9 /* UIKit.framework in Frameworks */,
-				B5B446FE180AD616009ADEF9 /* libNodelike.a in Frameworks */,
-				B5B446FA180AD616009ADEF9 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B537A602180C71F200CEF23D /* node */ = {
-			isa = PBXGroup;
-			children = (
-				B537A603180C71FF00CEF23D /* lib */,
-			);
-			name = node;
-			sourceTree = "<group>";
-		};
 		B537A603180C71FF00CEF23D /* lib */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,15 +231,44 @@
 				B537A634180C71FF00CEF23D /* zlib.js */,
 			);
 			name = lib;
-			path = node/lib;
+			path = NodelikeDemo/node/lib;
+			sourceTree = SOURCE_ROOT;
+		};
+		B59EA090180CB587005BF5C1 /* Nodelike */ = {
+			isa = PBXGroup;
+			children = (
+				B537A603180C71FF00CEF23D /* lib */,
+				B5B44679180AB800009ADEF9 /* NLProcess.h */,
+				B5B4467A180AB800009ADEF9 /* NLProcess.m */,
+				B5B446DF180AC689009ADEF9 /* NLRequire.h */,
+				B5B446E0180AC689009ADEF9 /* NLRequire.m */,
+				B5B446E3180ACC27009ADEF9 /* NLContext.h */,
+				B5B446E4180ACC27009ADEF9 /* NLContext.m */,
+				B5B4471F180B29CD009ADEF9 /* NLBinding.h */,
+				B5B44720180B29CD009ADEF9 /* NLBinding.m */,
+				B5B44723180B2F34009ADEF9 /* NLBindingConstants.h */,
+				B5B44724180B2F34009ADEF9 /* NLBindingConstants.m */,
+				B5B4471C180B294F009ADEF9 /* NLBindingFilesystem.h */,
+				B5B4471D180B294F009ADEF9 /* NLBindingFilesystem.m */,
+				B59EA093180CB587005BF5C1 /* Nodelike.h */,
+				B59EA091180CB587005BF5C1 /* Supporting Files */,
+			);
+			path = Nodelike;
+			sourceTree = "<group>";
+		};
+		B59EA091180CB587005BF5C1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B59EA092180CB587005BF5C1 /* Nodelike-Prefix.pch */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		B5B44636180AB78E009ADEF9 = {
 			isa = PBXGroup;
 			children = (
 				B5B44648180AB78E009ADEF9 /* NodelikeDemo */,
-				B5B44667180AB78E009ADEF9 /* NodelikeDemoTests */,
-				B5B446FF180AD616009ADEF9 /* NodelikeTests */,
+				B59EA090180CB587005BF5C1 /* Nodelike */,
 				B5B44641180AB78E009ADEF9 /* Frameworks */,
 				B5B44640180AB78E009ADEF9 /* Products */,
 			);
@@ -344,9 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				B5B4463F180AB78E009ADEF9 /* NodelikeDemo.app */,
-				B5B44660180AB78E009ADEF9 /* NodelikeDemoTests.xctest */,
-				B5B446EB180AD616009ADEF9 /* libNodelike.a */,
-				B5B446F8180AD616009ADEF9 /* NodelikeTests.xctest */,
+				B59EA08E180CB587005BF5C1 /* libNodelike.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -354,6 +286,7 @@
 		B5B44641180AB78E009ADEF9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B59EA04F180CB38E005BF5C1 /* JavaScriptCore.framework */,
 				B5B44642180AB78E009ADEF9 /* Foundation.framework */,
 				B5B44644180AB78E009ADEF9 /* CoreGraphics.framework */,
 				B5B44646180AB78E009ADEF9 /* UIKit.framework */,
@@ -365,7 +298,6 @@
 		B5B44648180AB78E009ADEF9 /* NodelikeDemo */ = {
 			isa = PBXGroup;
 			children = (
-				B5B44678180AB7CF009ADEF9 /* Nodelike */,
 				B5B44651180AB78E009ADEF9 /* NLAppDelegate.h */,
 				B5B44652180AB78E009ADEF9 /* NLAppDelegate.m */,
 				B5B44654180AB78E009ADEF9 /* Main.storyboard */,
@@ -388,65 +320,27 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B5B44667180AB78E009ADEF9 /* NodelikeDemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				B5B4466D180AB78E009ADEF9 /* NodelikeDemoTests.m */,
-				B5B44668180AB78E009ADEF9 /* Supporting Files */,
-			);
-			path = NodelikeDemoTests;
-			sourceTree = "<group>";
-		};
-		B5B44668180AB78E009ADEF9 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				B5B44669180AB78E009ADEF9 /* NodelikeDemoTests-Info.plist */,
-				B5B4466A180AB78E009ADEF9 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		B5B44678180AB7CF009ADEF9 /* Nodelike */ = {
-			isa = PBXGroup;
-			children = (
-				B537A602180C71F200CEF23D /* node */,
-				B5B44679180AB800009ADEF9 /* NLProcess.h */,
-				B5B4467A180AB800009ADEF9 /* NLProcess.m */,
-				B5B446DF180AC689009ADEF9 /* NLRequire.h */,
-				B5B446E0180AC689009ADEF9 /* NLRequire.m */,
-				B5B446E3180ACC27009ADEF9 /* NLContext.h */,
-				B5B446E4180ACC27009ADEF9 /* NLContext.m */,
-				B5B4471F180B29CD009ADEF9 /* NLBinding.h */,
-				B5B44720180B29CD009ADEF9 /* NLBinding.m */,
-				B5B44723180B2F34009ADEF9 /* NLBindingConstants.h */,
-				B5B44724180B2F34009ADEF9 /* NLBindingConstants.m */,
-				B5B4471C180B294F009ADEF9 /* NLBindingFilesystem.h */,
-				B5B4471D180B294F009ADEF9 /* NLBindingFilesystem.m */,
-			);
-			name = Nodelike;
-			sourceTree = "<group>";
-		};
-		B5B446FF180AD616009ADEF9 /* NodelikeTests */ = {
-			isa = PBXGroup;
-			children = (
-				B5B44705180AD616009ADEF9 /* NodelikeTests.m */,
-				B5B44700180AD616009ADEF9 /* Supporting Files */,
-			);
-			path = NodelikeTests;
-			sourceTree = "<group>";
-		};
-		B5B44700180AD616009ADEF9 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				B5B44701180AD616009ADEF9 /* NodelikeTests-Info.plist */,
-				B5B44702180AD616009ADEF9 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		B59EA08D180CB587005BF5C1 /* Nodelike */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B59EA0AA180CB588005BF5C1 /* Build configuration list for PBXNativeTarget "Nodelike" */;
+			buildPhases = (
+				B59EA08A180CB587005BF5C1 /* Sources */,
+				B59EA08B180CB587005BF5C1 /* Frameworks */,
+				B59EA08C180CB587005BF5C1 /* CopyFiles */,
+				B59EA0BE180CB677005BF5C1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Nodelike;
+			productName = Nodelike;
+			productReference = B59EA08E180CB587005BF5C1 /* libNodelike.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		B5B4463E180AB78E009ADEF9 /* NodelikeDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5B44671180AB78E009ADEF9 /* Build configuration list for PBXNativeTarget "NodelikeDemo" */;
@@ -458,64 +352,12 @@
 			buildRules = (
 			);
 			dependencies = (
+				B59EA0D3180CB6A3005BF5C1 /* PBXTargetDependency */,
 			);
 			name = NodelikeDemo;
 			productName = NodelikeDemo;
 			productReference = B5B4463F180AB78E009ADEF9 /* NodelikeDemo.app */;
 			productType = "com.apple.product-type.application";
-		};
-		B5B4465F180AB78E009ADEF9 /* NodelikeDemoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B5B44674180AB78E009ADEF9 /* Build configuration list for PBXNativeTarget "NodelikeDemoTests" */;
-			buildPhases = (
-				B5B4465C180AB78E009ADEF9 /* Sources */,
-				B5B4465D180AB78E009ADEF9 /* Frameworks */,
-				B5B4465E180AB78E009ADEF9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B5B44666180AB78E009ADEF9 /* PBXTargetDependency */,
-			);
-			name = NodelikeDemoTests;
-			productName = NodelikeDemoTests;
-			productReference = B5B44660180AB78E009ADEF9 /* NodelikeDemoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		B5B446EA180AD616009ADEF9 /* Nodelike */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B5B44707180AD616009ADEF9 /* Build configuration list for PBXNativeTarget "Nodelike" */;
-			buildPhases = (
-				B5B446E7180AD616009ADEF9 /* Sources */,
-				B5B446E8180AD616009ADEF9 /* Frameworks */,
-				B5B446E9180AD616009ADEF9 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Nodelike;
-			productName = Nodelike;
-			productReference = B5B446EB180AD616009ADEF9 /* libNodelike.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		B5B446F7180AD616009ADEF9 /* NodelikeTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B5B4470A180AD616009ADEF9 /* Build configuration list for PBXNativeTarget "NodelikeTests" */;
-			buildPhases = (
-				B5B446F4180AD616009ADEF9 /* Sources */,
-				B5B446F5180AD616009ADEF9 /* Frameworks */,
-				B5B446F6180AD616009ADEF9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B5B446FD180AD616009ADEF9 /* PBXTargetDependency */,
-			);
-			name = NodelikeTests;
-			productName = NodelikeTests;
-			productReference = B5B446F8180AD616009ADEF9 /* NodelikeTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -526,14 +368,6 @@
 				CLASSPREFIX = NL;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Sam Rijs";
-				TargetAttributes = {
-					B5B4465F180AB78E009ADEF9 = {
-						TestTargetID = B5B4463E180AB78E009ADEF9;
-					};
-					B5B446F7180AD616009ADEF9 = {
-						TestTargetID = B5B4463E180AB78E009ADEF9;
-					};
-				};
 			};
 			buildConfigurationList = B5B4463A180AB78E009ADEF9 /* Build configuration list for PBXProject "NodelikeDemo" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -549,162 +383,81 @@
 			projectRoot = "";
 			targets = (
 				B5B4463E180AB78E009ADEF9 /* NodelikeDemo */,
-				B5B4465F180AB78E009ADEF9 /* NodelikeDemoTests */,
-				B5B446EA180AD616009ADEF9 /* Nodelike */,
-				B5B446F7180AD616009ADEF9 /* NodelikeTests */,
+				B59EA08D180CB587005BF5C1 /* Nodelike */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B59EA0BE180CB677005BF5C1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B59EA0BF180CB694005BF5C1 /* _linklist.js in Resources */,
+				B59EA0C0180CB694005BF5C1 /* _stream_duplex.js in Resources */,
+				B59EA0C1180CB694005BF5C1 /* _stream_passthrough.js in Resources */,
+				B59EA0C2180CB694005BF5C1 /* _stream_readable.js in Resources */,
+				B59EA0C3180CB694005BF5C1 /* _stream_transform.js in Resources */,
+				B59EA0C4180CB694005BF5C1 /* _stream_writable.js in Resources */,
+				B59EA0C5180CB694005BF5C1 /* assert.js in Resources */,
+				B59EA0C6180CB694005BF5C1 /* constants.js in Resources */,
+				B59EA0C7180CB694005BF5C1 /* events.js in Resources */,
+				B59EA0C8180CB694005BF5C1 /* freelist.js in Resources */,
+				B59EA0C9180CB694005BF5C1 /* fs.js in Resources */,
+				B59EA0CA180CB694005BF5C1 /* path.js in Resources */,
+				B59EA0CB180CB694005BF5C1 /* punycode.js in Resources */,
+				B59EA0CC180CB694005BF5C1 /* querystring.js in Resources */,
+				B59EA0CD180CB694005BF5C1 /* stream.js in Resources */,
+				B59EA0CE180CB694005BF5C1 /* string_decoder.js in Resources */,
+				B59EA0CF180CB694005BF5C1 /* sys.js in Resources */,
+				B59EA0D0180CB694005BF5C1 /* url.js in Resources */,
+				B59EA0D1180CB694005BF5C1 /* util.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B5B4463D180AB78E009ADEF9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B537A666180C724500CEF23D /* _linklist.js in Resources */,
-				B537A667180C724500CEF23D /* _stream_duplex.js in Resources */,
-				B537A668180C724500CEF23D /* _stream_passthrough.js in Resources */,
-				B537A669180C724500CEF23D /* _stream_readable.js in Resources */,
-				B537A66A180C724500CEF23D /* _stream_transform.js in Resources */,
-				B537A66B180C724500CEF23D /* _stream_writable.js in Resources */,
-				B537A66C180C724500CEF23D /* assert.js in Resources */,
-				B537A66D180C724500CEF23D /* constants.js in Resources */,
-				B537A66E180C724500CEF23D /* events.js in Resources */,
-				B537A66F180C724500CEF23D /* freelist.js in Resources */,
-				B537A670180C724500CEF23D /* fs.js in Resources */,
-				B537A671180C724500CEF23D /* path.js in Resources */,
-				B537A672180C724500CEF23D /* punycode.js in Resources */,
-				B537A673180C724500CEF23D /* querystring.js in Resources */,
-				B537A674180C724500CEF23D /* stream.js in Resources */,
-				B537A675180C724500CEF23D /* string_decoder.js in Resources */,
-				B537A676180C724500CEF23D /* sys.js in Resources */,
-				B537A677180C724500CEF23D /* url.js in Resources */,
-				B537A678180C724500CEF23D /* util.js in Resources */,
 				B5B4465B180AB78E009ADEF9 /* Images.xcassets in Resources */,
 				B5B4464D180AB78E009ADEF9 /* InfoPlist.strings in Resources */,
 				B5B44656180AB78E009ADEF9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B5B4465E180AB78E009ADEF9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B5B4466C180AB78E009ADEF9 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B5B446F6180AD616009ADEF9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B5B44704180AD616009ADEF9 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B59EA08A180CB587005BF5C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B59EA0B1180CB62D005BF5C1 /* NLProcess.m in Sources */,
+				B59EA0B3180CB62D005BF5C1 /* NLRequire.m in Sources */,
+				B59EA0B5180CB62D005BF5C1 /* NLContext.m in Sources */,
+				B59EA0B7180CB62D005BF5C1 /* NLBinding.m in Sources */,
+				B59EA0B9180CB62D005BF5C1 /* NLBindingConstants.m in Sources */,
+				B59EA0BB180CB62D005BF5C1 /* NLBindingFilesystem.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B5B4463B180AB78E009ADEF9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B537A64F180C71FF00CEF23D /* freelist.js in Sources */,
-				B537A64C180C71FF00CEF23D /* dns.js in Sources */,
-				B537A63D180C71FF00CEF23D /* _stream_duplex.js in Sources */,
-				B537A655180C71FF00CEF23D /* os.js in Sources */,
 				B5B44659180AB78E009ADEF9 /* NLViewController.m in Sources */,
-				B537A648180C71FF00CEF23D /* console.js in Sources */,
-				B537A63A180C71FF00CEF23D /* _http_outgoing.js in Sources */,
-				B537A658180C71FF00CEF23D /* querystring.js in Sources */,
-				B537A65B180C71FF00CEF23D /* smalloc.js in Sources */,
-				B537A641180C71FF00CEF23D /* _stream_writable.js in Sources */,
-				B537A652180C71FF00CEF23D /* https.js in Sources */,
-				B5B44721180B29CD009ADEF9 /* NLBinding.m in Sources */,
-				B537A640180C71FF00CEF23D /* _stream_transform.js in Sources */,
-				B5B4471E180B294F009ADEF9 /* NLBindingFilesystem.m in Sources */,
-				B537A63F180C71FF00CEF23D /* _stream_readable.js in Sources */,
-				B537A646180C71FF00CEF23D /* child_process.js in Sources */,
-				B537A65D180C71FF00CEF23D /* string_decoder.js in Sources */,
-				B537A656180C71FF00CEF23D /* path.js in Sources */,
-				B537A643180C71FF00CEF23D /* _tls_wrap.js in Sources */,
-				B537A663180C71FF00CEF23D /* util.js in Sources */,
 				B5B44653180AB78E009ADEF9 /* NLAppDelegate.m in Sources */,
-				B537A637180C71FF00CEF23D /* _http_client.js in Sources */,
-				B537A64B180C71FF00CEF23D /* dgram.js in Sources */,
-				B537A664180C71FF00CEF23D /* vm.js in Sources */,
-				B537A63E180C71FF00CEF23D /* _stream_passthrough.js in Sources */,
-				B537A647180C71FF00CEF23D /* cluster.js in Sources */,
-				B537A638180C71FF00CEF23D /* _http_common.js in Sources */,
-				B537A64D180C71FF00CEF23D /* domain.js in Sources */,
-				B537A644180C71FF00CEF23D /* assert.js in Sources */,
-				B537A660180C71FF00CEF23D /* tls.js in Sources */,
-				B537A662180C71FF00CEF23D /* url.js in Sources */,
-				B537A649180C71FF00CEF23D /* constants.js in Sources */,
-				B537A645180C71FF00CEF23D /* buffer.js in Sources */,
-				B537A657180C71FF00CEF23D /* punycode.js in Sources */,
-				B537A659180C71FF00CEF23D /* readline.js in Sources */,
-				B5B44725180B2F34009ADEF9 /* NLBindingConstants.m in Sources */,
-				B537A636180C71FF00CEF23D /* _http_agent.js in Sources */,
 				B5B4464F180AB78E009ADEF9 /* main.m in Sources */,
-				B537A653180C71FF00CEF23D /* module.js in Sources */,
-				B537A64A180C71FF00CEF23D /* crypto.js in Sources */,
-				B537A635180C71FF00CEF23D /* _debugger.js in Sources */,
-				B537A65A180C71FF00CEF23D /* repl.js in Sources */,
-				B537A63B180C71FF00CEF23D /* _http_server.js in Sources */,
-				B537A65C180C71FF00CEF23D /* stream.js in Sources */,
-				B537A654180C71FF00CEF23D /* net.js in Sources */,
-				B537A65E180C71FF00CEF23D /* sys.js in Sources */,
-				B537A639180C71FF00CEF23D /* _http_incoming.js in Sources */,
-				B5B4467B180AB800009ADEF9 /* NLProcess.m in Sources */,
-				B537A65F180C71FF00CEF23D /* timers.js in Sources */,
-				B537A64E180C71FF00CEF23D /* events.js in Sources */,
-				B537A63C180C71FF00CEF23D /* _linklist.js in Sources */,
-				B537A661180C71FF00CEF23D /* tty.js in Sources */,
-				B537A650180C71FF00CEF23D /* fs.js in Sources */,
-				B537A665180C71FF00CEF23D /* zlib.js in Sources */,
-				B5B446E1180AC689009ADEF9 /* NLRequire.m in Sources */,
-				B537A651180C71FF00CEF23D /* http.js in Sources */,
-				B5B446E5180ACC27009ADEF9 /* NLContext.m in Sources */,
-				B537A642180C71FF00CEF23D /* _tls_legacy.js in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B5B4465C180AB78E009ADEF9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B5B4466E180AB78E009ADEF9 /* NodelikeDemoTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B5B446E7180AD616009ADEF9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B5B446F4180AD616009ADEF9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B5B44706180AD616009ADEF9 /* NodelikeTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B5B44666180AB78E009ADEF9 /* PBXTargetDependency */ = {
+		B59EA0D3180CB6A3005BF5C1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B5B4463E180AB78E009ADEF9 /* NodelikeDemo */;
-			targetProxy = B5B44665180AB78E009ADEF9 /* PBXContainerItemProxy */;
-		};
-		B5B446FD180AD616009ADEF9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B5B446EA180AD616009ADEF9 /* Nodelike */;
-			targetProxy = B5B446FC180AD616009ADEF9 /* PBXContainerItemProxy */;
+			target = B59EA08D180CB587005BF5C1 /* Nodelike */;
+			targetProxy = B59EA0D2180CB6A3005BF5C1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -725,25 +478,39 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		B5B4466A180AB78E009ADEF9 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B5B4466B180AB78E009ADEF9 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		B5B44702180AD616009ADEF9 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B5B44703180AD616009ADEF9 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		B59EA0AB180CB588005BF5C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				DSTROOT = /tmp/Nodelike.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Nodelike/Nodelike-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B59EA0AC180CB588005BF5C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				DSTROOT = /tmp/Nodelike.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Nodelike/Nodelike-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		B5B4466F180AB78E009ADEF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -842,123 +609,17 @@
 			};
 			name = Release;
 		};
-		B5B44675180AB78E009ADEF9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NodelikeDemo.app/NodelikeDemo";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "NodelikeDemo/NodelikeDemo-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "NodelikeDemoTests/NodelikeDemoTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		B5B44676180AB78E009ADEF9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NodelikeDemo.app/NodelikeDemo";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "NodelikeDemo/NodelikeDemo-Prefix.pch";
-				INFOPLIST_FILE = "NodelikeDemoTests/NodelikeDemoTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
-		B5B44708180AD616009ADEF9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				DSTROOT = /tmp/Nodelike.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Nodelike/Nodelike-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		B5B44709180AD616009ADEF9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				DSTROOT = /tmp/Nodelike.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Nodelike/Nodelike-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		B5B4470B180AD616009ADEF9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NodelikeDemo.app/NodelikeDemo";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Nodelike/Nodelike-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "NodelikeTests/NodelikeTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		B5B4470C180AD616009ADEF9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NodelikeDemo.app/NodelikeDemo";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Nodelike/Nodelike-Prefix.pch";
-				INFOPLIST_FILE = "NodelikeTests/NodelikeTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B59EA0AA180CB588005BF5C1 /* Build configuration list for PBXNativeTarget "Nodelike" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B59EA0AB180CB588005BF5C1 /* Debug */,
+				B59EA0AC180CB588005BF5C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		B5B4463A180AB78E009ADEF9 /* Build configuration list for PBXProject "NodelikeDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -973,33 +634,6 @@
 			buildConfigurations = (
 				B5B44672180AB78E009ADEF9 /* Debug */,
 				B5B44673180AB78E009ADEF9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B5B44674180AB78E009ADEF9 /* Build configuration list for PBXNativeTarget "NodelikeDemoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B5B44675180AB78E009ADEF9 /* Debug */,
-				B5B44676180AB78E009ADEF9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B5B44707180AD616009ADEF9 /* Build configuration list for PBXNativeTarget "Nodelike" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B5B44708180AD616009ADEF9 /* Debug */,
-				B5B44709180AD616009ADEF9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B5B4470A180AD616009ADEF9 /* Build configuration list for PBXNativeTarget "NodelikeTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B5B4470B180AD616009ADEF9 /* Debug */,
-				B5B4470C180AD616009ADEF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -8,7 +8,7 @@
 
 #import "NLAppDelegate.h"
 
-#import "NLContext.h"
+#import "Nodelike.h"
 
 @implementation NLAppDelegate {
     NLContext *context;
