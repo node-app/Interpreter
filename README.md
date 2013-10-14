@@ -3,7 +3,7 @@ NodelikeDemo
 
 Nodelike is a weekend hack to implement a roughly Node.JS-compatible interface using JavaScriptCore.framework on iOS 7 and OS X Mavericks.
 
-This is currently in a very incompletet state, and not viable for serious use.
+This is currently in a very incomplete state, and not viable for serious use.
 It could, however, become usable over the following weeks.
 
 The goals
@@ -15,3 +15,17 @@ The goals
 - NOT to archieve Node.js performance (this is meant as a client-side, not a server-side application)
 - NOT to be backwards-compatible (nodejs cutting edge and newest iOS/OS X required)
 - NOT to integrate libuv
+
+What's working right now
+------------------------
+
+- `process`: `.cwd()`, `.chdir()`, `.argv`, `.env`, `.exit()`, `.nextTick()`
+- `require()` for native modules
+- `util`
+- `url`
+- `events`
+- `path`
+- `stream`
+- `querystring`
+- `punycode`
+- `assert`
