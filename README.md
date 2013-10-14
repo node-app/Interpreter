@@ -16,6 +16,15 @@ The goals
 - NOT to be backwards-compatible (nodejs cutting edge and newest iOS/OS X required)
 - NOT to integrate libuv
 
+How to use the demo app
+-----------------------
+
+You can enter Javascript code into the TextView and execute that via a tap on the `Execute` button.
+After each execution, the result of the global variable `_` is pasted into the TextView.
+So to get the result of an addition, do: `_ = 1 + 3.2`. To print a variable: `_ = JSON.stringify(process.argv)`.
+
+Have fun!
+
 What's working right now
 ------------------------
 
