@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NLAppDelegate.h"
 
 @interface NLViewController : UIViewController
+
+@property NLAppDelegate *appDelegate;
+
+@property IBOutlet UIButton *action;
+@property IBOutlet UITextView *output;
+
+- (IBAction) execute:(id)sender;
 
 @end

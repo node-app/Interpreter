@@ -8,12 +8,24 @@
 
 #import "NLAppDelegate.h"
 
-@implementation NLAppDelegate
+#import "NLContext.h"
+
+@implementation NLAppDelegate {
+    NLContext *context;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    context = [[NLContext alloc] initWithVirtualMachine:[[JSVirtualMachine alloc] init]];
+    context.exceptionHandler = ^(JSContext *c, JSValue *e) {
+        NSLog(@"%@", e);
+    };
     return YES;
+}
+
+- (NSString *)execute:(NSString *)cmd {
+    [context evaluateScript:cmd];
+    return [context[@"_"] toString];
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

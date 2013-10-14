@@ -21,6 +21,86 @@
 		B5B44664180AB78E009ADEF9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B44646180AB78E009ADEF9 /* UIKit.framework */; };
 		B5B4466C180AB78E009ADEF9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5B4466A180AB78E009ADEF9 /* InfoPlist.strings */; };
 		B5B4466E180AB78E009ADEF9 /* NodelikeDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B4466D180AB78E009ADEF9 /* NodelikeDemoTests.m */; };
+		B5B4467B180AB800009ADEF9 /* NLProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B4467A180AB800009ADEF9 /* NLProcess.m */; };
+		B5B446AE180AC64A009ADEF9 /* _debugger.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B4467D180AC64A009ADEF9 /* _debugger.js */; };
+		B5B446AF180AC64A009ADEF9 /* _http_agent.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B4467E180AC64A009ADEF9 /* _http_agent.js */; };
+		B5B446B0180AC64A009ADEF9 /* _http_client.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B4467F180AC64A009ADEF9 /* _http_client.js */; };
+		B5B446B1180AC64A009ADEF9 /* _http_common.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B44680180AC64A009ADEF9 /* _http_common.js */; };
+		B5B446B2180AC64A009ADEF9 /* _http_incoming.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B44681180AC64A009ADEF9 /* _http_incoming.js */; };
+		B5B446B3180AC64A009ADEF9 /* _http_outgoing.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B44682180AC64A009ADEF9 /* _http_outgoing.js */; };
+		B5B446B4180AC64A009ADEF9 /* _http_server.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B44683180AC64A009ADEF9 /* _http_server.js */; };
+		B5B446B5180AC64A009ADEF9 /* _linklist.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B44684180AC64A009ADEF9 /* _linklist.js */; };
+		B5B446B6180AC64A009ADEF9 /* _stream_duplex.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B44685180AC64A009ADEF9 /* _stream_duplex.js */; };
+		B5B446B7180AC64A009ADEF9 /* _stream_passthrough.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B44686180AC64A009ADEF9 /* _stream_passthrough.js */; };
+		B5B446B8180AC64A009ADEF9 /* _stream_readable.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B44687180AC64A009ADEF9 /* _stream_readable.js */; };
+		B5B446B9180AC64A009ADEF9 /* _stream_transform.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B44688180AC64A009ADEF9 /* _stream_transform.js */; };
+		B5B446BA180AC64A009ADEF9 /* _stream_writable.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B44689180AC64A009ADEF9 /* _stream_writable.js */; };
+		B5B446BB180AC64A009ADEF9 /* _tls_legacy.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B4468A180AC64A009ADEF9 /* _tls_legacy.js */; };
+		B5B446BC180AC64A009ADEF9 /* _tls_wrap.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B4468B180AC64A009ADEF9 /* _tls_wrap.js */; };
+		B5B446BD180AC64A009ADEF9 /* assert.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B4468C180AC64A009ADEF9 /* assert.js */; };
+		B5B446BE180AC64A009ADEF9 /* buffer.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B4468D180AC64A009ADEF9 /* buffer.js */; };
+		B5B446BF180AC64A009ADEF9 /* child_process.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B4468E180AC64A009ADEF9 /* child_process.js */; };
+		B5B446C0180AC64A009ADEF9 /* cluster.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B4468F180AC64A009ADEF9 /* cluster.js */; };
+		B5B446C1180AC64A009ADEF9 /* console.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B44690180AC64A009ADEF9 /* console.js */; };
+		B5B446C2180AC64A009ADEF9 /* constants.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B44691180AC64A009ADEF9 /* constants.js */; };
+		B5B446C3180AC64A009ADEF9 /* crypto.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B44692180AC64A009ADEF9 /* crypto.js */; };
+		B5B446C4180AC64A009ADEF9 /* dgram.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B44693180AC64A009ADEF9 /* dgram.js */; };
+		B5B446C5180AC64A009ADEF9 /* dns.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B44694180AC64A009ADEF9 /* dns.js */; };
+		B5B446C6180AC64A009ADEF9 /* domain.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B44695180AC64A009ADEF9 /* domain.js */; };
+		B5B446C7180AC64A009ADEF9 /* events.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B44696180AC64A009ADEF9 /* events.js */; };
+		B5B446C8180AC64A009ADEF9 /* freelist.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B44697180AC64A009ADEF9 /* freelist.js */; };
+		B5B446C9180AC64A009ADEF9 /* fs.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B44698180AC64A009ADEF9 /* fs.js */; };
+		B5B446CA180AC64A009ADEF9 /* http.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B44699180AC64A009ADEF9 /* http.js */; };
+		B5B446CB180AC64A009ADEF9 /* https.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B4469A180AC64A009ADEF9 /* https.js */; };
+		B5B446CC180AC64A009ADEF9 /* module.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B4469B180AC64A009ADEF9 /* module.js */; };
+		B5B446CD180AC64A009ADEF9 /* net.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B4469C180AC64A009ADEF9 /* net.js */; };
+		B5B446CE180AC64A009ADEF9 /* os.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B4469D180AC64A009ADEF9 /* os.js */; };
+		B5B446CF180AC64A009ADEF9 /* path.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B4469E180AC64A009ADEF9 /* path.js */; };
+		B5B446D0180AC64A009ADEF9 /* punycode.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B4469F180AC64A009ADEF9 /* punycode.js */; };
+		B5B446D1180AC64A009ADEF9 /* querystring.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B446A0180AC64A009ADEF9 /* querystring.js */; };
+		B5B446D2180AC64A009ADEF9 /* readline.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B446A1180AC64A009ADEF9 /* readline.js */; };
+		B5B446D3180AC64A009ADEF9 /* repl.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B446A2180AC64A009ADEF9 /* repl.js */; };
+		B5B446D4180AC64A009ADEF9 /* smalloc.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B446A3180AC64A009ADEF9 /* smalloc.js */; };
+		B5B446D5180AC64A009ADEF9 /* stream.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B446A4180AC64A009ADEF9 /* stream.js */; };
+		B5B446D6180AC64A009ADEF9 /* string_decoder.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B446A5180AC64A009ADEF9 /* string_decoder.js */; };
+		B5B446D7180AC64A009ADEF9 /* sys.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B446A6180AC64A009ADEF9 /* sys.js */; };
+		B5B446D8180AC64A009ADEF9 /* timers.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B446A7180AC64A009ADEF9 /* timers.js */; };
+		B5B446D9180AC64A009ADEF9 /* tls.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B446A8180AC64A009ADEF9 /* tls.js */; };
+		B5B446DA180AC64A009ADEF9 /* tty.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B446A9180AC64A009ADEF9 /* tty.js */; };
+		B5B446DB180AC64A009ADEF9 /* url.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B446AA180AC64A009ADEF9 /* url.js */; };
+		B5B446DC180AC64A009ADEF9 /* util.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B446AB180AC64A009ADEF9 /* util.js */; };
+		B5B446DD180AC64A009ADEF9 /* vm.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B446AC180AC64A009ADEF9 /* vm.js */; };
+		B5B446DE180AC64A009ADEF9 /* zlib.js in Sources */ = {isa = PBXBuildFile; fileRef = B5B446AD180AC64A009ADEF9 /* zlib.js */; };
+		B5B446E1180AC689009ADEF9 /* NLRequire.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B446E0180AC689009ADEF9 /* NLRequire.m */; };
+		B5B446E2180ACA45009ADEF9 /* util.js in Resources */ = {isa = PBXBuildFile; fileRef = B5B446AB180AC64A009ADEF9 /* util.js */; };
+		B5B446E5180ACC27009ADEF9 /* NLContext.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B446E4180ACC27009ADEF9 /* NLContext.m */; };
+		B5B446E6180AD178009ADEF9 /* events.js in Resources */ = {isa = PBXBuildFile; fileRef = B5B44696180AC64A009ADEF9 /* events.js */; };
+		B5B446EC180AD616009ADEF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B44642180AB78E009ADEF9 /* Foundation.framework */; };
+		B5B446F9180AD616009ADEF9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B44661180AB78E009ADEF9 /* XCTest.framework */; };
+		B5B446FA180AD616009ADEF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B44642180AB78E009ADEF9 /* Foundation.framework */; };
+		B5B446FB180AD616009ADEF9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B44646180AB78E009ADEF9 /* UIKit.framework */; };
+		B5B446FE180AD616009ADEF9 /* libNodelike.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B446EB180AD616009ADEF9 /* libNodelike.a */; };
+		B5B44704180AD616009ADEF9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5B44702180AD616009ADEF9 /* InfoPlist.strings */; };
+		B5B44706180AD616009ADEF9 /* NodelikeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B44705180AD616009ADEF9 /* NodelikeTests.m */; };
+		B5B4470D180AD6B8009ADEF9 /* path.js in Resources */ = {isa = PBXBuildFile; fileRef = B5B4469E180AC64A009ADEF9 /* path.js */; };
+		B5B4470E180AFEE2009ADEF9 /* _stream_duplex.js in Resources */ = {isa = PBXBuildFile; fileRef = B5B44685180AC64A009ADEF9 /* _stream_duplex.js */; };
+		B5B4470F180AFEE2009ADEF9 /* _stream_passthrough.js in Resources */ = {isa = PBXBuildFile; fileRef = B5B44686180AC64A009ADEF9 /* _stream_passthrough.js */; };
+		B5B44710180AFEE2009ADEF9 /* _stream_readable.js in Resources */ = {isa = PBXBuildFile; fileRef = B5B44687180AC64A009ADEF9 /* _stream_readable.js */; };
+		B5B44711180AFEE2009ADEF9 /* _stream_transform.js in Resources */ = {isa = PBXBuildFile; fileRef = B5B44688180AC64A009ADEF9 /* _stream_transform.js */; };
+		B5B44712180AFEE2009ADEF9 /* _stream_writable.js in Resources */ = {isa = PBXBuildFile; fileRef = B5B44689180AC64A009ADEF9 /* _stream_writable.js */; };
+		B5B44713180AFEE2009ADEF9 /* stream.js in Resources */ = {isa = PBXBuildFile; fileRef = B5B446A4180AC64A009ADEF9 /* stream.js */; };
+		B5B44714180B084B009ADEF9 /* punycode.js in Resources */ = {isa = PBXBuildFile; fileRef = B5B4469F180AC64A009ADEF9 /* punycode.js */; };
+		B5B44715180B084B009ADEF9 /* url.js in Resources */ = {isa = PBXBuildFile; fileRef = B5B446AA180AC64A009ADEF9 /* url.js */; };
+		B5B44716180B0891009ADEF9 /* querystring.js in Resources */ = {isa = PBXBuildFile; fileRef = B5B446A0180AC64A009ADEF9 /* querystring.js */; };
+		B5B44717180B0932009ADEF9 /* _linklist.js in Resources */ = {isa = PBXBuildFile; fileRef = B5B44684180AC64A009ADEF9 /* _linklist.js */; };
+		B5B44718180B095A009ADEF9 /* assert.js in Resources */ = {isa = PBXBuildFile; fileRef = B5B4468C180AC64A009ADEF9 /* assert.js */; };
+		B5B44719180B0977009ADEF9 /* string_decoder.js in Resources */ = {isa = PBXBuildFile; fileRef = B5B446A5180AC64A009ADEF9 /* string_decoder.js */; };
+		B5B4471A180B099F009ADEF9 /* freelist.js in Resources */ = {isa = PBXBuildFile; fileRef = B5B44697180AC64A009ADEF9 /* freelist.js */; };
+		B5B4471B180B12DF009ADEF9 /* sys.js in Resources */ = {isa = PBXBuildFile; fileRef = B5B446A6180AC64A009ADEF9 /* sys.js */; };
+		B5B4471E180B294F009ADEF9 /* NLBindingFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B4471D180B294F009ADEF9 /* NLBindingFilesystem.m */; };
+		B5B44721180B29CD009ADEF9 /* NLBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B44720180B29CD009ADEF9 /* NLBinding.m */; };
+		B5B44722180B2BE4009ADEF9 /* fs.js in Resources */ = {isa = PBXBuildFile; fileRef = B5B44698180AC64A009ADEF9 /* fs.js */; };
+		B5B44725180B2F34009ADEF9 /* NLBindingConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B44724180B2F34009ADEF9 /* NLBindingConstants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +111,26 @@
 			remoteGlobalIDString = B5B4463E180AB78E009ADEF9;
 			remoteInfo = NodelikeDemo;
 		};
+		B5B446FC180AD616009ADEF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5B44637180AB78E009ADEF9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5B446EA180AD616009ADEF9;
+			remoteInfo = Nodelike;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B5B446E9180AD616009ADEF9 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B5B4463F180AB78E009ADEF9 /* NodelikeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NodelikeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +152,72 @@
 		B5B44669180AB78E009ADEF9 /* NodelikeDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NodelikeDemoTests-Info.plist"; sourceTree = "<group>"; };
 		B5B4466B180AB78E009ADEF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B5B4466D180AB78E009ADEF9 /* NodelikeDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NodelikeDemoTests.m; sourceTree = "<group>"; };
+		B5B44679180AB800009ADEF9 /* NLProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLProcess.h; path = Nodelike/NLProcess.h; sourceTree = "<group>"; };
+		B5B4467A180AB800009ADEF9 /* NLProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLProcess.m; path = Nodelike/NLProcess.m; sourceTree = "<group>"; };
+		B5B4467D180AC64A009ADEF9 /* _debugger.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = _debugger.js; sourceTree = "<group>"; };
+		B5B4467E180AC64A009ADEF9 /* _http_agent.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = _http_agent.js; sourceTree = "<group>"; };
+		B5B4467F180AC64A009ADEF9 /* _http_client.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = _http_client.js; sourceTree = "<group>"; };
+		B5B44680180AC64A009ADEF9 /* _http_common.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = _http_common.js; sourceTree = "<group>"; };
+		B5B44681180AC64A009ADEF9 /* _http_incoming.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = _http_incoming.js; sourceTree = "<group>"; };
+		B5B44682180AC64A009ADEF9 /* _http_outgoing.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = _http_outgoing.js; sourceTree = "<group>"; };
+		B5B44683180AC64A009ADEF9 /* _http_server.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = _http_server.js; sourceTree = "<group>"; };
+		B5B44684180AC64A009ADEF9 /* _linklist.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = _linklist.js; sourceTree = "<group>"; };
+		B5B44685180AC64A009ADEF9 /* _stream_duplex.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = _stream_duplex.js; sourceTree = "<group>"; };
+		B5B44686180AC64A009ADEF9 /* _stream_passthrough.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = _stream_passthrough.js; sourceTree = "<group>"; };
+		B5B44687180AC64A009ADEF9 /* _stream_readable.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = _stream_readable.js; sourceTree = "<group>"; };
+		B5B44688180AC64A009ADEF9 /* _stream_transform.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = _stream_transform.js; sourceTree = "<group>"; };
+		B5B44689180AC64A009ADEF9 /* _stream_writable.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = _stream_writable.js; sourceTree = "<group>"; };
+		B5B4468A180AC64A009ADEF9 /* _tls_legacy.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = _tls_legacy.js; sourceTree = "<group>"; };
+		B5B4468B180AC64A009ADEF9 /* _tls_wrap.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = _tls_wrap.js; sourceTree = "<group>"; };
+		B5B4468C180AC64A009ADEF9 /* assert.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = assert.js; sourceTree = "<group>"; };
+		B5B4468D180AC64A009ADEF9 /* buffer.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = buffer.js; sourceTree = "<group>"; };
+		B5B4468E180AC64A009ADEF9 /* child_process.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = child_process.js; sourceTree = "<group>"; };
+		B5B4468F180AC64A009ADEF9 /* cluster.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = cluster.js; sourceTree = "<group>"; };
+		B5B44690180AC64A009ADEF9 /* console.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = console.js; sourceTree = "<group>"; };
+		B5B44691180AC64A009ADEF9 /* constants.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = constants.js; sourceTree = "<group>"; };
+		B5B44692180AC64A009ADEF9 /* crypto.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = crypto.js; sourceTree = "<group>"; };
+		B5B44693180AC64A009ADEF9 /* dgram.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = dgram.js; sourceTree = "<group>"; };
+		B5B44694180AC64A009ADEF9 /* dns.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = dns.js; sourceTree = "<group>"; };
+		B5B44695180AC64A009ADEF9 /* domain.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = domain.js; sourceTree = "<group>"; };
+		B5B44696180AC64A009ADEF9 /* events.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = events.js; sourceTree = "<group>"; };
+		B5B44697180AC64A009ADEF9 /* freelist.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = freelist.js; sourceTree = "<group>"; };
+		B5B44698180AC64A009ADEF9 /* fs.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = fs.js; sourceTree = "<group>"; };
+		B5B44699180AC64A009ADEF9 /* http.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = http.js; sourceTree = "<group>"; };
+		B5B4469A180AC64A009ADEF9 /* https.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = https.js; sourceTree = "<group>"; };
+		B5B4469B180AC64A009ADEF9 /* module.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = module.js; sourceTree = "<group>"; };
+		B5B4469C180AC64A009ADEF9 /* net.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = net.js; sourceTree = "<group>"; };
+		B5B4469D180AC64A009ADEF9 /* os.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = os.js; sourceTree = "<group>"; };
+		B5B4469E180AC64A009ADEF9 /* path.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = path.js; sourceTree = "<group>"; };
+		B5B4469F180AC64A009ADEF9 /* punycode.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = punycode.js; sourceTree = "<group>"; };
+		B5B446A0180AC64A009ADEF9 /* querystring.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = querystring.js; sourceTree = "<group>"; };
+		B5B446A1180AC64A009ADEF9 /* readline.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = readline.js; sourceTree = "<group>"; };
+		B5B446A2180AC64A009ADEF9 /* repl.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = repl.js; sourceTree = "<group>"; };
+		B5B446A3180AC64A009ADEF9 /* smalloc.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = smalloc.js; sourceTree = "<group>"; };
+		B5B446A4180AC64A009ADEF9 /* stream.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = stream.js; sourceTree = "<group>"; };
+		B5B446A5180AC64A009ADEF9 /* string_decoder.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = string_decoder.js; sourceTree = "<group>"; };
+		B5B446A6180AC64A009ADEF9 /* sys.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = sys.js; sourceTree = "<group>"; };
+		B5B446A7180AC64A009ADEF9 /* timers.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = timers.js; sourceTree = "<group>"; };
+		B5B446A8180AC64A009ADEF9 /* tls.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = tls.js; sourceTree = "<group>"; };
+		B5B446A9180AC64A009ADEF9 /* tty.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = tty.js; sourceTree = "<group>"; };
+		B5B446AA180AC64A009ADEF9 /* url.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = url.js; sourceTree = "<group>"; };
+		B5B446AB180AC64A009ADEF9 /* util.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = util.js; sourceTree = "<group>"; };
+		B5B446AC180AC64A009ADEF9 /* vm.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = vm.js; sourceTree = "<group>"; };
+		B5B446AD180AC64A009ADEF9 /* zlib.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = zlib.js; sourceTree = "<group>"; };
+		B5B446DF180AC689009ADEF9 /* NLRequire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLRequire.h; path = Nodelike/NLRequire.h; sourceTree = "<group>"; };
+		B5B446E0180AC689009ADEF9 /* NLRequire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLRequire.m; path = Nodelike/NLRequire.m; sourceTree = "<group>"; };
+		B5B446E3180ACC27009ADEF9 /* NLContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLContext.h; path = Nodelike/NLContext.h; sourceTree = "<group>"; };
+		B5B446E4180ACC27009ADEF9 /* NLContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLContext.m; path = Nodelike/NLContext.m; sourceTree = "<group>"; };
+		B5B446EB180AD616009ADEF9 /* libNodelike.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNodelike.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5B446F8180AD616009ADEF9 /* NodelikeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NodelikeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5B44701180AD616009ADEF9 /* NodelikeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NodelikeTests-Info.plist"; sourceTree = "<group>"; };
+		B5B44703180AD616009ADEF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B5B44705180AD616009ADEF9 /* NodelikeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NodelikeTests.m; sourceTree = "<group>"; };
+		B5B4471C180B294F009ADEF9 /* NLBindingFilesystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLBindingFilesystem.h; path = Nodelike/NLBindingFilesystem.h; sourceTree = "<group>"; };
+		B5B4471D180B294F009ADEF9 /* NLBindingFilesystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLBindingFilesystem.m; path = Nodelike/NLBindingFilesystem.m; sourceTree = "<group>"; };
+		B5B4471F180B29CD009ADEF9 /* NLBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLBinding.h; path = Nodelike/NLBinding.h; sourceTree = "<group>"; };
+		B5B44720180B29CD009ADEF9 /* NLBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLBinding.m; path = Nodelike/NLBinding.m; sourceTree = "<group>"; };
+		B5B44723180B2F34009ADEF9 /* NLBindingConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLBindingConstants.h; path = Nodelike/NLBindingConstants.h; sourceTree = "<group>"; };
+		B5B44724180B2F34009ADEF9 /* NLBindingConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLBindingConstants.m; path = Nodelike/NLBindingConstants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +241,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B5B446E8180AD616009ADEF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5B446EC180AD616009ADEF9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5B446F5180AD616009ADEF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5B446F9180AD616009ADEF9 /* XCTest.framework in Frameworks */,
+				B5B446FB180AD616009ADEF9 /* UIKit.framework in Frameworks */,
+				B5B446FE180AD616009ADEF9 /* libNodelike.a in Frameworks */,
+				B5B446FA180AD616009ADEF9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -84,6 +268,7 @@
 			children = (
 				B5B44648180AB78E009ADEF9 /* NodelikeDemo */,
 				B5B44667180AB78E009ADEF9 /* NodelikeDemoTests */,
+				B5B446FF180AD616009ADEF9 /* NodelikeTests */,
 				B5B44641180AB78E009ADEF9 /* Frameworks */,
 				B5B44640180AB78E009ADEF9 /* Products */,
 			);
@@ -94,6 +279,8 @@
 			children = (
 				B5B4463F180AB78E009ADEF9 /* NodelikeDemo.app */,
 				B5B44660180AB78E009ADEF9 /* NodelikeDemoTests.xctest */,
+				B5B446EB180AD616009ADEF9 /* libNodelike.a */,
+				B5B446F8180AD616009ADEF9 /* NodelikeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,6 +299,7 @@
 		B5B44648180AB78E009ADEF9 /* NodelikeDemo */ = {
 			isa = PBXGroup;
 			children = (
+				B5B44678180AB7CF009ADEF9 /* Nodelike */,
 				B5B44651180AB78E009ADEF9 /* NLAppDelegate.h */,
 				B5B44652180AB78E009ADEF9 /* NLAppDelegate.m */,
 				B5B44654180AB78E009ADEF9 /* Main.storyboard */,
@@ -148,6 +336,100 @@
 			children = (
 				B5B44669180AB78E009ADEF9 /* NodelikeDemoTests-Info.plist */,
 				B5B4466A180AB78E009ADEF9 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B5B44678180AB7CF009ADEF9 /* Nodelike */ = {
+			isa = PBXGroup;
+			children = (
+				B5B4467C180AC64A009ADEF9 /* lib */,
+				B5B44679180AB800009ADEF9 /* NLProcess.h */,
+				B5B4467A180AB800009ADEF9 /* NLProcess.m */,
+				B5B446DF180AC689009ADEF9 /* NLRequire.h */,
+				B5B446E0180AC689009ADEF9 /* NLRequire.m */,
+				B5B446E3180ACC27009ADEF9 /* NLContext.h */,
+				B5B446E4180ACC27009ADEF9 /* NLContext.m */,
+				B5B4471F180B29CD009ADEF9 /* NLBinding.h */,
+				B5B44720180B29CD009ADEF9 /* NLBinding.m */,
+				B5B44723180B2F34009ADEF9 /* NLBindingConstants.h */,
+				B5B44724180B2F34009ADEF9 /* NLBindingConstants.m */,
+				B5B4471C180B294F009ADEF9 /* NLBindingFilesystem.h */,
+				B5B4471D180B294F009ADEF9 /* NLBindingFilesystem.m */,
+			);
+			name = Nodelike;
+			sourceTree = "<group>";
+		};
+		B5B4467C180AC64A009ADEF9 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				B5B4467D180AC64A009ADEF9 /* _debugger.js */,
+				B5B4467E180AC64A009ADEF9 /* _http_agent.js */,
+				B5B4467F180AC64A009ADEF9 /* _http_client.js */,
+				B5B44680180AC64A009ADEF9 /* _http_common.js */,
+				B5B44681180AC64A009ADEF9 /* _http_incoming.js */,
+				B5B44682180AC64A009ADEF9 /* _http_outgoing.js */,
+				B5B44683180AC64A009ADEF9 /* _http_server.js */,
+				B5B44684180AC64A009ADEF9 /* _linklist.js */,
+				B5B44685180AC64A009ADEF9 /* _stream_duplex.js */,
+				B5B44686180AC64A009ADEF9 /* _stream_passthrough.js */,
+				B5B44687180AC64A009ADEF9 /* _stream_readable.js */,
+				B5B44688180AC64A009ADEF9 /* _stream_transform.js */,
+				B5B44689180AC64A009ADEF9 /* _stream_writable.js */,
+				B5B4468A180AC64A009ADEF9 /* _tls_legacy.js */,
+				B5B4468B180AC64A009ADEF9 /* _tls_wrap.js */,
+				B5B4468C180AC64A009ADEF9 /* assert.js */,
+				B5B4468D180AC64A009ADEF9 /* buffer.js */,
+				B5B4468E180AC64A009ADEF9 /* child_process.js */,
+				B5B4468F180AC64A009ADEF9 /* cluster.js */,
+				B5B44690180AC64A009ADEF9 /* console.js */,
+				B5B44691180AC64A009ADEF9 /* constants.js */,
+				B5B44692180AC64A009ADEF9 /* crypto.js */,
+				B5B44693180AC64A009ADEF9 /* dgram.js */,
+				B5B44694180AC64A009ADEF9 /* dns.js */,
+				B5B44695180AC64A009ADEF9 /* domain.js */,
+				B5B44696180AC64A009ADEF9 /* events.js */,
+				B5B44697180AC64A009ADEF9 /* freelist.js */,
+				B5B44698180AC64A009ADEF9 /* fs.js */,
+				B5B44699180AC64A009ADEF9 /* http.js */,
+				B5B4469A180AC64A009ADEF9 /* https.js */,
+				B5B4469B180AC64A009ADEF9 /* module.js */,
+				B5B4469C180AC64A009ADEF9 /* net.js */,
+				B5B4469D180AC64A009ADEF9 /* os.js */,
+				B5B4469E180AC64A009ADEF9 /* path.js */,
+				B5B4469F180AC64A009ADEF9 /* punycode.js */,
+				B5B446A0180AC64A009ADEF9 /* querystring.js */,
+				B5B446A1180AC64A009ADEF9 /* readline.js */,
+				B5B446A2180AC64A009ADEF9 /* repl.js */,
+				B5B446A3180AC64A009ADEF9 /* smalloc.js */,
+				B5B446A4180AC64A009ADEF9 /* stream.js */,
+				B5B446A5180AC64A009ADEF9 /* string_decoder.js */,
+				B5B446A6180AC64A009ADEF9 /* sys.js */,
+				B5B446A7180AC64A009ADEF9 /* timers.js */,
+				B5B446A8180AC64A009ADEF9 /* tls.js */,
+				B5B446A9180AC64A009ADEF9 /* tty.js */,
+				B5B446AA180AC64A009ADEF9 /* url.js */,
+				B5B446AB180AC64A009ADEF9 /* util.js */,
+				B5B446AC180AC64A009ADEF9 /* vm.js */,
+				B5B446AD180AC64A009ADEF9 /* zlib.js */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		B5B446FF180AD616009ADEF9 /* NodelikeTests */ = {
+			isa = PBXGroup;
+			children = (
+				B5B44705180AD616009ADEF9 /* NodelikeTests.m */,
+				B5B44700180AD616009ADEF9 /* Supporting Files */,
+			);
+			path = NodelikeTests;
+			sourceTree = "<group>";
+		};
+		B5B44700180AD616009ADEF9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B5B44701180AD616009ADEF9 /* NodelikeTests-Info.plist */,
+				B5B44702180AD616009ADEF9 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -190,6 +472,41 @@
 			productReference = B5B44660180AB78E009ADEF9 /* NodelikeDemoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		B5B446EA180AD616009ADEF9 /* Nodelike */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5B44707180AD616009ADEF9 /* Build configuration list for PBXNativeTarget "Nodelike" */;
+			buildPhases = (
+				B5B446E7180AD616009ADEF9 /* Sources */,
+				B5B446E8180AD616009ADEF9 /* Frameworks */,
+				B5B446E9180AD616009ADEF9 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Nodelike;
+			productName = Nodelike;
+			productReference = B5B446EB180AD616009ADEF9 /* libNodelike.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B5B446F7180AD616009ADEF9 /* NodelikeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5B4470A180AD616009ADEF9 /* Build configuration list for PBXNativeTarget "NodelikeTests" */;
+			buildPhases = (
+				B5B446F4180AD616009ADEF9 /* Sources */,
+				B5B446F5180AD616009ADEF9 /* Frameworks */,
+				B5B446F6180AD616009ADEF9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B5B446FD180AD616009ADEF9 /* PBXTargetDependency */,
+			);
+			name = NodelikeTests;
+			productName = NodelikeTests;
+			productReference = B5B446F8180AD616009ADEF9 /* NodelikeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -201,6 +518,9 @@
 				ORGANIZATIONNAME = "Sam Rijs";
 				TargetAttributes = {
 					B5B4465F180AB78E009ADEF9 = {
+						TestTargetID = B5B4463E180AB78E009ADEF9;
+					};
+					B5B446F7180AD616009ADEF9 = {
 						TestTargetID = B5B4463E180AB78E009ADEF9;
 					};
 				};
@@ -220,6 +540,8 @@
 			targets = (
 				B5B4463E180AB78E009ADEF9 /* NodelikeDemo */,
 				B5B4465F180AB78E009ADEF9 /* NodelikeDemoTests */,
+				B5B446EA180AD616009ADEF9 /* Nodelike */,
+				B5B446F7180AD616009ADEF9 /* NodelikeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -229,6 +551,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5B44722180B2BE4009ADEF9 /* fs.js in Resources */,
+				B5B4471B180B12DF009ADEF9 /* sys.js in Resources */,
+				B5B4471A180B099F009ADEF9 /* freelist.js in Resources */,
+				B5B44719180B0977009ADEF9 /* string_decoder.js in Resources */,
+				B5B44718180B095A009ADEF9 /* assert.js in Resources */,
+				B5B44717180B0932009ADEF9 /* _linklist.js in Resources */,
+				B5B44716180B0891009ADEF9 /* querystring.js in Resources */,
+				B5B44714180B084B009ADEF9 /* punycode.js in Resources */,
+				B5B44715180B084B009ADEF9 /* url.js in Resources */,
+				B5B4470E180AFEE2009ADEF9 /* _stream_duplex.js in Resources */,
+				B5B4470F180AFEE2009ADEF9 /* _stream_passthrough.js in Resources */,
+				B5B44710180AFEE2009ADEF9 /* _stream_readable.js in Resources */,
+				B5B44711180AFEE2009ADEF9 /* _stream_transform.js in Resources */,
+				B5B44712180AFEE2009ADEF9 /* _stream_writable.js in Resources */,
+				B5B44713180AFEE2009ADEF9 /* stream.js in Resources */,
+				B5B4470D180AD6B8009ADEF9 /* path.js in Resources */,
+				B5B446E6180AD178009ADEF9 /* events.js in Resources */,
+				B5B446E2180ACA45009ADEF9 /* util.js in Resources */,
 				B5B4465B180AB78E009ADEF9 /* Images.xcassets in Resources */,
 				B5B4464D180AB78E009ADEF9 /* InfoPlist.strings in Resources */,
 				B5B44656180AB78E009ADEF9 /* Main.storyboard in Resources */,
@@ -243,6 +583,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B5B446F6180AD616009ADEF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5B44704180AD616009ADEF9 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -250,9 +598,64 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5B446C1180AC64A009ADEF9 /* console.js in Sources */,
+				B5B446C4180AC64A009ADEF9 /* dgram.js in Sources */,
+				B5B446CB180AC64A009ADEF9 /* https.js in Sources */,
 				B5B44659180AB78E009ADEF9 /* NLViewController.m in Sources */,
+				B5B446B6180AC64A009ADEF9 /* _stream_duplex.js in Sources */,
+				B5B446B1180AC64A009ADEF9 /* _http_common.js in Sources */,
+				B5B446D1180AC64A009ADEF9 /* querystring.js in Sources */,
+				B5B446C0180AC64A009ADEF9 /* cluster.js in Sources */,
+				B5B44721180B29CD009ADEF9 /* NLBinding.m in Sources */,
+				B5B446CA180AC64A009ADEF9 /* http.js in Sources */,
+				B5B446C5180AC64A009ADEF9 /* dns.js in Sources */,
+				B5B4471E180B294F009ADEF9 /* NLBindingFilesystem.m in Sources */,
+				B5B446C7180AC64A009ADEF9 /* events.js in Sources */,
+				B5B446B3180AC64A009ADEF9 /* _http_outgoing.js in Sources */,
+				B5B446C9180AC64A009ADEF9 /* fs.js in Sources */,
+				B5B446D4180AC64A009ADEF9 /* smalloc.js in Sources */,
+				B5B446C8180AC64A009ADEF9 /* freelist.js in Sources */,
 				B5B44653180AB78E009ADEF9 /* NLAppDelegate.m in Sources */,
+				B5B446BE180AC64A009ADEF9 /* buffer.js in Sources */,
+				B5B446B9180AC64A009ADEF9 /* _stream_transform.js in Sources */,
+				B5B446D8180AC64A009ADEF9 /* timers.js in Sources */,
+				B5B446CD180AC64A009ADEF9 /* net.js in Sources */,
+				B5B446DB180AC64A009ADEF9 /* url.js in Sources */,
+				B5B446D9180AC64A009ADEF9 /* tls.js in Sources */,
+				B5B446C3180AC64A009ADEF9 /* crypto.js in Sources */,
+				B5B446CC180AC64A009ADEF9 /* module.js in Sources */,
+				B5B446DC180AC64A009ADEF9 /* util.js in Sources */,
+				B5B446DA180AC64A009ADEF9 /* tty.js in Sources */,
+				B5B446BA180AC64A009ADEF9 /* _stream_writable.js in Sources */,
+				B5B446B5180AC64A009ADEF9 /* _linklist.js in Sources */,
+				B5B446D2180AC64A009ADEF9 /* readline.js in Sources */,
+				B5B44725180B2F34009ADEF9 /* NLBindingConstants.m in Sources */,
+				B5B446B4180AC64A009ADEF9 /* _http_server.js in Sources */,
+				B5B446AE180AC64A009ADEF9 /* _debugger.js in Sources */,
 				B5B4464F180AB78E009ADEF9 /* main.m in Sources */,
+				B5B446AF180AC64A009ADEF9 /* _http_agent.js in Sources */,
+				B5B446CF180AC64A009ADEF9 /* path.js in Sources */,
+				B5B446B0180AC64A009ADEF9 /* _http_client.js in Sources */,
+				B5B446DE180AC64A009ADEF9 /* zlib.js in Sources */,
+				B5B446B8180AC64A009ADEF9 /* _stream_readable.js in Sources */,
+				B5B446BF180AC64A009ADEF9 /* child_process.js in Sources */,
+				B5B446D7180AC64A009ADEF9 /* sys.js in Sources */,
+				B5B446B2180AC64A009ADEF9 /* _http_incoming.js in Sources */,
+				B5B446DD180AC64A009ADEF9 /* vm.js in Sources */,
+				B5B446D0180AC64A009ADEF9 /* punycode.js in Sources */,
+				B5B446D3180AC64A009ADEF9 /* repl.js in Sources */,
+				B5B446CE180AC64A009ADEF9 /* os.js in Sources */,
+				B5B446D5180AC64A009ADEF9 /* stream.js in Sources */,
+				B5B4467B180AB800009ADEF9 /* NLProcess.m in Sources */,
+				B5B446C6180AC64A009ADEF9 /* domain.js in Sources */,
+				B5B446C2180AC64A009ADEF9 /* constants.js in Sources */,
+				B5B446BC180AC64A009ADEF9 /* _tls_wrap.js in Sources */,
+				B5B446B7180AC64A009ADEF9 /* _stream_passthrough.js in Sources */,
+				B5B446BD180AC64A009ADEF9 /* assert.js in Sources */,
+				B5B446D6180AC64A009ADEF9 /* string_decoder.js in Sources */,
+				B5B446BB180AC64A009ADEF9 /* _tls_legacy.js in Sources */,
+				B5B446E1180AC689009ADEF9 /* NLRequire.m in Sources */,
+				B5B446E5180ACC27009ADEF9 /* NLContext.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +667,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B5B446E7180AD616009ADEF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5B446F4180AD616009ADEF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5B44706180AD616009ADEF9 /* NodelikeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -271,6 +689,11 @@
 			isa = PBXTargetDependency;
 			target = B5B4463E180AB78E009ADEF9 /* NodelikeDemo */;
 			targetProxy = B5B44665180AB78E009ADEF9 /* PBXContainerItemProxy */;
+		};
+		B5B446FD180AD616009ADEF9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5B446EA180AD616009ADEF9 /* Nodelike */;
+			targetProxy = B5B446FC180AD616009ADEF9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -295,6 +718,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				B5B4466B180AB78E009ADEF9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B5B44702180AD616009ADEF9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5B44703180AD616009ADEF9 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -442,6 +873,78 @@
 			};
 			name = Release;
 		};
+		B5B44708180AD616009ADEF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				DSTROOT = /tmp/Nodelike.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Nodelike/Nodelike-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B5B44709180AD616009ADEF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				DSTROOT = /tmp/Nodelike.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Nodelike/Nodelike-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		B5B4470B180AD616009ADEF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NodelikeDemo.app/NodelikeDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Nodelike/Nodelike-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "NodelikeTests/NodelikeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		B5B4470C180AD616009ADEF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NodelikeDemo.app/NodelikeDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Nodelike/Nodelike-Prefix.pch";
+				INFOPLIST_FILE = "NodelikeTests/NodelikeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -467,6 +970,22 @@
 			buildConfigurations = (
 				B5B44675180AB78E009ADEF9 /* Debug */,
 				B5B44676180AB78E009ADEF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B5B44707180AD616009ADEF9 /* Build configuration list for PBXNativeTarget "Nodelike" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5B44708180AD616009ADEF9 /* Debug */,
+				B5B44709180AD616009ADEF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B5B4470A180AD616009ADEF9 /* Build configuration list for PBXNativeTarget "NodelikeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5B4470B180AD616009ADEF9 /* Debug */,
+				B5B4470C180AD616009ADEF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
