@@ -16,6 +16,15 @@ The goals
 - NOT to be backwards-compatible (nodejs cutting edge and newest iOS/OS X required)
 - NOT to integrate libuv
 
+How to compile the demo app
+---------------------------
+
+You first need to fetch the nodejs submodule. Do so by:
+1. `git submodule init`
+2. `git submodule update`
+
+Afterwards, just open `NodelikeDemo.xcodeproj`, build the app and you're all set!
+
 How to use the demo app
 -----------------------
 
