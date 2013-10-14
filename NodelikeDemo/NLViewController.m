@@ -30,7 +30,8 @@
 - (IBAction)execute:(id)sender {
     NSLog(@"execute");
     NSString *input = _output.text;
-    _output.text = [_appDelegate execute:input];
+    _state.text = [@"_ = " stringByAppendingString:[_appDelegate execute:input]];
+    _output.text = @"";
 }
 
 @end
