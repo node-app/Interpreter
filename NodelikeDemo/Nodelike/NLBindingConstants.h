@@ -9,10 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <JavaScriptCore/JavaScriptCore.h>
 
-@protocol NLBindingConstantsExports <JSExport>
+#import "NLBinding.h"
 
-@end
-
-@interface NLBindingConstants : NSObject <NLBindingConstantsExports>
+@interface NLBindingConstants : NSObject <NLBinding>
 
 @end

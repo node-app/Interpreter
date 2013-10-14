@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol NLBinding
+
+- (id)binding;
+
+@end
+
 @interface NLBinding : NSObject
 
 + (id) bindingForIdentifier:(NSString *)identifier;

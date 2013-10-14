@@ -21,7 +21,7 @@
     }
     Class cls = bindings[identifier];
     if (cls) {
-        return [[cls alloc] init];
+        return [[[cls alloc] init] binding];
     } else {
         return nil;
     }

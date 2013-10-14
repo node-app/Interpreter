@@ -17,4 +17,8 @@
     return self;
 }
 
+- (id)binding {
+    return self;
+}
+
 @end

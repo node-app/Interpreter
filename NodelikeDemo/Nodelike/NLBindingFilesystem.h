@@ -9,13 +9,15 @@
 #import <Foundation/Foundation.h>
 #import <JavaScriptCore/JavaScriptCore.h>
 
+#import "NLBinding.h"
+
 @protocol NLBindingFilesystemExports <JSExport>
 
 @property JSValue *Stats;
 
 @end
 
-@interface NLBindingFilesystem : NSObject <NLBindingFilesystemExports>
+@interface NLBindingFilesystem : NSObject <NLBinding, NLBindingFilesystemExports>
 
 @property JSValue *Stats;
 
