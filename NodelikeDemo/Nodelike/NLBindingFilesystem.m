@@ -34,6 +34,7 @@
     int error = uv_fs_open(uv_default_loop(), req,
                            [path cStringUsingEncoding:NSUTF8StringEncoding],
                            [flags intValue], [mode intValue], nil);
+    free(req);
     NSLog(@"%@", cb);
     if (![cb isUndefined]) {
         [cb callWithArguments:@[[NSNumber numberWithInt:error]]];
