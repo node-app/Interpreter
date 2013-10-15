@@ -1,3 +1,6 @@
 [submodule "NodelikeDemo/node"]
 	path = NodelikeDemo/node
 	url = https://github.com/joyent/node.git
+[submodule "Nodelike/libuv"]
+	path = Nodelike/libuv
+	url = https://github.com/joyent/libuv.git

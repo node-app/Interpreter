@@ -8,13 +8,21 @@
 
 #import "NLBindingFilesystem.h"
 
+#import "uv.h"
+
 @implementation NLBindingFilesystem
 
 - (id)init {
+
     self = [super init];
+
+    NSLog(@"libuv version: %s", uv_version_string());
+
     _Stats = [JSValue valueWithNewObjectInContext:[JSContext currentContext]];
     _Stats[@"prototype"] = [JSValue valueWithNewObjectInContext:[JSContext currentContext]];
+
     return self;
+
 }
 
 - (id)binding {
