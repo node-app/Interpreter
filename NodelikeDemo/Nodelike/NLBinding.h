@@ -8,14 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol NLBinding
+@interface NLBinding : NSObject
 
 - (id)binding;
 
-@end
-
-@interface NLBinding : NSObject
-
-+ (id) bindingForIdentifier:(NSString *)identifier;
++ (id)bindingForIdentifier:(NSString *)identifier;
+- (id)throwNewErrorWithMessage:(NSString *)message;
 
 @end

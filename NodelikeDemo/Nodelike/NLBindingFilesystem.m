@@ -29,4 +29,18 @@
     return self;
 }
 
+- (id)open:(NSString *)path withFlags:(NSNumber *)flags andMode:(NSNumber *)mode andCallback:(JSValue *)cb {
+    uv_fs_t *req = malloc(sizeof(uv_fs_t));
+    int error = uv_fs_open(uv_default_loop(), req,
+                           [path cStringUsingEncoding:NSUTF8StringEncoding],
+                           [flags intValue], [mode intValue], nil);
+    NSLog(@"%@", cb);
+    if (![cb isUndefined]) {
+        [cb callWithArguments:@[[NSNumber numberWithInt:error]]];
+        return nil;
+    }
+    
+    return [NSNumber numberWithInt:error];
+}
+
 @end

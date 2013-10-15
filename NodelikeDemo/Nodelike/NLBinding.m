@@ -13,7 +13,11 @@
 
 @implementation NLBinding
 
-+ (id) bindingForIdentifier:(NSString *)identifier {
+- (id)binding {
+    return nil;
+}
+
++ (id)bindingForIdentifier:(NSString *)identifier {
     static NSDictionary *bindings;
     if (bindings == nil) {
         bindings = @{@"fs":        [NLBindingFilesystem class],
@@ -25,6 +29,12 @@
     } else {
         return nil;
     }
+}
+
+- (id)throwNewErrorWithMessage:(NSString *)message {
+    JSContext *context = [JSContext currentContext];
+    context.exception = [JSValue valueWithNewErrorFromMessage:message inContext:context];
+    return nil;
 }
 
 @end

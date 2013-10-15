@@ -15,9 +15,12 @@
 
 @property JSValue *Stats;
 
+JSExportAs(open,
+           - (id)open:(NSString *)path withFlags:(NSNumber *)flags andMode:(NSNumber *)mode andCallback:(JSValue *)cb);
+
 @end
 
-@interface NLBindingFilesystem : NSObject <NLBinding, NLBindingFilesystemExports>
+@interface NLBindingFilesystem : NLBinding <NLBindingFilesystemExports>
 
 @property JSValue *Stats;
 

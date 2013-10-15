@@ -11,6 +11,6 @@
 
 #import "NLBinding.h"
 
-@interface NLBindingConstants : NSObject <NLBinding>
+@interface NLBindingConstants : NLBinding
 
 @end
