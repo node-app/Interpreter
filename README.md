@@ -3,6 +3,10 @@ NodelikeDemo
 
 Nodelike is a weekend hack to implement a roughly Node.JS-compatible interface using JavaScriptCore.framework on iOS 7 and OS X Mavericks.
 
+(JavaScriptCore hasn't been available before iOS 7, and on OS X the project makes extensive use of the newly-updated 10.9-only Objective-C API. Previously on 10.8 there existed only a very low-level and very verbose C API.)
+
+
+
 This is currently in a very incomplete state, and not viable for serious use.
 It could, however, become usable over the following weeks.
 
