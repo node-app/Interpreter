@@ -14,8 +14,6 @@
 
     self = [super init];
 
-    NSLog(@"libuv version: %s", uv_version_string());
-
     _Stats = [JSValue valueWithNewObjectInContext:[JSContext currentContext]];
     _Stats[@"prototype"] = [JSValue valueWithNewObjectInContext:[JSContext currentContext]];
 
@@ -28,28 +26,58 @@
 }
 
 static void after(uv_fs_t* req) {
-    NSLog(@"after %li", req->result);
-    JSValue *cb = CFBridgingRelease(req->data);
-    NSNumber *result = [NSNumber numberWithLong:req->result];
-    uv_fs_req_cleanup(req);
-    [cb callWithArguments:@[result]];
-}
 
-- (id)open:(NSString *)path withFlags:(NSNumber *)flags andMode:(NSNumber *)mode andCallback:(JSValue *)cb {
-    Boolean async = ![cb isUndefined];
-    uv_fs_t *req = malloc(sizeof(uv_fs_t));
-    req->data = (void *)CFBridgingRetain(cb);
-    NLContext *context = [NLContext currentContext];
-    int error = [context runEventTask:uv_fs_open(context.eventLoop, req,
-                                                 [path cStringUsingEncoding:NSUTF8StringEncoding],
-                                                 [flags intValue], [mode intValue], async ? after : nil)];
-    if (async) {
-        return nil;
+    struct data *data = req->data;
+
+    JSValue *cb = CFBridgingRelease(data->callback);
+
+    NLContext *context = (NLContext *)[cb context];
+    
+    JSValue *errorArg = [JSValue valueWithNullInContext:context];
+    JSValue *valueArg = [JSValue valueWithUndefinedInContext:context];
+
+    if (req->result < 0) {
+
+        errorArg = [JSValue valueWithNewErrorFromMessage:@"error" inContext:context];
+
     } else {
-        uv_fs_req_cleanup(req);
-        return [NSNumber numberWithInt:error];
+
+        switch (req->result) {
+            case UV_FS_OPEN:
+                valueArg = [JSValue valueWithInt32:req->result inContext:context];
+                break;
+            default: assert(0 && "Unhandled eio response");
+        }
+
     }
 
+    uv_fs_req_cleanup(req);
+    
+    if (![cb isUndefined]) {
+        free(data);
+        [cb callWithArguments:@[errorArg, valueArg]];
+    } else if ([errorArg isNull]) {
+        data->error = nil;
+        data->value = (void *)CFBridgingRetain(valueArg);
+    } else {
+        data->error = (void *)CFBridgingRetain(errorArg);
+        data->value = nil;
+    }
+
+}
+
+#define CALL(fun, cb, ...)                                                               \
+    [[NLContext currentContext] runEventTask:^(uv_loop_t *loop, void *req, bool async) { \
+        uv_fs_ ## fun(loop, req, __VA_ARGS__, async ? after : nil);                      \
+        if (!async) after(req);                                                          \
+    } withRequest:malloc(sizeof(uv_fs_t)) andCallback:cb]
+
+- (id)open:(NSString *)path flags:(NSNumber *)flags mode:(NSNumber *)mode callback:(JSValue *)cb {
+    return CALL(open, cb, [path cStringUsingEncoding:NSUTF8StringEncoding], [flags intValue], [mode intValue]);
+}
+
+- (id)close:(NSNumber *)file callback:(JSValue *)cb {
+    return CALL(close, cb, [file intValue]);
 }
 
 @end

@@ -11,7 +11,14 @@
 #import "NLProcess.h"
 #import "NLRequire.h"
 
-@implementation NLContext
+@implementation NLContext {
+    uv_loop_t *eventLoop;
+    dispatch_queue_t dispatchQueue;
+}
+
++ (uv_loop_t *)eventLoop {
+    return uv_default_loop();
+}
 
 + (dispatch_queue_t)dispatchQueue {
     static dispatch_queue_t queue = nil;
@@ -23,8 +30,9 @@
 }
 
 - (void)augment {
-    
-    _eventLoop = uv_default_loop();
+
+    eventLoop     = [NLContext eventLoop];
+    dispatchQueue = [NLContext dispatchQueue];
 
     self[@"global"] = self.globalObject;
 
@@ -52,15 +60,37 @@
     return (NLContext *)[super currentContext];
 }
 
-- (void)runEventLoop {
-    dispatch_async([NLContext dispatchQueue], ^{
-        uv_run(_eventLoop, UV_RUN_DEFAULT);
-    });
-}
+- (id)runEventTask:(void(^)(uv_loop_t *loop, void *req, bool async))task
+       withRequest:(void *)req andCallback:(JSValue *)cb {
 
-- (int)runEventTask:(int)result {
-    [self runEventLoop];
-    return result;
+    bool async = ![cb isUndefined];
+
+    struct data *data = ((uv_req_t *)req)->data = malloc(sizeof(struct data));
+    data->callback = (void *)CFBridgingRetain(cb);
+
+    task(eventLoop, req, async);
+
+    dispatch_async(dispatchQueue, ^{
+        uv_run(eventLoop, UV_RUN_DEFAULT);
+    });
+
+    if (!async) {
+
+        JSValue *error = data->error != nil ? CFBridgingRelease(data->error) : nil;
+        JSValue *value = data->value != nil ? CFBridgingRelease(data->value) : nil;
+
+        free(data);
+
+        if (error == nil) {
+            return value;
+        } else {
+            self.exception = error;
+        }
+
+    }
+
+    return nil;
+
 }
 
 - (id)throwNewErrorWithMessage:(NSString *)message {

@@ -10,13 +10,16 @@
 
 #import "uv.h"
 
-@interface NLContext : JSContext
+struct data {
+    void *callback, *error, *value;
+};
 
-@property (readonly) uv_loop_t *eventLoop;
+@interface NLContext : JSContext
 
 + (NLContext *)currentContext;
 
-- (int)runEventTask:(int)result;
+- (id)runEventTask:(void(^)(uv_loop_t *loop, void *req, bool async))task
+       withRequest:(void *)req andCallback:(JSValue *)cb;
 
 - (id)throwNewErrorWithMessage:(NSString *)message;
 
