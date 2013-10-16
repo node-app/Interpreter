@@ -13,22 +13,27 @@
 
 @implementation NLBinding
 
-- (id)binding {
-    return nil;
++ (NSDictionary *)bindings {
+    static NSDictionary *bindings = nil;
+    static dispatch_once_t token = 0;
+    dispatch_once(&token, ^{
+        bindings = @{@"fs":        [NLBindingFilesystem class],
+                     @"constants": [NLBindingConstants  class]};
+    });
+    return bindings;
 }
 
 + (id)bindingForIdentifier:(NSString *)identifier {
-    static NSDictionary *bindings;
-    if (bindings == nil) {
-        bindings = @{@"fs":        [NLBindingFilesystem class],
-                     @"constants": [NLBindingConstants  class]};
-    }
-    Class cls = bindings[identifier];
+    Class cls = [NLBinding bindings][identifier];
     if (cls) {
         return [[[cls alloc] init] binding];
     } else {
         return nil;
     }
+}
+
+- (id)binding {
+    return nil;
 }
 
 - (id)throwNewErrorWithMessage:(NSString *)message {

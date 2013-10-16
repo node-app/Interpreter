@@ -11,17 +11,20 @@
 #import "NLProcess.h"
 #import "NLRequire.h"
 
-@implementation NLContext {
+@implementation NLContext
 
-    dispatch_queue_t queue;
-
++ (dispatch_queue_t)dispatchQueue {
+    static dispatch_queue_t queue = nil;
+    static dispatch_once_t token = 0;
+    dispatch_once(&token, ^{
+        queue = dispatch_queue_create("eventLoop", DISPATCH_QUEUE_SERIAL);
+    });
+    return queue;
 }
 
 - (void)augment {
     
     _eventLoop = uv_default_loop();
-    
-    queue = dispatch_queue_create("eventLoop", DISPATCH_QUEUE_SERIAL);
 
     self[@"global"] = self.globalObject;
 
@@ -50,7 +53,7 @@
 }
 
 - (void)runEventLoop {
-    dispatch_async(queue, ^{
+    dispatch_async([NLContext dispatchQueue], ^{
         uv_run(_eventLoop, UV_RUN_DEFAULT);
     });
 }

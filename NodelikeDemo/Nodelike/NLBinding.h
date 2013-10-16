@@ -14,9 +14,10 @@
 
 @interface NLBinding : NSObject
 
++ (id)bindingForIdentifier:(NSString *)identifier;
+
 - (id)binding;
 
-+ (id)bindingForIdentifier:(NSString *)identifier;
 - (id)throwNewErrorWithMessage:(NSString *)message;
 
 @end

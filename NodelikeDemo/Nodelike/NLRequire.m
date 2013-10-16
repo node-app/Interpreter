@@ -30,13 +30,18 @@
 
 }
 
++ (NSMutableDictionary *)requireCache {
+    static NSMutableDictionary *cache;
+    static dispatch_once_t token = 0;
+    dispatch_once(&token, ^{
+        cache = [[NSMutableDictionary alloc] init];
+    });
+    return cache;
+}
+
 + (JSValue *)require:(NSString *)module inContext:(NLContext *)context {
     
-    static NSMutableDictionary *requireCache;
-    
-    if (requireCache == nil) {
-        requireCache = [[NSMutableDictionary alloc] init];
-    }
+    NSMutableDictionary *requireCache = [NLRequire requireCache];
     
     id cached = [requireCache objectForKey:module];
 
