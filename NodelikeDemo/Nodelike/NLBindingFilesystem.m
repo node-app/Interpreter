@@ -27,12 +27,8 @@
 
 static void after(uv_fs_t* req) {
 
-    struct data *data = req->data;
+    NLContext *context = [NLContext contextForEventRequest:req];
 
-    JSValue *cb = CFBridgingRelease(data->callback);
-
-    NLContext *context = (NLContext *)[cb context];
-    
     JSValue *errorArg = [JSValue valueWithNullInContext:context];
     JSValue *valueArg = [JSValue valueWithUndefinedInContext:context];
 
@@ -51,32 +47,25 @@ static void after(uv_fs_t* req) {
 
     }
 
+    void *data = req->data;
+
     uv_fs_req_cleanup(req);
     
-    if (![cb isUndefined]) {
-        free(data);
-        [cb callWithArguments:@[errorArg, valueArg]];
-    } else if ([errorArg isNull]) {
-        data->error = nil;
-        data->value = (void *)CFBridgingRetain(valueArg);
-    } else {
-        data->error = (void *)CFBridgingRetain(errorArg);
-        data->value = nil;
-    }
+    [context finishEventRequestWithData:data error:errorArg value:valueArg];
 
 }
 
-#define CALL(fun, cb, ...)                                                               \
-    [[NLContext currentContext] runEventTask:^(uv_loop_t *loop, void *req, bool async) { \
-        uv_fs_ ## fun(loop, req, __VA_ARGS__, async ? after : nil);                      \
-        if (!async) after(req);                                                          \
-    } withRequest:malloc(sizeof(uv_fs_t)) andCallback:cb]
+#define CALL(fun, cb, ...)                                                                  \
+    [[NLContext currentContext] runEventRequest:^(uv_loop_t *loop, void *req, bool async) { \
+        uv_fs_ ## fun(loop, req, __VA_ARGS__, async ? after : nil);                         \
+        if (!async) after(req);                                                             \
+    } ofType:UV_FS withCallback:cb]
 
-- (id)open:(NSString *)path flags:(NSNumber *)flags mode:(NSNumber *)mode callback:(JSValue *)cb {
+- (JSValue *)open:(NSString *)path flags:(NSNumber *)flags mode:(NSNumber *)mode callback:(JSValue *)cb {
     return CALL(open, cb, [path cStringUsingEncoding:NSUTF8StringEncoding], [flags intValue], [mode intValue]);
 }
 
-- (id)close:(NSNumber *)file callback:(JSValue *)cb {
+- (JSValue *)close:(NSNumber *)file callback:(JSValue *)cb {
     return CALL(close, cb, [file intValue]);
 }
 

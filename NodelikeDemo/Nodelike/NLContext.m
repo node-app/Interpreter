@@ -11,6 +11,10 @@
 #import "NLProcess.h"
 #import "NLRequire.h"
 
+struct data {
+    void *callback, *error, *value;
+};
+
 @implementation NLContext {
     uv_loop_t *eventLoop;
     dispatch_queue_t dispatchQueue;
@@ -60,13 +64,19 @@
     return (NLContext *)[super currentContext];
 }
 
-- (id)runEventTask:(void(^)(uv_loop_t *loop, void *req, bool async))task
-       withRequest:(void *)req andCallback:(JSValue *)cb {
++ (NLContext *)contextForEventRequest:(void *)req {
+    return (NLContext *)[(__bridge JSValue *)(((struct data *)(((uv_req_t *)req)->data))->callback) context];
+}
+
+- (JSValue *)runEventRequest:(void(^)(uv_loop_t *loop, void *req, bool async))task
+                      ofType:(uv_req_type)type withCallback:(JSValue *)cb {
+
+    uv_req_t *req = malloc(uv_req_size(type));
+
+    struct data *data = req->data = malloc(sizeof(struct data));
+    data->callback = (void *)CFBridgingRetain(cb);
 
     bool async = ![cb isUndefined];
-
-    struct data *data = ((uv_req_t *)req)->data = malloc(sizeof(struct data));
-    data->callback = (void *)CFBridgingRetain(cb);
 
     task(eventLoop, req, async);
 
@@ -90,6 +100,31 @@
     }
 
     return nil;
+
+}
+
+- (void)finishEventRequestWithData:(void *)data_ error:(JSValue *)errorArg value:(JSValue *)valueArg {
+
+    struct data *data = data_;
+
+    JSValue *cb = CFBridgingRelease(data->callback);
+
+    if (![cb isUndefined]) {
+
+        free(data);
+        [cb callWithArguments:@[errorArg, valueArg]];
+
+    } else if ([errorArg isNull]) {
+
+        data->error = nil;
+        data->value = (void *)CFBridgingRetain(valueArg);
+
+    } else {
+
+        data->error = (void *)CFBridgingRetain(errorArg);
+        data->value = nil;
+
+    }
 
 }
 

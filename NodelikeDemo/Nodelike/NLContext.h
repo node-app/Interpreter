@@ -10,16 +10,16 @@
 
 #import "uv.h"
 
-struct data {
-    void *callback, *error, *value;
-};
-
 @interface NLContext : JSContext
 
 + (NLContext *)currentContext;
 
-- (id)runEventTask:(void(^)(uv_loop_t *loop, void *req, bool async))task
-       withRequest:(void *)req andCallback:(JSValue *)cb;
++ (NLContext *)contextForEventRequest:(void *)req;
+
+- (JSValue *)runEventRequest:(void(^)(uv_loop_t *loop, void *req, bool async))task
+                      ofType:(uv_req_type)type withCallback:(JSValue *)cb;
+
+- (void)finishEventRequestWithData:(void *)data error:(JSValue *)errorArg value:(JSValue *)valueArg;
 
 - (id)throwNewErrorWithMessage:(NSString *)message;
 

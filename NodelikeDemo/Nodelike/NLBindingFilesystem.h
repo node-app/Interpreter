@@ -15,8 +15,8 @@
 
 @property JSValue *Stats;
 
-JSExportAs(open,  - (id)open:(NSString *)path flags:(NSNumber *)flags mode:(NSNumber *)mode callback:(JSValue *)cb);
-JSExportAs(close, - (id)close:(NSNumber *)file callback:(JSValue *)cb);
+JSExportAs(open,  - (JSValue *)open:(NSString *)path flags:(NSNumber *)flags mode:(NSNumber *)mode callback:(JSValue *)cb);
+JSExportAs(close, - (JSValue *)close:(NSNumber *)file callback:(JSValue *)cb);
 
 @end
 
