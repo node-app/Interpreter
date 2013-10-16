@@ -32,9 +32,7 @@
 }
 
 - (id)throwNewErrorWithMessage:(NSString *)message {
-    JSContext *context = [JSContext currentContext];
-    context.exception = [JSValue valueWithNewErrorFromMessage:message inContext:context];
-    return nil;
+    return [[NLContext currentContext] throwNewErrorWithMessage:message];
 }
 
 @end

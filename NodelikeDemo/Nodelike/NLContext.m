@@ -11,11 +11,19 @@
 #import "NLProcess.h"
 #import "NLRequire.h"
 
-@implementation NLContext
+@implementation NLContext {
+
+    dispatch_queue_t queue;
+
+}
 
 - (void)augment {
+    
+    _eventLoop = uv_default_loop();
+    
+    queue = dispatch_queue_create("eventLoop", DISPATCH_QUEUE_SERIAL);
 
-    self[@"global"]  = self.globalObject;
+    self[@"global"] = self.globalObject;
 
     self[@"process"] = [[NLProcess alloc] init];
 
@@ -35,6 +43,21 @@
     self = [super initWithVirtualMachine:virtualMachine];
     [self augment];
     return self;
+}
+
++ (NLContext *)currentContext {
+    return (NLContext *)[super currentContext];
+}
+
+- (void)runEventLoop {
+    dispatch_async(queue, ^{
+        uv_run(_eventLoop, UV_RUN_DEFAULT);
+    });
+}
+
+- (int)runEventTask:(int)result {
+    [self runEventLoop];
+    return result;
 }
 
 - (id)throwNewErrorWithMessage:(NSString *)message {

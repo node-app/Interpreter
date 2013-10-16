@@ -8,8 +8,6 @@
 
 #import "NLBindingFilesystem.h"
 
-#import "uv.h"
-
 @implementation NLBindingFilesystem
 
 - (id)init {
@@ -29,19 +27,29 @@
     return self;
 }
 
+static void after(uv_fs_t* req) {
+    NSLog(@"after %li", req->result);
+    JSValue *cb = CFBridgingRelease(req->data);
+    NSNumber *result = [NSNumber numberWithLong:req->result];
+    uv_fs_req_cleanup(req);
+    [cb callWithArguments:@[result]];
+}
+
 - (id)open:(NSString *)path withFlags:(NSNumber *)flags andMode:(NSNumber *)mode andCallback:(JSValue *)cb {
+    Boolean async = ![cb isUndefined];
     uv_fs_t *req = malloc(sizeof(uv_fs_t));
-    int error = uv_fs_open(uv_default_loop(), req,
-                           [path cStringUsingEncoding:NSUTF8StringEncoding],
-                           [flags intValue], [mode intValue], nil);
-    free(req);
-    NSLog(@"%@", cb);
-    if (![cb isUndefined]) {
-        [cb callWithArguments:@[[NSNumber numberWithInt:error]]];
+    req->data = (void *)CFBridgingRetain(cb);
+    NLContext *context = [NLContext currentContext];
+    int error = [context runEventTask:uv_fs_open(context.eventLoop, req,
+                                                 [path cStringUsingEncoding:NSUTF8StringEncoding],
+                                                 [flags intValue], [mode intValue], async ? after : nil)];
+    if (async) {
         return nil;
+    } else {
+        uv_fs_req_cleanup(req);
+        return [NSNumber numberWithInt:error];
     }
-    
-    return [NSNumber numberWithInt:error];
+
 }
 
 @end

@@ -7,44 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B54C1EB4180D36E00051F826 /* tree.h in Resources */ = {isa = PBXBuildFile; fileRef = B54C1E12180D36E00051F826 /* tree.h */; };
-		B54C1EB5180D36E00051F826 /* uv-bsd.h in Resources */ = {isa = PBXBuildFile; fileRef = B54C1E13180D36E00051F826 /* uv-bsd.h */; };
-		B54C1EB6180D36E00051F826 /* uv-darwin.h in Resources */ = {isa = PBXBuildFile; fileRef = B54C1E14180D36E00051F826 /* uv-darwin.h */; };
-		B54C1EB7180D36E00051F826 /* uv-errno.h in Resources */ = {isa = PBXBuildFile; fileRef = B54C1E15180D36E00051F826 /* uv-errno.h */; };
-		B54C1EB8180D36E00051F826 /* uv-linux.h in Resources */ = {isa = PBXBuildFile; fileRef = B54C1E16180D36E00051F826 /* uv-linux.h */; };
-		B54C1EB9180D36E00051F826 /* uv-sunos.h in Resources */ = {isa = PBXBuildFile; fileRef = B54C1E17180D36E00051F826 /* uv-sunos.h */; };
-		B54C1EBA180D36E00051F826 /* uv-unix.h in Resources */ = {isa = PBXBuildFile; fileRef = B54C1E18180D36E00051F826 /* uv-unix.h */; };
-		B54C1EBB180D36E00051F826 /* uv.h in Resources */ = {isa = PBXBuildFile; fileRef = B54C1E19180D36E00051F826 /* uv.h */; };
-		B54C1EBC180D36E00051F826 /* async.c in Resources */ = {isa = PBXBuildFile; fileRef = B54C1E1B180D36E00051F826 /* async.c */; };
-		B54C1EBD180D36E00051F826 /* core.c in Resources */ = {isa = PBXBuildFile; fileRef = B54C1E1C180D36E00051F826 /* core.c */; };
-		B54C1EBE180D36E00051F826 /* darwin-proctitle.c in Resources */ = {isa = PBXBuildFile; fileRef = B54C1E1D180D36E00051F826 /* darwin-proctitle.c */; };
-		B54C1EBF180D36E00051F826 /* darwin.c in Resources */ = {isa = PBXBuildFile; fileRef = B54C1E1E180D36E00051F826 /* darwin.c */; };
-		B54C1EC0180D36E00051F826 /* dl.c in Resources */ = {isa = PBXBuildFile; fileRef = B54C1E1F180D36E00051F826 /* dl.c */; };
-		B54C1EC1180D36E00051F826 /* fs.c in Resources */ = {isa = PBXBuildFile; fileRef = B54C1E20180D36E00051F826 /* fs.c */; };
-		B54C1EC2180D36E00051F826 /* fsevents.c in Resources */ = {isa = PBXBuildFile; fileRef = B54C1E21180D36E00051F826 /* fsevents.c */; };
-		B54C1EC3180D36E00051F826 /* getaddrinfo.c in Resources */ = {isa = PBXBuildFile; fileRef = B54C1E22180D36E00051F826 /* getaddrinfo.c */; };
-		B54C1EC4180D36E00051F826 /* internal.h in Resources */ = {isa = PBXBuildFile; fileRef = B54C1E23180D36E00051F826 /* internal.h */; };
-		B54C1EC5180D36E00051F826 /* kqueue.c in Resources */ = {isa = PBXBuildFile; fileRef = B54C1E24180D36E00051F826 /* kqueue.c */; };
-		B54C1EC6180D36E00051F826 /* loop-watcher.c in Resources */ = {isa = PBXBuildFile; fileRef = B54C1E25180D36E00051F826 /* loop-watcher.c */; };
-		B54C1EC7180D36E00051F826 /* loop.c in Resources */ = {isa = PBXBuildFile; fileRef = B54C1E26180D36E00051F826 /* loop.c */; };
-		B54C1EC8180D36E00051F826 /* pipe.c in Resources */ = {isa = PBXBuildFile; fileRef = B54C1E27180D36E00051F826 /* pipe.c */; };
-		B54C1EC9180D36E00051F826 /* poll.c in Resources */ = {isa = PBXBuildFile; fileRef = B54C1E28180D36E00051F826 /* poll.c */; };
-		B54C1ECA180D36E00051F826 /* process.c in Resources */ = {isa = PBXBuildFile; fileRef = B54C1E29180D36E00051F826 /* process.c */; };
-		B54C1ECB180D36E00051F826 /* proctitle.c in Resources */ = {isa = PBXBuildFile; fileRef = B54C1E2A180D36E00051F826 /* proctitle.c */; };
-		B54C1ECC180D36E00051F826 /* signal.c in Resources */ = {isa = PBXBuildFile; fileRef = B54C1E2B180D36E00051F826 /* signal.c */; };
-		B54C1ECD180D36E00051F826 /* stream.c in Resources */ = {isa = PBXBuildFile; fileRef = B54C1E2C180D36E00051F826 /* stream.c */; };
-		B54C1ECE180D36E00051F826 /* tcp.c in Resources */ = {isa = PBXBuildFile; fileRef = B54C1E2D180D36E00051F826 /* tcp.c */; };
-		B54C1ECF180D36E00051F826 /* thread.c in Resources */ = {isa = PBXBuildFile; fileRef = B54C1E2E180D36E00051F826 /* thread.c */; };
-		B54C1ED0180D36E00051F826 /* threadpool.c in Resources */ = {isa = PBXBuildFile; fileRef = B54C1E2F180D36E00051F826 /* threadpool.c */; };
-		B54C1ED1180D36E00051F826 /* timer.c in Resources */ = {isa = PBXBuildFile; fileRef = B54C1E30180D36E00051F826 /* timer.c */; };
-		B54C1ED2180D36E00051F826 /* tty.c in Resources */ = {isa = PBXBuildFile; fileRef = B54C1E31180D36E00051F826 /* tty.c */; };
-		B54C1ED3180D36E00051F826 /* udp.c in Resources */ = {isa = PBXBuildFile; fileRef = B54C1E32180D36E00051F826 /* udp.c */; };
-		B54C1ED4180D36E00051F826 /* fs-poll.c in Resources */ = {isa = PBXBuildFile; fileRef = B54C1E34180D36E00051F826 /* fs-poll.c */; };
-		B54C1ED5180D36E00051F826 /* inet.c in Resources */ = {isa = PBXBuildFile; fileRef = B54C1E35180D36E00051F826 /* inet.c */; };
-		B54C1ED6180D36E00051F826 /* queue.h in Resources */ = {isa = PBXBuildFile; fileRef = B54C1E36180D36E00051F826 /* queue.h */; };
-		B54C1ED7180D36E00051F826 /* uv-common.c in Resources */ = {isa = PBXBuildFile; fileRef = B54C1E37180D36E00051F826 /* uv-common.c */; };
-		B54C1ED8180D36E00051F826 /* uv-common.h in Resources */ = {isa = PBXBuildFile; fileRef = B54C1E38180D36E00051F826 /* uv-common.h */; };
-		B54C1ED9180D36E00051F826 /* version.c in Resources */ = {isa = PBXBuildFile; fileRef = B54C1E39180D36E00051F826 /* version.c */; };
 		B54C1F53180D37280051F826 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B44642180AB78E009ADEF9 /* Foundation.framework */; };
 		B54C1F74180D37440051F826 /* fs-poll.c in Sources */ = {isa = PBXBuildFile; fileRef = B54C1E34180D36E00051F826 /* fs-poll.c */; };
 		B54C1F75180D37440051F826 /* inet.c in Sources */ = {isa = PBXBuildFile; fileRef = B54C1E35180D36E00051F826 /* inet.c */; };
@@ -75,8 +37,8 @@
 		B54C1F91180D374C0051F826 /* udp.c in Sources */ = {isa = PBXBuildFile; fileRef = B54C1E32180D36E00051F826 /* udp.c */; };
 		B54C1F94180D37810051F826 /* libuv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B54C1F52180D37280051F826 /* libuv.a */; };
 		B54C1F96180D37C80051F826 /* libm.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B54C1F95180D37C80051F826 /* libm.dylib */; };
+		B54C1F97180D488D0051F826 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5B44654180AB78E009ADEF9 /* Main.storyboard */; };
 		B59EA08F180CB587005BF5C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B44642180AB78E009ADEF9 /* Foundation.framework */; };
-		B59EA094180CB587005BF5C1 /* Nodelike.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B59EA093180CB587005BF5C1 /* Nodelike.h */; };
 		B59EA0B1180CB62D005BF5C1 /* NLProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B4467A180AB800009ADEF9 /* NLProcess.m */; };
 		B59EA0B3180CB62D005BF5C1 /* NLRequire.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B446E0180AC689009ADEF9 /* NLRequire.m */; };
 		B59EA0B5180CB62D005BF5C1 /* NLContext.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B446E4180ACC27009ADEF9 /* NLContext.m */; };
@@ -110,7 +72,6 @@
 		B5B4464D180AB78E009ADEF9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5B4464B180AB78E009ADEF9 /* InfoPlist.strings */; };
 		B5B4464F180AB78E009ADEF9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B4464E180AB78E009ADEF9 /* main.m */; };
 		B5B44653180AB78E009ADEF9 /* NLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B44652180AB78E009ADEF9 /* NLAppDelegate.m */; };
-		B5B44656180AB78E009ADEF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5B44654180AB78E009ADEF9 /* Main.storyboard */; };
 		B5B44659180AB78E009ADEF9 /* NLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B44658180AB78E009ADEF9 /* NLViewController.m */; };
 		B5B4465B180AB78E009ADEF9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5B4465A180AB78E009ADEF9 /* Images.xcassets */; };
 /* End PBXBuildFile section */
@@ -131,28 +92,6 @@
 			remoteInfo = Nodelike;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		B54C1F50180D37280051F826 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B59EA08C180CB587005BF5C1 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-				B59EA094180CB587005BF5C1 /* Nodelike.h in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B537A604180C71FF00CEF23D /* _debugger.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = _debugger.js; sourceTree = "<group>"; };
@@ -538,7 +477,6 @@
 			buildPhases = (
 				B54C1F4E180D37280051F826 /* Sources */,
 				B54C1F4F180D37280051F826 /* Frameworks */,
-				B54C1F50180D37280051F826 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -555,7 +493,6 @@
 			buildPhases = (
 				B59EA08A180CB587005BF5C1 /* Sources */,
 				B59EA08B180CB587005BF5C1 /* Frameworks */,
-				B59EA08C180CB587005BF5C1 /* CopyFiles */,
 				B59EA0BE180CB677005BF5C1 /* Resources */,
 			);
 			buildRules = (
@@ -647,47 +584,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B54C1EC1180D36E00051F826 /* fs.c in Resources */,
-				B54C1ECF180D36E00051F826 /* thread.c in Resources */,
-				B54C1EBF180D36E00051F826 /* darwin.c in Resources */,
-				B54C1ED1180D36E00051F826 /* timer.c in Resources */,
-				B54C1ED6180D36E00051F826 /* queue.h in Resources */,
-				B54C1EBD180D36E00051F826 /* core.c in Resources */,
-				B54C1EC5180D36E00051F826 /* kqueue.c in Resources */,
-				B54C1EB9180D36E00051F826 /* uv-sunos.h in Resources */,
-				B54C1EC9180D36E00051F826 /* poll.c in Resources */,
-				B54C1EC3180D36E00051F826 /* getaddrinfo.c in Resources */,
-				B54C1ED8180D36E00051F826 /* uv-common.h in Resources */,
-				B54C1ECC180D36E00051F826 /* signal.c in Resources */,
-				B54C1ECD180D36E00051F826 /* stream.c in Resources */,
-				B54C1EBB180D36E00051F826 /* uv.h in Resources */,
-				B54C1EBE180D36E00051F826 /* darwin-proctitle.c in Resources */,
-				B54C1EC0180D36E00051F826 /* dl.c in Resources */,
-				B54C1ECB180D36E00051F826 /* proctitle.c in Resources */,
-				B54C1EB8180D36E00051F826 /* uv-linux.h in Resources */,
-				B54C1ED0180D36E00051F826 /* threadpool.c in Resources */,
-				B54C1EC4180D36E00051F826 /* internal.h in Resources */,
-				B54C1EB5180D36E00051F826 /* uv-bsd.h in Resources */,
-				B54C1EBA180D36E00051F826 /* uv-unix.h in Resources */,
-				B54C1EC8180D36E00051F826 /* pipe.c in Resources */,
-				B54C1ED7180D36E00051F826 /* uv-common.c in Resources */,
-				B54C1ECA180D36E00051F826 /* process.c in Resources */,
-				B54C1EB4180D36E00051F826 /* tree.h in Resources */,
-				B54C1ED5180D36E00051F826 /* inet.c in Resources */,
-				B54C1ED4180D36E00051F826 /* fs-poll.c in Resources */,
-				B54C1EC7180D36E00051F826 /* loop.c in Resources */,
-				B54C1ECE180D36E00051F826 /* tcp.c in Resources */,
-				B54C1EBC180D36E00051F826 /* async.c in Resources */,
-				B54C1ED9180D36E00051F826 /* version.c in Resources */,
+				B54C1F97180D488D0051F826 /* Main.storyboard in Resources */,
 				B5B4465B180AB78E009ADEF9 /* Images.xcassets in Resources */,
-				B54C1EB7180D36E00051F826 /* uv-errno.h in Resources */,
-				B54C1ED3180D36E00051F826 /* udp.c in Resources */,
 				B5B4464D180AB78E009ADEF9 /* InfoPlist.strings in Resources */,
-				B54C1ED2180D36E00051F826 /* tty.c in Resources */,
-				B54C1EB6180D36E00051F826 /* uv-darwin.h in Resources */,
-				B5B44656180AB78E009ADEF9 /* Main.storyboard in Resources */,
-				B54C1EC6180D36E00051F826 /* loop-watcher.c in Resources */,
-				B54C1EC2180D36E00051F826 /* fsevents.c in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

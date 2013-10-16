@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+#import "uv.h"
+
+#import "NLContext.h"
+
 @interface NLBinding : NSObject
 
 - (id)binding;

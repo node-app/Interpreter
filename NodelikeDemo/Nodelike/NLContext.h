@@ -8,7 +8,15 @@
 
 #import <JavaScriptCore/JavaScriptCore.h>
 
+#import "uv.h"
+
 @interface NLContext : JSContext
+
+@property (readonly) uv_loop_t *eventLoop;
+
++ (NLContext *)currentContext;
+
+- (int)runEventTask:(int)result;
 
 - (id)throwNewErrorWithMessage:(NSString *)message;
 
