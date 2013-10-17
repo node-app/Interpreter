@@ -9,7 +9,6 @@
 #import "NLContext.h"
 
 #import "NLProcess.h"
-#import "NLRequire.h"
 
 struct data {
     void *callback, *error, *value;
@@ -19,20 +18,9 @@ struct data {
 
     uv_loop_t *eventLoop;
     dispatch_queue_t dispatchQueue;
+
+    NSMutableDictionary *requireCache;
     
-}
-
-+ (uv_loop_t *)eventLoop {
-    return uv_default_loop();
-}
-
-+ (dispatch_queue_t)dispatchQueue {
-    static dispatch_queue_t queue = nil;
-    static dispatch_once_t token = 0;
-    dispatch_once(&token, ^{
-        queue = dispatch_queue_create("eventLoop", DISPATCH_QUEUE_SERIAL);
-    });
-    return queue;
 }
 
 - (void)augment {
@@ -40,12 +28,14 @@ struct data {
     eventLoop     = [NLContext eventLoop];
     dispatchQueue = [NLContext dispatchQueue];
 
+    requireCache  = [NLContext requireCache];
+
     self[@"global"] = self.globalObject;
 
     self[@"process"] = [[NLProcess alloc] init];
 
     self[@"require"] = ^(NSString *module) {
-        return [NLRequire require:module inContext:JSContext.currentContext];
+        return [[NLContext currentContext] requireModule:module];
     };
 
 }
@@ -64,6 +54,26 @@ struct data {
 
 + (NLContext *)currentContext {
     return (NLContext *)[super currentContext];
+}
+
+- (id)throwNewErrorWithMessage:(NSString *)message {
+    self.exception = [JSValue valueWithNewErrorFromMessage:message inContext:self];
+    return nil;
+}
+
+#pragma mark Event Handling
+
++ (uv_loop_t *)eventLoop {
+    return uv_default_loop();
+}
+
++ (dispatch_queue_t)dispatchQueue {
+    static dispatch_queue_t queue;
+    static dispatch_once_t token = 0;
+    dispatch_once(&token, ^{
+        queue = dispatch_queue_create("eventLoop", DISPATCH_QUEUE_SERIAL);
+    });
+    return queue;
 }
 
 + (NLContext *)contextForEventRequest:(void *)req {
@@ -139,9 +149,69 @@ struct data {
     
 }
 
-- (id)throwNewErrorWithMessage:(NSString *)message {
-    self.exception = [JSValue valueWithNewErrorFromMessage:message inContext:self];
-    return nil;
+#pragma mark Module Loading
+
++ (NSMutableDictionary *)requireCache {
+    static NSMutableDictionary *cache;
+    static dispatch_once_t token = 0;
+    dispatch_once(&token, ^{
+        cache = [[NSMutableDictionary alloc] init];
+    });
+    return cache;
+}
+
+- (JSContext *)createContextForModule:(NSString *)module {
+    
+    NLContext *moduleContext = [[NLContext alloc] initWithVirtualMachine:self.virtualMachine];
+    
+    moduleContext.exceptionHandler = ^(JSContext *context, JSValue *error) {
+        NSLog(@"%@: %@", module, error);
+    };
+    
+    JSValue *moduleExports = [JSValue valueWithNewObjectInContext:moduleContext];
+    JSValue *moduleModule  = [JSValue valueWithObject:[NSDictionary dictionaryWithObject:moduleExports forKey:@"exports"] inContext:moduleContext];
+    
+    moduleContext[@"exports"] = moduleExports;
+    moduleContext[@"module"]  = moduleModule;
+    
+    return moduleContext;
+    
+}
+
+- (JSValue *)requireModule:(NSString *)module {
+    
+    id cached = [requireCache objectForKey:module];
+    
+    if (cached != nil && [cached isKindOfClass:[JSValue class]]) {
+        return cached;
+    }
+    
+    JSContext *moduleContext;
+    
+    if (cached != nil && [cached isKindOfClass:[JSContext class]]) {
+        moduleContext = cached;
+    } else {
+        moduleContext = [self createContextForModule:module];
+        requireCache[module] = moduleContext;
+    }
+    
+    NSString* path = [[NSBundle mainBundle] pathForResource:module
+                                                     ofType:@"js"];
+    
+    NSString* content = [NSString stringWithContentsOfFile:path
+                                                  encoding:NSUTF8StringEncoding
+                                                     error:NULL];
+    
+    if (content != nil) {
+        [moduleContext evaluateScript:content];
+        JSValue *moduleValue = moduleContext[@"module"][@"exports"];
+        requireCache[module] = moduleValue;
+        return moduleValue;
+    } else {
+        NSString *error = [NSString stringWithFormat:@"Cannot find module '%@'", module];
+        return [self throwNewErrorWithMessage:error];
+    }
+    
 }
 
 @end

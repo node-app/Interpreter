@@ -89,7 +89,6 @@
 		B54C1FC8180F67520051F826 /* zlib.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A634180C71FF00CEF23D /* zlib.js */; };
 		B59EA08F180CB587005BF5C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B44642180AB78E009ADEF9 /* Foundation.framework */; };
 		B59EA0B1180CB62D005BF5C1 /* NLProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B4467A180AB800009ADEF9 /* NLProcess.m */; };
-		B59EA0B3180CB62D005BF5C1 /* NLRequire.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B446E0180AC689009ADEF9 /* NLRequire.m */; };
 		B59EA0B5180CB62D005BF5C1 /* NLContext.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B446E4180ACC27009ADEF9 /* NLContext.m */; };
 		B59EA0B7180CB62D005BF5C1 /* NLBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B44720180B29CD009ADEF9 /* NLBinding.m */; };
 		B59EA0B9180CB62D005BF5C1 /* NLBindingConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B44724180B2F34009ADEF9 /* NLBindingConstants.m */; };
@@ -253,8 +252,6 @@
 		B5B44661180AB78E009ADEF9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		B5B44679180AB800009ADEF9 /* NLProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLProcess.h; path = NodelikeDemo/Nodelike/NLProcess.h; sourceTree = SOURCE_ROOT; };
 		B5B4467A180AB800009ADEF9 /* NLProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLProcess.m; path = NodelikeDemo/Nodelike/NLProcess.m; sourceTree = SOURCE_ROOT; };
-		B5B446DF180AC689009ADEF9 /* NLRequire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLRequire.h; path = NodelikeDemo/Nodelike/NLRequire.h; sourceTree = SOURCE_ROOT; };
-		B5B446E0180AC689009ADEF9 /* NLRequire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLRequire.m; path = NodelikeDemo/Nodelike/NLRequire.m; sourceTree = SOURCE_ROOT; };
 		B5B446E3180ACC27009ADEF9 /* NLContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLContext.h; path = NodelikeDemo/Nodelike/NLContext.h; sourceTree = SOURCE_ROOT; };
 		B5B446E4180ACC27009ADEF9 /* NLContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLContext.m; path = NodelikeDemo/Nodelike/NLContext.m; sourceTree = SOURCE_ROOT; };
 		B5B4471C180B294F009ADEF9 /* NLBindingFilesystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLBindingFilesystem.h; path = NodelikeDemo/Nodelike/NLBindingFilesystem.h; sourceTree = SOURCE_ROOT; };
@@ -434,8 +431,6 @@
 				B537A603180C71FF00CEF23D /* lib */,
 				B5B44679180AB800009ADEF9 /* NLProcess.h */,
 				B5B4467A180AB800009ADEF9 /* NLProcess.m */,
-				B5B446DF180AC689009ADEF9 /* NLRequire.h */,
-				B5B446E0180AC689009ADEF9 /* NLRequire.m */,
 				B5B446E3180ACC27009ADEF9 /* NLContext.h */,
 				B5B446E4180ACC27009ADEF9 /* NLContext.m */,
 				B5B4471F180B29CD009ADEF9 /* NLBinding.h */,
@@ -730,7 +725,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B59EA0B1180CB62D005BF5C1 /* NLProcess.m in Sources */,
-				B59EA0B3180CB62D005BF5C1 /* NLRequire.m in Sources */,
 				B59EA0B5180CB62D005BF5C1 /* NLContext.m in Sources */,
 				B59EA0B7180CB62D005BF5C1 /* NLBinding.m in Sources */,
 				B59EA0B9180CB62D005BF5C1 /* NLBindingConstants.m in Sources */,
