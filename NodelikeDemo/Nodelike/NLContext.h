@@ -21,11 +21,11 @@
 
 + (void)finishEventRequest:(void *)req do:(void(^)(NLContext *context))task;
 
-- (JSValue *)errorForEventRequestError:(int)error;
+- (void)setErrorCode:(int)error forEventRequest:(void *)req;
 
-+ (void)setError:(JSValue *)error forEventRequest:(void *)req;
+- (void)setError:(JSValue *)error forEventRequest:(void *)req;
 
-+ (void)setValue:(JSValue *)value forEventRequest:(void *)req;
+- (void)setValue:(JSValue *)value forEventRequest:(void *)req;
 
 - (id)throwNewErrorWithMessage:(NSString *)message;
 

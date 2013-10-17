@@ -61,7 +61,7 @@ struct data {
     return nil;
 }
 
-#pragma mark Event Handling
+#pragma mark - Event Handling
 
 + (uv_loop_t *)eventLoop {
     return uv_default_loop();
@@ -150,22 +150,20 @@ struct data {
     
 }
 
-- (JSValue *)errorForEventRequestError:(int)error {
-    
-    NSString *msg = [NSString stringWithCString:uv_strerror(error) encoding:NSUTF8StringEncoding];;
-    return [JSValue valueWithNewErrorFromMessage:msg inContext:self];
-
+- (void)setErrorCode:(int)error forEventRequest:(void *)req {
+    NSString *msg = [NSString stringWithCString:uv_strerror(error) encoding:NSUTF8StringEncoding];
+    [self setError:[JSValue valueWithNewErrorFromMessage:msg inContext:self] forEventRequest:req];
 }
 
-+ (void)setError:(JSValue *)error forEventRequest:(void *)req {
+- (void)setError:(JSValue *)error forEventRequest:(void *)req {
     ((struct data *)(((uv_req_t *)req)->data))->error = (void *)CFBridgingRetain(error);
 }
 
-+ (void)setValue:(JSValue *)value forEventRequest:(void *)req {
+- (void)setValue:(JSValue *)value forEventRequest:(void *)req {
     ((struct data *)(((uv_req_t *)req)->data))->value = (void *)CFBridgingRetain(value);
 }
 
-#pragma mark Module Loading
+#pragma mark - Module Loading
 
 + (NSMutableDictionary *)requireCache {
     static NSMutableDictionary *cache;

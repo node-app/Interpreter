@@ -32,13 +32,13 @@ static void after(uv_fs_t* req) {
 
          if (req->result < 0) {
 
-             [NLContext setError:[context errorForEventRequestError:req->result] forEventRequest:req];
+             [context setErrorCode:req->result forEventRequest:req];
 
          } else {
 
              switch (req->result) {
                  case UV_FS_OPEN:
-                     [NLContext setValue:[JSValue valueWithInt32:req->result inContext:context] forEventRequest:req];
+                     [context setValue:[JSValue valueWithInt32:req->result inContext:context] forEventRequest:req];
                      break;
                  default: assert(0 && "Unhandled eio response");
              }
