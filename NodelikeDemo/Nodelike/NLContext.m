@@ -89,6 +89,8 @@ struct data {
 
     struct data *data = req->data = malloc(sizeof(struct data));
     data->callback = (void *)CFBridgingRetain(cb);
+    data->error = nil;
+    data->value = nil;
 
     bool async = ![cb isUndefined];
 
@@ -117,32 +119,31 @@ struct data {
 
 }
 
-+ (void)finishEventRequest:(void *)req do:(void (^)(NLContext *, JSValue **, JSValue **))task {
++ (void)finishEventRequest:(void *)req do:(void (^)(NLContext *))task {
 
     NLContext *context = [NLContext contextForEventRequest:req];
 
-    JSValue *errorArg = [JSValue valueWithNullInContext:context];
-    JSValue *valueArg = [JSValue valueWithUndefinedInContext:context];
-
     struct data *data = ((uv_req_t *)req)->data;
     
-    task(context, &errorArg, &valueArg);
+    task(context);
     
-    JSValue *cb = CFBridgingRelease(data->callback);
+    JSValue *cb    = CFBridgingRelease(data->callback);
+    JSValue *error = data->error != nil ? CFBridgingRelease(data->error) : [JSValue valueWithNullInContext:context];
+    JSValue *value = data->value != nil ? CFBridgingRelease(data->value) : [JSValue valueWithUndefinedInContext:context];
     
     if (![cb isUndefined]) {
         
         free(data);
-        [cb callWithArguments:@[errorArg, valueArg]];
+        [cb callWithArguments:@[error, value]];
         
-    } else if ([errorArg isNull]) {
+    } else if ([error isNull]) {
         
         data->error = nil;
-        data->value = (void *)CFBridgingRetain(valueArg);
+        data->value = (void *)CFBridgingRetain(value);
         
     } else {
         
-        data->error = (void *)CFBridgingRetain(errorArg);
+        data->error = (void *)CFBridgingRetain(error);
         data->value = nil;
         
     }
@@ -154,6 +155,14 @@ struct data {
     NSString *msg = [NSString stringWithCString:uv_strerror(error) encoding:NSUTF8StringEncoding];;
     return [JSValue valueWithNewErrorFromMessage:msg inContext:self];
 
+}
+
++ (void)setError:(JSValue *)error forEventRequest:(void *)req {
+    ((struct data *)(((uv_req_t *)req)->data))->error = (void *)CFBridgingRetain(error);
+}
+
++ (void)setValue:(JSValue *)value forEventRequest:(void *)req {
+    ((struct data *)(((uv_req_t *)req)->data))->value = (void *)CFBridgingRetain(value);
 }
 
 #pragma mark Module Loading

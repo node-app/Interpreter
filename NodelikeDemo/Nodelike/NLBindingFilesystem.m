@@ -28,17 +28,17 @@
 static void after(uv_fs_t* req) {
 
     [NLContext finishEventRequest:req do:
-     ^(NLContext *context, JSValue *__autoreleasing *errorArg, JSValue *__autoreleasing *valueArg) {
+     ^(NLContext *context) {
 
          if (req->result < 0) {
 
-             *errorArg = [context errorForEventRequestError:req->result];
+             [NLContext setError:[context errorForEventRequestError:req->result] forEventRequest:req];
 
          } else {
 
              switch (req->result) {
                  case UV_FS_OPEN:
-                     *valueArg = [JSValue valueWithInt32:req->result inContext:context];
+                     [NLContext setValue:[JSValue valueWithInt32:req->result inContext:context] forEventRequest:req];
                      break;
                  default: assert(0 && "Unhandled eio response");
              }
