@@ -27,39 +27,36 @@
 
 static void after(uv_fs_t* req) {
 
-    NLContext *context = [NLContext contextForEventRequest:req];
+    [NLContext finishEventRequest:req do:
+     ^(NLContext *context, JSValue *__autoreleasing *errorArg, JSValue *__autoreleasing *valueArg) {
 
-    JSValue *errorArg = [JSValue valueWithNullInContext:context];
-    JSValue *valueArg = [JSValue valueWithUndefinedInContext:context];
+         if (req->result < 0) {
 
-    if (req->result < 0) {
+             *errorArg = [JSValue valueWithNewErrorFromMessage:@"error" inContext:context];
 
-        errorArg = [JSValue valueWithNewErrorFromMessage:@"error" inContext:context];
+         } else {
 
-    } else {
+             switch (req->result) {
+                 case UV_FS_OPEN:
+                     *valueArg = [JSValue valueWithInt32:req->result inContext:context];
+                     break;
+                 default: assert(0 && "Unhandled eio response");
+             }
 
-        switch (req->result) {
-            case UV_FS_OPEN:
-                valueArg = [JSValue valueWithInt32:req->result inContext:context];
-                break;
-            default: assert(0 && "Unhandled eio response");
-        }
+         }
 
-    }
+         uv_fs_req_cleanup(req);
 
-    void *data = req->data;
-
-    uv_fs_req_cleanup(req);
-    
-    [context finishEventRequestWithData:data error:errorArg value:valueArg];
+     }];
 
 }
 
-#define CALL(fun, cb, ...)                                                                  \
-    [[NLContext currentContext] runEventRequest:^(uv_loop_t *loop, void *req, bool async) { \
-        uv_fs_ ## fun(loop, req, __VA_ARGS__, async ? after : nil);                         \
-        if (!async) after(req);                                                             \
-    } ofType:UV_FS withCallback:cb]
+#define CALL(fun, cb, ...)                                          \
+    [NLContext createEventRequestOfType:UV_FS withCallback:cb do:   \
+     ^(uv_loop_t *loop, void *req, bool async) {                    \
+        uv_fs_ ## fun(loop, req, __VA_ARGS__, async ? after : nil); \
+        if (!async) after(req);                                     \
+    }]
 
 - (JSValue *)open:(NSString *)path flags:(NSNumber *)flags mode:(NSNumber *)mode callback:(JSValue *)cb {
     return CALL(open, cb, [path cStringUsingEncoding:NSUTF8StringEncoding], [flags intValue], [mode intValue]);

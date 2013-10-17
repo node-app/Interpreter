@@ -16,10 +16,10 @@
 
 + (NLContext *)contextForEventRequest:(void *)req;
 
-- (JSValue *)runEventRequest:(void(^)(uv_loop_t *loop, void *req, bool async))task
-                      ofType:(uv_req_type)type withCallback:(JSValue *)cb;
++ (JSValue *)createEventRequestOfType:(uv_req_type)type withCallback:(JSValue *)cb
+                                   do:(void(^)(uv_loop_t *loop, void *req, bool async))task;
 
-- (void)finishEventRequestWithData:(void *)data error:(JSValue *)errorArg value:(JSValue *)valueArg;
++ (void)finishEventRequest:(void *)req do:(void(^)(NLContext *context, JSValue **errorArg, JSValue **valueArg))task;
 
 - (id)throwNewErrorWithMessage:(NSString *)message;
 

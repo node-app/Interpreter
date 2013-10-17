@@ -16,8 +16,10 @@ struct data {
 };
 
 @implementation NLContext {
+
     uv_loop_t *eventLoop;
     dispatch_queue_t dispatchQueue;
+    
 }
 
 + (uv_loop_t *)eventLoop {
@@ -68,8 +70,10 @@ struct data {
     return (NLContext *)[(__bridge JSValue *)(((struct data *)(((uv_req_t *)req)->data))->callback) context];
 }
 
-- (JSValue *)runEventRequest:(void(^)(uv_loop_t *loop, void *req, bool async))task
-                      ofType:(uv_req_type)type withCallback:(JSValue *)cb {
++ (JSValue *)createEventRequestOfType:(uv_req_type)type withCallback:(JSValue *)cb
+                                   do:(void(^)(uv_loop_t *, void *, bool))task {
+    
+    NLContext *context = [NLContext currentContext];
 
     uv_req_t *req = malloc(uv_req_size(type));
 
@@ -78,10 +82,10 @@ struct data {
 
     bool async = ![cb isUndefined];
 
-    task(eventLoop, req, async);
+    task(context->eventLoop, req, async);
 
-    dispatch_async(dispatchQueue, ^{
-        uv_run(eventLoop, UV_RUN_DEFAULT);
+    dispatch_async(context->dispatchQueue, ^{
+        uv_run(context->eventLoop, UV_RUN_DEFAULT);
     });
 
     if (!async) {
@@ -94,7 +98,7 @@ struct data {
         if (error == nil) {
             return value;
         } else {
-            self.exception = error;
+            context.exception = error;
         }
 
     }
@@ -103,29 +107,36 @@ struct data {
 
 }
 
-- (void)finishEventRequestWithData:(void *)data_ error:(JSValue *)errorArg value:(JSValue *)valueArg {
++ (void)finishEventRequest:(void *)req do:(void (^)(NLContext *, JSValue **, JSValue **))task {
 
-    struct data *data = data_;
+    NLContext *context = [NLContext contextForEventRequest:req];
 
+    JSValue *errorArg = [JSValue valueWithNullInContext:context];
+    JSValue *valueArg = [JSValue valueWithUndefinedInContext:context];
+
+    struct data *data = ((uv_req_t *)req)->data;
+    
+    task(context, &errorArg, &valueArg);
+    
     JSValue *cb = CFBridgingRelease(data->callback);
-
+    
     if (![cb isUndefined]) {
-
+        
         free(data);
         [cb callWithArguments:@[errorArg, valueArg]];
-
+        
     } else if ([errorArg isNull]) {
-
+        
         data->error = nil;
         data->value = (void *)CFBridgingRetain(valueArg);
-
+        
     } else {
-
+        
         data->error = (void *)CFBridgingRetain(errorArg);
         data->value = nil;
-
+        
     }
-
+    
 }
 
 - (id)throwNewErrorWithMessage:(NSString *)message {
