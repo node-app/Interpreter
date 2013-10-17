@@ -32,7 +32,7 @@ static void after(uv_fs_t* req) {
 
          if (req->result < 0) {
 
-             *errorArg = [JSValue valueWithNewErrorFromMessage:@"error" inContext:context];
+             *errorArg = [context errorForEventRequestError:req->result];
 
          } else {
 

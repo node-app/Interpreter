@@ -30,7 +30,7 @@ struct data {
 
     requireCache  = [NLContext requireCache];
 
-    self[@"global"] = self.globalObject;
+    self[@"global"]  = self.globalObject;
 
     self[@"process"] = [[NLProcess alloc] init];
 
@@ -147,6 +147,13 @@ struct data {
         
     }
     
+}
+
+- (JSValue *)errorForEventRequestError:(int)error {
+    
+    NSString *msg = [NSString stringWithCString:uv_strerror(error) encoding:NSUTF8StringEncoding];;
+    return [JSValue valueWithNewErrorFromMessage:msg inContext:self];
+
 }
 
 #pragma mark Module Loading

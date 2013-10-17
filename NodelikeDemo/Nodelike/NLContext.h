@@ -21,6 +21,8 @@
 
 + (void)finishEventRequest:(void *)req do:(void(^)(NLContext *context, JSValue **errorArg, JSValue **valueArg))task;
 
+- (JSValue *)errorForEventRequestError:(int)error;
+
 - (id)throwNewErrorWithMessage:(NSString *)message;
 
 @end
