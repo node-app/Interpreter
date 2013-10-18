@@ -33,11 +33,7 @@
 }
 
 - (id)binding {
-    return nil;
-}
-
-- (id)throwNewErrorWithMessage:(NSString *)message {
-    return [[NLContext currentContext] throwNewErrorWithMessage:message];
+    return self;
 }
 
 @end

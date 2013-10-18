@@ -27,6 +27,4 @@
 
 - (void)setValue:(JSValue *)value forEventRequest:(void *)req;
 
-- (id)throwNewErrorWithMessage:(NSString *)message;
-
 @end

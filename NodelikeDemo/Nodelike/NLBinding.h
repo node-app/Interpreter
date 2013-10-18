@@ -18,6 +18,4 @@
 
 - (id)binding;
 
-- (id)throwNewErrorWithMessage:(NSString *)message;
-
 @end

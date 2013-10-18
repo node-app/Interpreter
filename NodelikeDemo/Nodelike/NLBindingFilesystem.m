@@ -21,10 +21,6 @@
 
 }
 
-- (id)binding {
-    return self;
-}
-
 static void after(uv_fs_t* req) {
 
     [NLContext finishEventRequest:req do:

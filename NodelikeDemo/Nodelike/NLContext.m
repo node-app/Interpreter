@@ -23,22 +23,7 @@ struct data {
     
 }
 
-- (void)augment {
-
-    eventLoop     = [NLContext eventLoop];
-    dispatchQueue = [NLContext dispatchQueue];
-
-    requireCache  = [NLContext requireCache];
-
-    self[@"global"]  = self.globalObject;
-
-    self[@"process"] = [[NLProcess alloc] init];
-
-    self[@"require"] = ^(NSString *module) {
-        return [[NLContext currentContext] requireModule:module];
-    };
-
-}
+#pragma mark - JSContext
 
 - (id)init {
     self = [super init];
@@ -56,9 +41,23 @@ struct data {
     return (NLContext *)[super currentContext];
 }
 
-- (id)throwNewErrorWithMessage:(NSString *)message {
-    self.exception = [JSValue valueWithNewErrorFromMessage:message inContext:self];
-    return nil;
+#pragma mark - Scope Setup
+
+- (void)augment {
+
+    eventLoop     = [NLContext eventLoop];
+    dispatchQueue = [NLContext dispatchQueue];
+
+    requireCache  = [NLContext requireCache];
+
+    self[@"global"]  = self.globalObject;
+
+    self[@"process"] = [[NLProcess alloc] init];
+
+    self[@"require"] = ^(NSString *module) {
+        return [[NLContext currentContext] requireModule:module];
+    };
+
 }
 
 #pragma mark - Event Handling
@@ -223,7 +222,8 @@ struct data {
         return moduleValue;
     } else {
         NSString *error = [NSString stringWithFormat:@"Cannot find module '%@'", module];
-        return [self throwNewErrorWithMessage:error];
+        self.exception = [JSValue valueWithNewErrorFromMessage:error inContext:self];
+        return nil;
     }
     
 }
