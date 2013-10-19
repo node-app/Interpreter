@@ -10,6 +10,8 @@
 
 #import "NLBindingFilesystem.h"
 #import "NLBindingConstants.h"
+#import "NLBindingSmalloc.h"
+#import "NLBindingBuffer.h"
 
 @implementation NLBinding
 
@@ -18,7 +20,9 @@
     static dispatch_once_t token = 0;
     dispatch_once(&token, ^{
         bindings = @{@"fs":        [NLBindingFilesystem class],
-                     @"constants": [NLBindingConstants  class]};
+                     @"constants": [NLBindingConstants  class],
+                     @"smalloc":   [NLBindingSmalloc    class],
+                     @"buffer":    [NLBindingBuffer     class]};
     });
     return bindings;
 }
