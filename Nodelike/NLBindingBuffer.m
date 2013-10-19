@@ -16,6 +16,11 @@
 }
     
 - (void)setupBufferJS:(JSValue *)target internal:(JSValue *)internal {
+
+    internal[@"byteLength"] = ^(NSString *string) {
+        return [string lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
+    };
+    
 }
 
 @end
