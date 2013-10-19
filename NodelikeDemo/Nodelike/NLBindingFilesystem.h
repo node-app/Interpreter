@@ -15,6 +15,8 @@
 JSExportAs(open,  - (JSValue *)open:(NSString *)path flags:(NSNumber *)flags mode:(NSNumber *)mode callback:(JSValue *)cb);
 JSExportAs(close, - (JSValue *)close:(NSNumber *)file callback:(JSValue *)cb);
 
+JSExportAs(readdir, - (JSValue *)readDir:(NSString *)path callback:(JSValue *)cb);
+
 @end
 
 @interface NLBindingFilesystem : NLBinding <NLBindingFilesystemExports>

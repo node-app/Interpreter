@@ -21,6 +21,21 @@
 
 }
 
+static void after_fs_open(uv_fs_t *req, NLContext *context) {
+    [context setValue:[JSValue valueWithInt32:req->result inContext:context] forEventRequest:req];
+}
+
+static void after_fs_readdir(uv_fs_t *req, NLContext *context) {
+    char *namebuf = req->ptr;
+    int i, nnames = req->result;
+    JSValue *names = [JSValue valueWithNewArrayInContext:context];
+    for (i = 0; i < nnames; i++) {
+        names[i] = [NSString stringWithUTF8String:namebuf];
+        namebuf += strlen(namebuf) + 1;
+    }
+    [context setValue:names forEventRequest:req];
+}
+
 static void after(uv_fs_t* req) {
 
     [NLContext finishEventRequest:req do:
@@ -32,9 +47,12 @@ static void after(uv_fs_t* req) {
 
          } else {
 
-             switch (req->result) {
+             switch (req->fs_type) {
                  case UV_FS_OPEN:
-                     [context setValue:[JSValue valueWithInt32:req->result inContext:context] forEventRequest:req];
+                     after_fs_open(req, context);
+                     break;
+                 case UV_FS_READDIR:
+                     after_fs_readdir(req, context);
                      break;
                  default: assert(0 && "Unhandled eio response");
              }
@@ -60,6 +78,10 @@ static void after(uv_fs_t* req) {
 
 - (JSValue *)close:(NSNumber *)file callback:(JSValue *)cb {
     return CALL(close, cb, [file intValue]);
+}
+
+- (JSValue *)readDir:(NSString *)path callback:(JSValue *)cb {
+    return CALL(readdir, cb, [path cStringUsingEncoding:NSUTF8StringEncoding], 0);
 }
 
 @end
