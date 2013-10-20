@@ -15,6 +15,15 @@
 
 @implementation NLBinding
 
++ (NSCache *)bindingCache {
+    static NSCache *cache = nil;
+    static dispatch_once_t token = 0;
+    dispatch_once(&token, ^{
+        cache = [[NSCache alloc] init];
+    });
+    return cache;
+}
+
 + (NSDictionary *)bindings {
     static NSDictionary *bindings = nil;
     static dispatch_once_t token = 0;
@@ -28,9 +37,16 @@
 }
 
 + (id)bindingForIdentifier:(NSString *)identifier {
+    NSCache *cache = [NLBinding bindingCache];
+    id binding = [cache objectForKey:identifier];
+    if (binding != nil) {
+        return binding;
+    }
     Class cls = [NLBinding bindings][identifier];
     if (cls) {
-        return [[[cls alloc] init] binding];
+        binding = [[[cls alloc] init] binding];
+        [cache setObject:binding forKey:identifier];
+        return binding;
     } else {
         return nil;
     }
