@@ -11,7 +11,7 @@
 #import "NLProcess.h"
 
 struct data {
-    void *callback, *error, *value;
+    void *callback, *error, *value, *after;
 };
 
 @implementation NLContext {
@@ -80,7 +80,8 @@ struct data {
 }
 
 + (JSValue *)createEventRequestOfType:(uv_req_type)type withCallback:(JSValue *)cb
-                                   do:(void(^)(uv_loop_t *, void *, bool))task {
+                                   do:(void(^)(uv_loop_t *, void *, bool))task
+                                 then:(void(^)(void *, NLContext *))after {
     
     NLContext *context = [NLContext currentContext];
 
@@ -90,6 +91,7 @@ struct data {
     data->callback = (void *)CFBridgingRetain(cb);
     data->error = nil;
     data->value = nil;
+    data->after = (void *)CFBridgingRetain(after);
 
     bool async = ![cb isUndefined];
 
@@ -123,7 +125,7 @@ struct data {
     NLContext *context = [NLContext contextForEventRequest:req];
 
     struct data *data = ((uv_req_t *)req)->data;
-    
+
     task(context);
     
     JSValue *cb    = CFBridgingRelease(data->callback);
@@ -147,6 +149,11 @@ struct data {
         
     }
     
+}
+
+- (void)callSuccessfulEventRequest:(void *)req {
+    struct data *data = ((uv_req_t *)req)->data;
+    ((void (^)(void*, NLContext *))CFBridgingRelease(data->after))(req, self);
 }
 
 - (void)setErrorCode:(int)error forEventRequest:(void *)req {
