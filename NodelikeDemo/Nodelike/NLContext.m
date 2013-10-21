@@ -57,6 +57,10 @@ struct data {
     self[@"require"] = ^(NSString *module) {
         return [[NLContext currentContext] requireModule:module];
     };
+    
+    self[@"log"] = ^(id msg) {
+        NSLog(@"%@", msg);
+    };
 
 }
 

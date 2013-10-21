@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B5061A33181595EB0083AB4B /* index.js in Sources */ = {isa = PBXBuildFile; fileRef = B5061A32181595EB0083AB4B /* index.js */; };
+		B5061A34181595FD0083AB4B /* index.js in Resources */ = {isa = PBXBuildFile; fileRef = B5061A32181595EB0083AB4B /* index.js */; };
+		B5061A37181597FE0083AB4B /* NLBindingTimerWrap.m in Sources */ = {isa = PBXBuildFile; fileRef = B5061A36181597FE0083AB4B /* NLBindingTimerWrap.m */; };
+		B5061A3A1815A9B00083AB4B /* NLBindingCaresWrap.m in Sources */ = {isa = PBXBuildFile; fileRef = B5061A391815A9B00083AB4B /* NLBindingCaresWrap.m */; };
 		B54C1F53180D37280051F826 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B44642180AB78E009ADEF9 /* Foundation.framework */; };
 		B54C1F74180D37440051F826 /* fs-poll.c in Sources */ = {isa = PBXBuildFile; fileRef = B54C1E34180D36E00051F826 /* fs-poll.c */; };
 		B54C1F75180D37440051F826 /* inet.c in Sources */ = {isa = PBXBuildFile; fileRef = B54C1E35180D36E00051F826 /* inet.c */; };
@@ -144,6 +148,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B5061A32181595EB0083AB4B /* index.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = index.js; sourceTree = "<group>"; };
+		B5061A35181597FE0083AB4B /* NLBindingTimerWrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLBindingTimerWrap.h; sourceTree = "<group>"; };
+		B5061A36181597FE0083AB4B /* NLBindingTimerWrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLBindingTimerWrap.m; sourceTree = "<group>"; };
+		B5061A381815A9B00083AB4B /* NLBindingCaresWrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLBindingCaresWrap.h; sourceTree = "<group>"; };
+		B5061A391815A9B00083AB4B /* NLBindingCaresWrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLBindingCaresWrap.m; sourceTree = "<group>"; };
 		B537A604180C71FF00CEF23D /* _debugger.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = _debugger.js; sourceTree = "<group>"; };
 		B537A605180C71FF00CEF23D /* _http_agent.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = _http_agent.js; sourceTree = "<group>"; };
 		B537A606180C71FF00CEF23D /* _http_client.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = _http_client.js; sourceTree = "<group>"; };
@@ -449,6 +458,10 @@
 				B5C5B248181319550091FDE8 /* NLBindingSmalloc.m */,
 				B5C5B24A181321300091FDE8 /* NLBindingBuffer.h */,
 				B5C5B24B181321300091FDE8 /* NLBindingBuffer.m */,
+				B5061A35181597FE0083AB4B /* NLBindingTimerWrap.h */,
+				B5061A36181597FE0083AB4B /* NLBindingTimerWrap.m */,
+				B5061A381815A9B00083AB4B /* NLBindingCaresWrap.h */,
+				B5061A391815A9B00083AB4B /* NLBindingCaresWrap.m */,
 				B59EA093180CB587005BF5C1 /* Nodelike.h */,
 				B59EA091180CB587005BF5C1 /* Supporting Files */,
 			);
@@ -502,6 +515,7 @@
 			children = (
 				B5B44651180AB78E009ADEF9 /* NLAppDelegate.h */,
 				B5B44652180AB78E009ADEF9 /* NLAppDelegate.m */,
+				B5061A32181595EB0083AB4B /* index.js */,
 				B5B44654180AB78E009ADEF9 /* Main.storyboard */,
 				B5B44657180AB78E009ADEF9 /* NLViewController.h */,
 				B5B44658180AB78E009ADEF9 /* NLViewController.m */,
@@ -687,6 +701,7 @@
 				B54C1FC6180F67520051F826 /* util.js in Resources */,
 				B54C1FC7180F67520051F826 /* vm.js in Resources */,
 				B54C1FC8180F67520051F826 /* zlib.js in Resources */,
+				B5061A34181595FD0083AB4B /* index.js in Resources */,
 				B54C1F97180D488D0051F826 /* Main.storyboard in Resources */,
 				B5B4465B180AB78E009ADEF9 /* Images.xcassets in Resources */,
 				B5B4464D180AB78E009ADEF9 /* InfoPlist.strings in Resources */,
@@ -738,9 +753,11 @@
 				B59EA0B5180CB62D005BF5C1 /* NLContext.m in Sources */,
 				B59EA0B7180CB62D005BF5C1 /* NLBinding.m in Sources */,
 				B5C5B249181319550091FDE8 /* NLBindingSmalloc.m in Sources */,
+				B5061A3A1815A9B00083AB4B /* NLBindingCaresWrap.m in Sources */,
 				B59EA0B9180CB62D005BF5C1 /* NLBindingConstants.m in Sources */,
 				B5C5B24C181321300091FDE8 /* NLBindingBuffer.m in Sources */,
 				B59EA0BB180CB62D005BF5C1 /* NLBindingFilesystem.m in Sources */,
+				B5061A37181597FE0083AB4B /* NLBindingTimerWrap.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -751,6 +768,7 @@
 				B5B44659180AB78E009ADEF9 /* NLViewController.m in Sources */,
 				B5B44653180AB78E009ADEF9 /* NLAppDelegate.m in Sources */,
 				B5B4464F180AB78E009ADEF9 /* main.m in Sources */,
+				B5061A33181595EB0083AB4B /* index.js in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

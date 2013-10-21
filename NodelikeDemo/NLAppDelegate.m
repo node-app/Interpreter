@@ -24,6 +24,7 @@
 }
 
 - (NSString *)execute:(NSString *)cmd {
+    [context requireModule:@"index"];
     [context evaluateScript:cmd];
     return [context[@"_"] toString];
 }

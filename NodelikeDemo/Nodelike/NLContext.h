@@ -30,4 +30,6 @@
 
 - (void)setValue:(JSValue *)value forEventRequest:(void *)req;
 
+- (JSValue *)requireModule:(NSString *)module;
+
 @end
