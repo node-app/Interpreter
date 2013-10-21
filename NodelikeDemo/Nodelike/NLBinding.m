@@ -12,6 +12,8 @@
 #import "NLBindingConstants.h"
 #import "NLBindingSmalloc.h"
 #import "NLBindingBuffer.h"
+#import "NLBindingTimerWrap.h"
+#import "NLBindingCaresWrap.h"
 
 @implementation NLBinding
 
@@ -28,10 +30,12 @@
     static NSDictionary *bindings = nil;
     static dispatch_once_t token = 0;
     dispatch_once(&token, ^{
-        bindings = @{@"fs":        [NLBindingFilesystem class],
-                     @"constants": [NLBindingConstants  class],
-                     @"smalloc":   [NLBindingSmalloc    class],
-                     @"buffer":    [NLBindingBuffer     class]};
+        bindings = @{@"fs":         [NLBindingFilesystem class],
+                     @"constants":  [NLBindingConstants  class],
+                     @"smalloc":    [NLBindingSmalloc    class],
+                     @"buffer":     [NLBindingBuffer     class],
+                     @"timer_wrap": [NLBindingTimerWrap  class],
+                     @"cares_wrap": [NLBindingCaresWrap  class]};
     });
     return bindings;
 }
