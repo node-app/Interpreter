@@ -10,4 +10,7 @@
 
 @interface NLBindingBuffer : NLBinding
 
++ (NSNumber *)writeString:(NSString *)str toBuffer:(JSValue *)target atOffset:(JSValue *)off withLength:(JSValue *)len;
++ (NSNumber *)writeData:(NSData *)data toBuffer:(JSValue *)target atOffset:(JSValue *)off withLength:(JSValue *)len;
+
 @end

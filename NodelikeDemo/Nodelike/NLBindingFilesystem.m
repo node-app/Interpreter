@@ -8,6 +8,8 @@
 
 #import "NLBindingFilesystem.h"
 
+#import "NLBindingBuffer.h"
+
 @implementation NLBindingFilesystem
 
 - (id)init {
@@ -52,6 +54,20 @@ static void after(uv_fs_t* req) {
     return [CALL(close, cb, [file intValue]) ^(void *req_, NLContext *context) {
         
     }];
+}
+
+- (JSValue *)read:(NSNumber *)file to:(JSValue *)target offset:(JSValue *)off length:(JSValue *)len pos:(JSValue *)pos callback:(JSValue *)cb {
+    unsigned int buffer_length = [target[@"length"] toUInt32];
+    unsigned int length   = [off isUndefined] ? buffer_length : [off toUInt32];
+    unsigned int position = [pos isUndefined] ?             0 : [pos toUInt32];
+    return [CALL(read, cb, [file intValue], malloc(length), length, position)
+            ^(void *req_, NLContext *context) {
+                uv_fs_t *req = req_;
+                NSData *data = [NSData dataWithBytesNoCopy:req->buf length:length freeWhenDone:YES];
+                [NLBindingBuffer writeData:data toBuffer:target atOffset:off withLength:len];
+                [context setValue:[JSValue valueWithInt32:req->result inContext:context] forEventRequest:req];
+            }];
+
 }
 
 - (JSValue *)readDir:(NSString *)path callback:(JSValue *)cb {
