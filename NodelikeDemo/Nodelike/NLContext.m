@@ -157,7 +157,9 @@ struct data {
 
 - (void)callSuccessfulEventRequest:(void *)req {
     struct data *data = ((uv_req_t *)req)->data;
-    ((void (^)(void*, NLContext *))CFBridgingRelease(data->after))(req, self);
+    if (data->after != nil) {
+        ((void (^)(void*, NLContext *))CFBridgingRelease(data->after))(req, self);
+    }
 }
 
 - (void)setErrorCode:(int)error forEventRequest:(void *)req {

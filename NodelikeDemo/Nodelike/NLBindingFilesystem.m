@@ -51,7 +51,7 @@ static void after(uv_fs_t* req) {
 }
 
 - (JSValue *)close:(NSNumber *)file callback:(JSValue *)cb {
-    return [CALL(close, cb, [file intValue]) ^(void *req_, NLContext *context) {}];
+    return [CALL(close, cb, [file intValue]) nil];
 }
 
 - (JSValue *)read:(NSNumber *)file to:(JSValue *)target offset:(JSValue *)off length:(JSValue *)len pos:(JSValue *)pos callback:(JSValue *)cb {
@@ -84,30 +84,30 @@ static void after(uv_fs_t* req) {
 }
 
 - (JSValue *)fdatasync:(NSNumber *)file callback:(JSValue *)cb {
-    return [CALL(fdatasync, cb, [file intValue]) ^(void *req_, NLContext *context) {}];
+    return [CALL(fdatasync, cb, [file intValue]) nil];
 }
 
 - (JSValue *)fsync:(NSNumber *)file callback:(JSValue *)cb {
-    return [CALL(fsync, cb, [file intValue]) ^(void *req_, NLContext *context) {}];
+    return [CALL(fsync, cb, [file intValue]) nil];
 }
 
 - (JSValue *)rename:(NSString *)oldpath to:(NSString *)newpath callback:(JSValue *)cb {
     const char *old = [oldpath cStringUsingEncoding:NSUTF8StringEncoding];
     const char *new = [newpath cStringUsingEncoding:NSUTF8StringEncoding];
-    return [CALL(rename, cb, old, new) ^(void *req_, NLContext *context) {}];
+    return [CALL(rename, cb, old, new) nil];
 }
 
 - (JSValue *)ftruncate:(NSNumber *)file length:(NSNumber *)len callback:(JSValue *)cb {
-    return [CALL(ftruncate, cb, [file intValue], [len intValue]) ^(void *req_, NLContext *context) {}];
+    return [CALL(ftruncate, cb, [file intValue], [len intValue]) nil];
 }
 
 - (JSValue *)rmdir:(NSString *)path callback:(JSValue *)cb {
-    return [CALL(rmdir, cb, [path cStringUsingEncoding:NSUTF8StringEncoding]) ^(void *req, NLContext *context) {}];
+    return [CALL(rmdir, cb, [path cStringUsingEncoding:NSUTF8StringEncoding]) nil];
 }
 
 - (JSValue *)mkdir:(NSString *)path mode:(NSNumber *)mode callback:(JSValue *)cb {
     const char *pathstr = [path cStringUsingEncoding:NSUTF8StringEncoding];
-    return [CALL(mkdir, cb, pathstr, [mode intValue]) ^(void *req_, NLContext *context) {}];
+    return [CALL(mkdir, cb, pathstr, [mode intValue]) nil];
 }
 
 @end
