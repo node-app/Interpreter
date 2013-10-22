@@ -101,4 +101,8 @@ static void after(uv_fs_t* req) {
     return [CALL(ftruncate, cb, [file intValue], [len intValue]) ^(void *req_, NLContext *context) {}];
 }
 
+- (JSValue *)rmdir:(NSString *)path callback:(JSValue *)cb {
+    return [CALL(rmdir, cb, [path cStringUsingEncoding:NSUTF8StringEncoding]) ^(void *req, NLContext *context) {}];
+}
+
 @end
