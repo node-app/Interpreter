@@ -28,7 +28,8 @@ JSExportAs(rmdir, - (JSValue *)rmdir:(NSString *)path callback:(JSValue *)cb);
 
 JSExportAs(mkdir, - (JSValue *)mkdir:(NSString *)path mode:(NSNumber *)mode callback:(JSValue *)cb);
 
-JSExportAs(link, - (JSValue *)link:(NSString *)dstpath from:(NSString *)srcpath callback:(JSValue *)cb);
+JSExportAs(link,    - (JSValue *)link:   (NSString *)dstpath from:(NSString *)srcpath                       callback:(JSValue *)cb);
+JSExportAs(symlink, - (JSValue *)symlink:(NSString *)dstpath from:(NSString *)srcpath mode:(NSString *)mode callback:(JSValue *)cb);
 
 @end
 

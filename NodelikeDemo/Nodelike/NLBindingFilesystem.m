@@ -116,4 +116,11 @@ static void after(uv_fs_t* req) {
     return [CALL(link, cb, dst, src) nil];
 }
 
+- (JSValue *)symlink:(NSString *)dstpath from:(NSString *)srcpath mode:(NSString *)mode callback:(JSValue *)cb {
+    const char *dst = [dstpath cStringUsingEncoding:NSUTF8StringEncoding];
+    const char *src = [srcpath cStringUsingEncoding:NSUTF8StringEncoding];
+    // we ignore the mode argument because it is only effective on windows platforms
+    return [CALL(symlink, cb, dst, src, 0 /*flags*/) nil];
+}
+
 @end
