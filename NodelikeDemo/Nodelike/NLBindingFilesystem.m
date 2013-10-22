@@ -43,7 +43,7 @@ static void after(uv_fs_t* req) {
     } then:
 
 - (JSValue *)open:(NSString *)path flags:(NSNumber *)flags mode:(NSNumber *)mode callback:(JSValue *)cb {
-    return [CALL(open, cb, [path cStringUsingEncoding:NSUTF8StringEncoding], [flags intValue], [mode intValue])
+    return [CALL(open, cb, strdup([path UTF8String]), [flags intValue], [mode intValue])
             ^(void *req_, NLContext *context) {
                 uv_fs_t *req = req_;
                 [context setValue:[JSValue valueWithInt32:req->result inContext:context] forEventRequest:req];
@@ -69,7 +69,7 @@ static void after(uv_fs_t* req) {
 }
 
 - (JSValue *)readDir:(NSString *)path callback:(JSValue *)cb {
-    return [CALL(readdir, cb, [path cStringUsingEncoding:NSUTF8StringEncoding], 0)
+    return [CALL(readdir, cb, strdup([path UTF8String]), 0)
             ^(void *req_, NLContext *context) {
                 uv_fs_t *req = req_;
                 char *namebuf = req->ptr;
@@ -92,9 +92,7 @@ static void after(uv_fs_t* req) {
 }
 
 - (JSValue *)rename:(NSString *)oldpath to:(NSString *)newpath callback:(JSValue *)cb {
-    const char *old = [oldpath cStringUsingEncoding:NSUTF8StringEncoding];
-    const char *new = [newpath cStringUsingEncoding:NSUTF8StringEncoding];
-    return [CALL(rename, cb, old, new) nil];
+    return [CALL(rename, cb, strdup([oldpath UTF8String]), strdup([newpath UTF8String])) nil];
 }
 
 - (JSValue *)ftruncate:(NSNumber *)file length:(NSNumber *)len callback:(JSValue *)cb {
@@ -102,29 +100,24 @@ static void after(uv_fs_t* req) {
 }
 
 - (JSValue *)rmdir:(NSString *)path callback:(JSValue *)cb {
-    return [CALL(rmdir, cb, [path cStringUsingEncoding:NSUTF8StringEncoding]) nil];
+    return [CALL(rmdir, cb, strdup([path UTF8String])) nil];
 }
 
 - (JSValue *)mkdir:(NSString *)path mode:(NSNumber *)mode callback:(JSValue *)cb {
-    const char *pathstr = [path cStringUsingEncoding:NSUTF8StringEncoding];
-    return [CALL(mkdir, cb, pathstr, [mode intValue]) nil];
+    return [CALL(mkdir, cb, strdup([path UTF8String]), [mode intValue]) nil];
 }
 
-- (JSValue *)link:(NSString *)dstpath from:(NSString *)srcpath callback:(JSValue *)cb {
-    const char *dst = [dstpath cStringUsingEncoding:NSUTF8StringEncoding];
-    const char *src = [srcpath cStringUsingEncoding:NSUTF8StringEncoding];
-    return [CALL(link, cb, dst, src) nil];
+- (JSValue *)link:(NSString *)dst from:(NSString *)src callback:(JSValue *)cb {
+    return [CALL(link, cb, strdup([dst UTF8String]), strdup([src UTF8String])) nil];
 }
 
-- (JSValue *)symlink:(NSString *)dstpath from:(NSString *)srcpath mode:(NSString *)mode callback:(JSValue *)cb {
-    const char *dst = [dstpath cStringUsingEncoding:NSUTF8StringEncoding];
-    const char *src = [srcpath cStringUsingEncoding:NSUTF8StringEncoding];
+- (JSValue *)symlink:(NSString *)dst from:(NSString *)src mode:(NSString *)mode callback:(JSValue *)cb {
     // we ignore the mode argument because it is only effective on windows platforms
-    return [CALL(symlink, cb, dst, src, 0 /*flags*/) nil];
+    return [CALL(symlink, cb, strdup([dst UTF8String]), strdup([src UTF8String]), 0 /*flags*/) nil];
 }
 
 - (JSValue *)readlink:(NSString *)path callback:(JSValue *)cb {
-    return [CALL(readlink, cb, [path cStringUsingEncoding:NSUTF8StringEncoding]) ^(void *req_, NLContext *context) {
+    return [CALL(readlink, cb, strdup([path UTF8String])) ^(void *req_, NLContext *context) {
         uv_fs_t *req = req_;
         NSString *str = [NSString stringWithCString:req->ptr encoding:NSUTF8StringEncoding];
         [context setValue:[JSValue valueWithObject:str inContext:context] forEventRequest:req];
@@ -132,11 +125,11 @@ static void after(uv_fs_t* req) {
 }
 
 - (JSValue *)unlink:(NSString *)path callback:(JSValue *)cb {
-    return [CALL(unlink, cb, [path cStringUsingEncoding:NSUTF8StringEncoding]) nil];
+    return [CALL(unlink, cb, strdup([path UTF8String])) nil];
 }
 
 - (JSValue *)chmod:(NSString *)path mode:(NSNumber *)mode callback:(JSValue *)cb {
-    return [CALL(chmod, cb, [path cStringUsingEncoding:NSUTF8StringEncoding], [mode intValue]) nil];
+    return [CALL(chmod, cb, strdup([path UTF8String]), [mode intValue]) nil];
 }
 
 - (JSValue *)fchmod:(NSNumber *)file mode:(NSNumber *)mode callback:(JSValue *)cb {
@@ -144,10 +137,9 @@ static void after(uv_fs_t* req) {
 }
 
 - (JSValue *)chown:(NSString *)path uid:(NSNumber *)uid_ gid:(NSNumber *)gid_ callback:(JSValue *)cb {
-    const char *str = [path cStringUsingEncoding:NSUTF8StringEncoding];
     uv_uid_t uid = [uid_ unsignedIntValue];
     uv_gid_t gid = [gid_ unsignedIntValue];
-    return [CALL(chown, cb, str, uid, gid) nil];
+    return [CALL(chown, cb, strdup([path UTF8String]), uid, gid) nil];
 }
 
 - (JSValue *)fchown:(NSNumber *)file uid:(NSNumber *)uid_ gid:(NSNumber *)gid_ callback:(JSValue *)cb {
