@@ -18,6 +18,7 @@ JSExportAs(close, - (JSValue *)close:(NSNumber *)file callback:(JSValue *)cb);
 JSExportAs(readdir, - (JSValue *)readDir:(NSString *)path callback:(JSValue *)cb);
 
 JSExportAs(fdatasync, - (JSValue *)fdatasync:(NSNumber *)file callback:(JSValue *)cb);
+JSExportAs(fsync,     - (JSValue *)fsync:    (NSNumber *)file callback:(JSValue *)cb);
 
 @end
 

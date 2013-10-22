@@ -87,4 +87,8 @@ static void after(uv_fs_t* req) {
     return [CALL(fdatasync, cb, [file intValue]) ^(void *req_, NLContext *context) {}];
 }
 
+- (JSValue *)fsync:(NSNumber *)file callback:(JSValue *)cb {
+    return [CALL(fsync, cb, [file intValue]) ^(void *req_, NLContext *context) {}];
+}
+
 @end
