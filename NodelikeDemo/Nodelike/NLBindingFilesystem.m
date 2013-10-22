@@ -135,4 +135,8 @@ static void after(uv_fs_t* req) {
     return [CALL(unlink, cb, [path cStringUsingEncoding:NSUTF8StringEncoding]) nil];
 }
 
+- (JSValue *)chmod:(NSString *)path mode:(NSNumber *)mode callback:(JSValue *)cb {
+    return [CALL(chmod, cb, [path cStringUsingEncoding:NSUTF8StringEncoding], [mode intValue]) nil];
+}
+
 @end
