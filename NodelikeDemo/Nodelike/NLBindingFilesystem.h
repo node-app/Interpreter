@@ -26,6 +26,8 @@ JSExportAs(ftruncate, - (JSValue *)ftruncate:(NSNumber *)file length:(NSNumber *
 
 JSExportAs(rmdir, - (JSValue *)rmdir:(NSString *)path callback:(JSValue *)cb);
 
+JSExportAs(mkdir, - (JSValue *)mkdir:(NSString *)path mode:(NSNumber *)mode callback:(JSValue *)cb);
+
 @end
 
 @interface NLBindingFilesystem : NLBinding <NLBindingFilesystemExports>

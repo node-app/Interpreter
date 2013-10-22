@@ -105,4 +105,9 @@ static void after(uv_fs_t* req) {
     return [CALL(rmdir, cb, [path cStringUsingEncoding:NSUTF8StringEncoding]) ^(void *req, NLContext *context) {}];
 }
 
+- (JSValue *)mkdir:(NSString *)path mode:(NSNumber *)mode callback:(JSValue *)cb {
+    const char *pathstr = [path cStringUsingEncoding:NSUTF8StringEncoding];
+    return [CALL(mkdir, cb, pathstr, [mode intValue]) ^(void *req_, NLContext *context) {}];
+}
+
 @end
