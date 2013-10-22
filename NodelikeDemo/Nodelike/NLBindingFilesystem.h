@@ -35,7 +35,8 @@ JSExportAs(readlink, - (JSValue *)readlink:(NSString *)path callback:(JSValue *)
 
 JSExportAs(unlink, - (JSValue *)unlink:(NSString *)path callback:(JSValue *)cb);
 
-JSExportAs(chmod, - (JSValue *)chmod:(NSString *)path mode:(NSNumber *)mode callback:(JSValue *)cb);
+JSExportAs(chmod,  - (JSValue *)chmod: (NSString *)path mode:(NSNumber *)mode callback:(JSValue *)cb);
+JSExportAs(fchmod, - (JSValue *)fchmod:(NSNumber *)file mode:(NSNumber *)mode callback:(JSValue *)cb);
 
 @end
 

@@ -139,4 +139,8 @@ static void after(uv_fs_t* req) {
     return [CALL(chmod, cb, [path cStringUsingEncoding:NSUTF8StringEncoding], [mode intValue]) nil];
 }
 
+- (JSValue *)fchmod:(NSNumber *)file mode:(NSNumber *)mode callback:(JSValue *)cb {
+    return [CALL(fchmod, cb, [file intValue], [mode intValue]) nil];
+}
+
 @end
