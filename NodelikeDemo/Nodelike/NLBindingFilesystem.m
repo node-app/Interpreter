@@ -51,9 +51,7 @@ static void after(uv_fs_t* req) {
 }
 
 - (JSValue *)close:(NSNumber *)file callback:(JSValue *)cb {
-    return [CALL(close, cb, [file intValue]) ^(void *req_, NLContext *context) {
-        
-    }];
+    return [CALL(close, cb, [file intValue]) ^(void *req_, NLContext *context) {}];
 }
 
 - (JSValue *)read:(NSNumber *)file to:(JSValue *)target offset:(JSValue *)off length:(JSValue *)len pos:(JSValue *)pos callback:(JSValue *)cb {
@@ -83,6 +81,10 @@ static void after(uv_fs_t* req) {
                 }
                 [context setValue:names forEventRequest:req];
             }];
+}
+
+- (JSValue *)fdatasync:(NSNumber *)file callback:(JSValue *)cb {
+    return [CALL(fdatasync, cb, [file intValue]) ^(void *req_, NLContext *context) {}];
 }
 
 @end
