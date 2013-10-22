@@ -38,6 +38,8 @@ JSExportAs(unlink, - (JSValue *)unlink:(NSString *)path callback:(JSValue *)cb);
 JSExportAs(chmod,  - (JSValue *)chmod: (NSString *)path mode:(NSNumber *)mode callback:(JSValue *)cb);
 JSExportAs(fchmod, - (JSValue *)fchmod:(NSNumber *)file mode:(NSNumber *)mode callback:(JSValue *)cb);
 
+JSExportAs(chown, - (JSValue *)chown:(NSString *)path uid:(NSNumber *)uid gid:(NSNumber *)gid callback:(JSValue *)cb);
+
 @end
 
 @interface NLBindingFilesystem : NLBinding <NLBindingFilesystemExports>

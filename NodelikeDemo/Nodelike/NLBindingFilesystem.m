@@ -143,4 +143,11 @@ static void after(uv_fs_t* req) {
     return [CALL(fchmod, cb, [file intValue], [mode intValue]) nil];
 }
 
+- (JSValue *)chown:(NSString *)path uid:(NSNumber *)uid_ gid:(NSNumber *)gid_ callback:(JSValue *)cb {
+    const char *str = [path cStringUsingEncoding:NSUTF8StringEncoding];
+    uv_uid_t uid = [uid_ unsignedIntValue];
+    uv_gid_t gid = [gid_ unsignedIntValue];
+    return [CALL(chown, cb, str, uid, gid) nil];
+}
+
 @end
