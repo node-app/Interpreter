@@ -123,4 +123,12 @@ static void after(uv_fs_t* req) {
     return [CALL(symlink, cb, dst, src, 0 /*flags*/) nil];
 }
 
+- (JSValue *)readlink:(NSString *)path callback:(JSValue *)cb {
+    return [CALL(readlink, cb, [path cStringUsingEncoding:NSUTF8StringEncoding]) ^(void *req_, NLContext *context) {
+        uv_fs_t *req = req_;
+        NSString *str = [NSString stringWithCString:req->ptr encoding:NSUTF8StringEncoding];
+        [context setValue:[JSValue valueWithObject:str inContext:context] forEventRequest:req];
+    }];
+}
+
 @end

@@ -31,6 +31,8 @@ JSExportAs(mkdir, - (JSValue *)mkdir:(NSString *)path mode:(NSNumber *)mode call
 JSExportAs(link,    - (JSValue *)link:   (NSString *)dstpath from:(NSString *)srcpath                       callback:(JSValue *)cb);
 JSExportAs(symlink, - (JSValue *)symlink:(NSString *)dstpath from:(NSString *)srcpath mode:(NSString *)mode callback:(JSValue *)cb);
 
+JSExportAs(readlink, - (JSValue *)readlink:(NSString *)path callback:(JSValue *)cb);
+
 @end
 
 @interface NLBindingFilesystem : NLBinding <NLBindingFilesystemExports>
