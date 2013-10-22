@@ -97,4 +97,8 @@ static void after(uv_fs_t* req) {
     return [CALL(rename, cb, old, new) ^(void *req_, NLContext *context) {}];
 }
 
+- (JSValue *)ftruncate:(NSNumber *)file length:(NSNumber *)len callback:(JSValue *)cb {
+    return [CALL(ftruncate, cb, [file intValue], [len intValue]) ^(void *req_, NLContext *context) {}];
+}
+
 @end
