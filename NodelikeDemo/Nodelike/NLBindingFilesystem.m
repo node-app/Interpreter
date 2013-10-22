@@ -110,4 +110,10 @@ static void after(uv_fs_t* req) {
     return [CALL(mkdir, cb, pathstr, [mode intValue]) nil];
 }
 
+- (JSValue *)link:(NSString *)dstpath from:(NSString *)srcpath callback:(JSValue *)cb {
+    const char *dst = [dstpath cStringUsingEncoding:NSUTF8StringEncoding];
+    const char *src = [srcpath cStringUsingEncoding:NSUTF8StringEncoding];
+    return [CALL(link, cb, dst, src) nil];
+}
+
 @end
