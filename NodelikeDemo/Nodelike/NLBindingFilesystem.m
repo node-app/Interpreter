@@ -150,4 +150,10 @@ static void after(uv_fs_t* req) {
     return [CALL(chown, cb, str, uid, gid) nil];
 }
 
+- (JSValue *)fchown:(NSNumber *)file uid:(NSNumber *)uid_ gid:(NSNumber *)gid_ callback:(JSValue *)cb {
+    uv_uid_t uid = [uid_ unsignedIntValue];
+    uv_gid_t gid = [gid_ unsignedIntValue];
+    return [CALL(fchown, cb, [file intValue], uid, gid) nil];
+}
+
 @end
