@@ -33,6 +33,8 @@ JSExportAs(symlink, - (JSValue *)symlink:(NSString *)dstpath from:(NSString *)sr
 
 JSExportAs(readlink, - (JSValue *)readlink:(NSString *)path callback:(JSValue *)cb);
 
+JSExportAs(unlink, - (JSValue *)unlink:(NSString *)path callback:(JSValue *)cb);
+
 @end
 
 @interface NLBindingFilesystem : NLBinding <NLBindingFilesystemExports>

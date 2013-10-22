@@ -131,4 +131,8 @@ static void after(uv_fs_t* req) {
     }];
 }
 
+- (JSValue *)unlink:(NSString *)path callback:(JSValue *)cb {
+    return [CALL(unlink, cb, [path cStringUsingEncoding:NSUTF8StringEncoding]) nil];
+}
+
 @end
