@@ -20,6 +20,8 @@ JSExportAs(readdir, - (JSValue *)readDir:(NSString *)path callback:(JSValue *)cb
 JSExportAs(fdatasync, - (JSValue *)fdatasync:(NSNumber *)file callback:(JSValue *)cb);
 JSExportAs(fsync,     - (JSValue *)fsync:    (NSNumber *)file callback:(JSValue *)cb);
 
+JSExportAs(rename, - (JSValue *)rename:(NSString *)oldpath to:(NSString *)newpath callback:(JSValue *)cb);
+
 @end
 
 @interface NLBindingFilesystem : NLBinding <NLBindingFilesystemExports>

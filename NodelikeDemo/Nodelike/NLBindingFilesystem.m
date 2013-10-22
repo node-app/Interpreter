@@ -91,4 +91,10 @@ static void after(uv_fs_t* req) {
     return [CALL(fsync, cb, [file intValue]) ^(void *req_, NLContext *context) {}];
 }
 
+- (JSValue *)rename:(NSString *)oldpath to:(NSString *)newpath callback:(JSValue *)cb {
+    const char *old = [oldpath cStringUsingEncoding:NSUTF8StringEncoding];
+    const char *new = [newpath cStringUsingEncoding:NSUTF8StringEncoding];
+    return [CALL(rename, cb, old, new) ^(void *req_, NLContext *context) {}];
+}
+
 @end
