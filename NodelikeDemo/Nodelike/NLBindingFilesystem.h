@@ -22,6 +22,8 @@ JSExportAs(fsync,     - (JSValue *)fsync:    (NSNumber *)file callback:(JSValue 
 
 JSExportAs(rename, - (JSValue *)rename:(NSString *)oldpath to:(NSString *)newpath callback:(JSValue *)cb);
 
+JSExportAs(ftruncate, - (JSValue *)ftruncate:(NSNumber *)file length:(NSNumber *)len callback:(JSValue *)cb);
+
 @end
 
 @interface NLBindingFilesystem : NLBinding <NLBindingFilesystemExports>
