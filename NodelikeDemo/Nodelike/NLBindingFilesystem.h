@@ -43,6 +43,7 @@ JSExportAs(fchown, - (JSValue *)fchown:(NSNumber *)file uid:(NSNumber *)uid gid:
 
 JSExportAs(stat,  - (JSValue *)stat: (NSString *)path callback:(JSValue *)cb);
 JSExportAs(lstat, - (JSValue *)lstat:(NSString *)path callback:(JSValue *)cb);
+JSExportAs(fstat, - (JSValue *)fstat:(NSNumber *)file callbacl:(JSValue *)cb);
 
 @end
 
