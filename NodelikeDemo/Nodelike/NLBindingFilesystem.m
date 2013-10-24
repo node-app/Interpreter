@@ -148,4 +148,31 @@ static void after(uv_fs_t* req) {
     return [CALL(fchown, cb, [file intValue], uid, gid) nil];
 }
 
+#pragma mark stat
+
+- (JSValue *)buildStatsObject:(const uv_stat_t *)s inContext:(JSContext *)context {
+    JSValue *stats = [JSValue valueWithNewObjectInContext:context];
+    stats[@"__proto__"] = _Stats[@"prototype"];
+    stats[@"dev"]     = [JSValue valueWithInt32:s->st_dev    inContext:context];
+    stats[@"mode"]    = [JSValue valueWithInt32:s->st_mode   inContext:context];
+    stats[@"nlink"]   = [JSValue valueWithInt32:s->st_nlink  inContext:context];
+    stats[@"uid"]     = [JSValue valueWithInt32:s->st_uid    inContext:context];
+    stats[@"gid"]     = [JSValue valueWithInt32:s->st_gid    inContext:context];
+    stats[@"rdev"]    = [JSValue valueWithInt32:s->st_rdev   inContext:context];
+    stats[@"ino"]     = [JSValue valueWithInt32:s->st_ino    inContext:context];
+    stats[@"size"]    = [JSValue valueWithInt32:s->st_size   inContext:context];
+    stats[@"blocks"]  = [JSValue valueWithInt32:s->st_blocks inContext:context];
+    // @TODO: atime, mtime, ctime, birthtime
+    return stats;
+}
+
+- (JSValue *)stat:(NSString *)path callback:(JSValue *)cb {
+    const char *str = strdup([path UTF8String]);
+    return [CALL(stat, cb, str) ^(void *req_, NLContext *context) {
+        uv_fs_t *req = req_;
+        [context setValue:[self buildStatsObject:req->ptr inContext:context] forEventRequest:req];
+        free((void *)str);
+    }];
+}
+
 @end
