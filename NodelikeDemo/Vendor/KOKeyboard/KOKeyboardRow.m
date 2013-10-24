@@ -56,15 +56,19 @@
     v.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     v.textView = t;
     
+    int buttonCount = 1;
+    NSString *keys = @"TTTTT";
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        buttonCount = 11;
+        keys = @"()\"[]{}'<>\\/$´`~^|€£-+=%*◉◉◉◉◉!?#@&_:;,.1203467589TTTTT";
+    }
+    
     int buttonHeight = 60;
     int leftMargin = 3;
     int topMargin = 1;
     int buttonSpacing = 6;
-    int buttonCount = 11;
     int buttonWidth = (barWidth - 2 * leftMargin - (buttonCount - 1) * buttonSpacing) / buttonCount;
     leftMargin = (barWidth - buttonWidth * buttonCount - buttonSpacing * (buttonCount - 1)) / 2;
-    
-    NSString *keys = @"()\"[]{}'<>\\/$´`~^|€£-+=%*◉◉◉◉◉!?#@&_:;,.1203467589TTTTT";
     
     for (int i = 0; i < buttonCount; i++) {
         KOSwipeButton *b = [[KOSwipeButton alloc] initWithFrame:CGRectMake(leftMargin + i * (buttonSpacing + buttonWidth), topMargin + (barHeight - buttonHeight) / 2, buttonWidth, buttonHeight)];
