@@ -52,19 +52,9 @@
     int barWidth = 768;
     
     KOKeyboardRow *v = [[KOKeyboardRow alloc] initWithFrame:CGRectMake(0, 0, barWidth, barHeight)];
-    v.backgroundColor = [UIColor colorWithRed:156/255. green:155/255. blue:166/255. alpha:1.];
+    v.backgroundColor = [UIColor colorWithRed:50/255. green:50/255. blue:50/255. alpha:1.];
     v.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     v.textView = t;
-    
-    UIView *border1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, barWidth, 1)];
-    border1.backgroundColor = [UIColor colorWithRed:51/255. green:51/255. blue:51/255. alpha:1.];
-    border1.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    [v addSubview:border1];
-    
-    UIView *border2 = [[UIView alloc] initWithFrame:CGRectMake(0, 1, barWidth, 1)];
-    border2.backgroundColor = [UIColor colorWithRed:191/255. green:191/255. blue:191/255. alpha:1.];
-    border2.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    [v addSubview:border2];
     
     int buttonHeight = 60;
     int leftMargin = 3;
@@ -74,7 +64,7 @@
     int buttonWidth = (barWidth - 2 * leftMargin - (buttonCount - 1) * buttonSpacing) / buttonCount;
     leftMargin = (barWidth - buttonWidth * buttonCount - buttonSpacing * (buttonCount - 1)) / 2;
     
-    NSString *keys = @"TTTTT()\"[]{}'<>\\/$´`~^|€£◉◉◉◉◉-+=%*!?#@&_:;,.1203467589";
+    NSString *keys = @"()\"[]{}'<>\\/$´`~^|€£-+=%*◉◉◉◉◉!?#@&_:;,.1203467589TTTTT";
     
     for (int i = 0; i < buttonCount; i++) {
         KOSwipeButton *b = [[KOSwipeButton alloc] initWithFrame:CGRectMake(leftMargin + i * (buttonSpacing + buttonWidth), topMargin + (barHeight - buttonHeight) / 2, buttonWidth, buttonHeight)];
@@ -116,6 +106,10 @@
     UITextRange *r = [textView textRangeFromPosition:p1 toPosition:p2];
     
     textView.selectedTextRange = r;
+}
+
+- (void)execButtonPressed {
+    [_viewController execute];
 }
 
 @end

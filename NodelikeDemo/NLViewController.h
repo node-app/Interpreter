@@ -13,10 +13,8 @@
 
 @property NLAppDelegate *appDelegate;
 
-@property IBOutlet UIButton *action;
 @property IBOutlet UITextView *output;
-@property IBOutlet UILabel *state;
 
-- (IBAction) execute:(id)sender;
+- (void) execute;
 
 @end

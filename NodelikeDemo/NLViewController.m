@@ -20,9 +20,8 @@
 {
     [super viewDidLoad];
     _appDelegate = [[UIApplication sharedApplication] delegate];
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        [KOKeyboardRow applyToTextView:_output];
-    }
+    [KOKeyboardRow applyToTextView:_output];
+    ((KOKeyboardRow *)_output.inputAccessoryView).viewController = self;
 	[_output becomeFirstResponder];
 }
 
@@ -32,10 +31,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)execute:(id)sender {
+- (void)execute {
     NSLog(@"execute");
-    NSString *input = _output.text;
-    _state.text = [@"_ = " stringByAppendingString:[_appDelegate execute:input]];
+    [_appDelegate execute:_output.text];
     _output.text = @"";
 }
 

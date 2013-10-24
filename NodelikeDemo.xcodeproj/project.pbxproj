@@ -129,18 +129,6 @@
 		B5C5B249181319550091FDE8 /* NLBindingSmalloc.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C5B248181319550091FDE8 /* NLBindingSmalloc.m */; };
 		B5C5B24C181321300091FDE8 /* NLBindingBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C5B24B181321300091FDE8 /* NLBindingBuffer.m */; };
 		B5CF827F1819B9C90095AE7E /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5CF827D1819B9C90095AE7E /* Main_iPad.storyboard */; };
-		B5CF82931819B9EC0095AE7E /* hal-black.png in Resources */ = {isa = PBXBuildFile; fileRef = B5CF82821819B9EC0095AE7E /* hal-black.png */; };
-		B5CF82941819B9EC0095AE7E /* hal-black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5CF82831819B9EC0095AE7E /* hal-black@2x.png */; };
-		B5CF82951819B9EC0095AE7E /* hal-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = B5CF82841819B9EC0095AE7E /* hal-blue.png */; };
-		B5CF82961819B9EC0095AE7E /* hal-blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5CF82851819B9EC0095AE7E /* hal-blue@2x.png */; };
-		B5CF82971819B9EC0095AE7E /* hal-white.png in Resources */ = {isa = PBXBuildFile; fileRef = B5CF82861819B9EC0095AE7E /* hal-white.png */; };
-		B5CF82981819B9EC0095AE7E /* hal-white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5CF82871819B9EC0095AE7E /* hal-white@2x.png */; };
-		B5CF82991819B9EC0095AE7E /* key-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = B5CF82881819B9EC0095AE7E /* key-blue.png */; };
-		B5CF829A1819B9EC0095AE7E /* key-blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5CF82891819B9EC0095AE7E /* key-blue@2x.png */; };
-		B5CF829B1819B9EC0095AE7E /* key-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = B5CF828A1819B9EC0095AE7E /* key-pressed.png */; };
-		B5CF829C1819B9EC0095AE7E /* key-pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5CF828B1819B9EC0095AE7E /* key-pressed@2x.png */; };
-		B5CF829D1819B9EC0095AE7E /* key.png in Resources */ = {isa = PBXBuildFile; fileRef = B5CF828C1819B9EC0095AE7E /* key.png */; };
-		B5CF829E1819B9EC0095AE7E /* key@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5CF828D1819B9EC0095AE7E /* key@2x.png */; };
 		B5CF829F1819B9EC0095AE7E /* KOKeyboardRow.m in Sources */ = {isa = PBXBuildFile; fileRef = B5CF82901819B9EC0095AE7E /* KOKeyboardRow.m */; };
 		B5CF82A01819B9EC0095AE7E /* KOSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B5CF82921819B9EC0095AE7E /* KOSwipeButton.m */; };
 /* End PBXBuildFile section */
@@ -291,23 +279,10 @@
 		B5C5B24A181321300091FDE8 /* NLBindingBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLBindingBuffer.h; sourceTree = "<group>"; };
 		B5C5B24B181321300091FDE8 /* NLBindingBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLBindingBuffer.m; sourceTree = "<group>"; };
 		B5CF827E1819B9C90095AE7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		B5CF82821819B9EC0095AE7E /* hal-black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hal-black.png"; sourceTree = "<group>"; };
-		B5CF82831819B9EC0095AE7E /* hal-black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hal-black@2x.png"; sourceTree = "<group>"; };
-		B5CF82841819B9EC0095AE7E /* hal-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hal-blue.png"; sourceTree = "<group>"; };
-		B5CF82851819B9EC0095AE7E /* hal-blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hal-blue@2x.png"; sourceTree = "<group>"; };
-		B5CF82861819B9EC0095AE7E /* hal-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hal-white.png"; sourceTree = "<group>"; };
-		B5CF82871819B9EC0095AE7E /* hal-white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hal-white@2x.png"; sourceTree = "<group>"; };
-		B5CF82881819B9EC0095AE7E /* key-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "key-blue.png"; sourceTree = "<group>"; };
-		B5CF82891819B9EC0095AE7E /* key-blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "key-blue@2x.png"; sourceTree = "<group>"; };
-		B5CF828A1819B9EC0095AE7E /* key-pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "key-pressed.png"; sourceTree = "<group>"; };
-		B5CF828B1819B9EC0095AE7E /* key-pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "key-pressed@2x.png"; sourceTree = "<group>"; };
-		B5CF828C1819B9EC0095AE7E /* key.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = key.png; sourceTree = "<group>"; };
-		B5CF828D1819B9EC0095AE7E /* key@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "key@2x.png"; sourceTree = "<group>"; };
-		B5CF828E1819B9EC0095AE7E /* KOKeyboard-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KOKeyboard-Prefix.pch"; sourceTree = "<group>"; };
-		B5CF828F1819B9EC0095AE7E /* KOKeyboardRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KOKeyboardRow.h; sourceTree = "<group>"; };
-		B5CF82901819B9EC0095AE7E /* KOKeyboardRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KOKeyboardRow.m; sourceTree = "<group>"; };
-		B5CF82911819B9EC0095AE7E /* KOSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KOSwipeButton.h; sourceTree = "<group>"; };
-		B5CF82921819B9EC0095AE7E /* KOSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KOSwipeButton.m; sourceTree = "<group>"; };
+		B5CF828F1819B9EC0095AE7E /* KOKeyboardRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KOKeyboardRow.h; path = NodelikeDemo/Vendor/KOKeyboard/KOKeyboardRow.h; sourceTree = SOURCE_ROOT; };
+		B5CF82901819B9EC0095AE7E /* KOKeyboardRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KOKeyboardRow.m; path = NodelikeDemo/Vendor/KOKeyboard/KOKeyboardRow.m; sourceTree = SOURCE_ROOT; };
+		B5CF82911819B9EC0095AE7E /* KOSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KOSwipeButton.h; path = NodelikeDemo/Vendor/KOKeyboard/KOSwipeButton.h; sourceTree = SOURCE_ROOT; };
+		B5CF82921819B9EC0095AE7E /* KOSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KOSwipeButton.m; path = NodelikeDemo/Vendor/KOKeyboard/KOSwipeButton.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -495,6 +470,10 @@
 				B5061A36181597FE0083AB4B /* NLBindingTimerWrap.m */,
 				B5061A381815A9B00083AB4B /* NLBindingCaresWrap.h */,
 				B5061A391815A9B00083AB4B /* NLBindingCaresWrap.m */,
+				B5CF828F1819B9EC0095AE7E /* KOKeyboardRow.h */,
+				B5CF82901819B9EC0095AE7E /* KOKeyboardRow.m */,
+				B5CF82911819B9EC0095AE7E /* KOSwipeButton.h */,
+				B5CF82921819B9EC0095AE7E /* KOSwipeButton.m */,
 				B59EA093180CB587005BF5C1 /* Nodelike.h */,
 				B59EA091180CB587005BF5C1 /* Supporting Files */,
 			);
@@ -517,7 +496,6 @@
 				B5B44648180AB78E009ADEF9 /* NodelikeDemo */,
 				B5B44641180AB78E009ADEF9 /* Frameworks */,
 				B5B44640180AB78E009ADEF9 /* Products */,
-				B5CF82801819B9EC0095AE7E /* Vendor */,
 			);
 			sourceTree = "<group>";
 		};
@@ -569,39 +547,6 @@
 				B5B44650180AB78E009ADEF9 /* NodelikeDemo-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		B5CF82801819B9EC0095AE7E /* Vendor */ = {
-			isa = PBXGroup;
-			children = (
-				B5CF82811819B9EC0095AE7E /* KOKeyboard */,
-			);
-			name = Vendor;
-			path = NodelikeDemo/Vendor;
-			sourceTree = "<group>";
-		};
-		B5CF82811819B9EC0095AE7E /* KOKeyboard */ = {
-			isa = PBXGroup;
-			children = (
-				B5CF82821819B9EC0095AE7E /* hal-black.png */,
-				B5CF82831819B9EC0095AE7E /* hal-black@2x.png */,
-				B5CF82841819B9EC0095AE7E /* hal-blue.png */,
-				B5CF82851819B9EC0095AE7E /* hal-blue@2x.png */,
-				B5CF82861819B9EC0095AE7E /* hal-white.png */,
-				B5CF82871819B9EC0095AE7E /* hal-white@2x.png */,
-				B5CF82881819B9EC0095AE7E /* key-blue.png */,
-				B5CF82891819B9EC0095AE7E /* key-blue@2x.png */,
-				B5CF828A1819B9EC0095AE7E /* key-pressed.png */,
-				B5CF828B1819B9EC0095AE7E /* key-pressed@2x.png */,
-				B5CF828C1819B9EC0095AE7E /* key.png */,
-				B5CF828D1819B9EC0095AE7E /* key@2x.png */,
-				B5CF828E1819B9EC0095AE7E /* KOKeyboard-Prefix.pch */,
-				B5CF828F1819B9EC0095AE7E /* KOKeyboardRow.h */,
-				B5CF82901819B9EC0095AE7E /* KOKeyboardRow.m */,
-				B5CF82911819B9EC0095AE7E /* KOSwipeButton.h */,
-				B5CF82921819B9EC0095AE7E /* KOSwipeButton.m */,
-			);
-			path = KOKeyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -720,8 +665,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5CF829E1819B9EC0095AE7E /* key@2x.png in Resources */,
-				B5CF829D1819B9EC0095AE7E /* key.png in Resources */,
 				B54C1F98180F67520051F826 /* _debugger.js in Resources */,
 				B54C1F99180F67520051F826 /* _http_agent.js in Resources */,
 				B54C1F9A180F67520051F826 /* _http_client.js in Resources */,
@@ -734,7 +677,6 @@
 				B54C1FA1180F67520051F826 /* _stream_passthrough.js in Resources */,
 				B54C1FA2180F67520051F826 /* _stream_readable.js in Resources */,
 				B54C1FA3180F67520051F826 /* _stream_transform.js in Resources */,
-				B5CF82941819B9EC0095AE7E /* hal-black@2x.png in Resources */,
 				B54C1FA4180F67520051F826 /* _stream_writable.js in Resources */,
 				B54C1FA5180F67520051F826 /* _tls_legacy.js in Resources */,
 				B54C1FA6180F67520051F826 /* _tls_wrap.js in Resources */,
@@ -749,18 +691,14 @@
 				B54C1FAF180F67520051F826 /* dns.js in Resources */,
 				B54C1FB0180F67520051F826 /* domain.js in Resources */,
 				B54C1FB1180F67520051F826 /* events.js in Resources */,
-				B5CF829C1819B9EC0095AE7E /* key-pressed@2x.png in Resources */,
 				B54C1FB2180F67520051F826 /* freelist.js in Resources */,
 				B54C1FB3180F67520051F826 /* fs.js in Resources */,
 				B54C1FB4180F67520051F826 /* http.js in Resources */,
-				B5CF82951819B9EC0095AE7E /* hal-blue.png in Resources */,
-				B5CF829B1819B9EC0095AE7E /* key-pressed.png in Resources */,
 				B54C1FB5180F67520051F826 /* https.js in Resources */,
 				B54C1FB6180F67520051F826 /* module.js in Resources */,
 				B54C1FB7180F67520051F826 /* net.js in Resources */,
 				B54C1FB8180F67520051F826 /* os.js in Resources */,
 				B54C1FB9180F67520051F826 /* path.js in Resources */,
-				B5CF82991819B9EC0095AE7E /* key-blue.png in Resources */,
 				B54C1FBA180F67520051F826 /* punycode.js in Resources */,
 				B54C1FBB180F67520051F826 /* querystring.js in Resources */,
 				B54C1FBC180F67520051F826 /* readline.js in Resources */,
@@ -769,20 +707,15 @@
 				B5CF827F1819B9C90095AE7E /* Main_iPad.storyboard in Resources */,
 				B54C1FBF180F67520051F826 /* stream.js in Resources */,
 				B54C1FC0180F67520051F826 /* string_decoder.js in Resources */,
-				B5CF82971819B9EC0095AE7E /* hal-white.png in Resources */,
-				B5CF82961819B9EC0095AE7E /* hal-blue@2x.png in Resources */,
 				B54C1FC1180F67520051F826 /* sys.js in Resources */,
-				B5CF829A1819B9EC0095AE7E /* key-blue@2x.png in Resources */,
 				B54C1FC2180F67520051F826 /* timers.js in Resources */,
 				B54C1FC3180F67520051F826 /* tls.js in Resources */,
 				B54C1FC4180F67520051F826 /* tty.js in Resources */,
 				B54C1FC5180F67520051F826 /* url.js in Resources */,
 				B54C1FC6180F67520051F826 /* util.js in Resources */,
 				B54C1FC7180F67520051F826 /* vm.js in Resources */,
-				B5CF82931819B9EC0095AE7E /* hal-black.png in Resources */,
 				B54C1FC8180F67520051F826 /* zlib.js in Resources */,
 				B5061A34181595FD0083AB4B /* index.js in Resources */,
-				B5CF82981819B9EC0095AE7E /* hal-white@2x.png in Resources */,
 				B54C1F97180D488D0051F826 /* Main.storyboard in Resources */,
 				B5B4465B180AB78E009ADEF9 /* Images.xcassets in Resources */,
 				B5B4464D180AB78E009ADEF9 /* InfoPlist.strings in Resources */,

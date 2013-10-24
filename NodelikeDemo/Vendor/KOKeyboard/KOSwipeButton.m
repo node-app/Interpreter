@@ -68,14 +68,6 @@
 {
     self = [super initWithFrame:frame];
     
-    UIImage *bgImg1 = [[UIImage imageNamed:@"key.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 9, 0, 9)];
-    UIImage *bgImg2 = [[UIImage imageNamed:@"key-pressed.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 9, 0, 9)];
-    bgView = [[UIImageView alloc] initWithFrame:self.bounds];
-    [bgView setImage:bgImg1];
-    [bgView setHighlightedImage:bgImg2];
-    bgView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    [self addSubview:bgView];
-    
     int labelWidth = 20;
     int labelHeight = 20;
     int leftInset = 9;
@@ -92,6 +84,7 @@
     l.text = @"1";
     l.font = f;
     [self addSubview:l];
+    [l setTextColor:[UIColor whiteColor]];
     [l setHighlightedTextColor:[UIColor blueColor]];
     l.backgroundColor = [UIColor clearColor];
     [labels addObject:l];
@@ -102,6 +95,7 @@
     l.font = f;
     l.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
     [self addSubview:l];
+    [l setTextColor:[UIColor whiteColor]];
     [l setHighlightedTextColor:[UIColor blueColor]];
     l.backgroundColor = [UIColor clearColor];
     [labels addObject:l];
@@ -112,6 +106,7 @@
     l.font = f;
     l.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     [self addSubview:l];
+    [l setTextColor:[UIColor whiteColor]];
     [l setHighlightedTextColor:[UIColor blueColor]];
     l.backgroundColor = [UIColor clearColor];
     [labels addObject:l];
@@ -121,6 +116,7 @@
     l.text = @"4";
     l.font = f;
     [self addSubview:l];
+    [l setTextColor:[UIColor whiteColor]];
     [l setHighlightedTextColor:[UIColor blueColor]];
     l.backgroundColor = [UIColor clearColor];
     [labels addObject:l];
@@ -131,6 +127,7 @@
     l.font = f;
     l.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
     [self addSubview:l];
+    [l setTextColor:[UIColor whiteColor]];
     [l setHighlightedTextColor:[UIColor blueColor]];
     l.backgroundColor = [UIColor clearColor];
     [labels addObject:l];
@@ -173,7 +170,7 @@
                     [self addSubview:foregroundView];
 
                 } else {
-                    [[labels objectAtIndex:i] setText:@"TAB"];
+                    [[labels objectAtIndex:i] setText:@"EXEC"];
                     [[labels objectAtIndex:i] setFrame:self.bounds];
                 }
             }
@@ -257,7 +254,7 @@
 {
     if (selectedLabel != nil) {
         if (tabButton) {
-            [delegate insertText:@"\t"];
+            [delegate execButtonPressed];
         } else if (! trackPoint) {
             NSString *textToInsert = selectedLabel.text;
             [delegate insertText:textToInsert];

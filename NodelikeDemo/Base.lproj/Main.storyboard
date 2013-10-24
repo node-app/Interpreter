@@ -17,59 +17,30 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7p7-0a-d0R">
-                                <rect key="frame" x="0.0" y="114" width="320" height="454"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QhT-VR-kEm">
-                                <rect key="frame" x="0.0" y="20" width="320" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="47" id="6AV-TQ-qqY"/>
-                                    <constraint firstAttribute="height" constant="47" id="fH6-Rd-KfT"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
-                                <state key="normal" title="Execute">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="execute:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="5aH-lx-Vwr"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_ = undefined" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clV-Ux-Jki">
-                                <rect key="frame" x="0.0" y="75" width="320" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="rJW-D7-dDd"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="clV-Ux-Jki" firstAttribute="top" secondItem="QhT-VR-kEm" secondAttribute="bottom" constant="8" id="1Kf-3m-dwh"/>
-                            <constraint firstItem="7p7-0a-d0R" firstAttribute="top" secondItem="clV-Ux-Jki" secondAttribute="bottom" constant="8" id="4M8-C1-115"/>
-                            <constraint firstItem="QhT-VR-kEm" firstAttribute="top" secondItem="8JS-Py-1EU" secondAttribute="bottom" id="I2A-tG-yhO"/>
-                            <constraint firstAttribute="trailing" secondItem="QhT-VR-kEm" secondAttribute="trailing" id="Ipx-LY-jjH"/>
+                            <constraint firstItem="7p7-0a-d0R" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="JVD-fW-594"/>
                             <constraint firstItem="PTp-ge-sYo" firstAttribute="top" secondItem="7p7-0a-d0R" secondAttribute="bottom" id="NIc-dO-I3B"/>
-                            <constraint firstAttribute="trailing" secondItem="clV-Ux-Jki" secondAttribute="trailing" id="RmW-82-TvL"/>
-                            <constraint firstItem="clV-Ux-Jki" firstAttribute="top" secondItem="QhT-VR-kEm" secondAttribute="bottom" constant="8" id="VyK-GI-WCL"/>
-                            <constraint firstItem="clV-Ux-Jki" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="eIX-48-evE"/>
+                            <constraint firstAttribute="trailing" secondItem="7p7-0a-d0R" secondAttribute="trailing" id="NJl-FY-4FQ"/>
+                            <constraint firstAttribute="trailing" secondItem="7p7-0a-d0R" secondAttribute="trailing" id="TbN-CK-wQZ"/>
+                            <constraint firstItem="PTp-ge-sYo" firstAttribute="top" secondItem="7p7-0a-d0R" secondAttribute="bottom" id="a2o-VI-n9f"/>
+                            <constraint firstItem="7p7-0a-d0R" firstAttribute="top" secondItem="8JS-Py-1EU" secondAttribute="bottom" id="dM0-fa-zVp"/>
                             <constraint firstAttribute="trailing" secondItem="7p7-0a-d0R" secondAttribute="trailing" id="fL3-T9-qGX"/>
-                            <constraint firstItem="7p7-0a-d0R" firstAttribute="top" secondItem="clV-Ux-Jki" secondAttribute="bottom" constant="8" id="hvT-Fs-p31"/>
-                            <constraint firstItem="QhT-VR-kEm" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="j2g-V8-PkJ"/>
                             <constraint firstItem="7p7-0a-d0R" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="jIx-GR-9Tb"/>
+                            <constraint firstItem="7p7-0a-d0R" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="lwR-Cf-9db"/>
+                            <constraint firstItem="PTp-ge-sYo" firstAttribute="top" secondItem="7p7-0a-d0R" secondAttribute="bottom" id="uHU-7q-Vbc"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="action" destination="QhT-VR-kEm" id="mt1-di-1qk"/>
                         <outlet property="output" destination="7p7-0a-d0R" id="yJi-de-cjm"/>
-                        <outlet property="state" destination="clV-Ux-Jki" id="yVh-fk-Loi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
