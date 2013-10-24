@@ -175,4 +175,13 @@ static void after(uv_fs_t* req) {
     }];
 }
 
+- (JSValue *)lstat:(NSString *)path callback:(JSValue *)cb {
+    const char *str = strdup([path UTF8String]);
+    return [CALL(lstat, cb, str) ^(void *req_, NLContext *context) {
+        uv_fs_t *req = req_;
+        [context setValue:[self buildStatsObject:req->ptr inContext:context] forEventRequest:req];
+        free((void *)str);
+    }];
+}
+
 @end

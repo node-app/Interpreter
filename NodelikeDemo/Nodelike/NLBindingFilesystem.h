@@ -41,7 +41,8 @@ JSExportAs(fchmod, - (JSValue *)fchmod:(NSNumber *)file mode:(NSNumber *)mode ca
 JSExportAs(chown,  - (JSValue *)chown: (NSString *)path uid:(NSNumber *)uid gid:(NSNumber *)gid callback:(JSValue *)cb);
 JSExportAs(fchown, - (JSValue *)fchown:(NSNumber *)file uid:(NSNumber *)uid gid:(NSNumber *)gid callback:(JSValue *)cb);
 
-JSExportAs(stat, - (JSValue *)stat:(NSString *)path callback:(JSValue *)cb);
+JSExportAs(stat,  - (JSValue *)stat: (NSString *)path callback:(JSValue *)cb);
+JSExportAs(lstat, - (JSValue *)lstat:(NSString *)path callback:(JSValue *)cb);
 
 @end
 
