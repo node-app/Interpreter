@@ -8,6 +8,8 @@
 
 #import "NLViewController.h"
 
+#import "KOKeyboardRow.h"
+
 @interface NLViewController ()
 
 @end
@@ -18,7 +20,10 @@
 {
     [super viewDidLoad];
     _appDelegate = [[UIApplication sharedApplication] delegate];
-	// Do any additional setup after loading the view, typically from a nib.
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        [KOKeyboardRow applyToTextView:_output];
+    }
+	[_output becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning
