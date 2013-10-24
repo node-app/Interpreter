@@ -184,7 +184,7 @@ static void after(uv_fs_t* req) {
     }];
 }
 
-- (JSValue *)fstat:(NSNumber *)file callbacl:(JSValue *)cb {
+- (JSValue *)fstat:(NSNumber *)file callback:(JSValue *)cb {
     return [CALL(fstat, cb, [file intValue]) ^(void *req_, NLContext *context) {
         uv_fs_t *req = req_;
         [context setValue:[self buildStatsObject:req->ptr inContext:context] forEventRequest:req];
