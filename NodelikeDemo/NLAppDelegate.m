@@ -20,11 +20,11 @@
     context.exceptionHandler = ^(JSContext *c, JSValue *e) {
         NSLog(@"%@", e);
     };
+       [context requireModule:@"index"];
     return YES;
 }
 
 - (NSString *)execute:(NSString *)cmd {
-    [context requireModule:@"index"];
     [context evaluateScript:cmd];
     return [context[@"_"] toString];
 }

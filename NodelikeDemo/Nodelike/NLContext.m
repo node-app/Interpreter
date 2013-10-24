@@ -186,39 +186,12 @@ struct data {
     return cache;
 }
 
-- (JSContext *)createContextForModule:(NSString *)module {
-    
-    NLContext *moduleContext = [[NLContext alloc] initWithVirtualMachine:self.virtualMachine];
-    
-    moduleContext.exceptionHandler = ^(JSContext *context, JSValue *error) {
-        NSLog(@"%@: %@", module, error);
-    };
-    
-    JSValue *moduleExports = [JSValue valueWithNewObjectInContext:moduleContext];
-    JSValue *moduleModule  = [JSValue valueWithObject:[NSDictionary dictionaryWithObject:moduleExports forKey:@"exports"] inContext:moduleContext];
-    
-    moduleContext[@"exports"] = moduleExports;
-    moduleContext[@"module"]  = moduleModule;
-    
-    return moduleContext;
-    
-}
-
 - (JSValue *)requireModule:(NSString *)module {
     
-    id cached = [requireCache objectForKey:module];
+    JSValue *cached = [requireCache objectForKey:module];
     
-    if (cached != nil && [cached isKindOfClass:[JSValue class]]) {
+    if (cached != nil) {
         return cached;
-    }
-    
-    JSContext *moduleContext;
-    
-    if (cached != nil && [cached isKindOfClass:[JSContext class]]) {
-        moduleContext = cached;
-    } else {
-        moduleContext = [self createContextForModule:module];
-        requireCache[module] = moduleContext;
     }
     
     NSString* path = [[NSBundle mainBundle] pathForResource:module
@@ -228,16 +201,28 @@ struct data {
                                                   encoding:NSUTF8StringEncoding
                                                      error:NULL];
     
-    if (content != nil) {
-        [moduleContext evaluateScript:content];
-        JSValue *moduleValue = moduleContext[@"module"][@"exports"];
-        requireCache[module] = moduleValue;
-        return moduleValue;
-    } else {
+    if (content == nil) {
         NSString *error = [NSString stringWithFormat:@"Cannot find module '%@'", module];
         self.exception = [JSValue valueWithNewErrorFromMessage:error inContext:self];
         return nil;
     }
+
+    NSString *template = @"(function (exports, require, module, __filename, __dirname) {%@\n});";
+    NSString *source = [NSString stringWithFormat:template, content];
+
+    JSValue *fn = [self evaluateScript:source];
+    
+    JSValue *exports = [JSValue valueWithNewObjectInContext:self];
+    JSValue *modulev = [JSValue valueWithNewObjectInContext:self];
+    modulev[@"exports"] = exports;
+
+    [fn callWithArguments:@[exports, self[@"require"], modulev]];
+
+    JSValue *moduleValue = modulev[@"exports"];
+
+    requireCache[module] = moduleValue;
+
+    return moduleValue;
     
 }
 
