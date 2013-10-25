@@ -20,9 +20,9 @@
 {
     [super viewDidLoad];
     _appDelegate = [[UIApplication sharedApplication] delegate];
-    [KOKeyboardRow applyToTextView:_output];
-    ((KOKeyboardRow *)_output.inputAccessoryView).viewController = self;
-	[_output becomeFirstResponder];
+    [KOKeyboardRow applyToTextView:_input];
+    ((KOKeyboardRow *)_input.inputAccessoryView).viewController = self;
+	[_input becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning
@@ -33,8 +33,9 @@
 
 - (void)execute {
     NSLog(@"execute");
-    [_appDelegate execute:_output.text];
-    _output.text = @"";
+    [_appDelegate execute:_input.text];
+    _input.text = @"";
+    _output.text = _appDelegate.outputText;
 }
 
 @end

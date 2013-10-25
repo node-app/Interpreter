@@ -16,31 +16,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7p7-0a-d0R">
-                                <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="7p7-0a-d0R">
+                                <rect key="frame" x="0.0" y="159" width="768" height="865"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert"/>
                             </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" showsHorizontalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdY-Kj-bEi">
+                                <rect key="frame" x="0.0" y="20" width="768" height="131"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="131" id="bqt-R6-HC4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7p7-0a-d0R" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="7el-Qx-0Ih"/>
-                            <constraint firstItem="PTp-ge-sYo" firstAttribute="top" secondItem="7p7-0a-d0R" secondAttribute="bottom" id="NIc-dO-I3B"/>
-                            <constraint firstItem="PTp-ge-sYo" firstAttribute="top" secondItem="7p7-0a-d0R" secondAttribute="bottom" id="Qgq-LK-Bzu"/>
-                            <constraint firstItem="PTp-ge-sYo" firstAttribute="top" secondItem="7p7-0a-d0R" secondAttribute="bottom" id="V4k-zX-x2G"/>
-                            <constraint firstAttribute="trailing" secondItem="7p7-0a-d0R" secondAttribute="trailing" id="W45-0r-fu3"/>
-                            <constraint firstItem="7p7-0a-d0R" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="f6E-jN-k4O"/>
-                            <constraint firstAttribute="trailing" secondItem="7p7-0a-d0R" secondAttribute="trailing" id="fL3-T9-qGX"/>
-                            <constraint firstItem="7p7-0a-d0R" firstAttribute="top" secondItem="8JS-Py-1EU" secondAttribute="bottom" id="iVG-ke-fiP"/>
-                            <constraint firstItem="7p7-0a-d0R" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="jIx-GR-9Tb"/>
-                            <constraint firstAttribute="trailing" secondItem="7p7-0a-d0R" secondAttribute="trailing" id="myy-Ht-Vjj"/>
+                            <constraint firstItem="7p7-0a-d0R" firstAttribute="top" secondItem="fdY-Kj-bEi" secondAttribute="bottom" constant="8" symbolic="YES" id="0gJ-a0-scV"/>
+                            <constraint firstItem="fdY-Kj-bEi" firstAttribute="leading" secondItem="7p7-0a-d0R" secondAttribute="leading" id="2sc-0E-aGP"/>
+                            <constraint firstItem="7p7-0a-d0R" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Raj-Ws-4LI"/>
+                            <constraint firstItem="fdY-Kj-bEi" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="20" symbolic="YES" id="a6P-ag-ODk"/>
+                            <constraint firstAttribute="trailing" secondItem="7p7-0a-d0R" secondAttribute="trailing" id="cAt-8v-JgW"/>
+                            <constraint firstItem="PTp-ge-sYo" firstAttribute="top" secondItem="7p7-0a-d0R" secondAttribute="bottom" id="eT6-op-rld"/>
+                            <constraint firstItem="fdY-Kj-bEi" firstAttribute="trailing" secondItem="7p7-0a-d0R" secondAttribute="trailing" id="ttJ-L3-aac"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="output" destination="7p7-0a-d0R" id="yJi-de-cjm"/>
+                        <outlet property="input" destination="7p7-0a-d0R" id="yoV-NO-BaT"/>
+                        <outlet property="output" destination="fdY-Kj-bEi" id="zPA-Gy-77X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

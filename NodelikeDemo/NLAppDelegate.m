@@ -20,7 +20,12 @@
     context.exceptionHandler = ^(JSContext *c, JSValue *e) {
         NSLog(@"%@", e);
     };
-       [context requireModule:@"index"];
+    //[context requireModule:@"index"];
+    _outputText = @"";
+    NLAppDelegate __weak *this = self;
+    context[@"show"] = ^(id object) {
+        this.outputText = [NSString stringWithFormat:@"%@", object];
+    };
     return YES;
 }
 
