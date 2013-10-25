@@ -1,0 +1,2 @@
+install: git submodule init && git submodule update
+language: objective-c
