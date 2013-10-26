@@ -15,14 +15,13 @@
         [self setupBufferJS:target internal:internal];}};
 }
 
-+ (NSNumber *)writeString:(NSString *)str toBuffer:(JSValue *)target atOffset:(JSValue *)off withLength:(JSValue *)len {
-    
-    NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
-    return [NLBindingBuffer writeData:data toBuffer:target atOffset:off withLength:len];
++ (NSNumber *)writeString:(longlived NSString *)str toBuffer:(JSValue *)target atOffset:(JSValue *)off withLength:(JSValue *)len {
+
+    return [NLBindingBuffer write:[str UTF8String] toBuffer:target atOffset:off withLength:len];
 
 }
 
-+ (NSNumber *)writeData:(longlived NSData *)data toBuffer:(JSValue *)target atOffset:(JSValue *)off withLength:(JSValue *)len {
++ (NSNumber *)write:(const char *)data toBuffer:(JSValue *)target atOffset:(JSValue *)off withLength:(JSValue *)len {
     
     size_t obj_length = [target[@"length"] toUInt32];
     
@@ -34,10 +33,8 @@
     
     max_length = MIN(obj_length - offset, max_length);
     
-    const char *bytes = [data bytes];
-    
     for (int i = 0; i < max_length; i++) {
-        JSValue *val = [JSValue valueWithInt32:bytes[i] inContext:target.context];
+        JSValue *val = [JSValue valueWithInt32:data[i] inContext:target.context];
         [target setObject:val atIndexedSubscript:i + offset];
     }
     

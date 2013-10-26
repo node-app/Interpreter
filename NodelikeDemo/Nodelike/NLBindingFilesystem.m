@@ -61,8 +61,7 @@ static void after(uv_fs_t* req) {
     return [CALL(read, cb, [file intValue], malloc(length), length, position)
             ^(void *req_, NLContext *context) {
                 uv_fs_t *req = req_;
-                NSData *data = [NSData dataWithBytesNoCopy:req->buf length:length freeWhenDone:YES];
-                [NLBindingBuffer writeData:data toBuffer:target atOffset:off withLength:len];
+                [NLBindingBuffer write:req->buf toBuffer:target atOffset:off withLength:len];
                 [context setValue:[JSValue valueWithInt32:req->result inContext:context] forEventRequest:req];
             }];
 
