@@ -42,13 +42,6 @@ static void after(uv_fs_t* req) {
         if (!async) after(req);                                     \
     } then:
 
-// In order to guarantee that the C string derived from an
-// NSString -UTF8String method call survives until libuv
-// gets a chance to copy it, it is annotated with the following
-// attribute, which guarantees that the object will be alive until
-// the end of the scope.
-#define longlived __attribute((objc_precise_lifetime))
-
 - (JSValue *)open:(longlived NSString *)path flags:(NSNumber *)flags mode:(NSNumber *)mode callback:(JSValue *)cb {
     return [CALL(open, cb, [path UTF8String], [flags intValue], [mode intValue])
             ^(void *req_, NLContext *context) {

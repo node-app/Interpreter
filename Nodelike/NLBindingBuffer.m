@@ -22,7 +22,7 @@
 
 }
 
-+ (NSNumber *)writeData:(NSData *)data toBuffer:(JSValue *)target atOffset:(JSValue *)off withLength:(JSValue *)len {
++ (NSNumber *)writeData:(longlived NSData *)data toBuffer:(JSValue *)target atOffset:(JSValue *)off withLength:(JSValue *)len {
     
     size_t obj_length = [target[@"length"] toUInt32];
     
