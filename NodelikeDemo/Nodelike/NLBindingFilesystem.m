@@ -42,8 +42,10 @@ static void after(uv_fs_t* req) {
         if (!async) after(req);                                     \
     } then:
 
-- (JSValue *)open:(NSString *)path flags:(NSNumber *)flags mode:(NSNumber *)mode callback:(JSValue *)cb {
-    return [CALL(open, cb, strdup([path UTF8String]), [flags intValue], [mode intValue])
+#define longlived __attribute((objc_precise_lifetime))
+
+- (JSValue *)open:(longlived NSString *)path flags:(NSNumber *)flags mode:(NSNumber *)mode callback:(JSValue *)cb {
+    return [CALL(open, cb, [path UTF8String], [flags intValue], [mode intValue])
             ^(void *req_, NLContext *context) {
                 uv_fs_t *req = req_;
                 [context setValue:[JSValue valueWithInt32:req->result inContext:context] forEventRequest:req];
@@ -68,8 +70,8 @@ static void after(uv_fs_t* req) {
 
 }
 
-- (JSValue *)readDir:(NSString *)path callback:(JSValue *)cb {
-    return [CALL(readdir, cb, strdup([path UTF8String]), 0)
+- (JSValue *)readDir:(longlived NSString *)path callback:(JSValue *)cb {
+    return [CALL(readdir, cb, [path UTF8String], 0)
             ^(void *req_, NLContext *context) {
                 uv_fs_t *req = req_;
                 char *namebuf = req->ptr;
@@ -91,55 +93,55 @@ static void after(uv_fs_t* req) {
     return [CALL(fsync, cb, [file intValue]) nil];
 }
 
-- (JSValue *)rename:(NSString *)oldpath to:(NSString *)newpath callback:(JSValue *)cb {
-    return [CALL(rename, cb, strdup([oldpath UTF8String]), strdup([newpath UTF8String])) nil];
+- (JSValue *)rename:(longlived NSString *)oldpath to:(longlived NSString *)newpath callback:(JSValue *)cb {
+    return [CALL(rename, cb, [oldpath UTF8String], [newpath UTF8String]) nil];
 }
 
 - (JSValue *)ftruncate:(NSNumber *)file length:(NSNumber *)len callback:(JSValue *)cb {
     return [CALL(ftruncate, cb, [file intValue], [len intValue]) nil];
 }
 
-- (JSValue *)rmdir:(NSString *)path callback:(JSValue *)cb {
-    return [CALL(rmdir, cb, strdup([path UTF8String])) nil];
+- (JSValue *)rmdir:(longlived NSString *)path callback:(JSValue *)cb {
+    return [CALL(rmdir, cb, [path UTF8String]) nil];
 }
 
-- (JSValue *)mkdir:(NSString *)path mode:(NSNumber *)mode callback:(JSValue *)cb {
-    return [CALL(mkdir, cb, strdup([path UTF8String]), [mode intValue]) nil];
+- (JSValue *)mkdir:(longlived NSString *)path mode:(NSNumber *)mode callback:(JSValue *)cb {
+    return [CALL(mkdir, cb, [path UTF8String], [mode intValue]) nil];
 }
 
-- (JSValue *)link:(NSString *)dst from:(NSString *)src callback:(JSValue *)cb {
-    return [CALL(link, cb, strdup([dst UTF8String]), strdup([src UTF8String])) nil];
+- (JSValue *)link:(longlived NSString *)dst from:(longlived NSString *)src callback:(JSValue *)cb {
+    return [CALL(link, cb, [dst UTF8String], [src UTF8String]) nil];
 }
 
-- (JSValue *)symlink:(NSString *)dst from:(NSString *)src mode:(NSString *)mode callback:(JSValue *)cb {
+- (JSValue *)symlink:(longlived NSString *)dst from:(longlived NSString *)src mode:(NSString *)mode callback:(JSValue *)cb {
     // we ignore the mode argument because it is only effective on windows platforms
-    return [CALL(symlink, cb, strdup([dst UTF8String]), strdup([src UTF8String]), 0 /*flags*/) nil];
+    return [CALL(symlink, cb, [dst UTF8String], [src UTF8String], 0 /*flags*/) nil];
 }
 
-- (JSValue *)readlink:(NSString *)path callback:(JSValue *)cb {
-    return [CALL(readlink, cb, strdup([path UTF8String])) ^(void *req_, NLContext *context) {
+- (JSValue *)readlink:(longlived NSString *)path callback:(JSValue *)cb {
+    return [CALL(readlink, cb, [path UTF8String]) ^(void *req_, NLContext *context) {
         uv_fs_t *req = req_;
-        NSString *str = [NSString stringWithCString:req->ptr encoding:NSUTF8StringEncoding];
+        NSString *str = [NSString stringWithUTF8String:req->ptr];
         [context setValue:[JSValue valueWithObject:str inContext:context] forEventRequest:req];
     }];
 }
 
-- (JSValue *)unlink:(NSString *)path callback:(JSValue *)cb {
-    return [CALL(unlink, cb, strdup([path UTF8String])) nil];
+- (JSValue *)unlink:(longlived NSString *)path callback:(JSValue *)cb {
+    return [CALL(unlink, cb, [path UTF8String]) nil];
 }
 
-- (JSValue *)chmod:(NSString *)path mode:(NSNumber *)mode callback:(JSValue *)cb {
-    return [CALL(chmod, cb, strdup([path UTF8String]), [mode intValue]) nil];
+- (JSValue *)chmod:(longlived NSString *)path mode:(NSNumber *)mode callback:(JSValue *)cb {
+    return [CALL(chmod, cb, [path UTF8String], [mode intValue]) nil];
 }
 
 - (JSValue *)fchmod:(NSNumber *)file mode:(NSNumber *)mode callback:(JSValue *)cb {
     return [CALL(fchmod, cb, [file intValue], [mode intValue]) nil];
 }
 
-- (JSValue *)chown:(NSString *)path uid:(NSNumber *)uid_ gid:(NSNumber *)gid_ callback:(JSValue *)cb {
+- (JSValue *)chown:(longlived NSString *)path uid:(NSNumber *)uid_ gid:(NSNumber *)gid_ callback:(JSValue *)cb {
     uv_uid_t uid = [uid_ unsignedIntValue];
     uv_gid_t gid = [gid_ unsignedIntValue];
-    return [CALL(chown, cb, strdup([path UTF8String]), uid, gid) nil];
+    return [CALL(chown, cb, [path UTF8String], uid, gid) nil];
 }
 
 - (JSValue *)fchown:(NSNumber *)file uid:(NSNumber *)uid_ gid:(NSNumber *)gid_ callback:(JSValue *)cb {
@@ -166,25 +168,21 @@ static void after(uv_fs_t* req) {
     return stats;
 }
 
-- (JSValue *)stat:(NSString *)path callback:(JSValue *)cb {
-    const char *str = strdup([path UTF8String]);
-    return [CALL(stat, cb, str) ^(void *req_, NLContext *context) {
+- (JSValue *)stat:(longlived NSString *)path callback:(JSValue *)cb {
+    return [CALL(stat, cb, [path UTF8String]) ^(void *req_, NLContext *context) {
         uv_fs_t *req = req_;
         [context setValue:[self buildStatsObject:req->ptr inContext:context] forEventRequest:req];
-        free((void *)str);
     }];
 }
 
-- (JSValue *)lstat:(NSString *)path callback:(JSValue *)cb {
-    const char *str = strdup([path UTF8String]);
-    return [CALL(lstat, cb, str) ^(void *req_, NLContext *context) {
+- (JSValue *)lstat:(longlived NSString *)path callback:(JSValue *)cb {
+    return [CALL(lstat, cb, [path UTF8String]) ^(void *req_, NLContext *context) {
         uv_fs_t *req = req_;
         [context setValue:[self buildStatsObject:req->ptr inContext:context] forEventRequest:req];
-        free((void *)str);
     }];
 }
 
-- (JSValue *)fstat:(NSNumber *)file callback:(JSValue *)cb {
+- (JSValue *)fstat:(longlived NSNumber *)file callback:(JSValue *)cb {
     return [CALL(fstat, cb, [file intValue]) ^(void *req_, NLContext *context) {
         uv_fs_t *req = req_;
         [context setValue:[self buildStatsObject:req->ptr inContext:context] forEventRequest:req];
