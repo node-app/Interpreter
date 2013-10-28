@@ -92,6 +92,7 @@
 		B54C1FC7180F67520051F826 /* vm.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A633180C71FF00CEF23D /* vm.js */; };
 		B54C1FC8180F67520051F826 /* zlib.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A634180C71FF00CEF23D /* zlib.js */; };
 		B5706233181E9BFF00EAEAF2 /* NLOutputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5706232181E9BFF00EAEAF2 /* NLOutputViewController.m */; };
+		B59E5F8B181EC45A0093A6FF /* NLBindingUv.m in Sources */ = {isa = PBXBuildFile; fileRef = B59E5F8A181EC45A0093A6FF /* NLBindingUv.m */; };
 		B59EA08F180CB587005BF5C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B44642180AB78E009ADEF9 /* Foundation.framework */; };
 		B59EA0B1180CB62D005BF5C1 /* NLProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B4467A180AB800009ADEF9 /* NLProcess.m */; };
 		B59EA0B5180CB62D005BF5C1 /* NLContext.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B446E4180ACC27009ADEF9 /* NLContext.m */; };
@@ -248,6 +249,8 @@
 		B54C1F95180D37C80051F826 /* libm.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libm.dylib; path = usr/lib/libm.dylib; sourceTree = SDKROOT; };
 		B5706231181E9BFF00EAEAF2 /* NLOutputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLOutputViewController.h; sourceTree = "<group>"; };
 		B5706232181E9BFF00EAEAF2 /* NLOutputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLOutputViewController.m; sourceTree = "<group>"; };
+		B59E5F89181EC45A0093A6FF /* NLBindingUv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLBindingUv.h; sourceTree = "<group>"; };
+		B59E5F8A181EC45A0093A6FF /* NLBindingUv.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLBindingUv.m; sourceTree = "<group>"; };
 		B59EA04F180CB38E005BF5C1 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		B59EA08E180CB587005BF5C1 /* libNodelike.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNodelike.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B59EA092180CB587005BF5C1 /* Nodelike-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Nodelike-Prefix.pch"; sourceTree = "<group>"; };
@@ -473,6 +476,8 @@
 				B5061A36181597FE0083AB4B /* NLBindingTimerWrap.m */,
 				B5061A381815A9B00083AB4B /* NLBindingCaresWrap.h */,
 				B5061A391815A9B00083AB4B /* NLBindingCaresWrap.m */,
+				B59E5F89181EC45A0093A6FF /* NLBindingUv.h */,
+				B59E5F8A181EC45A0093A6FF /* NLBindingUv.m */,
 				B5CF828F1819B9EC0095AE7E /* KOKeyboardRow.h */,
 				B5CF82901819B9EC0095AE7E /* KOKeyboardRow.m */,
 				B5CF82911819B9EC0095AE7E /* KOSwipeButton.h */,
@@ -770,6 +775,7 @@
 			files = (
 				B59EA0B1180CB62D005BF5C1 /* NLProcess.m in Sources */,
 				B59EA0B5180CB62D005BF5C1 /* NLContext.m in Sources */,
+				B59E5F8B181EC45A0093A6FF /* NLBindingUv.m in Sources */,
 				B59EA0B7180CB62D005BF5C1 /* NLBinding.m in Sources */,
 				B5C5B249181319550091FDE8 /* NLBindingSmalloc.m in Sources */,
 				B5061A3A1815A9B00083AB4B /* NLBindingCaresWrap.m in Sources */,

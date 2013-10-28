@@ -14,6 +14,7 @@
 #import "NLBindingBuffer.h"
 #import "NLBindingTimerWrap.h"
 #import "NLBindingCaresWrap.h"
+#import "NLBindingUv.h"
 
 @implementation NLBinding
 
@@ -35,7 +36,8 @@
                      @"smalloc":    [NLBindingSmalloc    class],
                      @"buffer":     [NLBindingBuffer     class],
                      @"timer_wrap": [NLBindingTimerWrap  class],
-                     @"cares_wrap": [NLBindingCaresWrap  class]};
+                     @"cares_wrap": [NLBindingCaresWrap  class],
+                     @"uv":         [NLBindingUv         class]};
     });
     return bindings;
 }
