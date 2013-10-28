@@ -91,6 +91,7 @@
 		B54C1FC6180F67520051F826 /* util.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A632180C71FF00CEF23D /* util.js */; };
 		B54C1FC7180F67520051F826 /* vm.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A633180C71FF00CEF23D /* vm.js */; };
 		B54C1FC8180F67520051F826 /* zlib.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A634180C71FF00CEF23D /* zlib.js */; };
+		B5706233181E9BFF00EAEAF2 /* NLOutputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5706232181E9BFF00EAEAF2 /* NLOutputViewController.m */; };
 		B59EA08F180CB587005BF5C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B44642180AB78E009ADEF9 /* Foundation.framework */; };
 		B59EA0B1180CB62D005BF5C1 /* NLProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B4467A180AB800009ADEF9 /* NLProcess.m */; };
 		B59EA0B5180CB62D005BF5C1 /* NLContext.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B446E4180ACC27009ADEF9 /* NLContext.m */; };
@@ -245,6 +246,8 @@
 		B54C1E39180D36E00051F826 /* version.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = version.c; sourceTree = "<group>"; };
 		B54C1F52180D37280051F826 /* libuv.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libuv.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B54C1F95180D37C80051F826 /* libm.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libm.dylib; path = usr/lib/libm.dylib; sourceTree = SDKROOT; };
+		B5706231181E9BFF00EAEAF2 /* NLOutputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLOutputViewController.h; sourceTree = "<group>"; };
+		B5706232181E9BFF00EAEAF2 /* NLOutputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLOutputViewController.m; sourceTree = "<group>"; };
 		B59EA04F180CB38E005BF5C1 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		B59EA08E180CB587005BF5C1 /* libNodelike.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNodelike.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B59EA092180CB587005BF5C1 /* Nodelike-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Nodelike-Prefix.pch"; sourceTree = "<group>"; };
@@ -530,6 +533,8 @@
 				B5061A32181595EB0083AB4B /* index.js */,
 				B5B44654180AB78E009ADEF9 /* Main.storyboard */,
 				B5CF827D1819B9C90095AE7E /* Main_iPad.storyboard */,
+				B5706231181E9BFF00EAEAF2 /* NLOutputViewController.h */,
+				B5706232181E9BFF00EAEAF2 /* NLOutputViewController.m */,
 				B5B44657180AB78E009ADEF9 /* NLViewController.h */,
 				B5B44658180AB78E009ADEF9 /* NLViewController.m */,
 				B5B4465A180AB78E009ADEF9 /* Images.xcassets */,
@@ -782,6 +787,7 @@
 				B5B44659180AB78E009ADEF9 /* NLViewController.m in Sources */,
 				B5B44653180AB78E009ADEF9 /* NLAppDelegate.m in Sources */,
 				B5B4464F180AB78E009ADEF9 /* main.m in Sources */,
+				B5706233181E9BFF00EAEAF2 /* NLOutputViewController.m in Sources */,
 				B5061A33181595EB0083AB4B /* index.js in Sources */,
 				B5CF82A01819B9EC0095AE7E /* KOSwipeButton.m in Sources */,
 				B5CF829F1819B9EC0095AE7E /* KOKeyboardRow.m in Sources */,

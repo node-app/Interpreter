@@ -48,22 +48,24 @@
 
 + (void)applyToTextView:(UITextView *)t
 {
-    int barHeight = 72;
+    int barHeight = 52;
     int barWidth = 768;
+    
+    int buttonCount = 1;
+    int buttonHeight = 40;
+    NSString *keys = @"TTTTT";
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        buttonCount  = 11;
+        barHeight    = 72;
+        buttonHeight = 60;
+        keys = @"()\"[]{}'<>\\/$´`~^|€£-+=%*◉◉◉◉◉!?#@&_:;,.1203467589TTTTT";
+    }
     
     KOKeyboardRow *v = [[KOKeyboardRow alloc] initWithFrame:CGRectMake(0, 0, barWidth, barHeight)];
     v.backgroundColor = [UIColor colorWithRed:50/255. green:50/255. blue:50/255. alpha:1.];
     v.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     v.textView = t;
     
-    int buttonCount = 1;
-    NSString *keys = @"TTTTT";
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        buttonCount = 11;
-        keys = @"()\"[]{}'<>\\/$´`~^|€£-+=%*◉◉◉◉◉!?#@&_:;,.1203467589TTTTT";
-    }
-    
-    int buttonHeight = 60;
     int leftMargin = 3;
     int topMargin = 1;
     int buttonSpacing = 6;

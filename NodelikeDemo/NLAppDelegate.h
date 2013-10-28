@@ -8,12 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+#import <JavaScriptCore/JavaScriptCore.h>
+
 @interface NLAppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
-
-@property NSString *outputText;
-
-- (NSString *)execute:(NSString *)cmd;
-
 @end
