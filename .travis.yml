@@ -1,2 +1,7 @@
-install: git submodule init && git submodule update
 language: objective-c
+before_install:
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq sloccount
+after_success:
+  - pip install coviolations_app
+  - covio
