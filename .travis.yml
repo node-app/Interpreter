@@ -1,7 +1,7 @@
 language: objective-c
 before_install:
   - brew install sloccount
-  - easy_install pip
+  - sudo easy_install pip
 after_success:
   - pip install coviolations_app
   - covio
