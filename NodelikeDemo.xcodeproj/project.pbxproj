@@ -94,12 +94,12 @@
 		B5706233181E9BFF00EAEAF2 /* NLOutputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5706232181E9BFF00EAEAF2 /* NLOutputViewController.m */; };
 		B59E5F8B181EC45A0093A6FF /* NLBindingUv.m in Sources */ = {isa = PBXBuildFile; fileRef = B59E5F8A181EC45A0093A6FF /* NLBindingUv.m */; };
 		B59E5F91181EE3590093A6FF /* NLHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = B59E5F90181EE3590093A6FF /* NLHandle.m */; };
+		B59E5F94181F07090093A6FF /* NLBindingFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = B59E5F93181F07090093A6FF /* NLBindingFilesystem.m */; };
+		B59E5F9A181F07270093A6FF /* NLContext.m in Sources */ = {isa = PBXBuildFile; fileRef = B59E5F99181F07270093A6FF /* NLContext.m */; };
+		B59E5F9D181F07320093A6FF /* NLProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = B59E5F9C181F07320093A6FF /* NLProcess.m */; };
+		B59E5FA0181F073D0093A6FF /* NLBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = B59E5F9F181F073D0093A6FF /* NLBinding.m */; };
+		B59E5FA3181F07480093A6FF /* NLBindingConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B59E5FA2181F07480093A6FF /* NLBindingConstants.m */; };
 		B59EA08F180CB587005BF5C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B44642180AB78E009ADEF9 /* Foundation.framework */; };
-		B59EA0B1180CB62D005BF5C1 /* NLProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B4467A180AB800009ADEF9 /* NLProcess.m */; };
-		B59EA0B5180CB62D005BF5C1 /* NLContext.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B446E4180ACC27009ADEF9 /* NLContext.m */; };
-		B59EA0B7180CB62D005BF5C1 /* NLBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B44720180B29CD009ADEF9 /* NLBinding.m */; };
-		B59EA0B9180CB62D005BF5C1 /* NLBindingConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B44724180B2F34009ADEF9 /* NLBindingConstants.m */; };
-		B59EA0BB180CB62D005BF5C1 /* NLBindingFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B4471D180B294F009ADEF9 /* NLBindingFilesystem.m */; };
 		B59EA0BD180CB639005BF5C1 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59EA04F180CB38E005BF5C1 /* JavaScriptCore.framework */; };
 		B59EA0BF180CB694005BF5C1 /* _linklist.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A60B180C71FF00CEF23D /* _linklist.js */; };
 		B59EA0C0180CB694005BF5C1 /* _stream_duplex.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A60C180C71FF00CEF23D /* _stream_duplex.js */; };
@@ -254,6 +254,16 @@
 		B59E5F8A181EC45A0093A6FF /* NLBindingUv.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLBindingUv.m; sourceTree = "<group>"; };
 		B59E5F8F181EE3590093A6FF /* NLHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLHandle.h; sourceTree = "<group>"; };
 		B59E5F90181EE3590093A6FF /* NLHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLHandle.m; sourceTree = "<group>"; };
+		B59E5F92181F07090093A6FF /* NLBindingFilesystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLBindingFilesystem.h; sourceTree = "<group>"; };
+		B59E5F93181F07090093A6FF /* NLBindingFilesystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLBindingFilesystem.m; sourceTree = "<group>"; };
+		B59E5F98181F07270093A6FF /* NLContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLContext.h; sourceTree = "<group>"; };
+		B59E5F99181F07270093A6FF /* NLContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLContext.m; sourceTree = "<group>"; };
+		B59E5F9B181F07320093A6FF /* NLProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLProcess.h; sourceTree = "<group>"; };
+		B59E5F9C181F07320093A6FF /* NLProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLProcess.m; sourceTree = "<group>"; };
+		B59E5F9E181F073D0093A6FF /* NLBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLBinding.h; sourceTree = "<group>"; };
+		B59E5F9F181F073D0093A6FF /* NLBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLBinding.m; sourceTree = "<group>"; };
+		B59E5FA1181F07480093A6FF /* NLBindingConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLBindingConstants.h; sourceTree = "<group>"; };
+		B59E5FA2181F07480093A6FF /* NLBindingConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLBindingConstants.m; sourceTree = "<group>"; };
 		B59EA04F180CB38E005BF5C1 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		B59EA08E180CB587005BF5C1 /* libNodelike.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNodelike.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B59EA092180CB587005BF5C1 /* Nodelike-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Nodelike-Prefix.pch"; sourceTree = "<group>"; };
@@ -273,16 +283,6 @@
 		B5B44658180AB78E009ADEF9 /* NLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NLViewController.m; sourceTree = "<group>"; };
 		B5B4465A180AB78E009ADEF9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B5B44661180AB78E009ADEF9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		B5B44679180AB800009ADEF9 /* NLProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLProcess.h; path = NodelikeDemo/Nodelike/NLProcess.h; sourceTree = SOURCE_ROOT; };
-		B5B4467A180AB800009ADEF9 /* NLProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLProcess.m; path = NodelikeDemo/Nodelike/NLProcess.m; sourceTree = SOURCE_ROOT; };
-		B5B446E3180ACC27009ADEF9 /* NLContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLContext.h; path = NodelikeDemo/Nodelike/NLContext.h; sourceTree = SOURCE_ROOT; };
-		B5B446E4180ACC27009ADEF9 /* NLContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLContext.m; path = NodelikeDemo/Nodelike/NLContext.m; sourceTree = SOURCE_ROOT; };
-		B5B4471C180B294F009ADEF9 /* NLBindingFilesystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLBindingFilesystem.h; path = NodelikeDemo/Nodelike/NLBindingFilesystem.h; sourceTree = SOURCE_ROOT; };
-		B5B4471D180B294F009ADEF9 /* NLBindingFilesystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLBindingFilesystem.m; path = NodelikeDemo/Nodelike/NLBindingFilesystem.m; sourceTree = SOURCE_ROOT; };
-		B5B4471F180B29CD009ADEF9 /* NLBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLBinding.h; path = NodelikeDemo/Nodelike/NLBinding.h; sourceTree = SOURCE_ROOT; };
-		B5B44720180B29CD009ADEF9 /* NLBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLBinding.m; path = NodelikeDemo/Nodelike/NLBinding.m; sourceTree = SOURCE_ROOT; };
-		B5B44723180B2F34009ADEF9 /* NLBindingConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLBindingConstants.h; path = NodelikeDemo/Nodelike/NLBindingConstants.h; sourceTree = SOURCE_ROOT; };
-		B5B44724180B2F34009ADEF9 /* NLBindingConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLBindingConstants.m; path = NodelikeDemo/Nodelike/NLBindingConstants.m; sourceTree = SOURCE_ROOT; };
 		B5C5B247181319550091FDE8 /* NLBindingSmalloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLBindingSmalloc.h; sourceTree = "<group>"; };
 		B5C5B248181319550091FDE8 /* NLBindingSmalloc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLBindingSmalloc.m; sourceTree = "<group>"; };
 		B5C5B24A181321300091FDE8 /* NLBindingBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLBindingBuffer.h; sourceTree = "<group>"; };
@@ -461,16 +461,16 @@
 			isa = PBXGroup;
 			children = (
 				B537A603180C71FF00CEF23D /* lib */,
-				B5B44679180AB800009ADEF9 /* NLProcess.h */,
-				B5B4467A180AB800009ADEF9 /* NLProcess.m */,
-				B5B446E3180ACC27009ADEF9 /* NLContext.h */,
-				B5B446E4180ACC27009ADEF9 /* NLContext.m */,
-				B5B4471F180B29CD009ADEF9 /* NLBinding.h */,
-				B5B44720180B29CD009ADEF9 /* NLBinding.m */,
-				B5B44723180B2F34009ADEF9 /* NLBindingConstants.h */,
-				B5B44724180B2F34009ADEF9 /* NLBindingConstants.m */,
-				B5B4471C180B294F009ADEF9 /* NLBindingFilesystem.h */,
-				B5B4471D180B294F009ADEF9 /* NLBindingFilesystem.m */,
+				B59E5F98181F07270093A6FF /* NLContext.h */,
+				B59E5F99181F07270093A6FF /* NLContext.m */,
+				B59E5F9B181F07320093A6FF /* NLProcess.h */,
+				B59E5F9C181F07320093A6FF /* NLProcess.m */,
+				B59E5F9E181F073D0093A6FF /* NLBinding.h */,
+				B59E5F9F181F073D0093A6FF /* NLBinding.m */,
+				B59E5F92181F07090093A6FF /* NLBindingFilesystem.h */,
+				B59E5F93181F07090093A6FF /* NLBindingFilesystem.m */,
+				B59E5FA1181F07480093A6FF /* NLBindingConstants.h */,
+				B59E5FA2181F07480093A6FF /* NLBindingConstants.m */,
 				B5C5B247181319550091FDE8 /* NLBindingSmalloc.h */,
 				B5C5B248181319550091FDE8 /* NLBindingSmalloc.m */,
 				B5C5B24A181321300091FDE8 /* NLBindingBuffer.h */,
@@ -778,17 +778,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B59EA0B1180CB62D005BF5C1 /* NLProcess.m in Sources */,
-				B59EA0B5180CB62D005BF5C1 /* NLContext.m in Sources */,
 				B59E5F8B181EC45A0093A6FF /* NLBindingUv.m in Sources */,
-				B59EA0B7180CB62D005BF5C1 /* NLBinding.m in Sources */,
+				B59E5FA3181F07480093A6FF /* NLBindingConstants.m in Sources */,
 				B5C5B249181319550091FDE8 /* NLBindingSmalloc.m in Sources */,
+				B59E5F9A181F07270093A6FF /* NLContext.m in Sources */,
 				B5061A3A1815A9B00083AB4B /* NLBindingCaresWrap.m in Sources */,
 				B59E5F91181EE3590093A6FF /* NLHandle.m in Sources */,
-				B59EA0B9180CB62D005BF5C1 /* NLBindingConstants.m in Sources */,
 				B5C5B24C181321300091FDE8 /* NLBindingBuffer.m in Sources */,
-				B59EA0BB180CB62D005BF5C1 /* NLBindingFilesystem.m in Sources */,
+				B59E5F94181F07090093A6FF /* NLBindingFilesystem.m in Sources */,
 				B5061A37181597FE0083AB4B /* NLBindingTimerWrap.m in Sources */,
+				B59E5F9D181F07320093A6FF /* NLProcess.m in Sources */,
+				B59E5FA0181F073D0093A6FF /* NLBinding.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
