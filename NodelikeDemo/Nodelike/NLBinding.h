@@ -24,6 +24,6 @@
 
 + (id)bindingForIdentifier:(NSString *)identifier;
 
-- (id)binding;
++ (id)binding;
 
 @end

@@ -10,7 +10,7 @@
 
 @implementation NLBindingTimerWrap
 
-- (id)binding {
++ (id)binding {
     
     JSValue *timer = [JSValue valueWithNewObjectInContext:[JSContext currentContext]];
     timer[@"prototype"] = [JSValue valueWithNewObjectInContext:[JSContext currentContext]];

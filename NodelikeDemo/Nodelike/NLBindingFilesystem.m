@@ -23,6 +23,10 @@
 
 }
 
++ (id)binding {
+    return [[self alloc] init];
+}
+
 static void after(uv_fs_t* req) {
     [NLContext finishEventRequest:req do:
      ^(NLContext *context) {

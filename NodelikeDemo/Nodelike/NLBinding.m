@@ -50,7 +50,7 @@
     }
     Class cls = [NLBinding bindings][identifier];
     if (cls) {
-        binding = [[[cls alloc] init] binding];
+        binding = [cls binding];
         [cache setObject:binding forKey:identifier];
         return binding;
     } else {
@@ -58,7 +58,7 @@
     }
 }
 
-- (id)binding {
++ (id)binding {
     return self;
 }
 

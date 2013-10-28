@@ -12,7 +12,7 @@
 
 @implementation NLBindingUv
 
-- (id)binding {
++ (id)binding {
 
     NSMutableDictionary *b = [[NSMutableDictionary alloc] init];
 

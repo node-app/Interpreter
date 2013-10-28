@@ -10,7 +10,7 @@
 
 @implementation NLBindingBuffer
 
-- (id)binding {
++ (id)binding {
     return @{@"setupBufferJS": ^(JSValue *target, JSValue *internal) {
         [self setupBufferJS:target internal:internal];}};
 }
@@ -42,7 +42,7 @@
     
 }
 
-- (void)setupBufferJS:(JSValue *)target internal:(JSValue *)internal {
++ (void)setupBufferJS:(JSValue *)target internal:(JSValue *)internal {
 
     JSValue *proto = target[@"prototype"];
     

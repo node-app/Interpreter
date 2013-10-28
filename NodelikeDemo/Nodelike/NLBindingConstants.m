@@ -17,7 +17,7 @@
 
 @implementation NLBindingConstants
 
-- (id)binding {
++ (id)binding {
     NSMutableDictionary *constants = [[NSMutableDictionary alloc] init];
     [NLBindingConstants defineErrnoConstants: constants];
     [NLBindingConstants defineSignalConstants:constants];

@@ -10,7 +10,7 @@
 
 @implementation NLBindingSmalloc
 
-- (id)binding {
++ (id)binding {
     return @{@"alloc":     ^(JSValue *target, NSNumber *size) { return target; },
              @"sliceOnto": ^(JSValue *s, JSValue *d, NSNumber *a, NSNumber *b) { return s; },
              @"kMaxLength": [NSNumber numberWithInt:INT_MAX]};
