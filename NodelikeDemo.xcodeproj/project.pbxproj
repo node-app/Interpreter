@@ -252,7 +252,7 @@
 		B59EA08E180CB587005BF5C1 /* libNodelike.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNodelike.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B59EA092180CB587005BF5C1 /* Nodelike-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Nodelike-Prefix.pch"; sourceTree = "<group>"; };
 		B59EA093180CB587005BF5C1 /* Nodelike.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Nodelike.h; sourceTree = "<group>"; };
-		B5B4463F180AB78E009ADEF9 /* NodelikeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NodelikeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5B4463F180AB78E009ADEF9 /* Interpreter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Interpreter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5B44642180AB78E009ADEF9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B5B44644180AB78E009ADEF9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B5B44646180AB78E009ADEF9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -505,7 +505,7 @@
 		B5B44640180AB78E009ADEF9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B5B4463F180AB78E009ADEF9 /* NodelikeDemo.app */,
+				B5B4463F180AB78E009ADEF9 /* Interpreter.app */,
 				B59EA08E180CB587005BF5C1 /* libNodelike.a */,
 				B54C1F52180D37280051F826 /* libuv.a */,
 			);
@@ -591,9 +591,9 @@
 			productReference = B59EA08E180CB587005BF5C1 /* libNodelike.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		B5B4463E180AB78E009ADEF9 /* NodelikeDemo */ = {
+		B5B4463E180AB78E009ADEF9 /* Interpreter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B5B44671180AB78E009ADEF9 /* Build configuration list for PBXNativeTarget "NodelikeDemo" */;
+			buildConfigurationList = B5B44671180AB78E009ADEF9 /* Build configuration list for PBXNativeTarget "Interpreter" */;
 			buildPhases = (
 				B5B4463B180AB78E009ADEF9 /* Sources */,
 				B5B4463C180AB78E009ADEF9 /* Frameworks */,
@@ -604,9 +604,9 @@
 			dependencies = (
 				B59EA0D3180CB6A3005BF5C1 /* PBXTargetDependency */,
 			);
-			name = NodelikeDemo;
+			name = Interpreter;
 			productName = NodelikeDemo;
-			productReference = B5B4463F180AB78E009ADEF9 /* NodelikeDemo.app */;
+			productReference = B5B4463F180AB78E009ADEF9 /* Interpreter.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -632,7 +632,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B5B4463E180AB78E009ADEF9 /* NodelikeDemo */,
+				B5B4463E180AB78E009ADEF9 /* Interpreter */,
 				B59EA08D180CB587005BF5C1 /* Nodelike */,
 				B54C1F51180D37280051F826 /* uv */,
 			);
@@ -1029,7 +1029,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B5B44671180AB78E009ADEF9 /* Build configuration list for PBXNativeTarget "NodelikeDemo" */ = {
+		B5B44671180AB78E009ADEF9 /* Build configuration list for PBXNativeTarget "Interpreter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B5B44672180AB78E009ADEF9 /* Debug */,
