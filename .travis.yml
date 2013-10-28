@@ -3,5 +3,5 @@ before_install:
   - brew install sloccount
   - sudo easy_install pip
 after_success:
-  - pip install coviolations_app
+  - sudo pip install coviolations_app
   - covio
