@@ -8,18 +8,11 @@
 
 #import "NLHandle.h"
 
-@interface NLHandle (Private)
+@implementation NLHandle {
 
-@property uv_handle_t *handle;
-@property unsigned int flags;
-
-@property JSValue *closeCallback;
-
-@property NSValue *weakValue;
+    unsigned int flags;
     
-@end
-
-@implementation NLHandle
+}
 
 + (NSMutableArray *)handleQueue {
     static NSMutableArray *queue;
@@ -30,24 +23,24 @@
     return queue;
 }
 
-+ (void)ref {
-    NLHandle *handle = [[NLContext currentThis] toObjectOfClass:[NLHandle class]];
+- (void)ref {
+    NLHandle *handle = self;
     if (handle != nil && handle.handle != nil) {
         uv_ref(handle.handle);
-        handle.flags &= ~kUnref;
+        handle->flags &= ~kUnref;
     }
 }
 
-+ (void)unref {
-    NLHandle *handle = [[NLContext currentThis] toObjectOfClass:[NLHandle class]];
+- (void)unref {
+    NLHandle *handle = self;
     if (handle != nil && handle.handle != nil) {
         uv_unref(handle.handle);
-        handle.flags |= kUnref;
+        handle->flags |= kUnref;
     }
 }
 
-+ (void)close:(JSValue *)cb {
-    NLHandle *handle = [[NLContext currentThis] toObjectOfClass:[NLHandle class]];
+- (void)close:(JSValue *)cb {
+    NLHandle *handle = self;
     if (handle == nil || handle.handle == nil) {
         return;
     }
@@ -55,15 +48,15 @@
     handle.handle = nil;
     if (![cb isUndefined]) {
         handle.closeCallback = cb;
-        handle.flags |= kCloseCallback;
+        handle->flags |= kCloseCallback;
     }
 }
 
-- (id)initWithHandle:(uv_handle_t *)handle {
+- (id)initWithHandle:(uv_handle_t *)handle inContext:(NLContext *)context {
     self = [super init];
-    self.flags = 0;
+    self->flags = 0;
     self.handle = handle;
-    self.handle->data = (void *)CFBridgingRetain(self);
+    self.handle->data = (void *)CFBridgingRetain([JSValue valueWithObject:self inContext:context]);
     self.weakValue = [NSValue valueWithNonretainedObject:self];
     [[NLHandle handleQueue] addObject:self.weakValue];
     return self;
@@ -74,8 +67,8 @@
 }
 
 void onClose(uv_handle_t *handle) {
-    NLHandle *wrap = CFBridgingRelease(handle->data);
-    if (wrap.flags & kCloseCallback) {
+    NLHandle *wrap = [(JSValue *)CFBridgingRelease(handle->data) toObjectOfClass:[NLHandle class]];
+    if (wrap->flags & kCloseCallback) {
         [wrap.closeCallback callWithArguments:@[]];
     }
 }

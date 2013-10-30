@@ -16,7 +16,6 @@ struct data {
 
 @implementation NLContext {
 
-    uv_loop_t *eventLoop;
     dispatch_queue_t dispatchQueue;
 
     NSMutableDictionary *requireCache;
@@ -41,11 +40,17 @@ struct data {
     return (NLContext *)[super currentContext];
 }
 
+- (JSValue *)evaluateScript:(NSString *)script {
+    JSValue *val = [super evaluateScript:script];
+    [self runEventLoop];
+    return val;
+}
+
 #pragma mark - Scope Setup
 
 - (void)augment {
 
-    eventLoop     = [NLContext eventLoop];
+    _eventLoop    = [NLContext eventLoop];
     dispatchQueue = [NLContext dispatchQueue];
 
     requireCache  = [NLContext requireCache];
@@ -83,6 +88,12 @@ struct data {
     return (NLContext *)[(__bridge JSValue *)(((struct data *)(((uv_req_t *)req)->data))->callback) context];
 }
 
+- (void)runEventLoop {
+    dispatch_async(self->dispatchQueue, ^{
+        uv_run(_eventLoop, UV_RUN_DEFAULT);
+    });
+}
+
 + (JSValue *)createEventRequestOfType:(uv_req_type)type withCallback:(JSValue *)cb
                                    do:(void(^)(uv_loop_t *, void *, bool))task
                                  then:(void(^)(void *, NLContext *))after {
@@ -99,11 +110,7 @@ struct data {
 
     bool async = ![cb isUndefined];
 
-    task(context->eventLoop, req, async);
-
-    dispatch_async(context->dispatchQueue, ^{
-        uv_run(context->eventLoop, UV_RUN_DEFAULT);
-    });
+    task(context.eventLoop, req, async);
 
     if (!async) {
 

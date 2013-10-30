@@ -12,9 +12,9 @@
 #import "NLBindingConstants.h"
 #import "NLBindingSmalloc.h"
 #import "NLBindingBuffer.h"
-#import "NLBindingTimerWrap.h"
 #import "NLBindingCaresWrap.h"
 #import "NLBindingUv.h"
+#import "NLTimerWrap.h"
 
 @implementation NLBinding
 
@@ -35,7 +35,7 @@
                      @"constants":  [NLBindingConstants  class],
                      @"smalloc":    [NLBindingSmalloc    class],
                      @"buffer":     [NLBindingBuffer     class],
-                     @"timer_wrap": [NLBindingTimerWrap  class],
+                     @"timer_wrap": [NLTimerWrap         class],
                      @"cares_wrap": [NLBindingCaresWrap  class],
                      @"uv":         [NLBindingUv         class]};
     });
@@ -60,6 +60,12 @@
 
 + (id)binding {
     return self;
+}
+
++ (JSValue *)makeConstructor:(id)block inContext:(JSContext *)context {
+    JSValue *fun = [context evaluateScript:@"(function () { return this.__construct.apply(this, arguments); });"];
+    fun[@"prototype"][@"__construct"] = block;
+    return fun;
 }
 
 @end

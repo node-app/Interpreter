@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		B5061A33181595EB0083AB4B /* index.js in Sources */ = {isa = PBXBuildFile; fileRef = B5061A32181595EB0083AB4B /* index.js */; };
 		B5061A34181595FD0083AB4B /* index.js in Resources */ = {isa = PBXBuildFile; fileRef = B5061A32181595EB0083AB4B /* index.js */; };
-		B5061A37181597FE0083AB4B /* NLBindingTimerWrap.m in Sources */ = {isa = PBXBuildFile; fileRef = B5061A36181597FE0083AB4B /* NLBindingTimerWrap.m */; };
 		B5061A3A1815A9B00083AB4B /* NLBindingCaresWrap.m in Sources */ = {isa = PBXBuildFile; fileRef = B5061A391815A9B00083AB4B /* NLBindingCaresWrap.m */; };
 		B54C1F53180D37280051F826 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B44642180AB78E009ADEF9 /* Foundation.framework */; };
 		B54C1F74180D37440051F826 /* fs-poll.c in Sources */ = {isa = PBXBuildFile; fileRef = B54C1E34180D36E00051F826 /* fs-poll.c */; };
@@ -99,6 +98,7 @@
 		B59E5F9D181F07320093A6FF /* NLProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = B59E5F9C181F07320093A6FF /* NLProcess.m */; };
 		B59E5FA0181F073D0093A6FF /* NLBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = B59E5F9F181F073D0093A6FF /* NLBinding.m */; };
 		B59E5FA3181F07480093A6FF /* NLBindingConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B59E5FA2181F07480093A6FF /* NLBindingConstants.m */; };
+		B59E5FA61820EF530093A6FF /* NLTimerWrap.m in Sources */ = {isa = PBXBuildFile; fileRef = B59E5FA51820EF530093A6FF /* NLTimerWrap.m */; };
 		B59EA08F180CB587005BF5C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B44642180AB78E009ADEF9 /* Foundation.framework */; };
 		B59EA0BD180CB639005BF5C1 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59EA04F180CB38E005BF5C1 /* JavaScriptCore.framework */; };
 		B59EA0BF180CB694005BF5C1 /* _linklist.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A60B180C71FF00CEF23D /* _linklist.js */; };
@@ -155,8 +155,6 @@
 
 /* Begin PBXFileReference section */
 		B5061A32181595EB0083AB4B /* index.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = index.js; sourceTree = "<group>"; };
-		B5061A35181597FE0083AB4B /* NLBindingTimerWrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLBindingTimerWrap.h; sourceTree = "<group>"; };
-		B5061A36181597FE0083AB4B /* NLBindingTimerWrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLBindingTimerWrap.m; sourceTree = "<group>"; };
 		B5061A381815A9B00083AB4B /* NLBindingCaresWrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLBindingCaresWrap.h; sourceTree = "<group>"; };
 		B5061A391815A9B00083AB4B /* NLBindingCaresWrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLBindingCaresWrap.m; sourceTree = "<group>"; };
 		B537A604180C71FF00CEF23D /* _debugger.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = _debugger.js; sourceTree = "<group>"; };
@@ -264,6 +262,8 @@
 		B59E5F9F181F073D0093A6FF /* NLBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLBinding.m; sourceTree = "<group>"; };
 		B59E5FA1181F07480093A6FF /* NLBindingConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLBindingConstants.h; sourceTree = "<group>"; };
 		B59E5FA2181F07480093A6FF /* NLBindingConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLBindingConstants.m; sourceTree = "<group>"; };
+		B59E5FA41820EF530093A6FF /* NLTimerWrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLTimerWrap.h; sourceTree = "<group>"; };
+		B59E5FA51820EF530093A6FF /* NLTimerWrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTimerWrap.m; sourceTree = "<group>"; };
 		B59EA04F180CB38E005BF5C1 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		B59EA08E180CB587005BF5C1 /* libNodelike.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNodelike.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B59EA092180CB587005BF5C1 /* Nodelike-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Nodelike-Prefix.pch"; sourceTree = "<group>"; };
@@ -475,14 +475,14 @@
 				B5C5B248181319550091FDE8 /* NLBindingSmalloc.m */,
 				B5C5B24A181321300091FDE8 /* NLBindingBuffer.h */,
 				B5C5B24B181321300091FDE8 /* NLBindingBuffer.m */,
-				B5061A35181597FE0083AB4B /* NLBindingTimerWrap.h */,
-				B5061A36181597FE0083AB4B /* NLBindingTimerWrap.m */,
 				B5061A381815A9B00083AB4B /* NLBindingCaresWrap.h */,
 				B5061A391815A9B00083AB4B /* NLBindingCaresWrap.m */,
 				B59E5F89181EC45A0093A6FF /* NLBindingUv.h */,
 				B59E5F8A181EC45A0093A6FF /* NLBindingUv.m */,
 				B59E5F8F181EE3590093A6FF /* NLHandle.h */,
 				B59E5F90181EE3590093A6FF /* NLHandle.m */,
+				B59E5FA41820EF530093A6FF /* NLTimerWrap.h */,
+				B59E5FA51820EF530093A6FF /* NLTimerWrap.m */,
 				B59EA093180CB587005BF5C1 /* Nodelike.h */,
 				B59EA091180CB587005BF5C1 /* Supporting Files */,
 			);
@@ -786,9 +786,9 @@
 				B59E5F91181EE3590093A6FF /* NLHandle.m in Sources */,
 				B5C5B24C181321300091FDE8 /* NLBindingBuffer.m in Sources */,
 				B59E5F94181F07090093A6FF /* NLBindingFilesystem.m in Sources */,
-				B5061A37181597FE0083AB4B /* NLBindingTimerWrap.m in Sources */,
 				B59E5F9D181F07320093A6FF /* NLProcess.m in Sources */,
 				B59E5FA0181F073D0093A6FF /* NLBinding.m in Sources */,
+				B59E5FA61820EF530093A6FF /* NLTimerWrap.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

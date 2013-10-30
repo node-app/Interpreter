@@ -12,6 +12,8 @@
 
 @interface NLContext : JSContext
 
+@property uv_loop_t *eventLoop;
+
 + (NLContext *)currentContext;
 
 + (NLContext *)contextForEventRequest:(void *)req;

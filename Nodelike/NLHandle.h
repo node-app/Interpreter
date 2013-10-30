@@ -10,9 +10,9 @@
 
 @protocol NLHandleExports <JSExport>
 
-+ (void)ref;
-+ (void)unref;
-+ (void)close:(JSValue *)cb;
+- (void)ref;
+- (void)unref;
+- (void)close:(JSValue *)cb;
 
 @end
 
@@ -21,6 +21,12 @@ static const unsigned int kCloseCallback = 2;
 
 @interface NLHandle : NLBinding <NLHandleExports>
 
-- (id)initWithHandle:(uv_handle_t *)handle;
+@property uv_handle_t *handle;
+
+@property JSValue *closeCallback;
+
+@property NSValue *weakValue;
+
+- (id)initWithHandle:(uv_handle_t *)handle inContext:(NLContext *)context;
 
 @end
