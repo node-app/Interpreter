@@ -14,8 +14,6 @@
 - (void)unref;
 - (void)close:(JSValue *)cb;
 
-@property JSValue *onTimeout;
-
 JSExportAs(start, - (NSNumber *)start:(NSNumber *)timeout repeat:(NSNumber *)repeat);
 - (NSNumber *)stop;
 - (NSNumber *)setRepeat:(NSNumber *)repeat;
@@ -25,7 +23,5 @@ JSExportAs(start, - (NSNumber *)start:(NSNumber *)timeout repeat:(NSNumber *)rep
 @end
 
 @interface NLTimerWrap : NLHandle <NLTimerWrapExports>
-
-@property JSValue *onTimeout;
 
 @end

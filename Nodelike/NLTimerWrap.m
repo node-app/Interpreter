@@ -8,7 +8,7 @@
 
 #import "NLTimerWrap.h"
 
-NSString *kOnTimeout = @"onTimeout";
+static const uint32_t kOnTimeout = 0;
 
 @implementation NLTimerWrap {
 
@@ -21,7 +21,7 @@ NSString *kOnTimeout = @"onTimeout";
     JSValue *timer = [NLBinding makeConstructor:^{ return [[NLTimerWrap alloc] init]; }
                                       inContext:[JSContext currentContext]];
     
-    timer[@"kOnTimeout"] = kOnTimeout;
+    timer[@"kOnTimeout"] = [NSNumber numberWithUnsignedInt:kOnTimeout];
 
     timer[@"now"] = ^{
         return [NSNumber numberWithDouble:uv_now([[NLContext currentContext] eventLoop])];
@@ -70,7 +70,7 @@ static void onTimeout(uv_timer_t *handle, int status) {
     JSValue     *wrap       = (__bridge JSValue *)(handle->data);
     JSObjectRef  wrapRef    = (JSObjectRef)[wrap JSValueRef];
     JSContextRef contextRef = [[wrap context] JSGlobalContextRef];
-    JSValueRef   callback   = JSObjectGetPropertyAtIndex(contextRef, wrapRef, 0, nil);
+    JSValueRef   callback   = JSObjectGetPropertyAtIndex(contextRef, wrapRef, kOnTimeout, nil);
     if (callback && JSValueIsObject(contextRef, callback) && JSObjectIsFunction(contextRef, (JSObjectRef)callback)) {
         JSValueRef arg = JSValueMakeNumber(contextRef, status);
         JSObjectCallAsFunction(contextRef, (JSObjectRef)callback, wrapRef, 1, &arg, nil);
