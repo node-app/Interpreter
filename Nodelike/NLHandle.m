@@ -66,7 +66,7 @@
     [[NLHandle handleQueue] removeObject:self.weakValue];
 }
 
-void onClose(uv_handle_t *handle) {
+static void onClose(uv_handle_t *handle) {
     NLHandle *wrap = [(JSValue *)CFBridgingRelease(handle->data) toObjectOfClass:[NLHandle class]];
     if (wrap->flags & kCloseCallback) {
         [wrap.closeCallback callWithArguments:@[]];
