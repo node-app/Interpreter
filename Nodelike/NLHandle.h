@@ -16,9 +16,6 @@
 
 @end
 
-static const unsigned int kUnref = 1;
-static const unsigned int kCloseCallback = 2;
-
 @interface NLHandle : NLBinding <NLHandleExports>
 
 @property uv_handle_t *handle;

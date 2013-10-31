@@ -8,7 +8,7 @@
 
 #import "NLTimerWrap.h"
 
-static const uint32_t kOnTimeout = 0;
+static const unsigned int kOnTimeout = 0;
 
 @implementation NLTimerWrap {
     uv_timer_t handle;

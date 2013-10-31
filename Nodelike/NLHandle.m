@@ -8,10 +8,11 @@
 
 #import "NLHandle.h"
 
-@implementation NLHandle {
+static const unsigned int kUnref = 1;
+static const unsigned int kCloseCallback = 2;
 
+@implementation NLHandle {
     unsigned int flags;
-    
 }
 
 + (NSMutableArray *)handleQueue {
@@ -24,31 +25,28 @@
 }
 
 - (void)ref {
-    NLHandle *handle = self;
-    if (handle != nil && handle.handle != nil) {
-        uv_ref(handle.handle);
-        handle->flags &= ~kUnref;
+    if (_handle != nil) {
+        uv_ref(_handle);
+        flags &= ~kUnref;
     }
 }
 
 - (void)unref {
-    NLHandle *handle = self;
-    if (handle != nil && handle.handle != nil) {
-        uv_unref(handle.handle);
-        handle->flags |= kUnref;
+    if (_handle != nil) {
+        uv_unref(_handle);
+        flags |= kUnref;
     }
 }
 
 - (void)close:(JSValue *)cb {
-    NLHandle *handle = self;
-    if (handle == nil || handle.handle == nil) {
+    if (_handle == nil) {
         return;
     }
-    uv_close(handle.handle, onClose);
-    handle.handle = nil;
+    uv_close(_handle, onClose);
+    _handle = nil;
     if (![cb isUndefined]) {
-        handle.closeCallback = cb;
-        handle->flags |= kCloseCallback;
+        _closeCallback = cb;
+        flags |= kCloseCallback;
     }
 }
 
