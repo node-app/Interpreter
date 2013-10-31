@@ -18,17 +18,24 @@
 @implementation NLBindingConstants
 
 + (id)binding {
-    NSMutableDictionary *constants = [[NSMutableDictionary alloc] init];
-    [NLBindingConstants defineErrnoConstants: constants];
-    [NLBindingConstants defineSignalConstants:constants];
-    [NLBindingConstants defineSystemConstants:constants];
+    JSValue       *constants   = [JSValue valueWithNewObjectInContext:[NLContext currentContext]];
+    JSObjectRef   constantsRef = (JSObjectRef)[constants JSValueRef];
+    JSContextRef  contextRef   = [[NLContext currentContext] JSGlobalContextRef];
+    [NLBindingConstants defineErrnoConstants: constantsRef inContext:contextRef];
+    [NLBindingConstants defineSignalConstants:constantsRef inContext:contextRef];
+    [NLBindingConstants defineSystemConstants:constantsRef inContext:contextRef];
     return constants;
 }
 
-#define NODE_DEFINE_CONSTANT(target, constant) \
-    [target setObject:[NSNumber numberWithInt:constant] forKey:@#constant]
+const static inline void define_constant(JSObjectRef target, JSContextRef context, const char *str, double constant) {
+    JSStringRef key = JSStringCreateWithUTF8CString(str);
+    JSObjectSetProperty(context, target, key, JSValueMakeNumber(context, constant), kJSPropertyAttributeReadOnly, nil);
+    JSStringRelease(key);
+}
 
-+ (void)defineErrnoConstants:(NSMutableDictionary *)target {
+#define NODE_DEFINE_CONSTANT(target, constant) define_constant(target, contextRef, #constant, constant)
+
++ (void)defineErrnoConstants:(JSObjectRef)target inContext:(JSContextRef)contextRef {
 
 #ifdef E2BIG
     NODE_DEFINE_CONSTANT(target, E2BIG);
@@ -348,7 +355,7 @@
 
 }
 
-+ (void)defineSignalConstants:(NSMutableDictionary *)target {
++ (void)defineSignalConstants:(JSObjectRef)target inContext:(JSContextRef)contextRef {
 
 #ifdef SIGHUP
     NODE_DEFINE_CONSTANT(target, SIGHUP);
@@ -495,7 +502,7 @@
 
 }
 
-+ (void)defineSystemConstants:(NSMutableDictionary *)target {
++ (void)defineSystemConstants:(JSObjectRef)target inContext:(JSContextRef)contextRef {
 
     // file access modes
     NODE_DEFINE_CONSTANT(target, O_RDONLY);
