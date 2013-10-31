@@ -11,9 +11,9 @@
 
 @protocol NLProcessJSExports <JSExport>
 
-@property NSArray *argv;
-@property NSString *platform;
-@property NSDictionary *env;
+@property (readonly) NSArray      *argv;
+@property (readonly) NSString     *platform;
+@property (readonly) NSDictionary *env;
 
 - (NSString *)cwd;
 - (void)chdir:(NSString *)path;
@@ -28,8 +28,8 @@
 
 @interface NLProcess : NSObject <NLProcessJSExports>
 
-@property NSArray *argv;
-@property NSString *platform;
-@property NSDictionary *env;
+@property (readonly) NSArray      *argv;
+@property (readonly) NSString     *platform;
+@property (readonly) NSDictionary *env;
 
 @end

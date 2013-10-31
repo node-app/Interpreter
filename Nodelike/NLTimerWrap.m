@@ -30,32 +30,32 @@ static const unsigned int kOnTimeout = 0;
 }
 
 - (id)initInContext:(NLContext *)context {
-    self = [super initWithHandle:(uv_handle_t *)&self->handle inContext:context];
-    int r = uv_timer_init(context.eventLoop, &self->handle);
+    self = [super initWithHandle:(uv_handle_t *)&handle inContext:context];
+    int r = uv_timer_init(context.eventLoop, &handle);
     assert(r == 0);
     return self;
 }
 
 - (NSNumber *)start:(NSNumber *)timeout repeat:(NSNumber *)repeat {
-    int err = uv_timer_start(&self->handle, onTimeout, [timeout intValue], [repeat intValue]);
+    int err = uv_timer_start(&handle, onTimeout, [timeout intValue], [repeat intValue]);
     return [NSNumber numberWithInt:err];
 }
 
 - (NSNumber *)stop {
-    return [NSNumber numberWithInt:uv_timer_stop(&self->handle)];
+    return [NSNumber numberWithInt:uv_timer_stop(&handle)];
 }
 
 - (NSNumber *)setRepeat:(NSNumber *)repeat {
-    uv_timer_set_repeat(&self->handle, [repeat intValue]);
+    uv_timer_set_repeat(&handle, [repeat intValue]);
     return @0;
 }
 
 - (NSNumber *)getRepeat {
-    return [NSNumber numberWithDouble:uv_timer_get_repeat(&self->handle)];
+    return [NSNumber numberWithDouble:uv_timer_get_repeat(&handle)];
 }
 
 - (NSNumber *)again {
-    int err = uv_timer_again(&self->handle);
+    int err = uv_timer_again(&handle);
     return [NSNumber numberWithInt:err];
 }
 

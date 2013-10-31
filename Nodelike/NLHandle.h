@@ -18,11 +18,9 @@
 
 @interface NLHandle : NLBinding <NLHandleExports>
 
-@property uv_handle_t *handle;
-
-@property JSValue *closeCallback;
-
-@property NSValue *weakValue;
+@property (readonly) uv_handle_t *handle;
+@property (readonly) JSValue     *closeCallback;
+@property (readonly) NSValue     *weakValue;
 
 - (id)initWithHandle:(uv_handle_t *)handle inContext:(NLContext *)context;
 

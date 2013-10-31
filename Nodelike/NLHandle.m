@@ -51,12 +51,12 @@ static const unsigned int kCloseCallback = 2;
 }
 
 - (id)initWithHandle:(uv_handle_t *)handle inContext:(NLContext *)context {
-    self = [super init];
-    self->flags = 0;
-    self.handle = handle;
-    self.handle->data = (void *)CFBridgingRetain([JSValue valueWithObject:self inContext:context]);
-    self.weakValue = [NSValue valueWithNonretainedObject:self];
-    [[NLHandle handleQueue] addObject:self.weakValue];
+    self          = [super init];
+    flags         = 0;
+    _handle       = handle;
+    _handle->data = (void *)CFBridgingRetain([JSValue valueWithObject:self inContext:context]);
+    _weakValue    = [NSValue valueWithNonretainedObject:self];
+    [[NLHandle handleQueue] addObject:_weakValue];
     return self;
 }
 

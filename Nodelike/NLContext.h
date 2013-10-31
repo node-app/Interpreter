@@ -12,7 +12,7 @@
 
 @interface NLContext : JSContext
 
-@property uv_loop_t *eventLoop;
+@property (readonly) uv_loop_t *eventLoop;
 
 + (NLContext *)currentContext;
 

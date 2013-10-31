@@ -15,11 +15,8 @@ struct data {
 };
 
 @implementation NLContext {
-
-    dispatch_queue_t dispatchQueue;
-
+    dispatch_queue_t     dispatchQueue;
     NSMutableDictionary *requireCache;
-    
 }
 
 #pragma mark - JSContext
@@ -89,7 +86,7 @@ struct data {
 }
 
 - (void)runEventLoop {
-    dispatch_async(self->dispatchQueue, ^{
+    dispatch_async(dispatchQueue, ^{
         uv_run(_eventLoop, UV_RUN_DEFAULT);
     });
 }

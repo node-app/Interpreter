@@ -11,16 +11,14 @@
 #import "NLBinding.h"
 
 @implementation NLProcess {
-
     NSFileManager *filemngr;
-
 }
 
 - (id)init {
 
-    self.platform = @"darwin";
-    self.argv = [[NSProcessInfo processInfo] arguments];
-    self.env  = [[NSProcessInfo processInfo] environment];
+    _platform = @"darwin";
+    _argv = [[NSProcessInfo processInfo] arguments];
+    _env  = [[NSProcessInfo processInfo] environment];
 
     filemngr  = [[NSFileManager alloc] init];
 
