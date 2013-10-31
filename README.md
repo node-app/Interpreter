@@ -32,8 +32,7 @@ How to use the demo app
 -----------------------
 
 You can enter Javascript code into the TextView and execute that via a tap on the `Execute` button.
-After each execution, the result of the global variable `_` is pasted into the TextView.
-So to get the result of an addition, do: `_ = 1 + 3.2`. To print a variable: `_ = JSON.stringify(process.argv)`.
+After each execution, when the result of the executed script is not undefined, a popover will appear containing that result.
 
 Have fun!
 
