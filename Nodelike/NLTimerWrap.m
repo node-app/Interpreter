@@ -15,12 +15,12 @@ static const uint32_t kOnTimeout = 0;
 }
 
 + (id)binding {
-    NLContext *context   = [NLContext currentContext];
-    JSValue   *timer     = [NLBinding makeConstructor:^{ return [[NLTimerWrap alloc] init]; } inContext:context];
+    JSValue   *timer     = [NLBinding makeConstructor:^{ return [[NLTimerWrap alloc] init]; } inContext:[NLContext currentContext]];
     timer[@"kOnTimeout"] = [NSNumber numberWithUnsignedInt:kOnTimeout];
     timer[@"now"]        = ^{
-        uv_update_time(context.eventLoop);
-        return [NSNumber numberWithDouble:uv_now(context.eventLoop)];
+        uv_loop_t *eventLoop = [[NLContext currentContext] eventLoop];
+        uv_update_time(eventLoop);
+        return [NSNumber numberWithDouble:uv_now(eventLoop)];
     };
     return @{@"Timer": timer};
 }
