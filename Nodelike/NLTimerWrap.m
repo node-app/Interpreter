@@ -11,28 +11,18 @@
 static const uint32_t kOnTimeout = 0;
 
 @implementation NLTimerWrap {
-
     uv_timer_t handle;
-
 }
 
 + (id)binding {
-    NSLog(@"binding context: %@", [NLContext currentContext]);
-    JSValue *timer = [NLBinding makeConstructor:^{ return [[NLTimerWrap alloc] init]; }
-                                      inContext:[JSContext currentContext]];
-    
+    NLContext *context   = [NLContext currentContext];
+    JSValue   *timer     = [NLBinding makeConstructor:^{ return [[NLTimerWrap alloc] init]; } inContext:context];
     timer[@"kOnTimeout"] = [NSNumber numberWithUnsignedInt:kOnTimeout];
-
-    timer[@"now"] = ^{
-        return [NSNumber numberWithDouble:uv_now([[NLContext currentContext] eventLoop])];
-    };
-
+    timer[@"now"]        = ^{ return [NSNumber numberWithDouble:uv_now(context.eventLoop)]; };
     return @{@"Timer": timer};
-
 }
 
 - (id)init {
-    NSLog(@"init context: %@", [NLContext currentContext]);
     return [self initInContext:[NLContext currentContext]];
 }
 
