@@ -18,7 +18,10 @@ static const uint32_t kOnTimeout = 0;
     NLContext *context   = [NLContext currentContext];
     JSValue   *timer     = [NLBinding makeConstructor:^{ return [[NLTimerWrap alloc] init]; } inContext:context];
     timer[@"kOnTimeout"] = [NSNumber numberWithUnsignedInt:kOnTimeout];
-    timer[@"now"]        = ^{ return [NSNumber numberWithDouble:uv_now(context.eventLoop)]; };
+    timer[@"now"]        = ^{
+        uv_update_time(context.eventLoop);
+        return [NSNumber numberWithDouble:uv_now(context.eventLoop)];
+    };
     return @{@"Timer": timer};
 }
 
