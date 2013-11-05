@@ -37,8 +37,7 @@ static const unsigned int kOnTimeout = 0;
 }
 
 - (NSNumber *)start:(NSNumber *)timeout repeat:(NSNumber *)repeat {
-    int err = uv_timer_start(&handle, onTimeout, [timeout intValue], [repeat intValue]);
-    return [NSNumber numberWithInt:err];
+    return [NSNumber numberWithInt:uv_timer_start(&handle, onTimeout, [timeout intValue], [repeat intValue])];
 }
 
 - (NSNumber *)stop {
@@ -55,8 +54,7 @@ static const unsigned int kOnTimeout = 0;
 }
 
 - (NSNumber *)again {
-    int err = uv_timer_again(&handle);
-    return [NSNumber numberWithInt:err];
+    return [NSNumber numberWithInt:uv_timer_again(&handle)];
 }
 
 static void onTimeout(uv_timer_t *handle, int status) {
