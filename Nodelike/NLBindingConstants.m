@@ -18,609 +18,193 @@
 @implementation NLBindingConstants
 
 + (id)binding {
-    JSValue       *constants   = [JSValue valueWithNewObjectInContext:[NLContext currentContext]];
-    JSObjectRef   constantsRef = (JSObjectRef)[constants JSValueRef];
-    JSContextRef  contextRef   = [[NLContext currentContext] JSGlobalContextRef];
-    [NLBindingConstants defineErrnoConstants: constantsRef inContext:contextRef];
-    [NLBindingConstants defineSignalConstants:constantsRef inContext:contextRef];
-    [NLBindingConstants defineSystemConstants:constantsRef inContext:contextRef];
-    return constants;
+    JSContext   *context      = [NLContext currentContext];
+    JSContextRef contextRef   = [context JSGlobalContextRef];
+    JSObjectRef  constantsRef = JSObjectMake(contextRef, nil, nil);
+    define_errnum_constants(constantsRef, contextRef);
+    define_signal_constants(constantsRef, contextRef);
+    define_system_constants(constantsRef, contextRef);
+    return [JSValue valueWithJSValueRef:constantsRef inContext:context];
 }
 
-const static inline void define_constant(JSObjectRef target, JSContextRef context, const char *str, double constant) {
+static void define_constant(JSObjectRef target, JSContextRef context, const char *str, double constant) {
     JSStringRef key = JSStringCreateWithUTF8CString(str);
     JSObjectSetProperty(context, target, key, JSValueMakeNumber(context, constant), kJSPropertyAttributeReadOnly, nil);
     JSStringRelease(key);
 }
 
-#define NODE_DEFINE_CONSTANT(target, constant) define_constant(target, contextRef, #constant, constant)
-
-+ (void)defineErrnoConstants:(JSObjectRef)target inContext:(JSContextRef)contextRef {
-
-#ifdef E2BIG
-    NODE_DEFINE_CONSTANT(target, E2BIG);
-#endif
-
-#ifdef EACCES
-    NODE_DEFINE_CONSTANT(target, EACCES);
-#endif
-
-#ifdef EADDRINUSE
-    NODE_DEFINE_CONSTANT(target, EADDRINUSE);
-#endif
-
-#ifdef EADDRNOTAVAIL
-    NODE_DEFINE_CONSTANT(target, EADDRNOTAVAIL);
-#endif
-
-#ifdef EAFNOSUPPORT
-    NODE_DEFINE_CONSTANT(target, EAFNOSUPPORT);
-#endif
-
-#ifdef EAGAIN
-    NODE_DEFINE_CONSTANT(target, EAGAIN);
-#endif
-
-#ifdef EALREADY
-    NODE_DEFINE_CONSTANT(target, EALREADY);
-#endif
-
-#ifdef EBADF
-    NODE_DEFINE_CONSTANT(target, EBADF);
-#endif
-
-#ifdef EBADMSG
-    NODE_DEFINE_CONSTANT(target, EBADMSG);
-#endif
-
-#ifdef EBUSY
-    NODE_DEFINE_CONSTANT(target, EBUSY);
-#endif
-
-#ifdef ECANCELED
-    NODE_DEFINE_CONSTANT(target, ECANCELED);
-#endif
-
-#ifdef ECHILD
-    NODE_DEFINE_CONSTANT(target, ECHILD);
-#endif
-
-#ifdef ECONNABORTED
-    NODE_DEFINE_CONSTANT(target, ECONNABORTED);
-#endif
-
-#ifdef ECONNREFUSED
-    NODE_DEFINE_CONSTANT(target, ECONNREFUSED);
-#endif
-
-#ifdef ECONNRESET
-    NODE_DEFINE_CONSTANT(target, ECONNRESET);
-#endif
-
-#ifdef EDEADLK
-    NODE_DEFINE_CONSTANT(target, EDEADLK);
-#endif
-
-#ifdef EDESTADDRREQ
-    NODE_DEFINE_CONSTANT(target, EDESTADDRREQ);
-#endif
-
-#ifdef EDOM
-    NODE_DEFINE_CONSTANT(target, EDOM);
-#endif
-
-#ifdef EDQUOT
-    NODE_DEFINE_CONSTANT(target, EDQUOT);
-#endif
-
-#ifdef EEXIST
-    NODE_DEFINE_CONSTANT(target, EEXIST);
-#endif
-
-#ifdef EFAULT
-    NODE_DEFINE_CONSTANT(target, EFAULT);
-#endif
-
-#ifdef EFBIG
-    NODE_DEFINE_CONSTANT(target, EFBIG);
-#endif
-
-#ifdef EHOSTUNREACH
-    NODE_DEFINE_CONSTANT(target, EHOSTUNREACH);
-#endif
-
-#ifdef EIDRM
-    NODE_DEFINE_CONSTANT(target, EIDRM);
-#endif
-
-#ifdef EILSEQ
-    NODE_DEFINE_CONSTANT(target, EILSEQ);
-#endif
-
-#ifdef EINPROGRESS
-    NODE_DEFINE_CONSTANT(target, EINPROGRESS);
-#endif
-
-#ifdef EINTR
-    NODE_DEFINE_CONSTANT(target, EINTR);
-#endif
-
-#ifdef EINVAL
-    NODE_DEFINE_CONSTANT(target, EINVAL);
-#endif
-
-#ifdef EIO
-    NODE_DEFINE_CONSTANT(target, EIO);
-#endif
-
-#ifdef EISCONN
-    NODE_DEFINE_CONSTANT(target, EISCONN);
-#endif
-
-#ifdef EISDIR
-    NODE_DEFINE_CONSTANT(target, EISDIR);
-#endif
-
-#ifdef ELOOP
-    NODE_DEFINE_CONSTANT(target, ELOOP);
-#endif
-
-#ifdef EMFILE
-    NODE_DEFINE_CONSTANT(target, EMFILE);
-#endif
-
-#ifdef EMLINK
-    NODE_DEFINE_CONSTANT(target, EMLINK);
-#endif
-
-#ifdef EMSGSIZE
-    NODE_DEFINE_CONSTANT(target, EMSGSIZE);
-#endif
-
-#ifdef EMULTIHOP
-    NODE_DEFINE_CONSTANT(target, EMULTIHOP);
-#endif
-
-#ifdef ENAMETOOLONG
-    NODE_DEFINE_CONSTANT(target, ENAMETOOLONG);
-#endif
-
-#ifdef ENETDOWN
-    NODE_DEFINE_CONSTANT(target, ENETDOWN);
-#endif
-
-#ifdef ENETRESET
-    NODE_DEFINE_CONSTANT(target, ENETRESET);
-#endif
-
-#ifdef ENETUNREACH
-    NODE_DEFINE_CONSTANT(target, ENETUNREACH);
-#endif
-
-#ifdef ENFILE
-    NODE_DEFINE_CONSTANT(target, ENFILE);
-#endif
-
-#ifdef ENOBUFS
-    NODE_DEFINE_CONSTANT(target, ENOBUFS);
-#endif
-
-#ifdef ENODATA
-    NODE_DEFINE_CONSTANT(target, ENODATA);
-#endif
-
-#ifdef ENODEV
-    NODE_DEFINE_CONSTANT(target, ENODEV);
-#endif
-
-#ifdef ENOENT
-    NODE_DEFINE_CONSTANT(target, ENOENT);
-#endif
-
-#ifdef ENOEXEC
-    NODE_DEFINE_CONSTANT(target, ENOEXEC);
-#endif
-
-#ifdef ENOLCK
-    NODE_DEFINE_CONSTANT(target, ENOLCK);
-#endif
-
-#ifdef ENOLINK
-    NODE_DEFINE_CONSTANT(target, ENOLINK);
-#endif
-
-#ifdef ENOMEM
-    NODE_DEFINE_CONSTANT(target, ENOMEM);
-#endif
-
-#ifdef ENOMSG
-    NODE_DEFINE_CONSTANT(target, ENOMSG);
-#endif
-
-#ifdef ENOPROTOOPT
-    NODE_DEFINE_CONSTANT(target, ENOPROTOOPT);
-#endif
-
-#ifdef ENOSPC
-    NODE_DEFINE_CONSTANT(target, ENOSPC);
-#endif
-
-#ifdef ENOSR
-    NODE_DEFINE_CONSTANT(target, ENOSR);
-#endif
-
-#ifdef ENOSTR
-    NODE_DEFINE_CONSTANT(target, ENOSTR);
-#endif
-
-#ifdef ENOSYS
-    NODE_DEFINE_CONSTANT(target, ENOSYS);
-#endif
-
-#ifdef ENOTCONN
-    NODE_DEFINE_CONSTANT(target, ENOTCONN);
-#endif
-
-#ifdef ENOTDIR
-    NODE_DEFINE_CONSTANT(target, ENOTDIR);
-#endif
-
-#ifdef ENOTEMPTY
-    NODE_DEFINE_CONSTANT(target, ENOTEMPTY);
-#endif
-
-#ifdef ENOTSOCK
-    NODE_DEFINE_CONSTANT(target, ENOTSOCK);
-#endif
-
-#ifdef ENOTSUP
-    NODE_DEFINE_CONSTANT(target, ENOTSUP);
-#endif
-
-#ifdef ENOTTY
-    NODE_DEFINE_CONSTANT(target, ENOTTY);
-#endif
-
-#ifdef ENXIO
-    NODE_DEFINE_CONSTANT(target, ENXIO);
-#endif
-
-#ifdef EOPNOTSUPP
-    NODE_DEFINE_CONSTANT(target, EOPNOTSUPP);
-#endif
-
-#ifdef EOVERFLOW
-    NODE_DEFINE_CONSTANT(target, EOVERFLOW);
-#endif
-
-#ifdef EPERM
-    NODE_DEFINE_CONSTANT(target, EPERM);
-#endif
-
-#ifdef EPIPE
-    NODE_DEFINE_CONSTANT(target, EPIPE);
-#endif
-
-#ifdef EPROTO
-    NODE_DEFINE_CONSTANT(target, EPROTO);
-#endif
-
-#ifdef EPROTONOSUPPORT
-    NODE_DEFINE_CONSTANT(target, EPROTONOSUPPORT);
-#endif
-
-#ifdef EPROTOTYPE
-    NODE_DEFINE_CONSTANT(target, EPROTOTYPE);
-#endif
-
-#ifdef ERANGE
-    NODE_DEFINE_CONSTANT(target, ERANGE);
-#endif
-
-#ifdef EROFS
-    NODE_DEFINE_CONSTANT(target, EROFS);
-#endif
-
-#ifdef ESPIPE
-    NODE_DEFINE_CONSTANT(target, ESPIPE);
-#endif
-
-#ifdef ESRCH
-    NODE_DEFINE_CONSTANT(target, ESRCH);
-#endif
-
-#ifdef ESTALE
-    NODE_DEFINE_CONSTANT(target, ESTALE);
-#endif
-
-#ifdef ETIME
-    NODE_DEFINE_CONSTANT(target, ETIME);
-#endif
-
-#ifdef ETIMEDOUT
-    NODE_DEFINE_CONSTANT(target, ETIMEDOUT);
-#endif
-
-#ifdef ETXTBSY
-    NODE_DEFINE_CONSTANT(target, ETXTBSY);
-#endif
-
-#ifdef EWOULDBLOCK
-    NODE_DEFINE_CONSTANT(target, EWOULDBLOCK);
-#endif
-
-#ifdef EXDEV
-    NODE_DEFINE_CONSTANT(target, EXDEV);
-#endif
-
+#define CONSTANT(target, contextRef, constant) define_constant(target, contextRef, #constant, constant)
+
+static void define_errnum_constants(JSObjectRef target, JSContextRef contextRef) {
+    CONSTANT(target, contextRef, E2BIG);
+    CONSTANT(target, contextRef, EACCES);
+    CONSTANT(target, contextRef, EADDRINUSE);
+    CONSTANT(target, contextRef, EADDRNOTAVAIL);
+    CONSTANT(target, contextRef, EAFNOSUPPORT);
+    CONSTANT(target, contextRef, EAGAIN);
+    CONSTANT(target, contextRef, EALREADY);
+    CONSTANT(target, contextRef, EBADF);
+    CONSTANT(target, contextRef, EBADMSG);
+    CONSTANT(target, contextRef, EBUSY);
+    CONSTANT(target, contextRef, ECANCELED);
+    CONSTANT(target, contextRef, ECHILD);
+    CONSTANT(target, contextRef, ECONNABORTED);
+    CONSTANT(target, contextRef, ECONNREFUSED);
+    CONSTANT(target, contextRef, ECONNRESET);
+    CONSTANT(target, contextRef, EDEADLK);
+    CONSTANT(target, contextRef, EDESTADDRREQ);
+    CONSTANT(target, contextRef, EDOM);
+    CONSTANT(target, contextRef, EDQUOT);
+    CONSTANT(target, contextRef, EEXIST);
+    CONSTANT(target, contextRef, EFAULT);
+    CONSTANT(target, contextRef, EFBIG);
+    CONSTANT(target, contextRef, EHOSTUNREACH);
+    CONSTANT(target, contextRef, EIDRM);
+    CONSTANT(target, contextRef, EILSEQ);
+    CONSTANT(target, contextRef, EINPROGRESS);
+    CONSTANT(target, contextRef, EINTR);
+    CONSTANT(target, contextRef, EINVAL);
+    CONSTANT(target, contextRef, EIO);
+    CONSTANT(target, contextRef, EISCONN);
+    CONSTANT(target, contextRef, EISDIR);
+    CONSTANT(target, contextRef, ELOOP);
+    CONSTANT(target, contextRef, EMFILE);
+    CONSTANT(target, contextRef, EMLINK);
+    CONSTANT(target, contextRef, EMSGSIZE);
+    CONSTANT(target, contextRef, EMULTIHOP);
+    CONSTANT(target, contextRef, ENAMETOOLONG);
+    CONSTANT(target, contextRef, ENETDOWN);
+    CONSTANT(target, contextRef, ENETRESET);
+    CONSTANT(target, contextRef, ENETUNREACH);
+    CONSTANT(target, contextRef, ENFILE);
+    CONSTANT(target, contextRef, ENOBUFS);
+    CONSTANT(target, contextRef, ENODATA);
+    CONSTANT(target, contextRef, ENODEV);
+    CONSTANT(target, contextRef, ENOENT);
+    CONSTANT(target, contextRef, ENOEXEC);
+    CONSTANT(target, contextRef, ENOLCK);
+    CONSTANT(target, contextRef, ENOLINK);
+    CONSTANT(target, contextRef, ENOMEM);
+    CONSTANT(target, contextRef, ENOMSG);
+    CONSTANT(target, contextRef, ENOPROTOOPT);
+    CONSTANT(target, contextRef, ENOSPC);
+    CONSTANT(target, contextRef, ENOSR);
+    CONSTANT(target, contextRef, ENOSTR);
+    CONSTANT(target, contextRef, ENOSYS);
+    CONSTANT(target, contextRef, ENOTCONN);
+    CONSTANT(target, contextRef, ENOTDIR);
+    CONSTANT(target, contextRef, ENOTEMPTY);
+    CONSTANT(target, contextRef, ENOTSOCK);
+    CONSTANT(target, contextRef, ENOTSUP);
+    CONSTANT(target, contextRef, ENOTTY);
+    CONSTANT(target, contextRef, ENXIO);
+    CONSTANT(target, contextRef, EOPNOTSUPP);
+    CONSTANT(target, contextRef, EOVERFLOW);
+    CONSTANT(target, contextRef, EPERM);
+    CONSTANT(target, contextRef, EPIPE);
+    CONSTANT(target, contextRef, EPROTO);
+    CONSTANT(target, contextRef, EPROTONOSUPPORT);
+    CONSTANT(target, contextRef, EPROTOTYPE);
+    CONSTANT(target, contextRef, ERANGE);
+    CONSTANT(target, contextRef, EROFS);
+    CONSTANT(target, contextRef, ESPIPE);
+    CONSTANT(target, contextRef, ESRCH);
+    CONSTANT(target, contextRef, ESTALE);
+    CONSTANT(target, contextRef, ETIME);
+    CONSTANT(target, contextRef, ETIMEDOUT);
+    CONSTANT(target, contextRef, ETXTBSY);
+    CONSTANT(target, contextRef, EWOULDBLOCK);
+    CONSTANT(target, contextRef, EXDEV);
 }
 
-+ (void)defineSignalConstants:(JSObjectRef)target inContext:(JSContextRef)contextRef {
-
-#ifdef SIGHUP
-    NODE_DEFINE_CONSTANT(target, SIGHUP);
-#endif
-
-#ifdef SIGINT
-    NODE_DEFINE_CONSTANT(target, SIGINT);
-#endif
-
-#ifdef SIGQUIT
-    NODE_DEFINE_CONSTANT(target, SIGQUIT);
-#endif
-
-#ifdef SIGILL
-    NODE_DEFINE_CONSTANT(target, SIGILL);
-#endif
-
-#ifdef SIGTRAP
-    NODE_DEFINE_CONSTANT(target, SIGTRAP);
-#endif
-
-#ifdef SIGABRT
-    NODE_DEFINE_CONSTANT(target, SIGABRT);
-#endif
-
-#ifdef SIGIOT
-    NODE_DEFINE_CONSTANT(target, SIGIOT);
-#endif
-
-#ifdef SIGBUS
-    NODE_DEFINE_CONSTANT(target, SIGBUS);
-#endif
-
-#ifdef SIGFPE
-    NODE_DEFINE_CONSTANT(target, SIGFPE);
-#endif
-
-#ifdef SIGKILL
-    NODE_DEFINE_CONSTANT(target, SIGKILL);
-#endif
-
-#ifdef SIGUSR1
-    NODE_DEFINE_CONSTANT(target, SIGUSR1);
-#endif
-
-#ifdef SIGSEGV
-    NODE_DEFINE_CONSTANT(target, SIGSEGV);
-#endif
-
-#ifdef SIGUSR2
-    NODE_DEFINE_CONSTANT(target, SIGUSR2);
-#endif
-
-#ifdef SIGPIPE
-    NODE_DEFINE_CONSTANT(target, SIGPIPE);
-#endif
-
-#ifdef SIGALRM
-    NODE_DEFINE_CONSTANT(target, SIGALRM);
-#endif
-
-    NODE_DEFINE_CONSTANT(target, SIGTERM);
-
-#ifdef SIGCHLD
-    NODE_DEFINE_CONSTANT(target, SIGCHLD);
-#endif
-
+static void define_signal_constants(JSObjectRef target, JSContextRef contextRef) {
+    CONSTANT(target, contextRef, SIGHUP);
+    CONSTANT(target, contextRef, SIGINT);
+    CONSTANT(target, contextRef, SIGQUIT);
+    CONSTANT(target, contextRef, SIGILL);
+    CONSTANT(target, contextRef, SIGTRAP);
+    CONSTANT(target, contextRef, SIGABRT);
+    CONSTANT(target, contextRef, SIGIOT);
+    CONSTANT(target, contextRef, SIGBUS);
+    CONSTANT(target, contextRef, SIGFPE);
+    CONSTANT(target, contextRef, SIGKILL);
+    CONSTANT(target, contextRef, SIGUSR1);
+    CONSTANT(target, contextRef, SIGSEGV);
+    CONSTANT(target, contextRef, SIGUSR2);
+    CONSTANT(target, contextRef, SIGPIPE);
+    CONSTANT(target, contextRef, SIGALRM);
+    CONSTANT(target, contextRef, SIGTERM);
+    CONSTANT(target, contextRef, SIGCHLD);
 #ifdef SIGSTKFLT
-    NODE_DEFINE_CONSTANT(target, SIGSTKFLT);
+    CONSTANT(target, contextRef, SIGSTKFLT);
 #endif
-
-
-#ifdef SIGCONT
-    NODE_DEFINE_CONSTANT(target, SIGCONT);
-#endif
-
-#ifdef SIGSTOP
-    NODE_DEFINE_CONSTANT(target, SIGSTOP);
-#endif
-
-#ifdef SIGTSTP
-    NODE_DEFINE_CONSTANT(target, SIGTSTP);
-#endif
-
+    CONSTANT(target, contextRef, SIGCONT);
+    CONSTANT(target, contextRef, SIGSTOP);
+    CONSTANT(target, contextRef, SIGTSTP);
 #ifdef SIGBREAK
-    NODE_DEFINE_CONSTANT(target, SIGBREAK);
+    CONSTANT(target, contextRef, SIGBREAK);
 #endif
-
-#ifdef SIGTTIN
-    NODE_DEFINE_CONSTANT(target, SIGTTIN);
-#endif
-
-#ifdef SIGTTOU
-    NODE_DEFINE_CONSTANT(target, SIGTTOU);
-#endif
-
-#ifdef SIGURG
-    NODE_DEFINE_CONSTANT(target, SIGURG);
-#endif
-
-#ifdef SIGXCPU
-    NODE_DEFINE_CONSTANT(target, SIGXCPU);
-#endif
-
-#ifdef SIGXFSZ
-    NODE_DEFINE_CONSTANT(target, SIGXFSZ);
-#endif
-
-#ifdef SIGVTALRM
-    NODE_DEFINE_CONSTANT(target, SIGVTALRM);
-#endif
-
-#ifdef SIGPROF
-    NODE_DEFINE_CONSTANT(target, SIGPROF);
-#endif
-
-#ifdef SIGWINCH
-    NODE_DEFINE_CONSTANT(target, SIGWINCH);
-#endif
-
-#ifdef SIGIO
-    NODE_DEFINE_CONSTANT(target, SIGIO);
-#endif
-
+    CONSTANT(target, contextRef, SIGTTIN);
+    CONSTANT(target, contextRef, SIGTTOU);
+    CONSTANT(target, contextRef, SIGURG);
+    CONSTANT(target, contextRef, SIGXCPU);
+    CONSTANT(target, contextRef, SIGXFSZ);
+    CONSTANT(target, contextRef, SIGVTALRM);
+    CONSTANT(target, contextRef, SIGPROF);
+    CONSTANT(target, contextRef, SIGWINCH);
+    CONSTANT(target, contextRef, SIGIO);
 #ifdef SIGPOLL
-    NODE_DEFINE_CONSTANT(target, SIGPOLL);
+    CONSTANT(target, contextRef, SIGPOLL);
 #endif
-
 #ifdef SIGLOST
-    NODE_DEFINE_CONSTANT(target, SIGLOST);
+    CONSTANT(target, contextRef, SIGLOST);
 #endif
-
 #ifdef SIGPWR
-    NODE_DEFINE_CONSTANT(target, SIGPWR);
+    CONSTANT(target, contextRef, SIGPWR);
 #endif
-
-#ifdef SIGSYS
-    NODE_DEFINE_CONSTANT(target, SIGSYS);
-#endif
-
+    CONSTANT(target, contextRef, SIGSYS);
 #ifdef SIGUNUSED
-    NODE_DEFINE_CONSTANT(target, SIGUNUSED);
+    CONSTANT(target, contextRef, SIGUNUSED);
 #endif
-
 }
 
-+ (void)defineSystemConstants:(JSObjectRef)target inContext:(JSContextRef)contextRef {
-
-    // file access modes
-    NODE_DEFINE_CONSTANT(target, O_RDONLY);
-    NODE_DEFINE_CONSTANT(target, O_WRONLY);
-    NODE_DEFINE_CONSTANT(target, O_RDWR);
-
-    NODE_DEFINE_CONSTANT(target, S_IFMT);
-    NODE_DEFINE_CONSTANT(target, S_IFREG);
-    NODE_DEFINE_CONSTANT(target, S_IFDIR);
-    NODE_DEFINE_CONSTANT(target, S_IFCHR);
-#ifdef S_IFBLK
-    NODE_DEFINE_CONSTANT(target, S_IFBLK);
-#endif
-
-#ifdef S_IFIFO
-    NODE_DEFINE_CONSTANT(target, S_IFIFO);
-#endif
-
-#ifdef S_IFLNK
-    NODE_DEFINE_CONSTANT(target, S_IFLNK);
-#endif
-
-#ifdef S_IFSOCK
-    NODE_DEFINE_CONSTANT(target, S_IFSOCK);
-#endif
-
-#ifdef O_CREAT
-    NODE_DEFINE_CONSTANT(target, O_CREAT);
-#endif
-
-#ifdef O_EXCL
-    NODE_DEFINE_CONSTANT(target, O_EXCL);
-#endif
-
-#ifdef O_NOCTTY
-    NODE_DEFINE_CONSTANT(target, O_NOCTTY);
-#endif
-
-#ifdef O_TRUNC
-    NODE_DEFINE_CONSTANT(target, O_TRUNC);
-#endif
-
-#ifdef O_APPEND
-    NODE_DEFINE_CONSTANT(target, O_APPEND);
-#endif
-
-#ifdef O_DIRECTORY
-    NODE_DEFINE_CONSTANT(target, O_DIRECTORY);
-#endif
-
-#ifdef O_EXCL
-    NODE_DEFINE_CONSTANT(target, O_EXCL);
-#endif
-
-#ifdef O_NOFOLLOW
-    NODE_DEFINE_CONSTANT(target, O_NOFOLLOW);
-#endif
-
-#ifdef O_SYNC
-    NODE_DEFINE_CONSTANT(target, O_SYNC);
-#endif
-
-#ifdef O_SYMLINK
-    NODE_DEFINE_CONSTANT(target, O_SYMLINK);
-#endif
-
+static void define_system_constants(JSObjectRef target, JSContextRef contextRef) {
+    CONSTANT(target, contextRef, O_RDONLY);
+    CONSTANT(target, contextRef, O_WRONLY);
+    CONSTANT(target, contextRef, O_RDWR);
+    CONSTANT(target, contextRef, S_IFMT);
+    CONSTANT(target, contextRef, S_IFREG);
+    CONSTANT(target, contextRef, S_IFDIR);
+    CONSTANT(target, contextRef, S_IFCHR);
+    CONSTANT(target, contextRef, S_IFBLK);
+    CONSTANT(target, contextRef, S_IFIFO);
+    CONSTANT(target, contextRef, S_IFLNK);
+    CONSTANT(target, contextRef, S_IFSOCK);
+    CONSTANT(target, contextRef, O_CREAT);
+    CONSTANT(target, contextRef, O_EXCL);
+    CONSTANT(target, contextRef, O_NOCTTY);
+    CONSTANT(target, contextRef, O_TRUNC);
+    CONSTANT(target, contextRef, O_APPEND);
+    CONSTANT(target, contextRef, O_DIRECTORY);
+    CONSTANT(target, contextRef, O_EXCL);
+    CONSTANT(target, contextRef, O_NOFOLLOW);
+    CONSTANT(target, contextRef, O_SYNC);
+    CONSTANT(target, contextRef, O_SYMLINK);
 #ifdef O_DIRECT
-    NODE_DEFINE_CONSTANT(target, O_DIRECT);
+    CONSTANT(target, contextRef, O_DIRECT);
 #endif
-
-#ifdef S_IRWXU
-    NODE_DEFINE_CONSTANT(target, S_IRWXU);
-#endif
-
-#ifdef S_IRUSR
-    NODE_DEFINE_CONSTANT(target, S_IRUSR);
-#endif
-
-#ifdef S_IWUSR
-    NODE_DEFINE_CONSTANT(target, S_IWUSR);
-#endif
-
-#ifdef S_IXUSR
-    NODE_DEFINE_CONSTANT(target, S_IXUSR);
-#endif
-
-#ifdef S_IRWXG
-    NODE_DEFINE_CONSTANT(target, S_IRWXG);
-#endif
-
-#ifdef S_IRGRP
-    NODE_DEFINE_CONSTANT(target, S_IRGRP);
-#endif
-
-#ifdef S_IWGRP
-    NODE_DEFINE_CONSTANT(target, S_IWGRP);
-#endif
-
-#ifdef S_IXGRP
-    NODE_DEFINE_CONSTANT(target, S_IXGRP);
-#endif
-
-#ifdef S_IRWXO
-    NODE_DEFINE_CONSTANT(target, S_IRWXO);
-#endif
-
-#ifdef S_IROTH
-    NODE_DEFINE_CONSTANT(target, S_IROTH);
-#endif
-
-#ifdef S_IWOTH
-    NODE_DEFINE_CONSTANT(target, S_IWOTH);
-#endif
-
-#ifdef S_IXOTH
-    NODE_DEFINE_CONSTANT(target, S_IXOTH);
-#endif
-
+    CONSTANT(target, contextRef, S_IRWXU);
+    CONSTANT(target, contextRef, S_IRUSR);
+    CONSTANT(target, contextRef, S_IWUSR);
+    CONSTANT(target, contextRef, S_IXUSR);
+    CONSTANT(target, contextRef, S_IRWXG);
+    CONSTANT(target, contextRef, S_IRGRP);
+    CONSTANT(target, contextRef, S_IWGRP);
+    CONSTANT(target, contextRef, S_IXGRP);
+    CONSTANT(target, contextRef, S_IRWXO);
+    CONSTANT(target, contextRef, S_IROTH);
+    CONSTANT(target, contextRef, S_IWOTH);
+    CONSTANT(target, contextRef, S_IXOTH);
 }
 
 @end
