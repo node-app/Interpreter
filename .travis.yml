@@ -1,5 +1,5 @@
 language: objective-c
-script: xcodebuild -target Nodelike -arch arm64
+script: xcodebuild -target Nodelike -arch armv7
 before_install:
   - brew install sloccount
   - sudo easy_install pip
