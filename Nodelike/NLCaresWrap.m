@@ -11,7 +11,7 @@
 @implementation NLCaresWrap
 
 + (NSNumber *)isIP:(NSString *)ip {
-    char address_buffer[sizeof(struct in6_addr)];
+    struct in6_addr address_buffer;
     int rc = 0;
     if (uv_inet_pton(AF_INET, [ip UTF8String], &address_buffer) == 0)
         rc = 4;
