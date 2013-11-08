@@ -48,7 +48,13 @@
                             <constraint firstAttribute="trailing" secondItem="BEb-te-d8m" secondAttribute="trailing" id="fp6-8p-Pbf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Interpreter" id="bW9-p7-z7G"/>
+                    <navigationItem key="navigationItem" title="Interpreter" id="bW9-p7-z7G">
+                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="Mgu-0X-gx5">
+                            <connections>
+                                <action selector="showDocu:" destination="oqM-hE-VlH" id="OSL-5d-Fxg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="input" destination="BEb-te-d8m" id="eQo-kq-Frj"/>
                         <segue destination="Q1b-Lp-Avg" kind="push" identifier="display" id="AAB-M1-NI4"/>

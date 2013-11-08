@@ -70,4 +70,10 @@
     _input.text = @"";
 }
 
+- (IBAction)showDocu:(id)sender {
+    PBWebViewController *docuViewController = [[PBWebViewController alloc] init];
+    docuViewController.URL = [NSURL URLWithString:@"http://nodejs.org/docs/latest/api/"];
+    [self.navigationController pushViewController:docuViewController animated:YES];
+}
+
 @end

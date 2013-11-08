@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "NLAppDelegate.h"
 
+#import "PBWebViewController.h"
+
 @interface NLViewController : UIViewController
 
 @property NLAppDelegate *appDelegate;
@@ -17,5 +19,7 @@
 @property IBOutlet UITextView *output;
 
 - (void) execute;
+
+- (IBAction)showDocu:(id)sender;
 
 @end

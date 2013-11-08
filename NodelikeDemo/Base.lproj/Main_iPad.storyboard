@@ -56,7 +56,13 @@
                             <constraint firstItem="DDh-S8-x8y" firstAttribute="top" secondItem="w0i-BE-TvL" secondAttribute="bottom" id="rXm-XD-0rw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Interpreter" id="gZR-Ou-vFe"/>
+                    <navigationItem key="navigationItem" title="Interpreter" id="gZR-Ou-vFe">
+                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="by3-Ac-iCi">
+                            <connections>
+                                <action selector="showDocu:" destination="i7V-RN-gas" id="BDE-Cv-6nh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="input" destination="w0i-BE-TvL" id="pYe-ND-YHv"/>
                         <segue destination="0Cm-lE-4qn" kind="modal" identifier="display" modalPresentationStyle="formSheet" id="Za8-pG-JUg"/>
