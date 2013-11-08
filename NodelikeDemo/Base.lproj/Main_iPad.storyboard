@@ -57,6 +57,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Interpreter" id="gZR-Ou-vFe">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="JPA-0b-pAf">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="riU-uv-GOP">
+                                <rect key="frame" x="16" y="11" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="by3-Ac-iCi">
                             <connections>
                                 <action selector="showDocu:" destination="i7V-RN-gas" id="BDE-Cv-6nh"/>
