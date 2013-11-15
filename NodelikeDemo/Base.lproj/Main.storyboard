@@ -57,6 +57,9 @@
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="showInfo:" destination="oqM-hE-VlH" eventType="touchUpInside" id="sfE-6B-aEd"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="Mgu-0X-gx5">

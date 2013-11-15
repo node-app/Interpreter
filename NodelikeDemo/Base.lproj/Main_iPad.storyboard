@@ -65,11 +65,14 @@
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="showInfo:" destination="3SS-Cn-U2A" eventType="touchUpInside" id="0Be-tu-yl6"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="by3-Ac-iCi">
                             <connections>
-                                <action selector="showDocu:" destination="i7V-RN-gas" id="BDE-Cv-6nh"/>
+                                <action selector="showDocu:" destination="3SS-Cn-U2A" id="Kgx-nr-Su4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

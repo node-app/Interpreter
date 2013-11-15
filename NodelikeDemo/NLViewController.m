@@ -76,4 +76,10 @@
     [self.navigationController pushViewController:docuViewController animated:YES];
 }
 
+- (IBAction)showInfo:(id)sender {
+    PBWebViewController *docuViewController = [[PBWebViewController alloc] init];
+    docuViewController.URL = [NSURL URLWithString:@"http://nodeapp.org"];
+    [self.navigationController pushViewController:docuViewController animated:YES];
+}
+
 @end

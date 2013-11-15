@@ -21,5 +21,6 @@
 - (void) execute;
 
 - (IBAction)showDocu:(id)sender;
+- (IBAction)showInfo:(id)sender;
 
 @end
