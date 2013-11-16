@@ -77,6 +77,8 @@
     
     self.labels = [[NSMutableArray alloc] init];
     
+    UIColor *green = [UIColor colorWithRed:140/255.0f green:200/255.0f blue:75/255.0f alpha:1.0f];
+    
     UIFont *f = [UIFont systemFontOfSize:15];
     
     UILabel *l = [[UILabel alloc] initWithFrame:CGRectMake(leftInset, topInset, labelWidth, labelHeight)];
@@ -85,7 +87,7 @@
     l.font = f;
     [self addSubview:l];
     [l setTextColor:[UIColor whiteColor]];
-    [l setHighlightedTextColor:[UIColor blueColor]];
+    [l setHighlightedTextColor:green];
     l.backgroundColor = [UIColor clearColor];
     [labels addObject:l];
     
@@ -96,7 +98,7 @@
     l.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
     [self addSubview:l];
     [l setTextColor:[UIColor whiteColor]];
-    [l setHighlightedTextColor:[UIColor blueColor]];
+    [l setHighlightedTextColor:green];
     l.backgroundColor = [UIColor clearColor];
     [labels addObject:l];
     
@@ -107,7 +109,7 @@
     l.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     [self addSubview:l];
     [l setTextColor:[UIColor whiteColor]];
-    [l setHighlightedTextColor:[UIColor blueColor]];
+    [l setHighlightedTextColor:green];
     l.backgroundColor = [UIColor clearColor];
     [labels addObject:l];
     
@@ -117,7 +119,7 @@
     l.font = f;
     [self addSubview:l];
     [l setTextColor:[UIColor whiteColor]];
-    [l setHighlightedTextColor:[UIColor blueColor]];
+    [l setHighlightedTextColor:green];
     l.backgroundColor = [UIColor clearColor];
     [labels addObject:l];
     
@@ -128,7 +130,7 @@
     l.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
     [self addSubview:l];
     [l setTextColor:[UIColor whiteColor]];
-    [l setHighlightedTextColor:[UIColor blueColor]];
+    [l setHighlightedTextColor:green];
     l.backgroundColor = [UIColor clearColor];
     [labels addObject:l];
     

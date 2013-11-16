@@ -48,7 +48,7 @@
 
 + (void)applyToTextView:(UITextView *)t
 {
-    int barHeight = 52;
+    int barHeight = 46;
     int barWidth = 768;
     
     int buttonCount = 1;
