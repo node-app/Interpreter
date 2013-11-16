@@ -36,6 +36,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self setupStyle];
 
     _appDelegate = [[UIApplication sharedApplication] delegate];
 
@@ -48,7 +50,20 @@
     ((KOKeyboardRow *)_input.inputAccessoryView).viewController = self;
 	[_input becomeFirstResponder];
 
-} 
+}
+
+- (void)setupStyle {
+
+    UIColor *black = [UIColor blackColor];
+    UIColor *green = [UIColor colorWithRed:140/255.0f green:200/255.0f blue:75/255.0f alpha:1.0f];
+    
+    self.navigationController.navigationBar.tintColor    = black;
+    self.navigationController.navigationBar.barTintColor = green;
+    self.navigationController.navigationBar.translucent  = NO;
+    self.navigationController.toolbar.tintColor          = black;
+    self.navigationController.toolbar.barTintColor       = green;
+
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NSLog(@"%@", _outputString);
