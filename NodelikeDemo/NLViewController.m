@@ -9,8 +9,7 @@
 #import "NLViewController.h"
 
 #import "KOKeyboardRow.h"
-
-#import "NLOutputViewController.h"
+#import "CSNotificationView.h"
 
 #import "Nodelike.h"
 
@@ -43,7 +42,7 @@
 
     _context = [[NLContext alloc] initWithVirtualMachine:[[JSVirtualMachine alloc] init]];
     _context.exceptionHandler = ^(JSContext *c, JSValue *e) {
-        NSLog(@"%@", e);
+        NSLog(@"%@", [e toString]);
     };
     
     [KOKeyboardRow applyToTextView:_input];
@@ -67,19 +66,13 @@
 
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSLog(@"%@", _outputString);
-    ((NLOutputViewController *)[segue destinationViewController]).outputString = _outputString;
-}
-
 - (void)output:(NSString *)message {
-    NSLog(@"output %@", message);
-    _outputString = message;
-    [self performSegueWithIdentifier:@"display" sender:self];
+    [CSNotificationView showInViewController:self
+                                       style:CSNotificationViewStyleSuccess
+                                     message:message];
 }
 
 - (void)execute {
-    NSLog(@"execute %@", _input.text);
     JSValue *ret = [_context evaluateScript:_input.text];
     if (![ret isUndefined]) {
         [self output:[ret toString]];

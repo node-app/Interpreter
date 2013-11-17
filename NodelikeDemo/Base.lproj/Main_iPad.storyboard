@@ -78,62 +78,11 @@
                     </navigationItem>
                     <connections>
                         <outlet property="input" destination="w0i-BE-TvL" id="pYe-ND-YHv"/>
-                        <segue destination="0Cm-lE-4qn" kind="modal" identifier="display" modalPresentationStyle="formSheet" id="Za8-pG-JUg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i7V-RN-gas" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="13" y="-321"/>
-        </scene>
-        <!--Output View Controller - Title-->
-        <scene sceneID="f1w-a6-szg">
-            <objects>
-                <viewController id="0Cm-lE-4qn" customClass="NLOutputViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7mp-zV-1Z1"/>
-                        <viewControllerLayoutGuide type="bottom" id="0gY-Pd-Ugo"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="9Xl-7q-f3O">
-                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cp7-yV-5Ny">
-                                <rect key="frame" x="0.0" y="0.0" width="540" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Output" id="BRG-vd-yh5">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="74W-OL-SZJ">
-                                            <connections>
-                                                <action selector="close:" destination="0Cm-lE-4qn" id="qJw-jf-b1E"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tBS-rH-HFU">
-                                <rect key="frame" x="0.0" y="44" width="540" height="576"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="0gY-Pd-Ugo" firstAttribute="top" secondItem="tBS-rH-HFU" secondAttribute="bottom" id="DEg-6B-mbr"/>
-                            <constraint firstItem="tBS-rH-HFU" firstAttribute="leading" secondItem="9Xl-7q-f3O" secondAttribute="leading" id="Uj9-6C-Wb1"/>
-                            <constraint firstItem="tBS-rH-HFU" firstAttribute="top" secondItem="cp7-yV-5Ny" secondAttribute="bottom" id="VZW-Sa-YPd"/>
-                            <constraint firstAttribute="trailing" secondItem="tBS-rH-HFU" secondAttribute="trailing" id="cwr-y0-DXV"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Title" id="gop-eW-2bj"/>
-                    <connections>
-                        <outlet property="outputView" destination="tBS-rH-HFU" id="r9G-G9-k7h"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="asl-mk-w5L" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="933" y="71"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

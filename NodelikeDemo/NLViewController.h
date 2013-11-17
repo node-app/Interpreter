@@ -16,7 +16,6 @@
 @property NLAppDelegate *appDelegate;
 
 @property IBOutlet UITextView *input;
-@property IBOutlet UITextView *output;
 
 - (void) execute;
 

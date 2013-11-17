@@ -70,43 +70,11 @@
                     </navigationItem>
                     <connections>
                         <outlet property="input" destination="BEb-te-d8m" id="eQo-kq-Frj"/>
-                        <segue destination="Q1b-Lp-Avg" kind="push" identifier="display" id="AAB-M1-NI4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zqk-OX-IVc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="421" y="-116"/>
-        </scene>
-        <!--Output View Controller - Output-->
-        <scene sceneID="8r8-DK-P9g">
-            <objects>
-                <viewController id="Q1b-Lp-Avg" customClass="NLOutputViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="olc-1E-cWH"/>
-                        <viewControllerLayoutGuide type="bottom" id="4AZ-3p-eK0"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="68y-ws-cv0">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lf-af-rtw">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Output" id="Qbf-2K-xt9"/>
-                    <connections>
-                        <outlet property="outputView" destination="4lf-af-rtw" id="c0e-xZ-6Kl"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CNq-2T-xJ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="856" y="-114"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

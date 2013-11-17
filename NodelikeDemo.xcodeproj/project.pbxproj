@@ -90,8 +90,9 @@
 		B54C1FC6180F67520051F826 /* util.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A632180C71FF00CEF23D /* util.js */; };
 		B54C1FC7180F67520051F826 /* vm.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A633180C71FF00CEF23D /* vm.js */; };
 		B54C1FC8180F67520051F826 /* zlib.js in Resources */ = {isa = PBXBuildFile; fileRef = B537A634180C71FF00CEF23D /* zlib.js */; };
-		B5706233181E9BFF00EAEAF2 /* NLOutputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5706232181E9BFF00EAEAF2 /* NLOutputViewController.m */; };
 		B588412B182D1D83007C5B0F /* PBWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B588412A182D1D83007C5B0F /* PBWebViewController.m */; };
+		B597EB7A18396ADB00DC767C /* CSNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = B597EB7918396ADB00DC767C /* CSNotificationView.m */; };
+		B597EB7C18396AE400DC767C /* CSNotificationView.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B597EB7B18396AE400DC767C /* CSNotificationView.xcassets */; };
 		B59E5F8B181EC45A0093A6FF /* NLBindingUv.m in Sources */ = {isa = PBXBuildFile; fileRef = B59E5F8A181EC45A0093A6FF /* NLBindingUv.m */; };
 		B59E5F91181EE3590093A6FF /* NLHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = B59E5F90181EE3590093A6FF /* NLHandle.m */; };
 		B59E5F94181F07090093A6FF /* NLBindingFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = B59E5F93181F07090093A6FF /* NLBindingFilesystem.m */; };
@@ -247,10 +248,11 @@
 		B54C1E39180D36E00051F826 /* version.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = version.c; sourceTree = "<group>"; };
 		B54C1F52180D37280051F826 /* libuv.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libuv.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B54C1F95180D37C80051F826 /* libm.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libm.dylib; path = usr/lib/libm.dylib; sourceTree = SDKROOT; };
-		B5706231181E9BFF00EAEAF2 /* NLOutputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLOutputViewController.h; sourceTree = "<group>"; };
-		B5706232181E9BFF00EAEAF2 /* NLOutputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLOutputViewController.m; sourceTree = "<group>"; };
 		B5884129182D1D83007C5B0F /* PBWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBWebViewController.h; sourceTree = "<group>"; };
 		B588412A182D1D83007C5B0F /* PBWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBWebViewController.m; sourceTree = "<group>"; };
+		B597EB7818396ADB00DC767C /* CSNotificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSNotificationView.h; sourceTree = "<group>"; };
+		B597EB7918396ADB00DC767C /* CSNotificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSNotificationView.m; sourceTree = "<group>"; };
+		B597EB7B18396AE400DC767C /* CSNotificationView.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CSNotificationView.xcassets; sourceTree = "<group>"; };
 		B59E5F89181EC45A0093A6FF /* NLBindingUv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLBindingUv.h; sourceTree = "<group>"; };
 		B59E5F8A181EC45A0093A6FF /* NLBindingUv.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLBindingUv.m; sourceTree = "<group>"; };
 		B59E5F8F181EE3590093A6FF /* NLHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLHandle.h; sourceTree = "<group>"; };
@@ -546,12 +548,13 @@
 				B5061A32181595EB0083AB4B /* index.js */,
 				B5B44654180AB78E009ADEF9 /* Main.storyboard */,
 				B5CF827D1819B9C90095AE7E /* Main_iPad.storyboard */,
-				B5706231181E9BFF00EAEAF2 /* NLOutputViewController.h */,
-				B5706232181E9BFF00EAEAF2 /* NLOutputViewController.m */,
 				B5B44657180AB78E009ADEF9 /* NLViewController.h */,
 				B5B44658180AB78E009ADEF9 /* NLViewController.m */,
 				B5884129182D1D83007C5B0F /* PBWebViewController.h */,
 				B588412A182D1D83007C5B0F /* PBWebViewController.m */,
+				B597EB7818396ADB00DC767C /* CSNotificationView.h */,
+				B597EB7918396ADB00DC767C /* CSNotificationView.m */,
+				B597EB7B18396AE400DC767C /* CSNotificationView.xcassets */,
 				B5B4465A180AB78E009ADEF9 /* Images.xcassets */,
 				B5B44649180AB78E009ADEF9 /* Supporting Files */,
 			);
@@ -689,6 +692,7 @@
 				B54C1F99180F67520051F826 /* _http_agent.js in Resources */,
 				B54C1F9A180F67520051F826 /* _http_client.js in Resources */,
 				B54C1F9B180F67520051F826 /* _http_common.js in Resources */,
+				B597EB7C18396AE400DC767C /* CSNotificationView.xcassets in Resources */,
 				B54C1F9C180F67520051F826 /* _http_incoming.js in Resources */,
 				B54C1F9D180F67520051F826 /* _http_outgoing.js in Resources */,
 				B54C1F9E180F67520051F826 /* _http_server.js in Resources */,
@@ -804,8 +808,8 @@
 				B5B44659180AB78E009ADEF9 /* NLViewController.m in Sources */,
 				B5B44653180AB78E009ADEF9 /* NLAppDelegate.m in Sources */,
 				B588412B182D1D83007C5B0F /* PBWebViewController.m in Sources */,
+				B597EB7A18396ADB00DC767C /* CSNotificationView.m in Sources */,
 				B5B4464F180AB78E009ADEF9 /* main.m in Sources */,
-				B5706233181E9BFF00EAEAF2 /* NLOutputViewController.m in Sources */,
 				B5061A33181595EB0083AB4B /* index.js in Sources */,
 				B5CF82A01819B9EC0095AE7E /* KOSwipeButton.m in Sources */,
 				B5CF829F1819B9EC0095AE7E /* KOKeyboardRow.m in Sources */,
