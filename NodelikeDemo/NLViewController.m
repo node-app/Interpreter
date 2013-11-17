@@ -55,13 +55,15 @@
 - (void)setupStyle {
 
     UIColor *foreground = [UIColor blackColor];
-    UIColor *background = [UIColor colorWithRed:163/255.0f green:232/255.0f blue:75/255.0f alpha:1.0f];
+    UIColor *background = [UIColor colorWithRed:163/255. green:232/255. blue:75/255. alpha:1.];
     
     self.navigationController.navigationBar.tintColor    = foreground;
     self.navigationController.navigationBar.barTintColor = background;
     self.navigationController.navigationBar.translucent  = NO;
     self.navigationController.toolbar.tintColor          = foreground;
     self.navigationController.toolbar.barTintColor       = background;
+    
+    self.input.backgroundColor = [UIColor colorWithRed:60/255. green:60/255. blue:60/255. alpha:1.];
 
 }
 

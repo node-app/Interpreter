@@ -62,7 +62,7 @@
     }
     
     KOKeyboardRow *v = [[KOKeyboardRow alloc] initWithFrame:CGRectMake(0, 0, barWidth, barHeight)];
-    v.backgroundColor = [UIColor colorWithRed:50/255. green:50/255. blue:50/255. alpha:1.];
+    v.backgroundColor = [UIColor colorWithRed:25/255. green:25/255. blue:25/255. alpha:1.];
     v.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     v.textView = t;
     
