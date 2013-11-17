@@ -77,7 +77,7 @@
     
     self.labels = [[NSMutableArray alloc] init];
     
-    UIColor *green = [UIColor colorWithRed:140/255.0f green:200/255.0f blue:75/255.0f alpha:1.0f];
+    UIColor *green = [UIColor colorWithRed:163/255.0f green:232/255.0f blue:75/255.0f alpha:1.0f];
     
     UIFont *f = [UIFont systemFontOfSize:15];
     

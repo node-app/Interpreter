@@ -54,14 +54,14 @@
 
 - (void)setupStyle {
 
-    UIColor *black = [UIColor blackColor];
-    UIColor *green = [UIColor colorWithRed:140/255.0f green:200/255.0f blue:75/255.0f alpha:1.0f];
+    UIColor *foreground = [UIColor blackColor];
+    UIColor *background = [UIColor colorWithRed:163/255.0f green:232/255.0f blue:75/255.0f alpha:1.0f];
     
-    self.navigationController.navigationBar.tintColor    = black;
-    self.navigationController.navigationBar.barTintColor = green;
+    self.navigationController.navigationBar.tintColor    = foreground;
+    self.navigationController.navigationBar.barTintColor = background;
     self.navigationController.navigationBar.translucent  = NO;
-    self.navigationController.toolbar.tintColor          = black;
-    self.navigationController.toolbar.barTintColor       = green;
+    self.navigationController.toolbar.tintColor          = foreground;
+    self.navigationController.toolbar.barTintColor       = background;
 
 }
 
