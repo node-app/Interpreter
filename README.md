@@ -1,5 +1,5 @@
-NodelikeDemo
-============
+Interpreter
+===========
 
 Nodelike is a weekend hack to implement a roughly Node.JS-compatible interface using JavaScriptCore.framework on iOS 7 and OS X Mavericks.
 
@@ -19,17 +19,17 @@ The goals
 - NOT to archieve Node.js performance (this is meant as a client-side, not a server-side application)
 - NOT to be backwards-compatible (nodejs cutting edge and newest iOS/OS X required)
 
-How to compile the demo app
----------------------------
+How to compile
+--------------
 
 You first need to fetch the nodejs submodule. Do so by:
 1. `git submodule init`
 2. `git submodule update --recursive`
 
-Afterwards, just open `NodelikeDemo.xcodeproj`, build the app and you're all set!
+Afterwards, just open `Interpreter.xcodeproj`, build the app and you're all set!
 
-How to use the demo app
------------------------
+How to use the app
+------------------
 
 You can enter Javascript code into the TextView and execute that via a tap on the `Execute` button.
 After each execution, when the result of the executed script is not undefined, a popover will appear containing that result.
