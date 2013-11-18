@@ -62,10 +62,10 @@
 		B5B44642180AB78E009ADEF9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B5B44644180AB78E009ADEF9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B5B44646180AB78E009ADEF9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		B5B4464A180AB78E009ADEF9 /* NodelikeDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NodelikeDemo-Info.plist"; sourceTree = "<group>"; };
+		B5B4464A180AB78E009ADEF9 /* Interpreter-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Interpreter-Info.plist"; sourceTree = "<group>"; };
 		B5B4464C180AB78E009ADEF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B5B4464E180AB78E009ADEF9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B5B44650180AB78E009ADEF9 /* NodelikeDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NodelikeDemo-Prefix.pch"; sourceTree = "<group>"; };
+		B5B44650180AB78E009ADEF9 /* Interpreter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Interpreter-Prefix.pch"; sourceTree = "<group>"; };
 		B5B44651180AB78E009ADEF9 /* NLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NLAppDelegate.h; sourceTree = "<group>"; };
 		B5B44652180AB78E009ADEF9 /* NLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NLAppDelegate.m; sourceTree = "<group>"; };
 		B5B44655180AB78E009ADEF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -157,10 +157,10 @@
 		B5B44649180AB78E009ADEF9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B5B4464A180AB78E009ADEF9 /* NodelikeDemo-Info.plist */,
+				B5B4464A180AB78E009ADEF9 /* Interpreter-Info.plist */,
 				B5B4464B180AB78E009ADEF9 /* InfoPlist.strings */,
 				B5B4464E180AB78E009ADEF9 /* main.m */,
-				B5B44650180AB78E009ADEF9 /* NodelikeDemo-Prefix.pch */,
+				B5B44650180AB78E009ADEF9 /* Interpreter-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -205,7 +205,7 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Sam Rijs";
 			};
-			buildConfigurationList = B5B4463A180AB78E009ADEF9 /* Build configuration list for PBXProject "NodelikeDemo" */;
+			buildConfigurationList = B5B4463A180AB78E009ADEF9 /* Build configuration list for PBXProject "Interpreter" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -392,8 +392,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "NodelikeDemo/NodelikeDemo-Prefix.pch";
-				INFOPLIST_FILE = "NodelikeDemo/NodelikeDemo-Info.plist";
+				GCC_PREFIX_HEADER = "NodelikeDemo/Interpreter-Prefix.pch";
+				INFOPLIST_FILE = "NodelikeDemo/Interpreter-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -411,8 +411,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "NodelikeDemo/NodelikeDemo-Prefix.pch";
-				INFOPLIST_FILE = "NodelikeDemo/NodelikeDemo-Info.plist";
+				GCC_PREFIX_HEADER = "NodelikeDemo/Interpreter-Prefix.pch";
+				INFOPLIST_FILE = "NodelikeDemo/Interpreter-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -427,7 +427,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B5B4463A180AB78E009ADEF9 /* Build configuration list for PBXProject "NodelikeDemo" */ = {
+		B5B4463A180AB78E009ADEF9 /* Build configuration list for PBXProject "Interpreter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B5B4466F180AB78E009ADEF9 /* Debug */,
