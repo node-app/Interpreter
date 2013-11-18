@@ -24,7 +24,7 @@ How to compile the demo app
 
 You first need to fetch the nodejs submodule. Do so by:
 1. `git submodule init`
-2. `git submodule update`
+2. `git submodule update --recursive`
 
 Afterwards, just open `NodelikeDemo.xcodeproj`, build the app and you're all set!
 

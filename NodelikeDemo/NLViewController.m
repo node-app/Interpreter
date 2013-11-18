@@ -11,7 +11,7 @@
 #import "KOKeyboardRow.h"
 #import "CSNotificationView.h"
 
-#import "Nodelike.h"
+#import "NLContext.h"
 
 @interface NLViewController ()
 
@@ -42,7 +42,7 @@
 
     _context = [[NLContext alloc] initWithVirtualMachine:[[JSVirtualMachine alloc] init]];
     _context.exceptionHandler = ^(JSContext *c, JSValue *e) {
-        NSLog(@"%@", [e toString]);
+        NSLog(@"%@", e);
     };
     
     [KOKeyboardRow applyToTextView:_input];
