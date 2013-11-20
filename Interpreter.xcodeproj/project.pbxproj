@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B51198D1183D2DFE008B2DE5 /* NLColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B51198D0183D2DFE008B2DE5 /* NLColor.m */; };
 		B54C1F97180D488D0051F826 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5B44654180AB78E009ADEF9 /* Main.storyboard */; };
 		B588412B182D1D83007C5B0F /* PBWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B588412A182D1D83007C5B0F /* PBWebViewController.m */; };
 		B597EB7A18396ADB00DC767C /* CSNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = B597EB7918396ADB00DC767C /* CSNotificationView.m */; };
@@ -51,6 +52,8 @@
 
 /* Begin PBXFileReference section */
 		B5061A32181595EB0083AB4B /* index.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = index.js; sourceTree = "<group>"; };
+		B51198CF183D2DFE008B2DE5 /* NLColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLColor.h; sourceTree = "<group>"; };
+		B51198D0183D2DFE008B2DE5 /* NLColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLColor.m; sourceTree = "<group>"; };
 		B54C1F95180D37C80051F826 /* libm.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libm.dylib; path = usr/lib/libm.dylib; sourceTree = SDKROOT; };
 		B5884129182D1D83007C5B0F /* PBWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBWebViewController.h; sourceTree = "<group>"; };
 		B588412A182D1D83007C5B0F /* PBWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBWebViewController.m; sourceTree = "<group>"; };
@@ -141,6 +144,8 @@
 				B5061A32181595EB0083AB4B /* index.js */,
 				B5B44654180AB78E009ADEF9 /* Main.storyboard */,
 				B5CF827D1819B9C90095AE7E /* Main_iPad.storyboard */,
+				B51198CF183D2DFE008B2DE5 /* NLColor.h */,
+				B51198D0183D2DFE008B2DE5 /* NLColor.m */,
 				B5B44657180AB78E009ADEF9 /* NLViewController.h */,
 				B5B44658180AB78E009ADEF9 /* NLViewController.m */,
 				B5884129182D1D83007C5B0F /* PBWebViewController.h */,
@@ -271,6 +276,7 @@
 				B588412B182D1D83007C5B0F /* PBWebViewController.m in Sources */,
 				B597EB7A18396ADB00DC767C /* CSNotificationView.m in Sources */,
 				B5B4464F180AB78E009ADEF9 /* main.m in Sources */,
+				B51198D1183D2DFE008B2DE5 /* NLColor.m in Sources */,
 				B5CF82A01819B9EC0095AE7E /* KOSwipeButton.m in Sources */,
 				B5CF829F1819B9EC0095AE7E /* KOKeyboardRow.m in Sources */,
 			);

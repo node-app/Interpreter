@@ -35,6 +35,8 @@
 #import "KOSwipeButton.h"
 #import "KOKeyboardRow.h"
 
+#import "NLColor.h"
+
 @interface KOSwipeButton ()
 
 @property (nonatomic, retain) NSMutableArray *labels;
@@ -77,8 +79,6 @@
     
     self.labels = [[NSMutableArray alloc] init];
     
-    UIColor *green = [UIColor colorWithRed:163/255.0f green:232/255.0f blue:75/255.0f alpha:1.0f];
-    
     UIFont *f = [UIFont systemFontOfSize:15];
     
     UILabel *l = [[UILabel alloc] initWithFrame:CGRectMake(leftInset, topInset, labelWidth, labelHeight)];
@@ -87,7 +87,7 @@
     l.font = f;
     [self addSubview:l];
     [l setTextColor:[UIColor whiteColor]];
-    [l setHighlightedTextColor:green];
+    [l setHighlightedTextColor:[NLColor greenColor]];
     l.backgroundColor = [UIColor clearColor];
     [labels addObject:l];
     
@@ -98,7 +98,7 @@
     l.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
     [self addSubview:l];
     [l setTextColor:[UIColor whiteColor]];
-    [l setHighlightedTextColor:green];
+    [l setHighlightedTextColor:[NLColor greenColor]];
     l.backgroundColor = [UIColor clearColor];
     [labels addObject:l];
     
@@ -109,7 +109,7 @@
     l.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     [self addSubview:l];
     [l setTextColor:[UIColor whiteColor]];
-    [l setHighlightedTextColor:green];
+    [l setHighlightedTextColor:[NLColor greenColor]];
     l.backgroundColor = [UIColor clearColor];
     [labels addObject:l];
     
@@ -119,7 +119,7 @@
     l.font = f;
     [self addSubview:l];
     [l setTextColor:[UIColor whiteColor]];
-    [l setHighlightedTextColor:green];
+    [l setHighlightedTextColor:[NLColor greenColor]];
     l.backgroundColor = [UIColor clearColor];
     [labels addObject:l];
     
@@ -130,7 +130,7 @@
     l.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
     [self addSubview:l];
     [l setTextColor:[UIColor whiteColor]];
-    [l setHighlightedTextColor:green];
+    [l setHighlightedTextColor:[NLColor greenColor]];
     l.backgroundColor = [UIColor clearColor];
     [labels addObject:l];
     

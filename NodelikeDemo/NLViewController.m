@@ -11,6 +11,7 @@
 #import "KOKeyboardRow.h"
 #import "CSNotificationView.h"
 
+#import "NLColor.h"
 #import "NLContext.h"
 
 @interface NLViewController ()
@@ -53,16 +54,12 @@
 
 - (void)setupStyle {
 
-    UIColor *foreground = [UIColor blackColor];
-    UIColor *background = [UIColor colorWithRed:163/255. green:232/255. blue:75/255. alpha:1.];
-    
-    self.navigationController.navigationBar.tintColor    = foreground;
-    self.navigationController.navigationBar.barTintColor = background;
-    self.navigationController.navigationBar.translucent  = NO;
-    self.navigationController.toolbar.tintColor          = foreground;
-    self.navigationController.toolbar.barTintColor       = background;
-    
-    self.input.backgroundColor = [UIColor colorWithRed:60/255. green:60/255. blue:60/255. alpha:1.];
+    self.navigationController.navigationBar.tintColor    = [NLColor greenColor];
+    self.navigationController.navigationBar.barTintColor = [NLColor blackColor];
+    self.navigationController.toolbar.tintColor          = [NLColor blackColor];
+    self.navigationController.toolbar.barTintColor       = [[NLColor whiteColor] colorWithAlphaComponent:0.5];
+
+    self.input.backgroundColor = [NLColor beigeColor];
 
 }
 
