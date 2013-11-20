@@ -30,6 +30,7 @@
       "idiom" : "ipad",
       "extent" : "full-screen",
       "minimum-system-version" : "7.0",
+      "filename" : "launch-pad-land.png",
       "scale" : "1x"
     },
     {
@@ -45,6 +46,7 @@
       "idiom" : "ipad",
       "extent" : "full-screen",
       "minimum-system-version" : "7.0",
+      "filename" : "launch-pad-land@2x.png",
       "scale" : "2x"
     },
     {
