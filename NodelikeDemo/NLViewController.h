@@ -9,13 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "NLAppDelegate.h"
 
+#import "NLTextView.h"
 #import "PBWebViewController.h"
 
 @interface NLViewController : UIViewController
 
 @property NLAppDelegate *appDelegate;
 
-@property IBOutlet UITextView *input;
+@property IBOutlet NLTextView *input;
 
 - (void) execute;
 

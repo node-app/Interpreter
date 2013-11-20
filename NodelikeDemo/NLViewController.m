@@ -25,14 +25,6 @@
 
 @implementation NLViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -46,9 +38,7 @@
         NSLog(@"%@", e);
     };
     
-    [KOKeyboardRow applyToTextView:_input];
-    ((KOKeyboardRow *)_input.inputAccessoryView).viewController = self;
-	[_input becomeFirstResponder];
+    [self.input setupWithViewController:self];
 
 }
 
