@@ -49,20 +49,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Interpreter" id="bW9-p7-z7G">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="i44-4h-oCJ">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="TNe-SX-IWI">
-                                <rect key="frame" x="16" y="11" width="22" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="showInfo:" destination="oqM-hE-VlH" eventType="touchUpInside" id="sfE-6B-aEd"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="leftBarButtonItem" image="info" id="fTq-wf-Uch">
+                            <connections>
+                                <action selector="showInfo:" destination="oqM-hE-VlH" id="p6x-J8-Ka0"/>
+                            </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="Mgu-0X-gx5">
+                        <barButtonItem key="rightBarButtonItem" image="bookmarks" id="Mgu-0X-gx5">
                             <connections>
                                 <action selector="showDocu:" destination="oqM-hE-VlH" id="OSL-5d-Fxg"/>
                             </connections>
@@ -77,6 +69,10 @@
             <point key="canvasLocation" x="421" y="-116"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bookmarks" width="22" height="20"/>
+        <image name="info" width="22" height="22"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
