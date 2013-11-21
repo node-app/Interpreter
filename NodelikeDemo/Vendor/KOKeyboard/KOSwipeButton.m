@@ -82,7 +82,7 @@
     UIFont *f = [UIFont systemFontOfSize:15];
     
     UILabel *l = [[UILabel alloc] initWithFrame:CGRectMake(leftInset, topInset, labelWidth, labelHeight)];
-    l.textAlignment = UITextAlignmentLeft;
+    l.textAlignment = NSTextAlignmentLeft;
     l.text = @"1";
     l.font = f;
     [self addSubview:l];
@@ -92,7 +92,7 @@
     [labels addObject:l];
     
     l = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width - labelWidth - rightInset, topInset, labelWidth, labelHeight)];
-    l.textAlignment = UITextAlignmentRight;
+    l.textAlignment = NSTextAlignmentRight;
     l.text = @"2";
     l.font = f;
     l.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
@@ -103,7 +103,7 @@
     [labels addObject:l];
     
     l = [[UILabel alloc] initWithFrame:CGRectIntegral(CGRectMake((self.frame.size.width - labelWidth - leftInset - rightInset) / 2 + leftInset, (self.frame.size.height - labelHeight - topInset - bottomInset) / 2 + topInset, labelWidth, labelHeight))];
-    l.textAlignment = UITextAlignmentCenter;
+    l.textAlignment = NSTextAlignmentCenter;
     l.text = @"3";
     l.font = f;
     l.autoresizingMask = UIViewAutoresizingFlexibleWidth;
@@ -114,7 +114,7 @@
     [labels addObject:l];
     
     l = [[UILabel alloc] initWithFrame:CGRectMake(leftInset, (self.frame.size.height - labelHeight - bottomInset), labelWidth, labelHeight)];
-    l.textAlignment = UITextAlignmentLeft;
+    l.textAlignment = NSTextAlignmentLeft;
     l.text = @"4";
     l.font = f;
     [self addSubview:l];
@@ -124,7 +124,7 @@
     [labels addObject:l];
     
     l = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width - labelWidth - rightInset, (self.frame.size.height - labelHeight - bottomInset), labelWidth, labelHeight)];
-    l.textAlignment = UITextAlignmentRight;
+    l.textAlignment = NSTextAlignmentRight;
     l.text = @"5";
     l.font = f;
     l.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;

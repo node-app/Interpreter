@@ -50,6 +50,7 @@
     self.navigationController.toolbar.barTintColor       = [[NLColor whiteColor] colorWithAlphaComponent:0.5];
 
     self.input.backgroundColor = [NLColor beigeColor];
+    self.input.inputView.backgroundColor = [NLColor beigeColor];
 
 }
 
