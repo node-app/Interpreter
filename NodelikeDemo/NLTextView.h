@@ -31,8 +31,8 @@
 @property (nonatomic, strong) UIPanGestureRecognizer *singleFingerPanRecognizer;
 @property (nonatomic, strong) UIPanGestureRecognizer *doubleFingerPanRecognizer;
 
-- (void)requireGestureRecognizerToFail:(UIGestureRecognizer*)gestureRecognizer;
+- (void)requireGestureRecognizerToFail:(UIGestureRecognizer *)gestureRecognizer;
 
-- (void)textStorageDidProcessEditing:(NSNotification *)notification;
+- (void)textStorageDidProcessEditing:(id)sender;
 
 @end

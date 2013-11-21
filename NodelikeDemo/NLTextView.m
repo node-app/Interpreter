@@ -30,18 +30,15 @@
 
 #define kCursorVelocity 1.0f/8.0f
 
-@interface NLTextView ()
-
-@property (nonatomic, assign) NSRange startRange;
-
-@end
-
 @implementation NLTextView {
 
+    NSRange       startRange;
     NSDictionary *highlightDef;
     NSDictionary *highlightTheme;
 
 }
+
+#pragma mark Setup
 
 - (void)setupWithViewController:(NLViewController *)viewController {
 
@@ -69,7 +66,7 @@
 
 #pragma mark Syntax Highlighting
 
-- (void)textStorageDidProcessEditing:(NSNotification *)notification {
+- (void)textStorageDidProcessEditing:(id)sender {
 
     NSRange paragaphRange = [self.textStorage.string paragraphRangeForRange: self.textStorage.editedRange];
 
@@ -84,8 +81,7 @@
 
         [regex enumerateMatchesInString:self.textStorage.string options:0 range:paragaphRange
                              usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
-            UIColor* textColor = [highlightTheme objectForKey:key];
-            [self.textStorage addAttribute:NSForegroundColorAttributeName value:textColor range:result.range];
+            [self.textStorage addAttribute:NSForegroundColorAttributeName value:[highlightTheme objectForKey:key] range:result.range];
         }];
 
     }
@@ -132,39 +128,39 @@
 
 }
 
-- (void)requireGestureRecognizerToFail:(UIGestureRecognizer*)gestureRecognizer {
+- (void)requireGestureRecognizerToFail:(UIGestureRecognizer *)gestureRecognizer {
+
     [self.singleFingerPanRecognizer requireGestureRecognizerToFail:gestureRecognizer];
     [self.doubleFingerPanRecognizer requireGestureRecognizerToFail:gestureRecognizer];
+
 }
 
-- (void)singleFingerPanHappend:(UIPanGestureRecognizer*)sender {
-    if (sender.state == UIGestureRecognizerStateBegan)
-    {
-        self.startRange = self.selectedRange;
+- (void)singleFingerPanHappend:(UIPanGestureRecognizer *)sender {
+
+    if (sender.state == UIGestureRecognizerStateBegan) {
+        startRange = self.selectedRange;
     }
-    
-    CGFloat cursorLocation = MAX(self.startRange.location+(NSInteger)([sender translationInView:self].x*kCursorVelocity), 0);
-    NSRange selectedRange = {cursorLocation, 0};
-    self.selectedRange = selectedRange;
+
+    CGFloat cursorLocation = MAX(startRange.location + [sender translationInView:self].x * kCursorVelocity, 0);
+
+    self.selectedRange = NSMakeRange(cursorLocation, 0);
+
 }
 
-- (void)doubleFingerPanHappend:(UIPanGestureRecognizer*)sender {
-    if (sender.state == UIGestureRecognizerStateBegan)
-    {
-        self.startRange = self.selectedRange;
+- (void)doubleFingerPanHappend:(UIPanGestureRecognizer *)sender {
+
+    if (sender.state == UIGestureRecognizerStateBegan) {
+        startRange = self.selectedRange;
     }
-    
-    CGFloat cursorLocation = MAX(self.startRange.location+(NSInteger)([sender translationInView:self].x*kCursorVelocity), 0);
-    NSRange selectedRange;
-    if (cursorLocation > self.startRange.location)
-    {
-        selectedRange = NSMakeRange(self.startRange.location, fabsf(self.startRange.location-cursorLocation));
+
+    CGFloat cursorLocation = MAX(startRange.location + [sender translationInView:self].x * kCursorVelocity, 0);
+
+    if (cursorLocation > startRange.location) {
+        self.selectedRange = NSMakeRange(startRange.location, fabsf(startRange.location - cursorLocation));
+    } else {
+        self.selectedRange = NSMakeRange(cursorLocation, fabsf(startRange.location - cursorLocation));
     }
-    else
-    {
-        selectedRange = NSMakeRange(cursorLocation, fabsf(self.startRange.location-cursorLocation));
-    }
-    self.selectedRange = selectedRange;
+
 }
 
 @end
