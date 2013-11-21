@@ -126,6 +126,18 @@
 
 }
 
+- (BOOL)gestureRecognizerShouldBegin:(UIPanGestureRecognizer *)gestureRecognizer {
+
+    // Only accept horizontal pans for the code navigation to preserve correct scrolling behaviour.
+    if (gestureRecognizer == _singleFingerPanRecognizer || gestureRecognizer == _doubleFingerPanRecognizer) {
+        CGPoint translation = [gestureRecognizer translationInView:self];
+        return (fabsf(translation.x) > fabsf(translation.y));
+    }
+
+    return YES;
+
+}
+
 - (void)requireGestureRecognizerToFail:(UIGestureRecognizer *)gestureRecognizer {
 
     [self.singleFingerPanRecognizer requireGestureRecognizerToFail:gestureRecognizer];
