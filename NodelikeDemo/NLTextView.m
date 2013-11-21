@@ -22,8 +22,11 @@
 //  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
+#import <CoreText/CoreText.h>
+
 #import "NLTextView.h"
 
+#import "NLTextStorage.h"
 #import "KOKeyboardRow.h"
 
 #define kCursorVelocity 1.0f/8.0f
@@ -34,12 +37,24 @@
 
 @end
 
-@implementation NLTextView
+@implementation NLTextView {
+
+    NLTextStorage *textStorage;
+
+}
 
 - (void)setupWithViewController:(NLViewController *)viewController {
 
     [self setupGestureRecognizers];
     [self setupKeyboardWithViewController:viewController];
+    [self setupTextStorage];
+
+}
+
+- (void)setupTextStorage {
+
+    textStorage = [NLTextStorage new];
+    [textStorage addLayoutManager:self.layoutManager];
 
 }
 
@@ -50,6 +65,8 @@
 	[self becomeFirstResponder];
 
 }
+
+#pragma mark Gestures
 
 - (void)setupGestureRecognizers {
 
@@ -63,14 +80,12 @@
 
 }
 
-- (void)requireGestureRecognizerToFail:(UIGestureRecognizer*)gestureRecognizer
-{
+- (void)requireGestureRecognizerToFail:(UIGestureRecognizer*)gestureRecognizer {
     [self.singleFingerPanRecognizer requireGestureRecognizerToFail:gestureRecognizer];
     [self.doubleFingerPanRecognizer requireGestureRecognizerToFail:gestureRecognizer];
 }
 
-- (void)singleFingerPanHappend:(UIPanGestureRecognizer*)sender
-{
+- (void)singleFingerPanHappend:(UIPanGestureRecognizer*)sender {
     if (sender.state == UIGestureRecognizerStateBegan)
     {
         self.startRange = self.selectedRange;
@@ -81,8 +96,7 @@
     self.selectedRange = selectedRange;
 }
 
-- (void)doubleFingerPanHappend:(UIPanGestureRecognizer*)sender
-{
+- (void)doubleFingerPanHappend:(UIPanGestureRecognizer*)sender {
     if (sender.state == UIGestureRecognizerStateBegan)
     {
         self.startRange = self.selectedRange;
