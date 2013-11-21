@@ -60,11 +60,11 @@
 }
 
 - (void)execute {
-    JSValue *ret = [_context evaluateScript:_input.text];
+    JSValue  *ret = [_context evaluateScript:self.input.text];
     if (![ret isUndefined]) {
         [self output:[ret toString]];
     }
-    _input.text = @"";
+    self.input.text = @"";
 }
 
 - (IBAction)showDocu:(id)sender {

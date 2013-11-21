@@ -26,7 +26,6 @@
 
 #import "NLTextView.h"
 
-#import "NLTextStorage.h"
 #import "KOKeyboardRow.h"
 
 #define kCursorVelocity 1.0f/8.0f
@@ -39,7 +38,8 @@
 
 @implementation NLTextView {
 
-    NLTextStorage *textStorage;
+    NSDictionary *highlightDef;
+    NSDictionary *highlightTheme;
 
 }
 
@@ -47,14 +47,15 @@
 
     [self setupGestureRecognizers];
     [self setupKeyboardWithViewController:viewController];
-    [self setupTextStorage];
+    [self setupHighlighting];
 
 }
 
-- (void)setupTextStorage {
+- (void)setupHighlighting {
 
-    textStorage = [NLTextStorage new];
-    [textStorage addLayoutManager:self.layoutManager];
+    self.textStorage.delegate = self;
+    highlightDef   = [NLTextView highlightDefinition];
+    highlightTheme = [NLTextView highlightTheme];
 
 }
 
@@ -64,6 +65,57 @@
     ((KOKeyboardRow *)self.inputAccessoryView).viewController = viewController;
 	[self becomeFirstResponder];
 
+}
+
+#pragma mark Syntax Highlighting
+
+- (void)textStorageDidProcessEditing:(NSNotification *)notification {
+
+    NSRange paragaphRange = [self.textStorage.string paragraphRangeForRange: self.textStorage.editedRange];
+
+    [self.textStorage setAttributes:@{NSFontAttributeName:            [UIFont fontWithName:@"Menlo" size:14],
+                                      NSForegroundColorAttributeName: [UIColor blackColor]}
+                              range:paragaphRange];
+
+    for (NSString* key in highlightDef) {
+
+        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:[highlightDef objectForKey:key]
+                                                                               options:NSRegularExpressionDotMatchesLineSeparators error:nil];
+
+        [regex enumerateMatchesInString:self.textStorage.string options:0 range:paragaphRange
+                             usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
+            UIColor* textColor = [highlightTheme objectForKey:key];
+            [self.textStorage addAttribute:NSForegroundColorAttributeName value:textColor range:result.range];
+        }];
+
+    }
+
+}
+
++ (NSDictionary *)highlightDefinition {
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"Syntax" ofType:@"plist"];
+    return [NSDictionary dictionaryWithContentsOfFile:path];
+    
+}
+
++ (NSDictionary *)highlightTheme {
+    
+    return @{@"text":                          [UIColor colorWithRed:255.0/255 green:255.0/255 blue:255.0/255 alpha:1],
+             @"background":                    [UIColor colorWithRed: 40.0/255 green: 43.0/255 blue: 52.0/255 alpha:1],
+             @"comment":                       [UIColor colorWithRed: 72.0/255 green:190.0/255 blue:102.0/255 alpha:1],
+             @"documentation_comment":         [UIColor colorWithRed: 72.0/255 green:190.0/255 blue:102.0/255 alpha:1],
+             @"documentation_comment_keyword": [UIColor colorWithRed: 72.0/255 green:190.0/255 blue:102.0/255 alpha:1],
+             @"string":                        [UIColor colorWithRed:230.0/255 green: 66.0/255 blue: 75.0/255 alpha:1],
+             @"character":                     [UIColor colorWithRed:139.0/255 green:134.0/255 blue:201.0/255 alpha:1],
+             @"number":                        [UIColor colorWithRed:139.0/255 green:134.0/255 blue:201.0/255 alpha:1],
+             @"keyword":                       [UIColor colorWithRed:195.0/255 green: 55.0/255 blue:149.0/255 alpha:1],
+             @"preprocessor":                  [UIColor colorWithRed:211.0/255 green:142.0/255 blue: 99.0/255 alpha:1],
+             @"url":                           [UIColor colorWithRed: 35.0/255 green: 63.0/255 blue:208.0/255 alpha:1],
+             @"attribute":                     [UIColor colorWithRed:103.0/255 green:135.0/255 blue:142.0/255 alpha:1],
+             @"project":                       [UIColor colorWithRed:146.0/255 green:199.0/255 blue:119.0/255 alpha:1],
+             @"other":                         [UIColor colorWithRed:  0.0/255 green:175.0/255 blue:199.0/255 alpha:1]};
+    
 }
 
 #pragma mark Gestures

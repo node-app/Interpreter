@@ -24,7 +24,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NLTextView : UITextView
+@interface NLTextView : UITextView <NSTextStorageDelegate>
 
 - (void)setupWithViewController:(UIViewController *)viewController;
 
@@ -32,5 +32,7 @@
 @property (nonatomic, strong) UIPanGestureRecognizer *doubleFingerPanRecognizer;
 
 - (void)requireGestureRecognizerToFail:(UIGestureRecognizer*)gestureRecognizer;
+
+- (void)textStorageDidProcessEditing:(NSNotification *)notification;
 
 @end
