@@ -22,8 +22,6 @@
 //  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <CoreText/CoreText.h>
-
 #import "NLTextView.h"
 
 #import "KOKeyboardRow.h"
