@@ -1,5 +1,5 @@
 language: objective-c
-script: xcodebuild -target Nodelike -arch armv7
+script: xcodebuild -target Interpreter -arch armv7
 install:
   - git submodule update --init --recursive
 after_success:
