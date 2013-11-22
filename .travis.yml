@@ -1,5 +1,5 @@
 language: objective-c
-script: xcodebuild -target Interpreter -arch armv7 -sdk iphonesimulator
+script: xcodebuild -target Interpreter -sdk iphonesimulator
 install:
   - git submodule update --init --recursive
 after_success:
