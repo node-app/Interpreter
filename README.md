@@ -22,9 +22,7 @@ The goals
 How to compile
 --------------
 
-You first need to fetch the nodejs submodule. Do so by:
-1. `git submodule init`
-2. `git submodule update --recursive`
+You first need to fetch the submodules. Do so by: `git submodule update --init --recursive`
 
 Afterwards, just open `Interpreter.xcodeproj`, build the app and you're all set!
 
