@@ -1,8 +1,9 @@
 language: objective-c
 script: xcodebuild -target Nodelike -arch armv7
-before_install:
+install:
+  - git submodule update --init --recursive
+after_success:
   - brew install sloccount
   - sudo easy_install pip
-after_success:
   - sudo pip install coviolations_app
   - covio
