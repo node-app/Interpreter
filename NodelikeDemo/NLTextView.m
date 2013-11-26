@@ -68,9 +68,7 @@
 
     NSRange paragaphRange = [self.textStorage.string paragraphRangeForRange: self.textStorage.editedRange];
 
-    [self.textStorage setAttributes:@{NSFontAttributeName:            [UIFont fontWithName:@"Menlo" size:14],
-                                      NSForegroundColorAttributeName: [UIColor blackColor]}
-                              range:paragaphRange];
+    [self.textStorage removeAttribute:NSForegroundColorAttributeName range:paragaphRange];
 
     for (NSString* key in highlightDef) {
 
