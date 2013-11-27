@@ -22,6 +22,7 @@
 		B5B44653180AB78E009ADEF9 /* NLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B44652180AB78E009ADEF9 /* NLAppDelegate.m */; };
 		B5B44659180AB78E009ADEF9 /* NLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B44658180AB78E009ADEF9 /* NLViewController.m */; };
 		B5B4465B180AB78E009ADEF9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5B4465A180AB78E009ADEF9 /* Images.xcassets */; };
+		B5C056251846A4A400E8A4B1 /* SEJSONViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C056241846A4A400E8A4B1 /* SEJSONViewController.m */; };
 		B5CF829F1819B9EC0095AE7E /* KOKeyboardRow.m in Sources */ = {isa = PBXBuildFile; fileRef = B5CF82901819B9EC0095AE7E /* KOKeyboardRow.m */; };
 		B5CF82A01819B9EC0095AE7E /* KOSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B5CF82921819B9EC0095AE7E /* KOSwipeButton.m */; };
 		B5D9EE4C183A3A3300E321A0 /* libNodelike.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D9EE47183A3A2200E321A0 /* libNodelike.a */; };
@@ -80,6 +81,8 @@
 		B5B44658180AB78E009ADEF9 /* NLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NLViewController.m; sourceTree = "<group>"; };
 		B5B4465A180AB78E009ADEF9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B5B44661180AB78E009ADEF9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		B5C056231846A4A400E8A4B1 /* SEJSONViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEJSONViewController.h; sourceTree = "<group>"; };
+		B5C056241846A4A400E8A4B1 /* SEJSONViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEJSONViewController.m; sourceTree = "<group>"; };
 		B5CF828F1819B9EC0095AE7E /* KOKeyboardRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KOKeyboardRow.h; path = NodelikeDemo/Vendor/KOKeyboard/KOKeyboardRow.h; sourceTree = SOURCE_ROOT; };
 		B5CF82901819B9EC0095AE7E /* KOKeyboardRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KOKeyboardRow.m; path = NodelikeDemo/Vendor/KOKeyboard/KOKeyboardRow.m; sourceTree = SOURCE_ROOT; };
 		B5CF82911819B9EC0095AE7E /* KOSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KOSwipeButton.h; path = NodelikeDemo/Vendor/KOKeyboard/KOSwipeButton.h; sourceTree = SOURCE_ROOT; };
@@ -154,6 +157,8 @@
 				B5B44658180AB78E009ADEF9 /* NLViewController.m */,
 				B5884129182D1D83007C5B0F /* PBWebViewController.h */,
 				B588412A182D1D83007C5B0F /* PBWebViewController.m */,
+				B5C056231846A4A400E8A4B1 /* SEJSONViewController.h */,
+				B5C056241846A4A400E8A4B1 /* SEJSONViewController.m */,
 				B597EB7818396ADB00DC767C /* CSNotificationView.h */,
 				B597EB7918396ADB00DC767C /* CSNotificationView.m */,
 				B597EB7B18396AE400DC767C /* CSNotificationView.xcassets */,
@@ -278,6 +283,7 @@
 			files = (
 				B5B44659180AB78E009ADEF9 /* NLViewController.m in Sources */,
 				B5B44653180AB78E009ADEF9 /* NLAppDelegate.m in Sources */,
+				B5C056251846A4A400E8A4B1 /* SEJSONViewController.m in Sources */,
 				B588412B182D1D83007C5B0F /* PBWebViewController.m in Sources */,
 				B597EB7A18396ADB00DC767C /* CSNotificationView.m in Sources */,
 				B51198D5183D3E55008B2DE5 /* NLTextView.m in Sources */,

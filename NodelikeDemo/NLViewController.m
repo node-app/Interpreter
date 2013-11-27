@@ -8,8 +8,8 @@
 
 #import "NLViewController.h"
 
-#import "KOKeyboardRow.h"
 #import "CSNotificationView.h"
+#import "SEJSONViewController.h"
 
 #import "NLColor.h"
 #import "NLContext.h"
@@ -30,12 +30,20 @@
     [super viewDidLoad];
     
     [self setupStyle];
+    
+    __weak NLViewController *weakSelf = self;
 
     _appDelegate = [[UIApplication sharedApplication] delegate];
 
     _context = [[NLContext alloc] initWithVirtualMachine:[[JSVirtualMachine alloc] init]];
     _context.exceptionHandler = ^(JSContext *c, JSValue *e) {
         NSLog(@"%@", e);
+    };
+
+    _context[@"inspect"] = ^(JSValue *obj) {
+        SEJSONViewController *con = [SEJSONViewController new];
+        [con setData:[obj toObject]];
+        [weakSelf.navigationController pushViewController:con animated:YES];
     };
     
     [self.input setupWithViewController:self];
