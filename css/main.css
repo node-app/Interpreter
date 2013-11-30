@@ -94,7 +94,7 @@ textarea {
    ========================================================================== */
 
 html, body{margin:0;padding:0;}
-.slogan {background-color:#eee;padding-top:5%;padding-bottom:10%;border-top:6px solid #333;}
+.slogan {background-color:#fff;padding-top:5%;padding-bottom:10%;border-top:6px solid #333;}
 .footer {background-color:#eee;padding-top:0.1%; margin-top:5%;}
 .copyright {color:#999; padding-right:2%; margin-bottom:0;}
 .logo{padding-bottom:2%;}
