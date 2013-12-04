@@ -1,5 +1,7 @@
 .DS_Store
 xcuserdata
 
+node_modules
+
 *.xccheckout
 build
