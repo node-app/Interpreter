@@ -7,7 +7,7 @@ Nodelike is a weekend hack to implement a roughly Node.JS-compatible interface u
 This is currently in a very incomplete state, and not viable for serious use.
 It could, however, become usable over the following weeks.
 
-![demo time](http://nodeapp.org/Interpreter/image/iwhite.png)
+![demo time](https://raw.github.com/node-app/Interpreter/master/demo.png)
 
 The goals
 ---------
