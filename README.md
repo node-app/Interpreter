@@ -38,7 +38,7 @@ What's working right now
 
 - `process`: `.cwd()`, `.chdir()`, `.argv`, `.env`, `.exit()`, `.nextTick()`
 - `require()` for native modules
-- `fs`: `open`, `close`, `readdir`
+- `fs`: everything except `.write()`
 - `util`
 - `url`
 - `events`
