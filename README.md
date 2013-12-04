@@ -1,6 +1,8 @@
 # Interpreter [![Build Status](https://travis-ci.org/node-app/Interpreter.png?branch=master)](https://travis-ci.org/node-app/Interpreter)
 
-Nodelike is a weekend hack to implement a roughly Node.JS-compatible interface using JavaScriptCore.framework on iOS 7 and OS X Mavericks.
+This an example project implementing a Node.JS interpreter as an iOS app, utilising the [Nodelike](https://github.com/node-app/Nodelike) framework.
+
+Nodelike is a project to implement a roughly Node.JS-compatible interface using JavaScriptCore.framework on iOS 7 and OS X Mavericks.
 
 (JavaScriptCore hasn't been available before iOS 7, and on OS X the project makes extensive use of the newly-updated 10.9-only Objective-C API. Previously on 10.8 there existed only a very low-level and very verbose C API.)
 
