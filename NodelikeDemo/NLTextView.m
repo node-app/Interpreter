@@ -26,7 +26,7 @@
 
 #import "KOKeyboardRow.h"
 
-#define kCursorVelocity 1.0f/8.0f
+static const float kCursorVelocity = 1.0f/8.0f;
 
 @implementation NLTextView {
 
@@ -89,7 +89,7 @@
 
 + (NSDictionary *)highlightDefinition {
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"Syntax" ofType:@"plist"];
+    NSString *path = [NSBundle.mainBundle pathForResource:@"Syntax" ofType:@"plist"];
     return [NSDictionary dictionaryWithContentsOfFile:path];
     
 }
@@ -132,7 +132,7 @@
     // Only accept horizontal pans for the code navigation to preserve correct scrolling behaviour.
     if (gestureRecognizer == singleFingerPanRecognizer || gestureRecognizer == doubleFingerPanRecognizer) {
         CGPoint translation = [gestureRecognizer translationInView:self];
-        return (fabsf(translation.x) > fabsf(translation.y));
+        return fabsf(translation.x) > fabsf(translation.y);
     }
 
     return YES;
