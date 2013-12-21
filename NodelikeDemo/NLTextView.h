@@ -28,9 +28,6 @@
 
 - (void)setupWithViewController:(UIViewController *)viewController;
 
-@property (nonatomic, strong) UIPanGestureRecognizer *singleFingerPanRecognizer;
-@property (nonatomic, strong) UIPanGestureRecognizer *doubleFingerPanRecognizer;
-
 - (void)requireGestureRecognizerToFail:(UIGestureRecognizer *)gestureRecognizer;
 
 - (void)textStorageDidProcessEditing:(id)sender;

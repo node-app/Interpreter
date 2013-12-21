@@ -33,6 +33,9 @@
     NSRange       startRange;
     NSDictionary *highlightDef;
     NSDictionary *highlightTheme;
+    
+    UIPanGestureRecognizer *singleFingerPanRecognizer;
+    UIPanGestureRecognizer *doubleFingerPanRecognizer;
 
 }
 
@@ -114,20 +117,20 @@
 
 - (void)setupGestureRecognizers {
 
-    _singleFingerPanRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(singleFingerPanHappend:)];
-    _singleFingerPanRecognizer.maximumNumberOfTouches = 1;
-    [self addGestureRecognizer:_singleFingerPanRecognizer];
+    singleFingerPanRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(singleFingerPanHappend:)];
+    singleFingerPanRecognizer.maximumNumberOfTouches = 1;
+    [self addGestureRecognizer:singleFingerPanRecognizer];
     
-    _doubleFingerPanRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(doubleFingerPanHappend:)];
-    _doubleFingerPanRecognizer.minimumNumberOfTouches = 2;
-    [self addGestureRecognizer:_doubleFingerPanRecognizer];
+    doubleFingerPanRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(doubleFingerPanHappend:)];
+    doubleFingerPanRecognizer.minimumNumberOfTouches = 2;
+    [self addGestureRecognizer:doubleFingerPanRecognizer];
 
 }
 
 - (BOOL)gestureRecognizerShouldBegin:(UIPanGestureRecognizer *)gestureRecognizer {
 
     // Only accept horizontal pans for the code navigation to preserve correct scrolling behaviour.
-    if (gestureRecognizer == _singleFingerPanRecognizer || gestureRecognizer == _doubleFingerPanRecognizer) {
+    if (gestureRecognizer == singleFingerPanRecognizer || gestureRecognizer == doubleFingerPanRecognizer) {
         CGPoint translation = [gestureRecognizer translationInView:self];
         return (fabsf(translation.x) > fabsf(translation.y));
     }
@@ -138,8 +141,8 @@
 
 - (void)requireGestureRecognizerToFail:(UIGestureRecognizer *)gestureRecognizer {
 
-    [self.singleFingerPanRecognizer requireGestureRecognizerToFail:gestureRecognizer];
-    [self.doubleFingerPanRecognizer requireGestureRecognizerToFail:gestureRecognizer];
+    [singleFingerPanRecognizer requireGestureRecognizerToFail:gestureRecognizer];
+    [doubleFingerPanRecognizer requireGestureRecognizerToFail:gestureRecognizer];
 
 }
 
