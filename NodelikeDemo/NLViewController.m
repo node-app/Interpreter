@@ -39,7 +39,7 @@
 
     _context = [[NLContext alloc] initWithVirtualMachine:[[JSVirtualMachine alloc] init]];
     _context.exceptionHandler = ^(JSContext *c, JSValue *e) {
-        NSLog(@"%@", e);
+        NSLog(@"%@ stack: %@", e, [e valueForProperty:@"stack"]);
     };
 
     _context[@"inspect"] = ^(JSValue *obj) {
