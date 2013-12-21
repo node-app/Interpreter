@@ -11,6 +11,8 @@
 #import "CSNotificationView.h"
 #import "SEJSONViewController.h"
 
+#import "KOKeyboardRow.h"
+
 #import "NLColor.h"
 #import "NLContext.h"
 
@@ -45,9 +47,14 @@
         [con setData:[obj toObject]];
         [weakSelf.navigationController pushViewController:con animated:YES];
     };
-    
-    [self.input setupWithViewController:self];
 
+    [KOKeyboardRow applyToTextView:self.input];
+    ((KOKeyboardRow *)self.input.inputAccessoryView).viewController = self;
+
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [self.input becomeFirstResponder];
 }
 
 - (void)setupStyle {

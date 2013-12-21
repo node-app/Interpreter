@@ -26,8 +26,6 @@
 
 @interface NLTextView : UITextView <NSTextStorageDelegate>
 
-- (void)setupWithViewController:(UIViewController *)viewController;
-
 - (void)requireGestureRecognizerToFail:(UIGestureRecognizer *)gestureRecognizer;
 
 - (void)textStorageDidProcessEditing:(id)sender;

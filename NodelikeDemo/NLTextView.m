@@ -24,8 +24,6 @@
 
 #import "NLTextView.h"
 
-#import "KOKeyboardRow.h"
-
 static const float kCursorVelocity = 1.0f/8.0f;
 
 @implementation NLTextView {
@@ -41,31 +39,22 @@ static const float kCursorVelocity = 1.0f/8.0f;
 
 #pragma mark Setup
 
-- (void)setupWithViewController:(NLViewController *)viewController {
-
+- (id)init {
+    self = [super init];
     [self setupGestureRecognizers];
-    [self setupKeyboardWithViewController:viewController];
     [self setupHighlighting];
-
-}
-
-- (void)setupHighlighting {
-
-    self.textStorage.delegate = self;
-    highlightDef   = [NLTextView highlightDefinition];
-    highlightTheme = [NLTextView highlightTheme];
-
-}
-
-- (void)setupKeyboardWithViewController:(NLViewController *)viewController {
-
-    [KOKeyboardRow applyToTextView:self];
-    ((KOKeyboardRow *)self.inputAccessoryView).viewController = viewController;
-	[self becomeFirstResponder];
-
+    return self;
 }
 
 #pragma mark Syntax Highlighting
+
+- (void)setupHighlighting {
+    
+    self.textStorage.delegate = self;
+    highlightDef   = [NLTextView highlightDefinition];
+    highlightTheme = [NLTextView highlightTheme];
+    
+}
 
 - (void)textStorageDidProcessEditing:(id)sender {
 
