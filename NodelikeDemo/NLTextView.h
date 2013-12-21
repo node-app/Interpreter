@@ -26,8 +26,9 @@
 
 @interface NLTextView : UITextView <NSTextStorageDelegate>
 
-- (void)requireGestureRecognizerToFail:(UIGestureRecognizer *)gestureRecognizer;
+@property NSDictionary *highlightDefinition;
+@property NSDictionary *highlightTheme;
 
-- (void)textStorageDidProcessEditing:(id)sender;
+- (void)requireGestureRecognizerToFail:(UIGestureRecognizer *)gestureRecognizer;
 
 @end

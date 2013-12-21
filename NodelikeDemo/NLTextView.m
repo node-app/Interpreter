@@ -28,10 +28,8 @@ static const float kCursorVelocity = 1.0f/8.0f;
 
 @implementation NLTextView {
 
-    NSRange       startRange;
-    NSDictionary *highlightDef;
-    NSDictionary *highlightTheme;
-    
+    NSRange startRange;
+
     UIPanGestureRecognizer *singleFingerPanRecognizer;
     UIPanGestureRecognizer *doubleFingerPanRecognizer;
 
@@ -39,8 +37,8 @@ static const float kCursorVelocity = 1.0f/8.0f;
 
 #pragma mark Setup
 
-- (id)init {
-    self = [super init];
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
     [self setupGestureRecognizers];
     [self setupHighlighting];
     return self;
@@ -51,8 +49,8 @@ static const float kCursorVelocity = 1.0f/8.0f;
 - (void)setupHighlighting {
     
     self.textStorage.delegate = self;
-    highlightDef   = [NLTextView highlightDefinition];
-    highlightTheme = [NLTextView highlightTheme];
+    _highlightDefinition = [NLTextView defaultHighlightDefinition];
+    _highlightTheme      = [NLTextView defaultHighlightTheme];
     
 }
 
@@ -62,28 +60,28 @@ static const float kCursorVelocity = 1.0f/8.0f;
 
     [self.textStorage removeAttribute:NSForegroundColorAttributeName range:paragaphRange];
 
-    for (NSString* key in highlightDef) {
+    for (NSString* key in _highlightDefinition) {
 
-        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:[highlightDef objectForKey:key]
+        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:[_highlightDefinition objectForKey:key]
                                                                                options:NSRegularExpressionDotMatchesLineSeparators error:nil];
 
         [regex enumerateMatchesInString:self.textStorage.string options:0 range:paragaphRange
                              usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
-            [self.textStorage addAttribute:NSForegroundColorAttributeName value:[highlightTheme objectForKey:key] range:result.range];
+            [self.textStorage addAttribute:NSForegroundColorAttributeName value:[_highlightTheme objectForKey:key] range:result.range];
         }];
 
     }
 
 }
 
-+ (NSDictionary *)highlightDefinition {
++ (NSDictionary *)defaultHighlightDefinition {
     
     NSString *path = [NSBundle.mainBundle pathForResource:@"Syntax" ofType:@"plist"];
     return [NSDictionary dictionaryWithContentsOfFile:path];
     
 }
 
-+ (NSDictionary *)highlightTheme {
++ (NSDictionary *)defaultHighlightTheme {
     
     return @{@"text":                          [UIColor colorWithRed:255.0/255 green:255.0/255 blue:255.0/255 alpha:1],
              @"background":                    [UIColor colorWithRed: 40.0/255 green: 43.0/255 blue: 52.0/255 alpha:1],
