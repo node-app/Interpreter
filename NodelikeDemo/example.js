@@ -13,9 +13,9 @@ module.exports = function () {
 
     server.listen(5000);
     
-    var con = net.createConnection({port:5000}, function () {
+    /*var con = net.createConnection({port:5000}, function () {
         log('client connect');
         con.write('hello world');
-    });
+    });*/
 
 };
