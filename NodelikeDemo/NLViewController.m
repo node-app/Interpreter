@@ -39,6 +39,7 @@
 
     _context = [[NLContext alloc] initWithVirtualMachine:[[JSVirtualMachine alloc] init]];
     _context.exceptionHandler = ^(JSContext *c, JSValue *e) {
+        [weakSelf error:[e toString]];
         NSLog(@"%@ stack: %@", e, [e valueForProperty:@"stack"]);
     };
 
@@ -72,6 +73,12 @@
 - (void)output:(NSString *)message {
     [CSNotificationView showInViewController:self
                                        style:CSNotificationViewStyleSuccess
+                                     message:message];
+}
+
+- (void)error:(NSString *)message {
+    [CSNotificationView showInViewController:self
+                                       style:CSNotificationViewStyleError
                                      message:message];
 }
 
