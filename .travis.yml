@@ -1,5 +1,5 @@
 language: objective-c
-script: xcodebuild -target Interpreter -sdk iphonesimulator
+script: xcodebuild -target "Node To Go" -sdk iphonesimulator
 install:
   - git submodule update --init --recursive
 after_success:

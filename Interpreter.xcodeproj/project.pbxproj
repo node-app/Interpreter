@@ -348,9 +348,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B5B4463E180AB78E009ADEF9 /* Interpreter */ = {
+		B5B4463E180AB78E009ADEF9 /* Node To Go */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B5B44671180AB78E009ADEF9 /* Build configuration list for PBXNativeTarget "Interpreter" */;
+			buildConfigurationList = B5B44671180AB78E009ADEF9 /* Build configuration list for PBXNativeTarget "Node To Go" */;
 			buildPhases = (
 				B5B4463B180AB78E009ADEF9 /* Sources */,
 				B5B4463C180AB78E009ADEF9 /* Frameworks */,
@@ -361,7 +361,7 @@
 			dependencies = (
 				B5D9EE4B183A3A2B00E321A0 /* PBXTargetDependency */,
 			);
-			name = Interpreter;
+			name = "Node To Go";
 			productName = NodelikeDemo;
 			productReference = B5B4463F180AB78E009ADEF9 /* Interpreter.app */;
 			productType = "com.apple.product-type.application";
@@ -395,7 +395,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				B5B4463E180AB78E009ADEF9 /* Interpreter */,
+				B5B4463E180AB78E009ADEF9 /* Node To Go */,
 			);
 		};
 /* End PBXProject section */
@@ -652,7 +652,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B5B44671180AB78E009ADEF9 /* Build configuration list for PBXNativeTarget "Interpreter" */ = {
+		B5B44671180AB78E009ADEF9 /* Build configuration list for PBXNativeTarget "Node To Go" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B5B44672180AB78E009ADEF9 /* Debug */,
