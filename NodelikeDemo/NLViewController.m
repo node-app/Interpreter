@@ -98,7 +98,7 @@
 
 - (IBAction)showInfo:(id)sender {
     PBWebViewController *docuViewController = [[PBWebViewController alloc] init];
-    docuViewController.URL = [NSURL URLWithString:@"http://nodeapp.org"];
+    docuViewController.URL = [NSURL URLWithString:@"http://nodeapp.org/?utm_source=interpreter&utm_medium=mobile&utm_campaign=info"];
     [self.navigationController pushViewController:docuViewController animated:YES];
 }
 
