@@ -1,6 +1,6 @@
 # Interpreter [![Build Status](https://travis-ci.org/node-app/Interpreter.png?branch=master)](https://travis-ci.org/node-app/Interpreter)
 
-This an example project implementing a Node.JS interpreter as an iOS app, utilising the [Nodelike](https://github.com/node-app/Nodelike) framework.
+This is an example project implementing a Node.JS interpreter as an iOS app, utilising the [Nodelike](https://github.com/node-app/Nodelike) framework.
 
 Nodelike is a project to implement a roughly Node.JS-compatible interface using JavaScriptCore.framework on iOS 7 and OS X Mavericks.
 
