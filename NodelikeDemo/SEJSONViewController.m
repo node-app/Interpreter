@@ -103,7 +103,7 @@
             cell.detailTextLabel.text = [subObj description];
         }
     } else if ([obj isKindOfClass:[NSArray class]]) {
-        cell.textLabel.text = [NSString stringWithFormat:@"%i",indexPath.row];
+        cell.textLabel.text = [NSString stringWithFormat:@"%li",(long)indexPath.row];
         cell.detailTextLabel.text = @"";
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     } else {
@@ -119,7 +119,7 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     if ([[_data class] isSubclassOfClass:[NSArray class]]){
-        return [NSString stringWithFormat:@"%i",section];
+        return [NSString stringWithFormat:@"%li",(long)section];
     }
     
     return @"Attributes";
@@ -144,7 +144,7 @@
         title = key;
     }  else if ([obj isKindOfClass:[NSArray class]]) {
         selectedObjet = obj[indexPath.row];
-        title = [NSString stringWithFormat:@"%@-%i",self.title, indexPath.row];
+        title = [NSString stringWithFormat:@"%@-%li",self.title, (long)indexPath.row];
     }
     
     if ( !([selectedObjet isKindOfClass:[NSDictionary class]] || [selectedObjet isKindOfClass:[NSArray class]])) return;
