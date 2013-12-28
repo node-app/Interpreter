@@ -10,8 +10,12 @@
 
 @interface NLContext : JSContext
 
-+ (NLContext *)currentContext;
++ (void)attachToContext:(JSContext *)context;
+
++ (JSValue *)requireModule:(NSString *)module inContext:(JSContext *)context;
 
 - (JSValue *)requireModule:(NSString *)module;
+
++ (void)runEventLoop;
 
 @end

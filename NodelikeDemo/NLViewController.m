@@ -21,7 +21,7 @@
 @property UIViewController* outputViewController;
 @property NSString *outputString;
 
-@property NLContext *context;
+@property JSContext *context;
 
 @end
 
@@ -37,7 +37,10 @@
 
     _appDelegate = [[UIApplication sharedApplication] delegate];
 
-    _context = [[NLContext alloc] initWithVirtualMachine:[[JSVirtualMachine alloc] init]];
+    _context = [[JSContext alloc] initWithVirtualMachine:[[JSVirtualMachine alloc] init]];
+
+    [NLContext attachToContext:_context];
+
     _context.exceptionHandler = ^(JSContext *c, JSValue *e) {
         [weakSelf error:[e toString]];
         NSLog(@"%@ stack: %@", e, [e valueForProperty:@"stack"]);
@@ -84,6 +87,7 @@
 
 - (void)execute {
     JSValue  *ret = [_context evaluateScript:self.input.text];
+    [NLContext runEventLoop];
     if (![ret isUndefined]) {
         [self output:[ret toString]];
     }
