@@ -42,14 +42,18 @@
     [NLContext attachToContext:_context];
 
     _context.exceptionHandler = ^(JSContext *c, JSValue *e) {
-        [weakSelf error:[e toString]];
-        NSLog(@"%@ stack: %@", e, [e valueForProperty:@"stack"]);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf error:[e toString]];
+            NSLog(@"%@ stack: %@", e, [e valueForProperty:@"stack"]);
+        });
     };
 
     _context[@"inspect"] = ^(JSValue *obj) {
-        SEJSONViewController *con = [SEJSONViewController new];
-        [con setData:[obj toObject]];
-        [weakSelf.navigationController pushViewController:con animated:YES];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            SEJSONViewController *con = [SEJSONViewController new];
+            [con setData:[obj toObject]];
+            [weakSelf.navigationController pushViewController:con animated:YES];
+        });
     };
 
     [KOKeyboardRow applyToTextView:self.input];
