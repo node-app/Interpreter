@@ -7,15 +7,15 @@ module.exports = function () {
     var server = net.createServer(function (c) {
         log('server connect');
         c.on("data", function (data) {
-            log("data: " + data.toString());
+            log("data: " + data);
         });
     });
 
     server.listen(5000);
     
-    /*var con = net.createConnection({port:5000}, function () {
+    var con = net.createConnection({port:5000}, function () {
         log('client connect');
         con.write('hello world');
-    });*/
+    });
 
 };
