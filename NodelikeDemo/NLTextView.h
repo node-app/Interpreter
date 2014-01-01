@@ -27,7 +27,7 @@
 @interface NLTextView : UITextView <NSTextStorageDelegate>
 
 @property NSDictionary *highlightDefinition;
-@property NSDictionary *highlightTheme;
+@property (nonatomic) NSDictionary *highlightTheme;
 
 - (void)requireGestureRecognizerToFail:(UIGestureRecognizer *)gestureRecognizer;
 

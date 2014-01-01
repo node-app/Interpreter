@@ -37,7 +37,14 @@ static const float kCursorVelocity = 1.0f/8.0f;
 
 #pragma mark Setup
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
+- (instancetype)initWithFrame:(CGRect)frame textContainer:(NSTextContainer *)textContainer {
+    self = [super initWithFrame:frame textContainer:textContainer];
+    [self setupGestureRecognizers];
+    [self setupHighlighting];
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     [self setupGestureRecognizers];
     [self setupHighlighting];
@@ -46,11 +53,28 @@ static const float kCursorVelocity = 1.0f/8.0f;
 
 #pragma mark Syntax Highlighting
 
+- (UIColor *)themedBackgroundColor {
+    return [_highlightTheme objectForKey:@"background"] ?: [UIColor whiteColor];
+}
+
+- (UIColor *)themedTextColor {
+    return [_highlightTheme objectForKey:@"text"] ?: [UIColor blackColor];
+}
+
+- (void)setHighlightTheme:(NSDictionary *)highlightTheme {
+
+    _highlightTheme = highlightTheme;
+
+    self.backgroundColor = self.themedBackgroundColor;
+    self.textColor       = self.themedTextColor;
+
+}
+
 - (void)setupHighlighting {
     
     self.textStorage.delegate = self;
-    self.highlightDefinition = [NLTextView defaultHighlightDefinition];
-    self.highlightTheme      = [NLTextView defaultHighlightTheme];
+    self.highlightDefinition  = [NLTextView defaultHighlightDefinition];
+    self.highlightTheme       = [NLTextView defaultHighlightTheme];
     
 }
 
@@ -58,16 +82,16 @@ static const float kCursorVelocity = 1.0f/8.0f;
 
     NSRange paragaphRange = [self.textStorage.string paragraphRangeForRange: self.textStorage.editedRange];
 
-    [self.textStorage removeAttribute:NSForegroundColorAttributeName range:paragaphRange];
+    [self.textStorage addAttribute:NSForegroundColorAttributeName value:self.themedTextColor range:paragaphRange];
 
-    for (NSString* key in self.highlightDefinition) {
+    for (NSString* key in _highlightDefinition) {
 
-        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:[self.highlightDefinition objectForKey:key]
+        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:[_highlightDefinition objectForKey:key]
                                                                                options:NSRegularExpressionDotMatchesLineSeparators error:nil];
 
         [regex enumerateMatchesInString:self.textStorage.string options:0 range:paragaphRange
                              usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
-            [self.textStorage addAttribute:NSForegroundColorAttributeName value:[self.highlightTheme objectForKey:key] range:result.range];
+            [self.textStorage addAttribute:NSForegroundColorAttributeName value:[_highlightTheme objectForKey:key] range:result.range];
         }];
 
     }
@@ -83,8 +107,8 @@ static const float kCursorVelocity = 1.0f/8.0f;
 
 + (NSDictionary *)defaultHighlightTheme {
     
-    return @{@"text":                          [UIColor colorWithRed:255.0/255 green:255.0/255 blue:255.0/255 alpha:1],
-             @"background":                    [UIColor colorWithRed: 40.0/255 green: 43.0/255 blue: 52.0/255 alpha:1],
+    return @{//@"text":                          [UIColor colorWithRed:255.0/255 green:255.0/255 blue:255.0/255 alpha:1],
+             //@"background":                    [UIColor colorWithRed: 40.0/255 green: 43.0/255 blue: 52.0/255 alpha:1],
              @"comment":                       [UIColor colorWithRed: 72.0/255 green:190.0/255 blue:102.0/255 alpha:1],
              @"documentation_comment":         [UIColor colorWithRed: 72.0/255 green:190.0/255 blue:102.0/255 alpha:1],
              @"documentation_comment_keyword": [UIColor colorWithRed: 72.0/255 green:190.0/255 blue:102.0/255 alpha:1],
