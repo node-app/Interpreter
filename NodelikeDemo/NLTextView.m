@@ -49,8 +49,8 @@ static const float kCursorVelocity = 1.0f/8.0f;
 - (void)setupHighlighting {
     
     self.textStorage.delegate = self;
-    _highlightDefinition = [NLTextView defaultHighlightDefinition];
-    _highlightTheme      = [NLTextView defaultHighlightTheme];
+    self.highlightDefinition = [NLTextView defaultHighlightDefinition];
+    self.highlightTheme      = [NLTextView defaultHighlightTheme];
     
 }
 
@@ -60,14 +60,14 @@ static const float kCursorVelocity = 1.0f/8.0f;
 
     [self.textStorage removeAttribute:NSForegroundColorAttributeName range:paragaphRange];
 
-    for (NSString* key in _highlightDefinition) {
+    for (NSString* key in self.highlightDefinition) {
 
-        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:[_highlightDefinition objectForKey:key]
+        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:[self.highlightDefinition objectForKey:key]
                                                                                options:NSRegularExpressionDotMatchesLineSeparators error:nil];
 
         [regex enumerateMatchesInString:self.textStorage.string options:0 range:paragaphRange
                              usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
-            [self.textStorage addAttribute:NSForegroundColorAttributeName value:[_highlightTheme objectForKey:key] range:result.range];
+            [self.textStorage addAttribute:NSForegroundColorAttributeName value:[self.highlightTheme objectForKey:key] range:result.range];
         }];
 
     }
