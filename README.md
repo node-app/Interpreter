@@ -1,4 +1,4 @@
-# Interpreter [![Build Status](https://travis-ci.org/node-app/Interpreter.png?branch=master)](https://travis-ci.org/node-app/Interpreter)
+# Interpreter [![Build Status](https://travis-ci.org/node-app/Interpreter.png?branch=master)](https://travis-ci.org/node-app/Interpreter) ![GA Beackon](https://ga-beacon.appspot.com/UA-38007063-5/node-app/Interpreter)
 
 This is an example project implementing a Node.JS interpreter as an iOS app, utilising the [Nodelike](https://github.com/node-app/Nodelike) framework.
 
