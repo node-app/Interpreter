@@ -1,5 +1,5 @@
 language: objective-c
-script: xcodebuild -target "Node To Go" -sdk iphonesimulator
+script: xcodebuild -sdk iphonesimulator -workspace Interpreter.xcworkspace -scheme "Node To Go"
 install:
   - gem install cocoapods
   - pod install
