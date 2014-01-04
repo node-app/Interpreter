@@ -1,7 +1,8 @@
 language: objective-c
 script: xcodebuild -target "Node To Go" -sdk iphonesimulator
 install:
-  - git submodule update --init --recursive
+  - gem install cocoapods
+  - pod install
 after_success:
   - brew install sloccount
   - sudo easy_install pip
