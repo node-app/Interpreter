@@ -1,9 +1,11 @@
 language: objective-c
-script: xcodebuild -sdk iphonesimulator -workspace Interpreter.xcworkspace -scheme "Node To Go"
-install:
+xcode_sdk: iphonesimulator
+xcode_scheme: "Node To Go"
+xcode_workspace: Interpreter.xcworkspace
+before_install: 
   - gem install cocoapods
-  - pod install
 after_success:
+  - brew update
   - brew install sloccount
   - sudo easy_install pip
   - sudo pip install coviolations_app
