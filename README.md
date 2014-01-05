@@ -22,9 +22,9 @@ The goals
 How to compile
 --------------
 
-You first need to fetch the submodules. Do so by: `git submodule update --init --recursive`
-
-Afterwards, just open `Interpreter.xcodeproj`, build the app and you're all set!
+1. You need to have [CocoaPods](http://cocoapods.org) installed. If you do not have already, run `sudo gem install cocoapods`.
+2. Install the dependencies via `pod install`.
+3. Open `Interpreter.xcworkspace` in Xcode and run!
 
 How to use the app
 ------------------
