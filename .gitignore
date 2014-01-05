@@ -5,3 +5,5 @@ node_modules
 
 *.xccheckout
 build
+
+Pods/

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41F76CC626CB4B9D9C35557A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EFDE6E040EB45CAB99BE307 /* libPods.a */; };
 		B51198D1183D2DFE008B2DE5 /* NLColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B51198D0183D2DFE008B2DE5 /* NLColor.m */; };
 		B51198D5183D3E55008B2DE5 /* NLTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = B51198D4183D3E55008B2DE5 /* NLTextView.m */; };
 		B51198DD183D7E64008B2DE5 /* Syntax.plist in Resources */ = {isa = PBXBuildFile; fileRef = B51198DC183D7E64008B2DE5 /* Syntax.plist */; };
@@ -75,34 +76,11 @@
 		B5D7A3B0185F046100576C69 /* util.js in Resources */ = {isa = PBXBuildFile; fileRef = B5D7A37F185F045900576C69 /* util.js */; };
 		B5D7A3B1185F046100576C69 /* vm.js in Resources */ = {isa = PBXBuildFile; fileRef = B5D7A380185F045900576C69 /* vm.js */; };
 		B5D7A3B2185F046100576C69 /* zlib.js in Resources */ = {isa = PBXBuildFile; fileRef = B5D7A381185F045900576C69 /* zlib.js */; };
-		B5D9EE4C183A3A3300E321A0 /* libNodelike.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D9EE47183A3A2200E321A0 /* libNodelike.a */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		B5D9EE46183A3A2200E321A0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B5D9EE41183A3A2200E321A0 /* Nodelike.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B59EA08E180CB587005BF5C1;
-			remoteInfo = Nodelike;
-		};
-		B5D9EE48183A3A2200E321A0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B5D9EE41183A3A2200E321A0 /* Nodelike.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B54C1F52180D37280051F826;
-			remoteInfo = uv;
-		};
-		B5D9EE4A183A3A2B00E321A0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B5D9EE41183A3A2200E321A0 /* Nodelike.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = B59EA08D180CB587005BF5C1;
-			remoteInfo = Nodelike;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		052D7BA09FC3465ABCD8A15D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		8EFDE6E040EB45CAB99BE307 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5061A32181595EB0083AB4B /* example.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = example.js; sourceTree = "<group>"; };
 		B51198CF183D2DFE008B2DE5 /* NLColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLColor.h; sourceTree = "<group>"; };
 		B51198D0183D2DFE008B2DE5 /* NLColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLColor.m; sourceTree = "<group>"; };
@@ -186,8 +164,6 @@
 		B5D7A37F185F045900576C69 /* util.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = util.js; sourceTree = "<group>"; };
 		B5D7A380185F045900576C69 /* vm.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = vm.js; sourceTree = "<group>"; };
 		B5D7A381185F045900576C69 /* zlib.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = zlib.js; sourceTree = "<group>"; };
-		B5D9EE41183A3A2200E321A0 /* Nodelike.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Nodelike.xcodeproj; path = Nodelike/Nodelike.xcodeproj; sourceTree = "<group>"; };
-		B5D9EE4E183A3AB600E321A0 /* NLContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NLContext.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,10 +171,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5D9EE4C183A3A3300E321A0 /* libNodelike.a in Frameworks */,
 				B5B44645180AB78E009ADEF9 /* CoreGraphics.framework in Frameworks */,
 				B5B44647180AB78E009ADEF9 /* UIKit.framework in Frameworks */,
 				B5B44643180AB78E009ADEF9 /* Foundation.framework in Frameworks */,
+				41F76CC626CB4B9D9C35557A /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,11 +184,11 @@
 		B5B44636180AB78E009ADEF9 = {
 			isa = PBXGroup;
 			children = (
-				B5D9EE41183A3A2200E321A0 /* Nodelike.xcodeproj */,
 				B5B44648180AB78E009ADEF9 /* NodelikeDemo */,
 				B5B44641180AB78E009ADEF9 /* Frameworks */,
 				B5B44640180AB78E009ADEF9 /* Products */,
 				B5D7A350185F045900576C69 /* lib */,
+				052D7BA09FC3465ABCD8A15D /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -233,6 +209,7 @@
 				B5B44644180AB78E009ADEF9 /* CoreGraphics.framework */,
 				B5B44646180AB78E009ADEF9 /* UIKit.framework */,
 				B5B44661180AB78E009ADEF9 /* XCTest.framework */,
+				8EFDE6E040EB45CAB99BE307 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -240,7 +217,6 @@
 		B5B44648180AB78E009ADEF9 /* NodelikeDemo */ = {
 			isa = PBXGroup;
 			children = (
-				B5D9EE4E183A3AB600E321A0 /* NLContext.h */,
 				B5CF828F1819B9EC0095AE7E /* KOKeyboardRow.h */,
 				B5CF82901819B9EC0095AE7E /* KOKeyboardRow.m */,
 				B5CF82911819B9EC0095AE7E /* KOSwipeButton.h */,
@@ -336,15 +312,6 @@
 			path = lib;
 			sourceTree = "<group>";
 		};
-		B5D9EE42183A3A2200E321A0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B5D9EE47183A3A2200E321A0 /* libNodelike.a */,
-				B5D9EE49183A3A2200E321A0 /* libuv.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -352,14 +319,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5B44671180AB78E009ADEF9 /* Build configuration list for PBXNativeTarget "Node To Go" */;
 			buildPhases = (
+				5A1AFDF162304FC08D9AD807 /* Check Pods Manifest.lock */,
 				B5B4463B180AB78E009ADEF9 /* Sources */,
 				B5B4463C180AB78E009ADEF9 /* Frameworks */,
 				B5B4463D180AB78E009ADEF9 /* Resources */,
+				C244253F309047989B007737 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B5D9EE4B183A3A2B00E321A0 /* PBXTargetDependency */,
 			);
 			name = "Node To Go";
 			productName = NodelikeDemo;
@@ -387,35 +355,12 @@
 			mainGroup = B5B44636180AB78E009ADEF9;
 			productRefGroup = B5B44640180AB78E009ADEF9 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = B5D9EE42183A3A2200E321A0 /* Products */;
-					ProjectRef = B5D9EE41183A3A2200E321A0 /* Nodelike.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				B5B4463E180AB78E009ADEF9 /* Node To Go */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		B5D9EE47183A3A2200E321A0 /* libNodelike.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libNodelike.a;
-			remoteRef = B5D9EE46183A3A2200E321A0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B5D9EE49183A3A2200E321A0 /* libuv.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libuv.a;
-			remoteRef = B5D9EE48183A3A2200E321A0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B5B4463D180AB78E009ADEF9 /* Resources */ = {
@@ -482,6 +427,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5A1AFDF162304FC08D9AD807 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C244253F309047989B007737 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B5B4463B180AB78E009ADEF9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -501,14 +479,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B5D9EE4B183A3A2B00E321A0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Nodelike;
-			targetProxy = B5D9EE4A183A3A2B00E321A0 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B5B4464B180AB78E009ADEF9 /* InfoPlist.strings */ = {
@@ -604,6 +574,7 @@
 		};
 		B5B44672180AB78E009ADEF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 052D7BA09FC3465ABCD8A15D /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -623,6 +594,7 @@
 		};
 		B5B44673180AB78E009ADEF9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 052D7BA09FC3465ABCD8A15D /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
