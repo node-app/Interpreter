@@ -94,7 +94,7 @@
 		B597EB7918396ADB00DC767C /* CSNotificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSNotificationView.m; sourceTree = "<group>"; };
 		B597EB7B18396AE400DC767C /* CSNotificationView.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CSNotificationView.xcassets; sourceTree = "<group>"; };
 		B59EA04F180CB38E005BF5C1 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		B5B4463F180AB78E009ADEF9 /* Node To Go.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Node To Go.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5B4463F180AB78E009ADEF9 /* Node.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Node.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5B44642180AB78E009ADEF9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B5B44644180AB78E009ADEF9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B5B44646180AB78E009ADEF9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -195,7 +195,7 @@
 		B5B44640180AB78E009ADEF9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B5B4463F180AB78E009ADEF9 /* Node To Go.app */,
+				B5B4463F180AB78E009ADEF9 /* Node.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -315,9 +315,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B5B4463E180AB78E009ADEF9 /* Node To Go */ = {
+		B5B4463E180AB78E009ADEF9 /* Node */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B5B44671180AB78E009ADEF9 /* Build configuration list for PBXNativeTarget "Node To Go" */;
+			buildConfigurationList = B5B44671180AB78E009ADEF9 /* Build configuration list for PBXNativeTarget "Node" */;
 			buildPhases = (
 				5A1AFDF162304FC08D9AD807 /* Check Pods Manifest.lock */,
 				B5B4463B180AB78E009ADEF9 /* Sources */,
@@ -329,9 +329,9 @@
 			);
 			dependencies = (
 			);
-			name = "Node To Go";
+			name = Node;
 			productName = NodelikeDemo;
-			productReference = B5B4463F180AB78E009ADEF9 /* Node To Go.app */;
+			productReference = B5B4463F180AB78E009ADEF9 /* Node.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -357,7 +357,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B5B4463E180AB78E009ADEF9 /* Node To Go */,
+				B5B4463E180AB78E009ADEF9 /* Node */,
 			);
 		};
 /* End PBXProject section */
@@ -624,7 +624,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B5B44671180AB78E009ADEF9 /* Build configuration list for PBXNativeTarget "Node To Go" */ = {
+		B5B44671180AB78E009ADEF9 /* Build configuration list for PBXNativeTarget "Node" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B5B44672180AB78E009ADEF9 /* Debug */,

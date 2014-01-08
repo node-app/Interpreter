@@ -1,5 +1,5 @@
 language: objective-c
 xcode_sdk: iphonesimulator
-xcode_scheme: "Node To Go"
+xcode_scheme: Node
 xcode_workspace: Interpreter.xcworkspace
 rvm: 1.9.3

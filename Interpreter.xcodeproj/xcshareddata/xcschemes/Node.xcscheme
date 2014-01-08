@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B5B4463E180AB78E009ADEF9"
-               BuildableName = "Node To Go.app"
-               BlueprintName = "Node To Go"
+               BuildableName = "Node.app"
+               BlueprintName = "Node"
                ReferencedContainer = "container:Interpreter.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B5B4463E180AB78E009ADEF9"
-            BuildableName = "Node To Go.app"
-            BlueprintName = "Node To Go"
+            BuildableName = "Node.app"
+            BlueprintName = "Node"
             ReferencedContainer = "container:Interpreter.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -52,8 +52,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B5B4463E180AB78E009ADEF9"
-            BuildableName = "Node To Go.app"
-            BlueprintName = "Node To Go"
+            BuildableName = "Node.app"
+            BlueprintName = "Node"
             ReferencedContainer = "container:Interpreter.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -70,8 +70,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B5B4463E180AB78E009ADEF9"
-            BuildableName = "Node To Go.app"
-            BlueprintName = "Node To Go"
+            BuildableName = "Node.app"
+            BlueprintName = "Node"
             ReferencedContainer = "container:Interpreter.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
