@@ -2,20 +2,23 @@ log("hello world");
 
 module.exports = function () {
 
-    var net = require('net');
+    var http = require('http');
 
-    var server = net.createServer(function (c) {
-        log('server connect');
-        c.on("data", function (data) {
-            log("data: " + data);
-        });
+    var server = http.createServer(function (req, res) {
+        res.statusCode = 200;
+        res.write(new Buffer("PONG!"));
+        res.end();
     });
 
     server.listen(5000);
     
-    var con = net.createConnection({port:5000}, function () {
-        log('client connect');
-        con.write('hello world');
+    http.get("http://localhost:5000/", function(res) {
+        log("Got response: " + res.statusCode);
+        res.on("data", function (data) {
+            log("Got data: " + data);
+        });
+    }).on('error', function(e) {
+        log("Got error: " + e.message);
     });
 
 };
