@@ -19,6 +19,24 @@ The goals
 - NOT to archieve Node.js performance (this is meant as a client-side, not a server-side application)
 - NOT to be backwards-compatible (nodejs cutting edge and newest iOS/OS X required)
 
+What's working right now
+------------------------
+
+- `process`: `.argv`, `.env`, `.exit()`, `.nextTick()`
+- `require()` for native modules
+- `fs`
+- `net`
+- `http`
+- `timers`
+- `util`
+- `url`
+- `events`
+- `path`
+- `stream`
+- `querystring`
+- `punycode`
+- `assert`
+
 How to compile
 --------------
 
@@ -33,19 +51,3 @@ You can enter Javascript code into the TextView and execute that via a tap on th
 After each execution, when the result of the executed script is not undefined, a popover will appear containing that result.
 
 Have fun!
-
-What's working right now
-------------------------
-
-- `process`: `.cwd()`, `.chdir()`, `.argv`, `.env`, `.exit()`, `.nextTick()`
-- `require()` for native modules
-- `fs`: everything except `.write()`
-- `timers`
-- `util`
-- `url`
-- `events`
-- `path`
-- `stream`
-- `querystring`
-- `punycode`
-- `assert`
