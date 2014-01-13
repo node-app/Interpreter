@@ -22,6 +22,7 @@ The goals
 What's working right now
 ------------------------
 
+- `console.log()`
 - `process`: `.argv`, `.env`, `.exit()`, `.nextTick()`
 - `require()` for native modules
 - `fs`
