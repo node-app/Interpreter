@@ -21,6 +21,8 @@
 @property UIViewController* outputViewController;
 @property NSString *outputString;
 
+@property NSMutableArray *log;
+
 @property JSContext *context;
 
 @end
@@ -40,6 +42,8 @@
     _context = [[JSContext alloc] initWithVirtualMachine:[[JSVirtualMachine alloc] init]];
 
     [NLContext attachToContext:_context];
+    
+    self.log = [NSMutableArray new];
 
     _context.exceptionHandler = ^(JSContext *c, JSValue *e) {
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -55,6 +59,12 @@
             [weakSelf.navigationController pushViewController:con animated:YES];
         });
     };
+    
+    _context[@"console"] = @{@"log": ^(JSValue *thing) {
+        [JSContext.currentArguments enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            [weakSelf.log addObject:[obj toObject]];
+        }];
+    }};
 
     [KOKeyboardRow applyToTextView:self.input];
     ((KOKeyboardRow *)self.input.inputAccessoryView).viewController = self;
@@ -94,6 +104,12 @@
     [NLContext runEventLoop];
     if (![ret isUndefined]) {
         [self output:[ret toString]];
+    }
+    if ([self.log count]) {
+        SEJSONViewController *con = [SEJSONViewController new];
+        [con setData:[NSArray arrayWithArray:self.log]];
+        [self.navigationController pushViewController:con animated:YES];
+        [self.log removeAllObjects];
     }
     self.input.text = @"";
 }
