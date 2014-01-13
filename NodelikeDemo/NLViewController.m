@@ -111,7 +111,6 @@
         [self.navigationController pushViewController:con animated:YES];
         [self.log removeAllObjects];
     }
-    self.input.text = @"";
 }
 
 - (IBAction)showDocu:(id)sender {
