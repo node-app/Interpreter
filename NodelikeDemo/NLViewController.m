@@ -52,14 +52,6 @@
         });
     };
 
-    _context[@"inspect"] = ^(JSValue *obj) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            SEJSONViewController *con = [SEJSONViewController new];
-            [con setData:[obj toObject]];
-            [weakSelf.navigationController pushViewController:con animated:YES];
-        });
-    };
-    
     _context[@"console"] = @{@"log": ^(JSValue *thing) {
         [JSContext.currentArguments enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             [weakSelf.log addObject:[obj toObject]];
