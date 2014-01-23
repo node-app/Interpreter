@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A226F2618919B1600F58AE6 /* example01.js in Resources */ = {isa = PBXBuildFile; fileRef = 2A226F2318919B1600F58AE6 /* example01.js */; };
+		2A226F2718919B1600F58AE6 /* example02.js in Resources */ = {isa = PBXBuildFile; fileRef = 2A226F2418919B1600F58AE6 /* example02.js */; };
+		2A226F2818919B1600F58AE6 /* example03.js in Resources */ = {isa = PBXBuildFile; fileRef = 2A226F2518919B1600F58AE6 /* example03.js */; };
 		41F76CC626CB4B9D9C35557A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EFDE6E040EB45CAB99BE307 /* libPods.a */; };
 		B51198D1183D2DFE008B2DE5 /* NLColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B51198D0183D2DFE008B2DE5 /* NLColor.m */; };
 		B51198D5183D3E55008B2DE5 /* NLTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = B51198D4183D3E55008B2DE5 /* NLTextView.m */; };
 		B51198DD183D7E64008B2DE5 /* Syntax.plist in Resources */ = {isa = PBXBuildFile; fileRef = B51198DC183D7E64008B2DE5 /* Syntax.plist */; };
-		B5122DF91868C628005E0E3C /* example.js in Resources */ = {isa = PBXBuildFile; fileRef = B5061A32181595EB0083AB4B /* example.js */; };
 		B54C1F97180D488D0051F826 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5B44654180AB78E009ADEF9 /* Main.storyboard */; };
 		B588412B182D1D83007C5B0F /* PBWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B588412A182D1D83007C5B0F /* PBWebViewController.m */; };
 		B597EB7A18396ADB00DC767C /* CSNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = B597EB7918396ADB00DC767C /* CSNotificationView.m */; };
@@ -80,6 +82,9 @@
 
 /* Begin PBXFileReference section */
 		052D7BA09FC3465ABCD8A15D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		2A226F2318919B1600F58AE6 /* example01.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = example01.js; path = NodelikeDemo/example01.js; sourceTree = "<group>"; };
+		2A226F2418919B1600F58AE6 /* example02.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = example02.js; path = NodelikeDemo/example02.js; sourceTree = "<group>"; };
+		2A226F2518919B1600F58AE6 /* example03.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = example03.js; path = NodelikeDemo/example03.js; sourceTree = "<group>"; };
 		8EFDE6E040EB45CAB99BE307 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5061A32181595EB0083AB4B /* example.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = example.js; sourceTree = "<group>"; };
 		B51198CF183D2DFE008B2DE5 /* NLColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLColor.h; sourceTree = "<group>"; };
@@ -184,6 +189,9 @@
 		B5B44636180AB78E009ADEF9 = {
 			isa = PBXGroup;
 			children = (
+				2A226F2318919B1600F58AE6 /* example01.js */,
+				2A226F2418919B1600F58AE6 /* example02.js */,
+				2A226F2518919B1600F58AE6 /* example03.js */,
 				B5B44648180AB78E009ADEF9 /* NodelikeDemo */,
 				B5B44641180AB78E009ADEF9 /* Frameworks */,
 				B5B44640180AB78E009ADEF9 /* Products */,
@@ -367,7 +375,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5122DF91868C628005E0E3C /* example.js in Resources */,
+				2A226F2618919B1600F58AE6 /* example01.js in Resources */,
+				2A226F2718919B1600F58AE6 /* example02.js in Resources */,
+				2A226F2818919B1600F58AE6 /* example03.js in Resources */,
 				B5D7A382185F046100576C69 /* _debugger.js in Resources */,
 				B5D7A383185F046100576C69 /* _http_agent.js in Resources */,
 				B5D7A384185F046100576C69 /* _http_client.js in Resources */,
