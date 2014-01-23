@@ -327,6 +327,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5B44671180AB78E009ADEF9 /* Build configuration list for PBXNativeTarget "Node" */;
 			buildPhases = (
+				2A226F2218919AC300F58AE6 /* Set CFBundleVersion to current Git Commit Hash */,
 				5A1AFDF162304FC08D9AD807 /* Check Pods Manifest.lock */,
 				B5B4463B180AB78E009ADEF9 /* Sources */,
 				B5B4463C180AB78E009ADEF9 /* Frameworks */,
@@ -438,6 +439,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2A226F2218919AC300F58AE6 /* Set CFBundleVersion to current Git Commit Hash */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Set CFBundleVersion to current Git Commit Hash";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/libexec/Plistbuddy -c \"Set CFBundleVersion $(git log --pretty=format:'%h' -n 1)\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+		};
 		5A1AFDF162304FC08D9AD807 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
