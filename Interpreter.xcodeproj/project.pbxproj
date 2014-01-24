@@ -86,7 +86,6 @@
 		2A226F2418919B1600F58AE6 /* example02.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = example02.js; path = NodelikeDemo/example02.js; sourceTree = "<group>"; };
 		2A226F2518919B1600F58AE6 /* example03.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = example03.js; path = NodelikeDemo/example03.js; sourceTree = "<group>"; };
 		8EFDE6E040EB45CAB99BE307 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		B5061A32181595EB0083AB4B /* example.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = example.js; sourceTree = "<group>"; };
 		B51198CF183D2DFE008B2DE5 /* NLColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLColor.h; sourceTree = "<group>"; };
 		B51198D0183D2DFE008B2DE5 /* NLColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLColor.m; sourceTree = "<group>"; };
 		B51198D3183D3E55008B2DE5 /* NLTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLTextView.h; sourceTree = "<group>"; };
@@ -233,7 +232,6 @@
 				B5B44652180AB78E009ADEF9 /* NLAppDelegate.m */,
 				B51198D3183D3E55008B2DE5 /* NLTextView.h */,
 				B51198D4183D3E55008B2DE5 /* NLTextView.m */,
-				B5061A32181595EB0083AB4B /* example.js */,
 				B5B44654180AB78E009ADEF9 /* Main.storyboard */,
 				B51198CF183D2DFE008B2DE5 /* NLColor.h */,
 				B51198D0183D2DFE008B2DE5 /* NLColor.m */,
