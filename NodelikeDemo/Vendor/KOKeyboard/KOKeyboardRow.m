@@ -35,6 +35,8 @@
 #import "KOKeyboardRow.h"
 #import "KOSwipeButton.h"
 
+#import "NLColor.h"
+
 @interface KOKeyboardRow ()
 
 @property (nonatomic, retain) UITextView *textView;
@@ -62,7 +64,7 @@
     }
     
     KOKeyboardRow *v = [[KOKeyboardRow alloc] initWithFrame:CGRectMake(0, 0, barWidth, barHeight)];
-    v.backgroundColor = [UIColor colorWithRed:140/255. green:138/255. blue:131/255. alpha:1];
+    v.backgroundColor = [NLColor blackColor];//[UIColor colorWithRed:240/255. green:240/255. blue:240/255. alpha:1];
     v.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     v.textView = t;
     
