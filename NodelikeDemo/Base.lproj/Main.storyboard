@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="SzV-qi-HIg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="SzV-qi-HIg">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -32,22 +32,7 @@
                     <view key="view" contentMode="scaleToFill" id="0qa-6J-6eO">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BEb-te-d8m" customClass="NLTextView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.92549019610000005" green="0.92156862750000001" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert"/>
-                            </textView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="BEb-te-d8m" firstAttribute="top" secondItem="0qa-6J-6eO" secondAttribute="top" id="00K-fa-hxA"/>
-                            <constraint firstItem="mJU-Cf-VR0" firstAttribute="top" secondItem="BEb-te-d8m" secondAttribute="bottom" id="1RU-DJ-WZQ"/>
-                            <constraint firstItem="BEb-te-d8m" firstAttribute="leading" secondItem="0qa-6J-6eO" secondAttribute="leading" id="H7S-we-ynr"/>
-                            <constraint firstAttribute="trailing" secondItem="BEb-te-d8m" secondAttribute="trailing" id="fp6-8p-Pbf"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Interpreter" id="bW9-p7-z7G">
                         <barButtonItem key="leftBarButtonItem" image="info" id="fTq-wf-Uch">
@@ -61,9 +46,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="input" destination="BEb-te-d8m" id="eQo-kq-Frj"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zqk-OX-IVc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

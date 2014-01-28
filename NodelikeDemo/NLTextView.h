@@ -24,11 +24,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NLTextView : UITextView <NSTextStorageDelegate>
+#import "CYRTextView.h"
+
+@interface NLTextView : CYRTextView
+
++ (instancetype)textViewForView:(UIView *)view;
 
 @property NSDictionary *highlightDefinition;
 @property (nonatomic) NSDictionary *highlightTheme;
-
-- (void)requireGestureRecognizerToFail:(UIGestureRecognizer *)gestureRecognizer;
 
 @end

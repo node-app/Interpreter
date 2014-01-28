@@ -57,6 +57,10 @@
             [weakSelf.log addObject:[obj toObject]];
         }];
     }};
+    
+    self.input = [NLTextView textViewForView:self.view];
+
+    [self.view addSubview:self.input];
 
     [KOKeyboardRow applyToTextView:self.input];
     ((KOKeyboardRow *)self.input.inputAccessoryView).viewController = self;
@@ -73,9 +77,6 @@
     self.navigationController.navigationBar.barTintColor = [NLColor blackColor];
     self.navigationController.toolbar.tintColor          = [NLColor blackColor];
     self.navigationController.toolbar.barTintColor       = [[NLColor whiteColor] colorWithAlphaComponent:0.5];
-
-    self.input.backgroundColor = [NLColor beigeColor];
-    self.input.inputView.backgroundColor = [NLColor beigeColor];
 
 }
 

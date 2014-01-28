@@ -24,78 +24,73 @@
 
 #import "NLTextView.h"
 
-static const float kCursorVelocity = 1.0f/8.0f;
+#import "CYRToken.h"
 
-@implementation NLTextView {
+@implementation NLTextView
 
-    NSRange startRange;
-
-    UIPanGestureRecognizer *singleFingerPanRecognizer;
-    UIPanGestureRecognizer *doubleFingerPanRecognizer;
-
++ (instancetype)textViewForView:(UIView *)view {
+    CGRect frame = view.frame;
+    frame.size.height -= 64;
+    return [[self alloc] initWithFrame:frame];
 }
 
-#pragma mark Setup
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
 
-- (instancetype)initWithFrame:(CGRect)frame textContainer:(NSTextContainer *)textContainer {
-    self = [super initWithFrame:frame textContainer:textContainer];
-    [self setupGestureRecognizers];
-    [self setupHighlighting];
+    self.gutterBackgroundColor = [UIColor clearColor];
+    self.gutterLineColor       = [UIColor clearColor];
+
+    self.font = [UIFont fontWithName:@"Menlo" size:12.0];
+    self.autocorrectionType = UITextAutocorrectionTypeNo;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    
+    self.highlightDefinition = [NLTextView defaultHighlightDefinition];
+    self.highlightTheme      = [NLTextView defaultHighlightTheme];
+    
+    NSMutableArray *tokens = [NSMutableArray new];
+    [self.highlightDefinition enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        [tokens addObject:[CYRToken tokenWithName:key expression:obj
+                                       attributes:@{NSForegroundColorAttributeName:self.highlightTheme[key]}]];
+    }];
+    self.tokens = tokens;
+
     return self;
 }
 
-- (instancetype)initWithCoder:(NSCoder *)aDecoder {
-    self = [super initWithCoder:aDecoder];
-    [self setupGestureRecognizers];
-    [self setupHighlighting];
-    return self;
+
+- (void)keyboardWillShow:(NSNotification*)aNotification
+{
+    [self moveTextViewForKeyboard:aNotification up:YES];
 }
 
-#pragma mark Syntax Highlighting
-
-- (UIColor *)themedBackgroundColor {
-    return [_highlightTheme objectForKey:@"background"] ?: [UIColor whiteColor];
+- (void)keyboardWillHide:(NSNotification*)aNotification
+{
+    [self moveTextViewForKeyboard:aNotification up:NO];
 }
 
-- (UIColor *)themedTextColor {
-    return [_highlightTheme objectForKey:@"text"] ?: [UIColor blackColor];
-}
-
-- (void)setHighlightTheme:(NSDictionary *)highlightTheme {
-
-    _highlightTheme = highlightTheme;
-
-    self.backgroundColor = self.themedBackgroundColor;
-    self.textColor       = self.themedTextColor;
-
-}
-
-- (void)setupHighlighting {
+- (void)moveTextViewForKeyboard:(NSNotification*)aNotification up:(BOOL)up
+{
+    NSDictionary* userInfo = [aNotification userInfo];
+    NSTimeInterval animationDuration;
+    UIViewAnimationCurve animationCurve;
+    CGRect keyboardEndFrame;
     
-    self.textStorage.delegate = self;
-    self.highlightDefinition  = [NLTextView defaultHighlightDefinition];
-    self.highlightTheme       = [NLTextView defaultHighlightTheme];
+    [[userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey]    getValue:&animationCurve];
+    [[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] getValue:&animationDuration];
+    [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey]          getValue:&keyboardEndFrame];
     
-}
-
-- (void)textStorageDidProcessEditing:(id)sender {
-
-    NSRange paragaphRange = [self.textStorage.string paragraphRangeForRange: self.textStorage.editedRange];
-
-    [self.textStorage addAttribute:NSForegroundColorAttributeName value:self.themedTextColor range:paragaphRange];
-
-    for (NSString* key in _highlightDefinition) {
-
-        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:[_highlightDefinition objectForKey:key]
-                                                                               options:NSRegularExpressionDotMatchesLineSeparators error:nil];
-
-        [regex enumerateMatchesInString:self.textStorage.string options:0 range:paragaphRange
-                             usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
-            [self.textStorage addAttribute:NSForegroundColorAttributeName value:[_highlightTheme objectForKey:key] range:result.range];
-        }];
-
-    }
-
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    [UIView setAnimationCurve:animationCurve];
+    
+    CGRect newFrame = self.frame;
+    CGRect keyboardFrame = [self.superview convertRect:keyboardEndFrame toView:nil];;
+    newFrame.size.height -= keyboardFrame.size.height * (up?1:-1);
+    self.frame = newFrame;
+    
+    [UIView commitAnimations];
 }
 
 + (NSDictionary *)defaultHighlightDefinition {
@@ -122,67 +117,6 @@ static const float kCursorVelocity = 1.0f/8.0f;
              @"project":                       [UIColor colorWithRed:146.0/255 green:199.0/255 blue:119.0/255 alpha:1],
              @"other":                         [UIColor colorWithRed:  0.0/255 green:175.0/255 blue:199.0/255 alpha:1]};
     
-}
-
-#pragma mark Gestures
-
-- (void)setupGestureRecognizers {
-
-    singleFingerPanRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(singleFingerPanHappend:)];
-    singleFingerPanRecognizer.maximumNumberOfTouches = 1;
-    [self addGestureRecognizer:singleFingerPanRecognizer];
-    
-    doubleFingerPanRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(doubleFingerPanHappend:)];
-    doubleFingerPanRecognizer.minimumNumberOfTouches = 2;
-    [self addGestureRecognizer:doubleFingerPanRecognizer];
-
-}
-
-- (BOOL)gestureRecognizerShouldBegin:(UIPanGestureRecognizer *)gestureRecognizer {
-
-    // Only accept horizontal pans for the code navigation to preserve correct scrolling behaviour.
-    if (gestureRecognizer == singleFingerPanRecognizer || gestureRecognizer == doubleFingerPanRecognizer) {
-        CGPoint translation = [gestureRecognizer translationInView:self];
-        return fabsf(translation.x) > fabsf(translation.y);
-    }
-
-    return YES;
-
-}
-
-- (void)requireGestureRecognizerToFail:(UIGestureRecognizer *)gestureRecognizer {
-
-    [singleFingerPanRecognizer requireGestureRecognizerToFail:gestureRecognizer];
-    [doubleFingerPanRecognizer requireGestureRecognizerToFail:gestureRecognizer];
-
-}
-
-- (void)singleFingerPanHappend:(UIPanGestureRecognizer *)sender {
-
-    if (sender.state == UIGestureRecognizerStateBegan) {
-        startRange = self.selectedRange;
-    }
-
-    CGFloat cursorLocation = MAX(startRange.location + [sender translationInView:self].x * kCursorVelocity, 0);
-
-    self.selectedRange = NSMakeRange(cursorLocation, 0);
-
-}
-
-- (void)doubleFingerPanHappend:(UIPanGestureRecognizer *)sender {
-
-    if (sender.state == UIGestureRecognizerStateBegan) {
-        startRange = self.selectedRange;
-    }
-
-    CGFloat cursorLocation = MAX(startRange.location + [sender translationInView:self].x * kCursorVelocity, 0);
-
-    if (cursorLocation > startRange.location) {
-        self.selectedRange = NSMakeRange(startRange.location, fabsf(startRange.location - cursorLocation));
-    } else {
-        self.selectedRange = NSMakeRange(cursorLocation, fabsf(startRange.location - cursorLocation));
-    }
-
 }
 
 @end
