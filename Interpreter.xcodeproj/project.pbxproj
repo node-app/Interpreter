@@ -25,7 +25,7 @@
 		B5B4464D180AB78E009ADEF9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5B4464B180AB78E009ADEF9 /* InfoPlist.strings */; };
 		B5B4464F180AB78E009ADEF9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B4464E180AB78E009ADEF9 /* main.m */; };
 		B5B44653180AB78E009ADEF9 /* NLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B44652180AB78E009ADEF9 /* NLAppDelegate.m */; };
-		B5B44659180AB78E009ADEF9 /* NLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B44658180AB78E009ADEF9 /* NLViewController.m */; };
+		B5B44659180AB78E009ADEF9 /* NLEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B44658180AB78E009ADEF9 /* NLEditorViewController.m */; };
 		B5B4465B180AB78E009ADEF9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5B4465A180AB78E009ADEF9 /* Images.xcassets */; };
 		B5C056251846A4A400E8A4B1 /* SEJSONViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C056241846A4A400E8A4B1 /* SEJSONViewController.m */; };
 		B5CF829F1819B9EC0095AE7E /* KOKeyboardRow.m in Sources */ = {isa = PBXBuildFile; fileRef = B5CF82901819B9EC0095AE7E /* KOKeyboardRow.m */; };
@@ -34,6 +34,9 @@
 		B5FD81221897EE97007FB460 /* CYRTextStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FD811C1897EE97007FB460 /* CYRTextStorage.m */; };
 		B5FD81231897EE97007FB460 /* CYRTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FD811E1897EE97007FB460 /* CYRTextView.m */; };
 		B5FD81241897EE97007FB460 /* CYRToken.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FD81201897EE97007FB460 /* CYRToken.m */; };
+		B5FD8127189860DB007FB460 /* FHSegmentedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FD8126189860DB007FB460 /* FHSegmentedViewController.m */; };
+		B5FD812A18986190007FB460 /* NLMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FD812918986190007FB460 /* NLMasterViewController.m */; };
+		B5FD812D1898686F007FB460 /* NLConsoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FD812C1898686F007FB460 /* NLConsoleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,8 +69,8 @@
 		B5B44651180AB78E009ADEF9 /* NLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NLAppDelegate.h; sourceTree = "<group>"; };
 		B5B44652180AB78E009ADEF9 /* NLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NLAppDelegate.m; sourceTree = "<group>"; };
 		B5B44655180AB78E009ADEF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B5B44657180AB78E009ADEF9 /* NLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NLViewController.h; sourceTree = "<group>"; };
-		B5B44658180AB78E009ADEF9 /* NLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NLViewController.m; sourceTree = "<group>"; };
+		B5B44657180AB78E009ADEF9 /* NLEditorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NLEditorViewController.h; sourceTree = "<group>"; };
+		B5B44658180AB78E009ADEF9 /* NLEditorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NLEditorViewController.m; sourceTree = "<group>"; };
 		B5B4465A180AB78E009ADEF9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B5B44661180AB78E009ADEF9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		B5C056231846A4A400E8A4B1 /* SEJSONViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEJSONViewController.h; sourceTree = "<group>"; };
@@ -84,6 +87,12 @@
 		B5FD811E1897EE97007FB460 /* CYRTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYRTextView.m; sourceTree = "<group>"; };
 		B5FD811F1897EE97007FB460 /* CYRToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYRToken.h; sourceTree = "<group>"; };
 		B5FD81201897EE97007FB460 /* CYRToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYRToken.m; sourceTree = "<group>"; };
+		B5FD8125189860DB007FB460 /* FHSegmentedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FHSegmentedViewController.h; sourceTree = "<group>"; };
+		B5FD8126189860DB007FB460 /* FHSegmentedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FHSegmentedViewController.m; sourceTree = "<group>"; };
+		B5FD812818986190007FB460 /* NLMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLMasterViewController.h; sourceTree = "<group>"; };
+		B5FD812918986190007FB460 /* NLMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLMasterViewController.m; sourceTree = "<group>"; };
+		B5FD812B1898686F007FB460 /* NLConsoleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLConsoleViewController.h; sourceTree = "<group>"; };
+		B5FD812C1898686F007FB460 /* NLConsoleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLConsoleViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,14 +168,20 @@
 				B5B44654180AB78E009ADEF9 /* Main.storyboard */,
 				B51198CF183D2DFE008B2DE5 /* NLColor.h */,
 				B51198D0183D2DFE008B2DE5 /* NLColor.m */,
-				B5B44657180AB78E009ADEF9 /* NLViewController.h */,
-				B5B44658180AB78E009ADEF9 /* NLViewController.m */,
+				B5FD812818986190007FB460 /* NLMasterViewController.h */,
+				B5FD812918986190007FB460 /* NLMasterViewController.m */,
+				B5B44657180AB78E009ADEF9 /* NLEditorViewController.h */,
+				B5B44658180AB78E009ADEF9 /* NLEditorViewController.m */,
+				B5FD812B1898686F007FB460 /* NLConsoleViewController.h */,
+				B5FD812C1898686F007FB460 /* NLConsoleViewController.m */,
 				B5884129182D1D83007C5B0F /* PBWebViewController.h */,
 				B588412A182D1D83007C5B0F /* PBWebViewController.m */,
 				B5C056231846A4A400E8A4B1 /* SEJSONViewController.h */,
 				B5C056241846A4A400E8A4B1 /* SEJSONViewController.m */,
 				B597EB7818396ADB00DC767C /* CSNotificationView.h */,
 				B597EB7918396ADB00DC767C /* CSNotificationView.m */,
+				B5FD8125189860DB007FB460 /* FHSegmentedViewController.h */,
+				B5FD8126189860DB007FB460 /* FHSegmentedViewController.m */,
 				B597EB7B18396AE400DC767C /* CSNotificationView.xcassets */,
 				B5B4465A180AB78E009ADEF9 /* Images.xcassets */,
 				B5B44649180AB78E009ADEF9 /* Supporting Files */,
@@ -308,7 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5B44659180AB78E009ADEF9 /* NLViewController.m in Sources */,
+				B5B44659180AB78E009ADEF9 /* NLEditorViewController.m in Sources */,
 				B5B44653180AB78E009ADEF9 /* NLAppDelegate.m in Sources */,
 				B5C056251846A4A400E8A4B1 /* SEJSONViewController.m in Sources */,
 				B588412B182D1D83007C5B0F /* PBWebViewController.m in Sources */,
@@ -316,8 +331,11 @@
 				B51198D5183D3E55008B2DE5 /* NLTextView.m in Sources */,
 				B5FD81211897EE97007FB460 /* CYRLayoutManager.m in Sources */,
 				B5FD81231897EE97007FB460 /* CYRTextView.m in Sources */,
+				B5FD812D1898686F007FB460 /* NLConsoleViewController.m in Sources */,
+				B5FD812A18986190007FB460 /* NLMasterViewController.m in Sources */,
 				B5FD81221897EE97007FB460 /* CYRTextStorage.m in Sources */,
 				B5B4464F180AB78E009ADEF9 /* main.m in Sources */,
+				B5FD8127189860DB007FB460 /* FHSegmentedViewController.m in Sources */,
 				B5FD81241897EE97007FB460 /* CYRToken.m in Sources */,
 				B51198D1183D2DFE008B2DE5 /* NLColor.m in Sources */,
 				B5CF82A01819B9EC0095AE7E /* KOSwipeButton.m in Sources */,

@@ -34,11 +34,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "NLViewController.h"
+#import "NLEditorViewController.h"
 
 @interface KOKeyboardRow : UIView
 
-@property NLViewController *viewController;
+@property NLEditorViewController *viewController;
 
 + (void)applyToTextView:(UITextView *)textView;
 - (void)trackPointMovedX:(int)xdiff Y:(int)ydiff selecting:(BOOL)selecting;

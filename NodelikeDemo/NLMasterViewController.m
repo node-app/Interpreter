@@ -1,83 +1,86 @@
 //
-//  NLViewController.m
-//  NodelikeDemo
+//  NLMasterViewController.m
+//  Interpreter
 //
-//  Created by Sam Rijs on 10/13/13.
-//  Copyright (c) 2013 Sam Rijs. All rights reserved.
+//  Created by Sam Rijs on 1/28/14.
+//  Copyright (c) 2014 Sam Rijs. All rights reserved.
 //
 
-#import "NLViewController.h"
+#import "NLMasterViewController.h"
+
+#import "NLEditorViewController.h"
+#import "NLConsoleViewController.h"
 
 #import "CSNotificationView.h"
-#import "SEJSONViewController.h"
-
-#import "KOKeyboardRow.h"
+#import "PBWebViewController.h"
 
 #import "NLColor.h"
-#import "NLContext.h"
 
-@interface NLViewController ()
-
-@property UIViewController* outputViewController;
-@property NSString *outputString;
-
-@property NSMutableArray *log;
-
-@property JSContext *context;
+@interface NLMasterViewController ()
 
 @end
 
-@implementation NLViewController
+@implementation NLMasterViewController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
+
     [super viewDidLoad];
+    
+    self.editorViewController  = [self.storyboard instantiateViewControllerWithIdentifier:@"editorViewController"];
+    self.consoleViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"consoleViewController"];
+    
+    ((NLEditorViewController *)self.editorViewController).masterViewController = self;
+    
+	[self setViewControllers:@[self.editorViewController, self.consoleViewController]];
     
     [self setupStyle];
     
-    __weak NLViewController *weakSelf = self;
-
-    _appDelegate = [[UIApplication sharedApplication] delegate];
-
-    _context = [[JSContext alloc] initWithVirtualMachine:[[JSVirtualMachine alloc] init]];
-
+    __weak NLMasterViewController *weakSelf = self;
+    
+    _context = [[NLContext alloc] initWithVirtualMachine:[[JSVirtualMachine alloc] init]];
+    
     [NLContext attachToContext:_context];
     
-    self.log = [NSMutableArray new];
-
     _context.exceptionHandler = ^(JSContext *c, JSValue *e) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf error:[e toString]];
             NSLog(@"%@ stack: %@", e, [e valueForProperty:@"stack"]);
         });
     };
-
+    
     _context[@"console"] = @{@"log": ^(JSValue *thing) {
         [JSContext.currentArguments enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            [weakSelf.log addObject:[obj toObject]];
+            [((NLConsoleViewController *)self.consoleViewController) log:[obj toString]];
         }];
     }};
-    
-    self.input = [NLTextView textViewForView:self.view];
 
-    [self.view addSubview:self.input];
-
-    [KOKeyboardRow applyToTextView:self.input];
-    ((KOKeyboardRow *)self.input.inputAccessoryView).viewController = self;
-
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [self.input becomeFirstResponder];
 }
 
 - (void)setupStyle {
-
+    
     self.navigationController.navigationBar.tintColor    = [NLColor greenColor];
     self.navigationController.navigationBar.barTintColor = [NLColor blackColor];
     self.navigationController.toolbar.tintColor          = [NLColor blackColor];
     self.navigationController.toolbar.barTintColor       = [[NLColor whiteColor] colorWithAlphaComponent:0.5];
+    
+}
 
+- (void)execute:(NSString *)code {
+    JSValue *ret = [_context evaluateScript:code];
+    [NLContext runEventLoop];
+    if (![ret isUndefined]) {
+        [self output:[ret toString]];
+    }
 }
 
 - (void)output:(NSString *)message {
@@ -92,20 +95,6 @@
                                      message:message];
 }
 
-- (void)execute {
-    JSValue  *ret = [_context evaluateScript:self.input.text];
-    [NLContext runEventLoop];
-    if (![ret isUndefined]) {
-        [self output:[ret toString]];
-    }
-    if ([self.log count]) {
-        SEJSONViewController *con = [SEJSONViewController new];
-        [con setData:[NSArray arrayWithArray:self.log]];
-        [self.navigationController pushViewController:con animated:YES];
-        [self.log removeAllObjects];
-    }
-}
-
 - (IBAction)showDocu:(id)sender {
     PBWebViewController *docuViewController = [[PBWebViewController alloc] init];
     docuViewController.URL = [NSURL URLWithString:@"http://nodejs.org/docs/latest/api/"];
@@ -116,6 +105,13 @@
     PBWebViewController *docuViewController = [[PBWebViewController alloc] init];
     docuViewController.URL = [NSURL URLWithString:@"http://nodeapp.org/?utm_source=interpreter&utm_medium=App&utm_campaign=info"];
     [self.navigationController pushViewController:docuViewController animated:YES];
+}
+
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 @end

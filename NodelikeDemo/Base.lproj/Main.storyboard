@@ -21,10 +21,10 @@
             </objects>
             <point key="canvasLocation" x="-31" y="-116"/>
         </scene>
-        <!--View Controller - Interpreter-->
+        <!--Master View Controller - Interpreter-->
         <scene sceneID="XLv-3e-n8F">
             <objects>
-                <viewController id="oqM-hE-VlH" customClass="NLViewController" sceneMemberID="viewController">
+                <viewController id="oqM-hE-VlH" customClass="NLMasterViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Fpm-pI-7LB"/>
                         <viewControllerLayoutGuide type="bottom" id="mJU-Cf-VR0"/>
@@ -49,7 +49,61 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zqk-OX-IVc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="421" y="-116"/>
+            <point key="canvasLocation" x="424" y="-116"/>
+        </scene>
+        <!--Editor View Controller - Editor-->
+        <scene sceneID="7d3-xH-YaP">
+            <objects>
+                <viewController storyboardIdentifier="editorViewController" title="Editor" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qEG-HH-O80" customClass="NLEditorViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="F9R-J0-eJJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="YMI-w0-8Lq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KeD-z5-x7w">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AmP-iv-YDo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="887" y="-561"/>
+        </scene>
+        <!--Console View Controller - Console-->
+        <scene sceneID="KSr-Nl-9xA">
+            <objects>
+                <viewController storyboardIdentifier="consoleViewController" title="Console" id="SS7-Ms-cy4" customClass="NLConsoleViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="onN-ot-2N4"/>
+                        <viewControllerLayoutGuide type="bottom" id="oCO-us-6cD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qk0-bG-AGb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFS-5m-P6j">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.9960784912109375" green="0.99215692281723022" blue="0.99215692281723022" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bFS-5m-P6j" firstAttribute="top" secondItem="qk0-bG-AGb" secondAttribute="top" id="KTm-AV-u6M"/>
+                            <constraint firstItem="oCO-us-6cD" firstAttribute="top" secondItem="bFS-5m-P6j" secondAttribute="bottom" id="nQZ-sz-J8S"/>
+                            <constraint firstItem="bFS-5m-P6j" firstAttribute="leading" secondItem="qk0-bG-AGb" secondAttribute="leading" id="uTQ-L6-Rpi"/>
+                            <constraint firstAttribute="trailing" secondItem="bFS-5m-P6j" secondAttribute="trailing" id="zWQ-N6-0jL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="console" destination="bFS-5m-P6j" id="4Yh-Ry-oEs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i5h-hX-pth" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="887" y="133"/>
         </scene>
     </scenes>
     <resources>
