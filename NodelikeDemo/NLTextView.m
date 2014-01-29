@@ -41,7 +41,6 @@
     self.gutterLineColor       = [UIColor clearColor];
 
     self.font = [UIFont fontWithName:@"Menlo" size:14.0];
-    self.autocorrectionType = UITextAutocorrectionTypeNo;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
