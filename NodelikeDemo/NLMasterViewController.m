@@ -77,7 +77,7 @@
 
 - (void)execute:(NSString *)code {
     JSValue *ret = [_context evaluateScript:code];
-    [NLContext runEventLoop];
+    [NLContext runEventLoopAsync];
     if (![ret isUndefined]) {
         [self output:[ret toString]];
     }
