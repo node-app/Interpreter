@@ -123,6 +123,7 @@ static const float kCursorVelocity = 1.0f/8.0f;
 {
     [self removeObserver:self forKeyPath:NSStringFromSelector(@selector(font))];
     [self removeObserver:self forKeyPath:NSStringFromSelector(@selector(selectedTextRange))];
+    [self removeObserver:self forKeyPath:NSStringFromSelector(@selector(selectedRange))];
 }
 
 
