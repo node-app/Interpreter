@@ -16,7 +16,7 @@ The goals
 - to be _very lightweight_
 - to _reuse javascript code from node_ (/lib)
 - to provide the _most minimal binding_ that is possible (via libuv)
-- NOT to archieve Node.js performance (this is meant as a client-side, not a server-side application)
+- NOT to achieve Node.js performance (this is meant as a client-side, not a server-side application)
 - NOT to be backwards-compatible (nodejs cutting edge and newest iOS/OS X required)
 
 What's working right now
