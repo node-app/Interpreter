@@ -1,4 +1,4 @@
-# Interpreter [![Build Status](https://travis-ci.org/node-app/Interpreter.png?branch=master)](https://travis-ci.org/node-app/Interpreter) [![Gitter chat](https://badges.gitter.im/node-app.png)](https://gitter.im/node-app)
+# Interpreter [![Build Status](https://travis-ci.org/node-app/Interpreter.png?branch=master)](https://travis-ci.org/node-app/Interpreter) [![Gitter chat](https://badges.gitter.im/node-app/Interpreter.png)](https://gitter.im/node-app/Interpreter)
 
 This is an example project implementing a Node.JS interpreter as an iOS app, utilising the [Nodelike](https://github.com/node-app/Nodelike) framework.
 
