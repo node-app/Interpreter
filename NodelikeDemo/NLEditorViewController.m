@@ -27,11 +27,17 @@
       [KOKeyboardRow applyToTextView:self.input];
       ((KOKeyboardRow *)self.input.inputAccessoryView).viewController = self;
     }
+    
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(fileOpenTriggered:) name:@"NLFileOpen" object:nil];
 
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [self.input becomeFirstResponder];
+}
+
+- (void)fileOpenTriggered:(NSNotification*)notification {
+    self.input.text = notification.userInfo[@"script"];
 }
 
 @end
