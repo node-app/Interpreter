@@ -35,12 +35,10 @@
 
 - (void)load
 {
-    NSLog(@"load");
     NSURLRequest *request = [NSURLRequest requestWithURL:self.URL];
     [self.webView loadRequest:request];
     
     if (self.navigationController.toolbarHidden) {
-        NSLog(@"unhiding tb: %@", self.navigationController.toolbarItems);
         self.toolbarPreviouslyHidden = YES;
         if (self.showsNavigationToolbar) {
             [self.navigationController setToolbarHidden:NO animated:YES];
