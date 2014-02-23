@@ -10,7 +10,7 @@
 
 #import <JavaScriptCore/JavaScriptCore.h>
 
-@interface NLAppDelegate : UIResponder <UIApplicationDelegate>
+@interface NLAppDelegate : UIResponder <UIApplicationDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
