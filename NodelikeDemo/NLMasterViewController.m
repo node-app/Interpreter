@@ -38,10 +38,10 @@
     
     self.editorViewController  = [self.storyboard instantiateViewControllerWithIdentifier:@"editorViewController"];
     self.consoleViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"consoleViewController"];
-    
-    ((NLEditorViewController *)self.editorViewController).masterViewController = self;
+    self.documentationViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"documentationViewController"];
     
 	[self setViewControllers:@[self.editorViewController, self.consoleViewController]];
+    [self pushViewController:self.documentationViewController];
     
     [self setupStyle];
     
@@ -75,7 +75,7 @@
     
 }
 
-- (void)execute:(NSString *)code {
+- (void)executeJS:(NSString *)code {
     JSValue *ret = [_context evaluateScript:code];
     [NLContext runEventLoopAsync];
     if (![ret isUndefined]) {
@@ -95,10 +95,8 @@
                                      message:message];
 }
 
-- (IBAction)showDocu:(id)sender {
-    PBWebViewController *docuViewController = [[PBWebViewController alloc] init];
-    docuViewController.URL = [NSURL URLWithString:@"http://nodejs.org/docs/latest/api/"];
-    [self.navigationController pushViewController:docuViewController animated:YES];
+- (IBAction)execute:(id)sender {
+    [self executeJS:((NLEditorViewController *)self.editorViewController).input.text];
 }
 
 - (IBAction)showInfo:(id)sender {

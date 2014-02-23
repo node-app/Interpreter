@@ -116,8 +116,4 @@
     textView.selectedTextRange = r;
 }
 
-- (void)execButtonPressed {
-    [_viewController execute];
-}
-
 @end

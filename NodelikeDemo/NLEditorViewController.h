@@ -13,10 +13,6 @@
 
 @interface NLEditorViewController : UIViewController
 
-@property NLMasterViewController *masterViewController;
-
 @property IBOutlet NLTextView *input;
-
-- (void) execute;
 
 @end

@@ -14,9 +14,10 @@
 
 @property UIViewController *editorViewController;
 @property UIViewController *consoleViewController;
+@property UIViewController *documentationViewController;
 
 @property NLContext *context;
 
-- (void)execute:(NSString *)code;
+- (void)executeJS:(NSString *)code;
 
 @end

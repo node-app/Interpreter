@@ -35,14 +35,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Interpreter" id="bW9-p7-z7G">
-                        <barButtonItem key="leftBarButtonItem" image="info" id="fTq-wf-Uch">
+                        <barButtonItem key="leftBarButtonItem" systemItem="play" id="D32-Ws-39S">
                             <connections>
-                                <action selector="showInfo:" destination="oqM-hE-VlH" id="p6x-J8-Ka0"/>
+                                <action selector="execute:" destination="oqM-hE-VlH" id="4W8-Gw-utb"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="bookmarks" id="Mgu-0X-gx5">
+                        <barButtonItem key="rightBarButtonItem" image="info" id="fTq-wf-Uch">
                             <connections>
-                                <action selector="showDocu:" destination="oqM-hE-VlH" id="OSL-5d-Fxg"/>
+                                <action selector="showInfo:" destination="oqM-hE-VlH" id="p6x-J8-Ka0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -105,9 +105,42 @@
             </objects>
             <point key="canvasLocation" x="887" y="133"/>
         </scene>
+        <!--Documentation View Controller - Docs-->
+        <scene sceneID="O9D-uv-92V">
+            <objects>
+                <viewController storyboardIdentifier="documentationViewController" title="Docs" useStoryboardIdentifierAsRestorationIdentifier="YES" id="V2b-qG-pCI" customClass="NLDocumentationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DgJ-ID-FEW"/>
+                        <viewControllerLayoutGuide type="bottom" id="xkm-or-S23"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4lQ-p6-eJZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vpl-f4-t7X">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="vpl-f4-t7X" secondAttribute="bottom" id="NIQ-ff-8tu"/>
+                            <constraint firstAttribute="trailing" secondItem="vpl-f4-t7X" secondAttribute="trailing" id="aUT-7y-XRI"/>
+                            <constraint firstItem="vpl-f4-t7X" firstAttribute="top" secondItem="4lQ-p6-eJZ" secondAttribute="top" id="e95-LI-3ou"/>
+                            <constraint firstItem="vpl-f4-t7X" firstAttribute="leading" secondItem="4lQ-p6-eJZ" secondAttribute="leading" id="yqT-su-ND6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="vpl-f4-t7X" id="RI3-wj-Bc0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ouz-Hk-uSK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1302" y="133"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="bookmarks" width="22" height="20"/>
         <image name="info" width="22" height="22"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

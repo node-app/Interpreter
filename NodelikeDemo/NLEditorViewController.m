@@ -23,17 +23,15 @@
 
     [self.view addSubview:self.input];
 
-    [KOKeyboardRow applyToTextView:self.input];
-    ((KOKeyboardRow *)self.input.inputAccessoryView).viewController = self;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+      [KOKeyboardRow applyToTextView:self.input];
+      ((KOKeyboardRow *)self.input.inputAccessoryView).viewController = self;
+    }
 
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [self.input becomeFirstResponder];
-}
-
-- (void)execute {
-    [self.masterViewController execute:self.input.text];
 }
 
 @end

@@ -172,7 +172,7 @@
                     [self addSubview:foregroundView];
 
                 } else {
-                    [[labels objectAtIndex:i] setText:@"EXEC"];
+                    [[labels objectAtIndex:i] setText:@"TAB"];
                     [[labels objectAtIndex:i] setFrame:self.bounds];
                 }
             }
@@ -256,7 +256,7 @@
 {
     if (selectedLabel != nil) {
         if (tabButton) {
-            [delegate execButtonPressed];
+            [delegate insertText:@"\t"];
         } else if (! trackPoint) {
             NSString *textToInsert = selectedLabel.text;
             [delegate insertText:textToInsert];
