@@ -56,30 +56,16 @@
 
 #pragma mark - View controller lifecycle
 
-- (void)loadView
-{
-    [super loadView];
-    NSLog(@"loadView");
-    //self.view.clipsToBounds = YES;
-    //self.webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
-    //self.webView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-    //self.webView.scalesPageToFit = YES;
-    //[self.view addSubview:self.webView];
-    NSLog(@"webview: %@", self.webView);
-};
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.webView.scalesPageToFit = YES;
-    NSLog(@"webview: %@", self.webView);
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     [self setupToolBarItems];
-    NSLog(@"webview: %@", self.webView);
     self.webView.delegate = self;
     if (self.URL) {
         [self load];
@@ -155,7 +141,6 @@
 
 - (void)setupToolBarItems
 {
-    NSLog(@"setup tb");
     
     self.stopLoadingButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop
                                                                            target:self.webView
@@ -252,14 +237,12 @@
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
-    NSLog(@"startLoad");
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     [self toggleState];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    NSLog(@"finshLoad: %@", [webView stringByEvaluatingJavaScriptFromString:@"document.title"]);
     [self finishLoad];
     self.title = [webView stringByEvaluatingJavaScriptFromString:@"document.title"];
     self.URL = self.webView.request.URL;
