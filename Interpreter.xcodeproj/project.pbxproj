@@ -295,7 +295,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ $CONFIGURATION == Release ]; then\n    REVISION=$(python -c \"print(int('$(git log --pretty=format:'%h' -n 1)', 16))\")\n    /usr/libexec/Plistbuddy -c \"Set CFBundleVersion ${REVISION}\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\nfi";
+			shellScript = "if [ $CONFIGURATION == Release ] || [ $CONFIGURATION == TestFlight ]; then\n    echo \"Bumping build number...\"\n    plist=${PROJECT_DIR}/${INFOPLIST_FILE}\n\n    # increment the build number (ie 115 to 116)\n    buildnum=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${plist}\")\n    if [[ \"${buildnum}\" == \"\" ]]; then\n        echo \"No build number in $plist\"\n        exit 2\n    fi\n\n    buildnum=$(expr $buildnum + 1)\n    /usr/libexec/Plistbuddy -c \"Set CFBundleVersion $buildnum\" \"${plist}\"\n    echo \"Bumped build number to $buildnum\"\n\nelse\n    echo $CONFIGURATION \" build - Not bumping build number.\"\nfi";
 		};
 		5A1AFDF162304FC08D9AD807 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
