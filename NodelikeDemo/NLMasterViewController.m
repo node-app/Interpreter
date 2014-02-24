@@ -68,8 +68,8 @@
 
 - (void)setupStyle {
     
-    self.navigationController.navigationBar.tintColor    = [NLColor greenColor];
-    self.navigationController.navigationBar.barTintColor = [NLColor blackColor];
+    //self.navigationController.navigationBar.tintColor    = [NLColor greenColor];
+    //self.navigationController.navigationBar.barTintColor = [NLColor blackColor];
     self.navigationController.toolbar.tintColor          = [NLColor blackColor];
     self.navigationController.toolbar.barTintColor       = [[NLColor whiteColor] colorWithAlphaComponent:0.5];
     
