@@ -20,6 +20,8 @@
     [super viewDidLoad];
     
     self.input = [NLTextView textViewForView:self.view];
+    
+    self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 
     [self.view addSubview:self.input];
 

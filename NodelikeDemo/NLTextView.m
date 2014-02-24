@@ -44,6 +44,8 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidChangeFrame:) name:UIKeyboardDidChangeFrameNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientationChanged:) name:UIDeviceOrientationDidChangeNotification object:nil];
     
     self.highlightDefinition = [NLTextView defaultHighlightDefinition];
     self.highlightTheme      = [NLTextView defaultHighlightTheme];
@@ -59,19 +61,29 @@
 }
 
 
-- (void)keyboardWillShow:(NSNotification*)aNotification
-{
-    [self moveTextViewForKeyboard:aNotification up:YES];
+- (void)keyboardWillShow:(NSNotification *)notification {
+    [self moveTextViewForKeyboard:notification up:YES];
 }
 
-- (void)keyboardWillHide:(NSNotification*)aNotification
-{
-    [self moveTextViewForKeyboard:aNotification up:NO];
+- (void)keyboardWillHide:(NSNotification *)notification {
+    [self moveTextViewForKeyboard:notification up:NO];
 }
 
-- (void)moveTextViewForKeyboard:(NSNotification*)aNotification up:(BOOL)up
-{
-    NSDictionary* userInfo = [aNotification userInfo];
+- (void)keyboardDidChangeFrame:(NSNotification *)notification {
+    CGRect keyboardEndFrame, newFrame, keyboardFrame;
+    [[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] getValue:&keyboardEndFrame];
+    newFrame      = self.superview.bounds;
+    keyboardFrame = [self.superview convertRect:keyboardEndFrame toView:nil];
+    newFrame.size.height -= keyboardFrame.size.height;
+    self.frame = newFrame;
+}
+
+- (void)orientationChanged:(NSNotification *)notification {
+    self.frame = self.superview.bounds;
+}
+
+- (void)moveTextViewForKeyboard:(NSNotification* )notification up:(BOOL)up {
+    NSDictionary* userInfo = [notification userInfo];
     NSTimeInterval animationDuration;
     UIViewAnimationCurve animationCurve;
     CGRect keyboardEndFrame;
