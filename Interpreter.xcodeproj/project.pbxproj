@@ -295,7 +295,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ $CONFIGURATION == Release ]; then\n    /usr/libexec/Plistbuddy -c \"Set CFBundleVersion $(git log --pretty=format:'%h' -n 1)\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\nfi";
+			shellScript = "if [ $CONFIGURATION == Release ]; then\n    REVISION=$(python -c \"print(int('$(git log --pretty=format:'%h' -n 1)', 16))\")\n    /usr/libexec/Plistbuddy -c \"Set CFBundleVersion ${REVISION}\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\nfi";
 		};
 		5A1AFDF162304FC08D9AD807 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -482,6 +482,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -505,6 +506,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
