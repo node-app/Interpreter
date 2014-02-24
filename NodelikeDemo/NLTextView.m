@@ -97,7 +97,7 @@
     [UIView setAnimationCurve:animationCurve];
     
     CGRect newFrame = self.frame;
-    CGRect keyboardFrame = [self.superview convertRect:keyboardEndFrame toView:nil];;
+    CGRect keyboardFrame = [self.superview convertRect:keyboardEndFrame toView:nil];
     newFrame.size.height -= keyboardFrame.size.height * (up?1:-1);
     self.frame = newFrame;
     
