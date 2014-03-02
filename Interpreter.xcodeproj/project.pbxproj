@@ -11,6 +11,7 @@
 		2A226F2718919B1600F58AE6 /* example02.js in Resources */ = {isa = PBXBuildFile; fileRef = 2A226F2418919B1600F58AE6 /* example02.js */; };
 		2A226F2818919B1600F58AE6 /* example03.js in Resources */ = {isa = PBXBuildFile; fileRef = 2A226F2518919B1600F58AE6 /* example03.js */; };
 		41F76CC626CB4B9D9C35557A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EFDE6E040EB45CAB99BE307 /* libPods.a */; };
+		B50A490118C2C15D00656FA3 /* node_modules in Resources */ = {isa = PBXBuildFile; fileRef = B50A490018C2C15D00656FA3 /* node_modules */; };
 		B51198D1183D2DFE008B2DE5 /* NLColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B51198D0183D2DFE008B2DE5 /* NLColor.m */; };
 		B51198D5183D3E55008B2DE5 /* NLTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = B51198D4183D3E55008B2DE5 /* NLTextView.m */; };
 		B51198DD183D7E64008B2DE5 /* Syntax.plist in Resources */ = {isa = PBXBuildFile; fileRef = B51198DC183D7E64008B2DE5 /* Syntax.plist */; };
@@ -46,6 +47,7 @@
 		2A226F2418919B1600F58AE6 /* example02.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = example02.js; path = NodelikeDemo/example02.js; sourceTree = "<group>"; };
 		2A226F2518919B1600F58AE6 /* example03.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = example03.js; path = NodelikeDemo/example03.js; sourceTree = "<group>"; };
 		8EFDE6E040EB45CAB99BE307 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B50A490018C2C15D00656FA3 /* node_modules */ = {isa = PBXFileReference; lastKnownFileType = folder; path = node_modules; sourceTree = "<group>"; };
 		B51198CF183D2DFE008B2DE5 /* NLColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLColor.h; sourceTree = "<group>"; };
 		B51198D0183D2DFE008B2DE5 /* NLColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLColor.m; sourceTree = "<group>"; };
 		B51198D3183D3E55008B2DE5 /* NLTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLTextView.h; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 		B5B44636180AB78E009ADEF9 = {
 			isa = PBXGroup;
 			children = (
+				B50A490018C2C15D00656FA3 /* node_modules */,
 				2A226F2318919B1600F58AE6 /* example01.js */,
 				2A226F2418919B1600F58AE6 /* example02.js */,
 				2A226F2518919B1600F58AE6 /* example03.js */,
@@ -276,6 +279,7 @@
 				B597EB7C18396AE400DC767C /* CSNotificationView.xcassets in Resources */,
 				B54C1F97180D488D0051F826 /* Main.storyboard in Resources */,
 				B5B4465B180AB78E009ADEF9 /* Images.xcassets in Resources */,
+				B50A490118C2C15D00656FA3 /* node_modules in Resources */,
 				B5B4464D180AB78E009ADEF9 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

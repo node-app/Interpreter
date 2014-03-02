@@ -58,11 +58,15 @@
         });
     };
     
-    _context[@"console"] = @{@"log": ^(JSValue *thing) {
+    id logger = ^(JSValue *thing) {
         [JSContext.currentArguments enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            NSLog(@"log: %@", [obj toString]);
             [((NLConsoleViewController *)self.consoleViewController) log:[obj toString]];
         }];
-    }};
+    };
+    _context[@"console"] = @{@"log": logger, @"error": logger};
+    
+    //[_context evaluateScript:@"process.env['NODE_DEBUG']='module'"];
 
 }
 
