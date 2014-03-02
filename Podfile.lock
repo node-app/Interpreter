@@ -2,15 +2,15 @@ PODS:
   - Nodelike (0.1.0)
 
 DEPENDENCIES:
-  - Nodelike (from `https://github.com/node-app/Nodelike.git`, commit `d61d9c1cc7`)
+  - Nodelike (from `https://github.com/node-app/Nodelike.git`, commit `cb085fad1c2f9e49ac7b40d20d2cdae8b2333764`)
 
 EXTERNAL SOURCES:
   Nodelike:
-    :commit: d61d9c1cc7
+    :commit: cb085fad1c2f9e49ac7b40d20d2cdae8b2333764
     :git: https://github.com/node-app/Nodelike.git
     :submodules: true
 
 SPEC CHECKSUMS:
-  Nodelike: 1b3600e474d1b6a283d9abdff45012ee9e6687f1
+  Nodelike: 7a9cbc13a39da5bf27c4dadada5ea09751901fd6
 
 COCOAPODS: 0.29.0
