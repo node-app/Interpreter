@@ -2,7 +2,6 @@ language: objective-c
 xcode_sdk: iphonesimulator
 xcode_scheme: Node
 xcode_workspace: Interpreter.xcworkspace
-rvm: 1.9.3
 notifications:
   flowdock: 803358c5edc46b50866b8e588b4c374b
   webhooks:
