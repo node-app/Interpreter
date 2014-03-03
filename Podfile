@@ -1,3 +1,3 @@
 platform :ios, '7.0'
 
-pod 'Nodelike', :git => 'https://github.com/node-app/Nodelike.git', :commit => 'cb085fad1c2f9e49ac7b40d20d2cdae8b2333764', :submodules => true
+pod 'Nodelike', :git => 'https://github.com/node-app/Nodelike.git', :commit => '928139925d2a1dbd9977ca9e4386ddcd7c686ef5', :submodules => true
