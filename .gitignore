@@ -4,4 +4,5 @@ xcuserdata
 *.xccheckout
 build
 
+Podfile.lock
 Pods/
