@@ -208,6 +208,7 @@
 				5A1AFDF162304FC08D9AD807 /* Check Pods Manifest.lock */,
 				B5B4463B180AB78E009ADEF9 /* Sources */,
 				B5B4463C180AB78E009ADEF9 /* Frameworks */,
+				B50A497318C7624B00656FA3 /* Clean node_modules */,
 				B5B4463D180AB78E009ADEF9 /* Resources */,
 				C244253F309047989B007737 /* Copy Pods Resources */,
 				OBJCLEANCUSTOMRUNSCRIPTT /* Objective-Clean Run Script */,
@@ -299,6 +300,20 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		B50A497318C7624B00656FA3 /* Clean node_modules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Clean node_modules";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "rm -rf \"${TARGET_BUILD_DIR}/${PRODUCT_NAME}.app/node_modules\"";
 		};
 		C244253F309047989B007737 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
