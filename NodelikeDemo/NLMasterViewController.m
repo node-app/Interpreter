@@ -81,10 +81,25 @@
 
 - (void)executeJS:(NSString *)code {
     JSValue *ret = [_context evaluateScript:code];
-    [NLContext runEventLoopAsync];
     if (![ret isUndefined]) {
         [self output:[ret toString]];
     }
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        self.backgroundTask = [UIApplication.sharedApplication beginBackgroundTaskWithExpirationHandler:^{
+            NSLog(@"beginBG called");
+            [UIApplication.sharedApplication endBackgroundTask:self.backgroundTask];
+            self.backgroundTask = UIBackgroundTaskInvalid;
+        }];
+        
+        [NLContext runEventLoopSync];
+        
+        [UIApplication.sharedApplication endBackgroundTask:self.backgroundTask];
+        self.backgroundTask = UIBackgroundTaskInvalid;
+
+    });
+
 }
 
 - (void)output:(NSString *)message {

@@ -18,6 +18,8 @@
 
 @property NLContext *context;
 
+@property UIBackgroundTaskIdentifier backgroundTask;
+
 - (void)executeJS:(NSString *)code;
 
 @end
