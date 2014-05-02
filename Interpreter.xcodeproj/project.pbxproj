@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2ADE7D7F19138F5700460861 /* NLErrorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ADE7D7E19138F5700460861 /* NLErrorManager.m */; };
 		41F76CC626CB4B9D9C35557A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EFDE6E040EB45CAB99BE307 /* libPods.a */; };
 		B50A490118C2C15D00656FA3 /* node_modules in Resources */ = {isa = PBXBuildFile; fileRef = B50A490018C2C15D00656FA3 /* node_modules */; };
 		B51198D1183D2DFE008B2DE5 /* NLColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B51198D0183D2DFE008B2DE5 /* NLColor.m */; };
@@ -39,6 +40,8 @@
 
 /* Begin PBXFileReference section */
 		052D7BA09FC3465ABCD8A15D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		2ADE7D7D19138F5700460861 /* NLErrorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLErrorManager.h; sourceTree = "<group>"; };
+		2ADE7D7E19138F5700460861 /* NLErrorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLErrorManager.m; sourceTree = "<group>"; };
 		8EFDE6E040EB45CAB99BE307 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B50A490018C2C15D00656FA3 /* node_modules */ = {isa = PBXFileReference; lastKnownFileType = folder; path = node_modules; sourceTree = "<group>"; };
 		B51198CF183D2DFE008B2DE5 /* NLColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLColor.h; sourceTree = "<group>"; };
@@ -143,6 +146,8 @@
 		B5B44648180AB78E009ADEF9 /* NodelikeDemo */ = {
 			isa = PBXGroup;
 			children = (
+				2ADE7D7D19138F5700460861 /* NLErrorManager.h */,
+				2ADE7D7E19138F5700460861 /* NLErrorManager.m */,
 				B5CF828F1819B9EC0095AE7E /* KOKeyboardRow.h */,
 				B5CF82901819B9EC0095AE7E /* KOKeyboardRow.m */,
 				B5CF82911819B9EC0095AE7E /* KOSwipeButton.h */,
@@ -356,6 +361,7 @@
 				B5C056251846A4A400E8A4B1 /* SEJSONViewController.m in Sources */,
 				B588412B182D1D83007C5B0F /* NLDocumentationViewController.m in Sources */,
 				B597EB7A18396ADB00DC767C /* CSNotificationView.m in Sources */,
+				2ADE7D7F19138F5700460861 /* NLErrorManager.m in Sources */,
 				B51198D5183D3E55008B2DE5 /* NLTextView.m in Sources */,
 				B5FD81211897EE97007FB460 /* CYRLayoutManager.m in Sources */,
 				B5FD81231897EE97007FB460 /* CYRTextView.m in Sources */,

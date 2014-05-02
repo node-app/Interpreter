@@ -14,6 +14,7 @@
 
 @property UIViewController *editorViewController;
 @property UIViewController *consoleViewController;
+@property UIViewController *errorViewController;
 @property UIViewController *documentationViewController;
 
 @property NLContext *context;

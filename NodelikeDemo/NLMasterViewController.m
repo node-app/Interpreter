@@ -13,10 +13,13 @@
 
 #import "CSNotificationView.h"
 #import "PBWebViewController.h"
+#import "NLErrorManager.h"
 
 #import "NLColor.h"
 
 @interface NLMasterViewController ()
+
+@property (nonatomic, strong) NLErrorManager *errorManager;
 
 @end
 
@@ -35,12 +38,15 @@
 {
 
     [super viewDidLoad];
+    self.errorManager = [NLErrorManager sharedManager];
+    self.errorManager.errorViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"errorViewController"];
     
     self.editorViewController  = [self.storyboard instantiateViewControllerWithIdentifier:@"editorViewController"];
     self.consoleViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"consoleViewController"];
+    self.errorViewController = self.errorManager.errorViewController;
     self.documentationViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"documentationViewController"];
     
-	[self setViewControllers:@[self.editorViewController, self.consoleViewController]];
+	[self setViewControllers:@[self.editorViewController, self.consoleViewController, self.errorViewController]];
     [self pushViewController:self.documentationViewController];
     
     [self setupStyle];
@@ -103,12 +109,14 @@
 }
 
 - (void)output:(NSString *)message {
+    [self.errorManager dispatchErrorType:NLErrorTypeSuccess message:message];
     [CSNotificationView showInViewController:self
                                        style:CSNotificationViewStyleSuccess
                                      message:message];
 }
 
 - (void)error:(NSString *)message {
+    [self.errorManager dispatchErrorType:NLErrorTypeGeneralError message:message];
     [CSNotificationView showInViewController:self
                                        style:CSNotificationViewStyleError
                                      message:message];
